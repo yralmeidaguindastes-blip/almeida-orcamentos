@@ -1,21 +1,27 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta name="viewport"
+      content="width=device-width,initial-scale=1">
 
 <title>Almeida Orçamentos</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
 
 body{
   margin:0;
-  font-family:Arial,sans-serif;
+  font-family:Arial,Helvetica,sans-serif;
   background:#f3f5f7;
-  color:#171717
+  color:#161616;
 }
 
 header{
@@ -25,33 +31,35 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px
+  gap:15px;
 }
 
 header img{
-  height:52px;
+  height:55px;
+  max-width:180px;
+  object-fit:contain;
   background:#fff;
   border-radius:6px;
-  padding:3px
+  padding:3px;
 }
 
 header h1{
   margin:0;
   font-size:20px;
-  text-align:center
+  text-align:center;
 }
 
 header small{
   display:block;
   font-size:12px;
   font-weight:normal;
-  margin-top:3px
+  margin-top:4px;
 }
 
 .wrap{
-  max-width:1150px;
+  max-width:1250px;
   margin:20px auto;
-  padding:0 14px
+  padding:0 14px;
 }
 
 .card{
@@ -59,23 +67,34 @@ header small{
   border:1px solid #ddd;
   border-radius:12px;
   padding:20px;
-  margin-bottom:16px;
-  box-shadow:0 3px 12px #0000000b
+  margin-bottom:18px;
+  box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
 h2{
-  margin-top:0
+  margin-top:0;
+}
+
+h3{
+  margin-bottom:10px;
 }
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:13px
+  gap:13px;
+}
+
+.grid3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:13px;
 }
 
 label{
+  display:block;
   font-size:12px;
-  font-weight:bold
+  font-weight:bold;
 }
 
 input,
@@ -86,12 +105,13 @@ select{
   border:1px solid #ccd2d8;
   border-radius:7px;
   margin-top:5px;
-  font-size:14px
+  font-size:14px;
+  background:#fff;
 }
 
 textarea{
   min-height:90px;
-  resize:vertical
+  resize:vertical;
 }
 
 button{
@@ -100,44 +120,107 @@ button{
   padding:11px 16px;
   font-weight:bold;
   cursor:pointer;
-  font-size:14px
+  font-size:14px;
 }
 
 button:hover{
-  opacity:.9
+  opacity:.88;
 }
 
 .yellow{
   background:#f7c600;
-  color:#000
+  color:#000;
 }
 
 .green{
-  background:#1fa463;
-  color:#fff
+  background:#1f9d61;
+  color:#fff;
 }
 
 .black{
   background:#111;
-  color:#fff
+  color:#fff;
 }
 
-.danger{
-  background:#c93232;
-  color:#fff
+.red{
+  background:#c93636;
+  color:#fff;
+}
+
+.blue{
+  background:#1769aa;
+  color:#fff;
 }
 
 .actions{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-top:15px
+  margin-top:15px;
+}
+
+.hidden{
+  display:none!important;
+}
+
+.muted{
+  color:#68717b;
+  font-size:13px;
+}
+
+.total-box{
+  display:flex;
+  justify-content:flex-end;
+  align-items:center;
+  gap:12px;
+  padding:15px 0;
+  font-size:18px;
+  font-weight:bold;
 }
 
 .total{
-  font-size:25px;
-  color:#188b4e;
-  font-weight:900
+  font-size:27px;
+  color:#16894e;
+  font-weight:900;
+}
+
+.item{
+  border:1px solid #d8dde2;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:12px;
+  background:#fafbfc;
+}
+
+.item-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px;
+}
+
+.item-title{
+  font-weight:bold;
+  font-size:16px;
+}
+
+.item-total{
+  font-weight:900;
+  color:#16894e;
+  font-size:17px;
+}
+
+.checkbox-line{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+  font-weight:bold;
+}
+
+.checkbox-line input{
+  width:auto;
+  margin:0;
 }
 
 .status{
@@ -145,103 +228,139 @@ button:hover{
   padding:5px 9px;
   border-radius:20px;
   background:#fff0b8;
-  display:inline-block
+  display:inline-block;
 }
 
 .approved{
   background:#dff7ea;
-  color:#176d45
+  color:#176d45;
 }
 
 .rejected{
   background:#ffe1e1;
-  color:#a22
-}
-
-.muted{
-  color:#68717b;
-  font-size:13px
-}
-
-.hidden{
-  display:none!important
-}
-
-.link{
-  background:#f6f7f8;
-  padding:12px;
-  border-radius:8px;
-  word-break:break-all;
-  margin-top:10px
+  color:#a22;
 }
 
 .orcamento{
-  padding:12px 0;
-  border-bottom:1px solid #eee
+  padding:13px 0;
+  border-bottom:1px solid #eee;
 }
 
 .login-card{
-  max-width:900px;
-  margin:30px auto
+  max-width:700px;
+  margin:35px auto;
 }
 
 .msg{
   margin-top:12px;
-  font-weight:bold
+  font-weight:bold;
+}
+
+.link{
+  background:#f4f6f8;
+  padding:12px;
+  border-radius:8px;
+  word-break:break-all;
+  margin-top:10px;
 }
 
 .publico{
-  max-width:850px;
-  margin:30px auto
+  max-width:900px;
+  margin:30px auto;
 }
 
 .publico-logo{
   width:230px;
   max-width:100%;
-  margin-bottom:15px
+  margin-bottom:10px;
 }
 
-@media(max-width:700px){
+.public-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
 
-  .grid{
-    grid-template-columns:1fr
+.public-table th,
+.public-table td{
+  border:1px solid #ddd;
+  padding:9px;
+  text-align:left;
+  font-size:13px;
+}
+
+.public-table th{
+  background:#111;
+  color:#fff;
+}
+
+@media(max-width:850px){
+
+  .grid3{
+    grid-template-columns:1fr 1fr;
   }
 
+}
+
+@media(max-width:650px){
+
   header{
-    padding:10px
+    padding:10px;
   }
 
   header img{
-    height:40px
+    height:42px;
+    max-width:120px;
   }
 
   header h1{
-    font-size:16px
+    font-size:15px;
   }
 
-  .wrap{
-    padding:0 10px
+  .grid,
+  .grid3{
+    grid-template-columns:1fr;
   }
 
   .card{
-    padding:15px
+    padding:14px;
   }
+
+  .total-box{
+    display:block;
+  }
+
+  .total{
+    display:block;
+    margin-top:5px;
+  }
+
 }
+
 </style>
+
 </head>
 
 <body>
 
+
 <header>
 
-  <img src="logo-almeida.png" alt="Almeida Guindastes">
+  <img
+    src="logo-almeida.png"
+    alt="Almeida Guindastes"
+  >
 
   <h1>
     ALMEIDA ORÇAMENTOS
-    <small>V5 • sistema online</small>
+    <small>Sistema online de propostas</small>
   </h1>
 
-  <button id="btnSair" class="yellow hidden" onclick="sair()">
+  <button
+    id="btnSair"
+    class="yellow hidden"
+    onclick="sair()"
+  >
     Sair
   </button>
 
@@ -251,295 +370,576 @@ button:hover{
 <div class="wrap">
 
 
-  <!-- LOGIN -->
+<!-- =====================================================
+LOGIN
+===================================================== -->
 
-  <section id="login" class="card login-card">
+<section
+  id="login"
+  class="card login-card"
+>
 
-    <h2>Acesso da Almeida</h2>
+  <h2>Acesso da Almeida</h2>
 
-    <p class="muted">
-      Entre com o e-mail e senha cadastrados no sistema.
-    </p>
+  <p class="muted">
+    Entre com o e-mail e senha cadastrados.
+  </p>
 
-    <div class="grid">
+  <div class="grid">
 
-      <label>
-        E-mail
-        <input
-          id="loginEmail"
-          type="email"
-          autocomplete="username"
-          placeholder="seu@email.com"
-        >
-      </label>
+    <label>
+      E-mail
 
-      <label>
-        Senha
-        <input
-          id="loginSenha"
-          type="password"
-          autocomplete="current-password"
-          placeholder="Sua senha"
-        >
-      </label>
+      <input
+        id="loginEmail"
+        type="email"
+        autocomplete="username"
+        placeholder="seu@email.com"
+      >
+
+    </label>
+
+
+    <label>
+      Senha
+
+      <input
+        id="loginSenha"
+        type="password"
+        autocomplete="current-password"
+        placeholder="Sua senha"
+      >
+
+    </label>
+
+  </div>
+
+
+  <div class="actions">
+
+    <button
+      class="black"
+      onclick="login()"
+    >
+      Entrar
+    </button>
+
+  </div>
+
+
+  <div
+    id="loginMsg"
+    class="msg"
+  ></div>
+
+</section>
+
+
+
+<!-- =====================================================
+PAINEL
+===================================================== -->
+
+<section
+  id="painel"
+  class="hidden"
+>
+
+
+<!-- =====================================================
+DADOS DO CLIENTE
+===================================================== -->
+
+<div class="card">
+
+  <h2>Dados da contratante</h2>
+
+  <div class="grid">
+
+
+    <label>
+      Empresa contratante
+
+      <input
+        id="cliente"
+        placeholder="Nome da empresa"
+      >
+
+    </label>
+
+
+    <label>
+      CNPJ / CPF
+
+      <input
+        id="cnpj"
+        placeholder="CNPJ ou CPF"
+      >
+
+    </label>
+
+
+    <label>
+      Responsável
+
+      <input
+        id="contato"
+        placeholder="Nome do responsável"
+      >
+
+    </label>
+
+
+    <label>
+      Telefone
+
+      <input
+        id="telefone"
+        placeholder="Telefone"
+      >
+
+    </label>
+
+
+    <label>
+      E-mail
+
+      <input
+        id="email"
+        type="email"
+        placeholder="E-mail"
+      >
+
+    </label>
+
+
+    <label>
+      Endereço da contratante
+
+      <input
+        id="endereco"
+        placeholder="Endereço"
+      >
+
+    </label>
+
+
+    <label>
+      Local do serviço
+
+      <input
+        id="local"
+        placeholder="Local onde o equipamento será utilizado"
+      >
+
+    </label>
+
+
+    <label>
+      Validade do orçamento
+
+      <input
+        id="validade"
+        type="number"
+        value="30"
+        min="1"
+      >
+
+    </label>
+
+
+    <label>
+      Forma de pagamento
+
+      <input
+        id="formaPagamento"
+        placeholder="Ex.: A combinar"
+        value="A COMBINAR"
+      >
+
+    </label>
+
+
+    <label>
+      Prazo / período
+
+      <input
+        id="periodo"
+        placeholder="Ex.: 12 meses"
+      >
+
+    </label>
+
+  </div>
+
+
+  <label style="margin-top:13px">
+
+    Observações
+
+    <textarea
+      id="obs"
+      placeholder="Observações adicionais"
+    ></textarea>
+
+  </label>
+
+</div>
+
+
+
+<!-- =====================================================
+ITENS
+===================================================== -->
+
+<div class="card">
+
+  <div
+    style="
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    "
+  >
+
+    <div>
+
+      <h2 style="margin-bottom:4px">
+        Equipamentos e serviços
+      </h2>
+
+      <div class="muted">
+        Adicione quantos itens forem necessários.
+      </div>
 
     </div>
 
+
+    <button
+      class="blue"
+      onclick="adicionarItem()"
+    >
+      + ADICIONAR ITEM
+    </button>
+
+  </div>
+
+
+  <div
+    id="itens"
+    style="margin-top:15px"
+  ></div>
+
+
+  <div class="total-box">
+
+    <span>
+      TOTAL:
+    </span>
+
+    <span
+      id="total"
+      class="total"
+    >
+      R$ 0,00
+    </span>
+
+  </div>
+
+
+  <label>
+
+    Desconto geral
+
+    <input
+      id="desconto"
+      type="number"
+      min="0"
+      step="0.01"
+      value="0"
+      oninput="calcularTotal()"
+    >
+
+  </label>
+
+
+  <div class="total-box">
+
+    <span>
+      TOTAL COM DESCONTO:
+    </span>
+
+    <span
+      id="totalFinal"
+      class="total"
+    >
+      R$ 0,00
+    </span>
+
+  </div>
+
+
+  <div class="actions">
+
+    <button
+      class="yellow"
+      onclick="calcularTotal()"
+    >
+      CALCULAR
+    </button>
+
+
+    <button
+      class="black"
+      onclick="salvar()"
+    >
+      SALVAR NA NUVEM
+    </button>
+
+
+    <button
+      class="green"
+      onclick="gerarLink()"
+    >
+      GERAR LINK DO CLIENTE
+    </button>
+
+  </div>
+
+
+  <div
+    id="linkCard"
+    class="hidden"
+    style="margin-top:18px"
+  >
+
+    <b>
+      Link da proposta para o cliente:
+    </b>
+
+    <div
+      id="link"
+      class="link"
+    ></div>
+
+
     <div class="actions">
 
-      <button class="black" onclick="login()">
-        Entrar
+      <button
+        class="green"
+        onclick="compartilhar()"
+      >
+        COMPARTILHAR / WHATSAPP
       </button>
 
     </div>
 
-    <div id="loginMsg" class="msg"></div>
+  </div>
 
-  </section>
-
-
-
-  <!-- PAINEL -->
-
-  <section id="painel" class="hidden">
-
-
-    <!-- NOVO ORÇAMENTO -->
-
-    <div class="card">
-
-      <h2>Novo orçamento</h2>
-
-      <div class="grid">
-
-        <label>
-          Cliente
-          <input id="cliente">
-        </label>
-
-        <label>
-          CNPJ / CPF
-          <input id="cnpj">
-        </label>
-
-        <label>
-          Contato
-          <input id="contato">
-        </label>
-
-        <label>
-          Telefone
-          <input id="telefone">
-        </label>
-
-        <label>
-          E-mail
-          <input id="email" type="email">
-        </label>
-
-        <label>
-          Local do serviço
-          <input id="local">
-        </label>
-
-        <label>
-          Descrição
-          <input
-            id="descricao"
-            value="GUINDASTE 160 TONELADAS COM LANÇA TELESCÓPICA DE 77,5 METROS E JIB"
-          >
-        </label>
-
-        <label>
-          Unidade
-          <select id="unidade">
-
-            <option value="HR">HR</option>
-            <option value="DIÁRIA">DIÁRIA</option>
-            <option value="MÊS">MÊS</option>
-            <option value="UN">UN</option>
-            <option value="SERVIÇO">SERVIÇO</option>
-
-          </select>
-        </label>
-
-        <label>
-          Quantidade
-          <input id="qtd" type="number" value="200" min="0" step="0.01">
-        </label>
-
-        <label>
-          Valor unitário
-          <input id="valor" type="number" value="700" min="0" step="0.01">
-        </label>
-
-        <label>
-          Desconto
-          <input id="desconto" type="number" value="0" min="0" step="0.01">
-        </label>
-
-        <label>
-          Validade (dias)
-          <input id="validade" type="number" value="30" min="1">
-        </label>
-
-      </div>
-
-
-      <label style="display:block;margin-top:13px">
-        Observações
-        <textarea id="obs"></textarea>
-      </label>
-
-
-      <div style="margin-top:15px">
-
-        Valor total:
-
-        <span id="total" class="total">
-          R$ 0,00
-        </span>
-
-      </div>
-
-
-      <div class="actions">
-
-        <button class="yellow" onclick="calcular()">
-          Calcular
-        </button>
-
-        <button class="black" onclick="salvar()">
-          Salvar na nuvem
-        </button>
-
-        <button class="green" onclick="gerarLink()">
-          Gerar link do cliente
-        </button>
-
-      </div>
-
-
-      <div id="linkCard" class="hidden" style="margin-top:15px">
-
-        <b>Link da proposta para o cliente:</b>
-
-        <div id="link" class="link"></div>
-
-        <div class="actions">
-
-          <button class="green" onclick="compartilhar()">
-            Compartilhar / WhatsApp
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
+</div>
 
 
 
-    <!-- LISTA -->
+<!-- =====================================================
+LISTA
+===================================================== -->
 
-    <div class="card">
+<div class="card">
 
-      <h2>Orçamentos</h2>
+  <h2>
+    Orçamentos salvos
+  </h2>
 
-      <div id="lista">
-        Carregando...
-      </div>
+  <div
+    id="lista"
+  >
+    Carregando...
+  </div>
 
-    </div>
-
-
-  </section>
-
+</div>
 
 
-  <!-- PROPOSTA PÚBLICA -->
+</section>
 
-  <section id="publico" class="hidden">
 
-    <div class="card publico">
 
-      <img
-        src="logo-almeida.png"
-        class="publico-logo"
-        alt="Almeida Guindastes"
+<!-- =====================================================
+PROPOSTA PÚBLICA
+===================================================== -->
+
+<section
+  id="publico"
+  class="hidden"
+>
+
+<div class="card publico">
+
+
+  <img
+    src="logo-almeida.png"
+    class="publico-logo"
+    alt="Almeida Guindastes"
+  >
+
+
+  <h2>
+    PROPOSTA COMERCIAL
+  </h2>
+
+
+  <p>
+    Nº:
+    <b id="pNumero"></b>
+  </p>
+
+
+  <p>
+    <b>Empresa:</b>
+    <span id="pCliente"></span>
+  </p>
+
+
+  <p>
+    <b>CNPJ/CPF:</b>
+    <span id="pCnpj"></span>
+  </p>
+
+
+  <p>
+    <b>Responsável:</b>
+    <span id="pContato"></span>
+  </p>
+
+
+  <p>
+    <b>Local do serviço:</b>
+    <span id="pLocal"></span>
+  </p>
+
+
+  <h3>
+    Equipamentos / Serviços
+  </h3>
+
+
+  <div
+    style="overflow-x:auto"
+  >
+
+    <table
+      class="public-table"
+    >
+
+      <thead>
+
+        <tr>
+
+          <th>Qtd.</th>
+          <th>Un.</th>
+          <th>Descrição</th>
+          <th>Valor</th>
+          <th>Total</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody
+        id="pItens"
+      ></tbody>
+
+    </table>
+
+  </div>
+
+
+  <div
+    class="total-box"
+  >
+
+    TOTAL:
+
+    <span
+      id="pTotal"
+      class="total"
+    ></span>
+
+  </div>
+
+
+  <hr>
+
+
+  <h3>
+    Aprovação do cliente
+  </h3>
+
+
+  <p class="muted">
+    Para registrar a decisão, informe o responsável.
+  </p>
+
+
+  <div class="grid">
+
+
+    <label>
+
+      Nome do responsável
+
+      <input
+        id="pNome"
       >
 
-      <h2>PROPOSTA COMERCIAL</h2>
+    </label>
 
-      <p>
-        Orçamento Nº
-        <b id="pNumero"></b>
-      </p>
 
-      <p>
-        Cliente:
-        <b id="pCliente"></b>
-      </p>
+    <label>
 
-      <p>
-        Serviço:
-        <b id="pDesc"></b>
-      </p>
+      CPF / CNPJ
 
-      <p>
-        Quantidade:
-        <b id="pQtd"></b>
-      </p>
+      <input
+        id="pDoc"
+      >
 
-      <p>
-        Valor total:
-        <span id="pTotal" class="total"></span>
-      </p>
+    </label>
 
-      <p>
-        Validade:
-        <b id="pVal"></b>
-      </p>
 
-      <hr>
+  </div>
 
-      <h3>Aprovação do cliente</h3>
 
-      <p>
-        Para registrar sua decisão, informe o responsável.
-      </p>
+  <div class="actions">
 
-      <div class="grid">
+    <button
+      class="green"
+      onclick="aprovar()"
+    >
+      ✓ APROVAR ORÇAMENTO
+    </button>
 
-        <label>
-          Nome do responsável
-          <input id="pNome">
-        </label>
 
-        <label>
-          CPF / CNPJ
-          <input id="pDoc">
-        </label>
+    <button
+      class="red"
+      onclick="recusar()"
+    >
+      ✕ RECUSAR
+    </button>
 
-      </div>
+  </div>
 
-      <div class="actions">
 
-        <button class="green" onclick="aprovar()">
-          ✓ APROVAR ORÇAMENTO
-        </button>
+  <div
+    id="pMsg"
+    class="msg"
+  ></div>
 
-        <button class="danger" onclick="recusar()">
-          ✕ RECUSAR
-        </button>
 
-      </div>
+</div>
 
-      <div id="pMsg" class="msg"></div>
+</section>
 
-    </div>
-
-  </section>
 
 </div>
 
@@ -547,15 +947,18 @@ button:hover{
 
 <script>
 
-/* ================================
-   SUPABASE
-================================ */
+
+/* =====================================================
+SUPABASE
+===================================================== */
 
 const SUPABASE_URL =
   'https://tkzwxveskwgfvvfalmcb.supabase.co';
 
+
 const SUPABASE_KEY =
   'sb_publishable_lBD8I4QUQbDLsTlllmROUQ_Ek0kPBw3';
+
 
 const sb =
   supabase.createClient(
@@ -564,22 +967,28 @@ const sb =
   );
 
 
-/* ================================
-   FUNÇÕES AUXILIARES
-================================ */
+
+/* =====================================================
+AUXILIARES
+===================================================== */
 
 const $ = id =>
   document.getElementById(id);
 
 
-const brl = value =>
-  new Intl.NumberFormat(
+function brl(valor){
+
+  return new Intl.NumberFormat(
     'pt-BR',
     {
       style:'currency',
       currency:'BRL'
     }
-  ).format(Number(value) || 0);
+  ).format(
+    Number(valor) || 0
+  );
+
+}
 
 
 function escapar(texto){
@@ -594,87 +1003,639 @@ function escapar(texto){
 }
 
 
-/* ================================
-   CALCULAR
-================================ */
 
-function calcular(){
+/* =====================================================
+ITENS
+===================================================== */
 
-  const qtd =
-    Number($('qtd').value) || 0;
+let itens = [];
 
-  const valor =
-    Number($('valor').value) || 0;
+let itemId = 0;
 
-  const desconto =
-    Number($('desconto').value) || 0;
 
-  const total =
-    Math.max(
-      0,
-      (qtd * valor) - desconto
-    );
 
-  $('total').textContent =
-    brl(total);
+function adicionarItem(dados = {}){
 
-  return total;
+  itemId++;
+
+
+  const item = {
+
+    id:itemId,
+
+    quantidade:
+      dados.quantidade ?? 1,
+
+    unidade:
+      dados.unidade ?? 'UNIDADE',
+
+    descricao:
+      dados.descricao ?? '',
+
+    valor:
+      dados.valor ?? 0,
+
+    combustivel:
+      dados.combustivel ?? 'NÃO INCLUSO',
+
+    alimentacao:
+      dados.alimentacao ?? 'NÃO INCLUSO',
+
+    hospedagem:
+      dados.hospedagem ?? 'NÃO INCLUSO',
+
+    transporte:
+      dados.transporte ?? 'NÃO INCLUSO',
+
+    cortesia:
+      dados.cortesia ?? false
+
+  };
+
+
+  itens.push(item);
+
+
+  renderItens();
+
+  calcularTotal();
 
 }
 
 
-/* ================================
-   PEGAR DADOS DO FORMULÁRIO
-================================ */
 
-function form(){
+function removerItem(id){
+
+  itens =
+    itens.filter(
+      item => item.id !== id
+    );
+
+  renderItens();
+
+  calcularTotal();
+
+}
+
+
+
+function atualizarItem(
+  id,
+  campo,
+  valor
+){
+
+  const item =
+    itens.find(
+      x => x.id === id
+    );
+
+
+  if(!item) return;
+
+
+  if(campo === 'quantidade'){
+    item[campo] =
+      Number(valor) || 0;
+  }
+
+  else if(campo === 'valor'){
+    item[campo] =
+      Number(valor) || 0;
+  }
+
+  else if(campo === 'cortesia'){
+    item[campo] =
+      valor === true ||
+      valor === 'true';
+  }
+
+  else{
+    item[campo] = valor;
+  }
+
+
+  calcularTotal();
+
+}
+
+
+
+function totalItem(item){
+
+  if(item.cortesia)
+    return 0;
+
+
+  return (
+    Number(item.quantidade) || 0
+  ) *
+  (
+    Number(item.valor) || 0
+  );
+
+}
+
+
+
+function renderItens(){
+
+  const container =
+    $('itens');
+
+
+  if(itens.length === 0){
+
+    container.innerHTML = `
+
+      <div class="muted"
+           style="
+             padding:20px;
+             text-align:center;
+             border:1px dashed #bbb;
+             border-radius:8px;
+           ">
+
+        Nenhum item adicionado.
+        Clique em
+        <b>+ ADICIONAR ITEM</b>.
+
+      </div>
+
+    `;
+
+    return;
+
+  }
+
+
+  container.innerHTML =
+    itens.map(item => `
+
+      <div class="item">
+
+        <div class="item-header">
+
+          <div class="item-title">
+
+            Item ${item.id}
+
+          </div>
+
+          <div>
+
+            <span
+              class="item-total"
+              id="itemTotal${item.id}"
+            >
+              ${brl(totalItem(item))}
+            </span>
+
+            <button
+              class="red"
+              style="margin-left:8px"
+              onclick="removerItem(${item.id})"
+            >
+              Remover
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <div class="grid3">
+
+
+          <label>
+
+            Quantidade
+
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              value="${item.quantidade}"
+              oninput="
+                atualizarItem(
+                  ${item.id},
+                  'quantidade',
+                  this.value
+                )
+              "
+            >
+
+          </label>
+
+
+          <label>
+
+            Unidade
+
+            <select
+              onchange="
+                atualizarItem(
+                  ${item.id},
+                  'unidade',
+                  this.value
+                )
+              "
+            >
+
+              ${opcoesUnidade(item.unidade)}
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Preço unitário
+
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              value="${item.valor}"
+              oninput="
+                atualizarItem(
+                  ${item.id},
+                  'valor',
+                  this.value
+                )
+              "
+            >
+
+          </label>
+
+        </div>
+
+
+        <label
+          style="margin-top:12px"
+        >
+
+          Descrição / Equipamento
+
+          <textarea
+            oninput="
+              atualizarItem(
+                ${item.id},
+                'descricao',
+                this.value
+              )
+            "
+          >${escapar(item.descricao)}</textarea>
+
+        </label>
+
+
+        <div
+          class="grid3"
+          style="margin-top:12px"
+        >
+
+
+          <label>
+
+            Combustível
+
+            <select
+              onchange="
+                atualizarItem(
+                  ${item.id},
+                  'combustivel',
+                  this.value
+                )
+              "
+            >
+
+              ${opcoesSimNao(item.combustivel)}
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Alimentação
+
+            <select
+              onchange="
+                atualizarItem(
+                  ${item.id},
+                  'alimentacao',
+                  this.value
+                )
+              "
+            >
+
+              ${opcoesSimNao(item.alimentacao)}
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Hospedagem
+
+            <select
+              onchange="
+                atualizarItem(
+                  ${item.id},
+                  'hospedagem',
+                  this.value
+                )
+              "
+            >
+
+              ${opcoesSimNao(item.hospedagem)}
+
+            </select>
+
+          </label>
+
+
+        </div>
+
+
+        <div
+          class="grid3"
+          style="margin-top:12px"
+        >
+
+
+          <label>
+
+            Transporte
+
+            <select
+              onchange="
+                atualizarItem(
+                  ${item.id},
+                  'transporte',
+                  this.value
+                )
+              "
+            >
+
+              ${opcoesSimNao(item.transporte)}
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Cortesia
+
+            <span class="checkbox-line">
+
+              <input
+                type="checkbox"
+                ${item.cortesia ? 'checked' : ''}
+                onchange="
+                  atualizarItem(
+                    ${item.id},
+                    'cortesia',
+                    this.checked
+                  );
+                  renderItens();
+                "
+              >
+
+              Item sem custo
+
+            </span>
+
+          </label>
+
+
+          <div></div>
+
+
+        </div>
+
+      </div>
+
+    `).join('');
+
+}
+
+
+
+function opcoesUnidade(atual){
+
+  const lista = [
+
+    'UNIDADE',
+    'HORAS',
+    'H',
+    'KM',
+    'DIÁRIA',
+    'MÊS',
+    'SERVIÇO'
+
+  ];
+
+
+  return lista.map(x => `
+
+    <option
+      value="${x}"
+      ${x === atual ? 'selected' : ''}
+    >
+      ${x}
+    </option>
+
+  `).join('');
+
+}
+
+
+
+function opcoesSimNao(atual){
+
+  const lista = [
+
+    'NÃO INCLUSO',
+    'INCLUSO',
+    'A CALCULAR'
+
+  ];
+
+
+  return lista.map(x => `
+
+    <option
+      value="${x}"
+      ${x === atual ? 'selected' : ''}
+    >
+      ${x}
+    </option>
+
+  `).join('');
+
+}
+
+
+
+/* =====================================================
+CÁLCULO
+===================================================== */
+
+function calcularTotal(){
+
+  let total = 0;
+
+
+  itens.forEach(item => {
+
+    const valor =
+      totalItem(item);
+
+    total += valor;
+
+
+    const elemento =
+      $('itemTotal' + item.id);
+
+
+    if(elemento){
+
+      elemento.textContent =
+        brl(valor);
+
+    }
+
+  });
+
+
+  const desconto =
+    Number($('desconto').value) || 0;
+
+
+  const totalFinal =
+    Math.max(
+      0,
+      total - desconto
+    );
+
+
+  $('total').textContent =
+    brl(total);
+
+
+  $('totalFinal').textContent =
+    brl(totalFinal);
+
 
   return {
 
-    cliente:$('cliente').value.trim(),
+    total:total,
 
-    cnpj:$('cnpj').value.trim(),
+    desconto:desconto,
 
-    contato:$('contato').value.trim(),
-
-    telefone:$('telefone').value.trim(),
-
-    email:$('email').value.trim(),
-
-    local_servico:$('local').value.trim(),
-
-    descricao:$('descricao').value.trim(),
-
-    unidade:$('unidade').value,
-
-    quantidade:Number($('qtd').value) || 0,
-
-    valor_unitario:Number($('valor').value) || 0,
-
-    desconto:Number($('desconto').value) || 0,
-
-    total:calcular(),
-
-    validade:Number($('validade').value) || 30,
-
-    observacoes:$('obs').value.trim()
+    totalFinal:totalFinal
 
   };
 
 }
 
 
-/* ================================
-   LOGIN
-================================ */
+
+/* =====================================================
+FORMULÁRIO
+===================================================== */
+
+function form(){
+
+  const calculo =
+    calcularTotal();
+
+
+  return {
+
+    cliente:
+      $('cliente').value.trim(),
+
+    cnpj:
+      $('cnpj').value.trim(),
+
+    contato:
+      $('contato').value.trim(),
+
+    telefone:
+      $('telefone').value.trim(),
+
+    email:
+      $('email').value.trim(),
+
+    endereco_cliente:
+      $('endereco').value.trim(),
+
+    local_servico:
+      $('local').value.trim(),
+
+    forma_pagamento:
+      $('formaPagamento').value.trim(),
+
+    descricao:
+      itens.map(
+        x => x.descricao
+      ).filter(Boolean).join(' | '),
+
+    unidade:
+      'DIVERSOS',
+
+    quantidade:
+      itens.length,
+
+    valor_unitario:
+      0,
+
+    desconto:
+      calculo.desconto,
+
+    total:
+      calculo.totalFinal,
+
+    validade:
+      Number($('validade').value) || 30,
+
+    observacoes:
+      $('obs').value.trim(),
+
+    itens:
+      itens,
+
+    periodo:
+      $('periodo').value.trim()
+
+  };
+
+}
+
+
+
+/* =====================================================
+LOGIN
+===================================================== */
 
 async function login(){
 
   const email =
     $('loginEmail').value.trim();
 
+
   const senha =
     $('loginSenha').value;
+
 
   if(!email || !senha){
 
@@ -685,10 +1646,15 @@ async function login(){
 
   }
 
+
   $('loginMsg').textContent =
     'Entrando...';
 
-  const {data,error} =
+
+  const {
+    data,
+    error
+  } =
     await sb.auth.signInWithPassword({
 
       email:email,
@@ -701,7 +1667,8 @@ async function login(){
   if(error){
 
     $('loginMsg').textContent =
-      'Erro: ' + error.message;
+      'Erro: ' +
+      error.message;
 
     return;
 
@@ -715,9 +1682,10 @@ async function login(){
 }
 
 
-/* ================================
-   SAIR
-================================ */
+
+/* =====================================================
+SAIR
+===================================================== */
 
 async function sair(){
 
@@ -728,28 +1696,44 @@ async function sair(){
 }
 
 
-/* ================================
-   MOSTRAR PAINEL
-================================ */
+
+/* =====================================================
+MOSTRAR PAINEL
+===================================================== */
 
 async function showPainel(){
 
-  $('login').classList.add('hidden');
+  $('login')
+    .classList
+    .add('hidden');
 
-  $('painel').classList.remove('hidden');
 
-  $('btnSair').classList.remove('hidden');
+  $('painel')
+    .classList
+    .remove('hidden');
 
-  calcular();
+
+  $('btnSair')
+    .classList
+    .remove('hidden');
+
+
+  if(itens.length === 0){
+
+    adicionarItem();
+
+  }
+
 
   await listar();
 
 }
 
 
-/* ================================
-   SALVAR ORÇAMENTO
-================================ */
+
+/* =====================================================
+SALVAR
+===================================================== */
 
 async function salvar(){
 
@@ -757,7 +1741,31 @@ async function salvar(){
     form();
 
 
-  const {data:userData} =
+  if(!q.cliente){
+
+    alert(
+      'Informe a empresa contratante.'
+    );
+
+    return;
+
+  }
+
+
+  if(itens.length === 0){
+
+    alert(
+      'Adicione pelo menos um item.'
+    );
+
+    return;
+
+  }
+
+
+  const {
+    data:userData
+  } =
     await sb.auth.getUser();
 
 
@@ -778,11 +1786,16 @@ async function salvar(){
     crypto.randomUUID();
 
 
-  const {data,error} =
+  const {
+    data,
+    error
+  } =
     await sb
       .from('orcamentos')
       .insert(q)
-      .select('numero,public_token')
+      .select(
+        'numero,public_token'
+      )
       .single();
 
 
@@ -800,7 +1813,8 @@ async function salvar(){
 
   alert(
     'Orçamento salvo na nuvem.\n\n' +
-    'Nº ' + data.numero
+    'Nº ' +
+    data.numero
   );
 
 
@@ -809,9 +1823,175 @@ async function salvar(){
 }
 
 
-/* ================================
-   LISTAR ORÇAMENTOS
-================================ */
+
+/* =====================================================
+GERAR LINK
+===================================================== */
+
+async function gerarLink(){
+
+  const q =
+    form();
+
+
+  if(!q.cliente){
+
+    alert(
+      'Informe a empresa contratante.'
+    );
+
+    return;
+
+  }
+
+
+  if(itens.length === 0){
+
+    alert(
+      'Adicione pelo menos um item.'
+    );
+
+    return;
+
+  }
+
+
+  const {
+    data:userData
+  } =
+    await sb.auth.getUser();
+
+
+  if(!userData.user){
+
+    alert('Faça login.');
+
+    return;
+
+  }
+
+
+  q.user_id =
+    userData.user.id;
+
+
+  q.public_token =
+    crypto.randomUUID();
+
+
+  const {
+    data,
+    error
+  } =
+    await sb
+      .from('orcamentos')
+      .insert(q)
+      .select(
+        'numero,public_token'
+      )
+      .single();
+
+
+  if(error){
+
+    alert(
+      'Erro ao gerar link:\n\n' +
+      error.message
+    );
+
+    return;
+
+  }
+
+
+  const url =
+    location.origin +
+    location.pathname +
+    '?proposta=' +
+    data.public_token;
+
+
+  $('link').textContent =
+    url;
+
+
+  $('linkCard')
+    .classList
+    .remove('hidden');
+
+
+  alert(
+    'Proposta Nº ' +
+    data.numero +
+    ' criada.\n\n' +
+    'O link do cliente está abaixo.'
+  );
+
+
+  await listar();
+
+}
+
+
+
+/* =====================================================
+COMPARTILHAR
+===================================================== */
+
+function compartilhar(){
+
+  const url =
+    $('link').textContent;
+
+
+  if(!url){
+
+    alert(
+      'Gere primeiro o link.'
+    );
+
+    return;
+
+  }
+
+
+  const texto =
+    'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n' +
+    url;
+
+
+  if(navigator.share){
+
+    navigator.share({
+
+      title:
+        'Proposta Almeida Guindastes',
+
+      text:texto,
+
+      url:url
+
+    });
+
+  }
+
+  else{
+
+    window.open(
+      'https://wa.me/?text=' +
+      encodeURIComponent(texto),
+      '_blank'
+    );
+
+  }
+
+}
+
+
+
+/* =====================================================
+LISTAR
+===================================================== */
 
 async function listar(){
 
@@ -824,7 +2004,9 @@ async function listar(){
       .select('*')
       .order(
         'created_at',
-        {ascending:false}
+        {
+          ascending:false
+        }
       );
 
 
@@ -853,8 +2035,10 @@ async function listar(){
 
       let classe = '';
 
+
       if(q.status === 'Aprovado')
         classe = 'approved';
+
 
       if(q.status === 'Recusado')
         classe = 'rejected';
@@ -864,18 +2048,28 @@ async function listar(){
 
         <div class="orcamento">
 
-          <b>${escapar(q.numero)}</b>
+          <b>
+            Nº ${escapar(q.numero)}
+          </b>
 
-          —
-          ${escapar(q.cliente || 'Sem cliente')}
+          &nbsp;—
 
-          —
+          ${escapar(
+            q.cliente || 'Sem cliente'
+          )}
+
+          &nbsp;—
+
           ${brl(q.total)}
 
-          <span class="status ${classe}">
+          &nbsp;
 
-            ${escapar(q.status || 'Pendente')}
-
+          <span
+            class="status ${classe}"
+          >
+            ${escapar(
+              q.status || 'Pendente'
+            )}
           </span>
 
         </div>
@@ -887,141 +2081,13 @@ async function listar(){
 }
 
 
-/* ================================
-   GERAR LINK DO CLIENTE
-================================ */
 
-async function gerarLink(){
-
-  const q =
-    form();
-
-
-  const {data:userData} =
-    await sb.auth.getUser();
-
-
-  if(!userData.user){
-
-    alert('Faça login.');
-
-    return;
-
-  }
-
-
-  q.user_id =
-    userData.user.id;
-
-
-  q.public_token =
-    crypto.randomUUID();
-
-
-  const {data,error} =
-    await sb
-      .from('orcamentos')
-      .insert(q)
-      .select('numero,public_token')
-      .single();
-
-
-  if(error){
-
-    alert(
-      'Erro ao gerar link:\n\n' +
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  const url =
-    location.origin +
-    location.pathname +
-    '?proposta=' +
-    data.public_token;
-
-
-  $('link').textContent =
-    url;
-
-
-  $('linkCard').classList.remove(
-    'hidden'
-  );
-
-
-  alert(
-    'Proposta Nº ' +
-    data.numero +
-    ' criada.\n\n' +
-    'O link do cliente está logo abaixo.'
-  );
-
-
-  await listar();
-
-}
-
-
-/* ================================
-   COMPARTILHAR
-================================ */
-
-function compartilhar(){
-
-  const url =
-    $('link').textContent;
-
-
-  if(!url){
-
-    alert('Gere primeiro o link.');
-
-    return;
-
-  }
-
-
-  if(navigator.share){
-
-    navigator.share({
-
-      title:'Proposta Almeida Guindastes',
-
-      text:
-        'Acesse sua proposta comercial da Almeida Guindastes:',
-
-      url:url
-
-    });
-
-  }else{
-
-    const texto =
-      'Acesse sua proposta comercial da Almeida Guindastes: ' +
-      url;
-
-
-    window.open(
-      'https://wa.me/?text=' +
-      encodeURIComponent(texto),
-      '_blank'
-    );
-
-  }
-
-}
-
-
-/* ================================
-   PROPOSTA PÚBLICA
-================================ */
+/* =====================================================
+PROPOSTA PÚBLICA
+===================================================== */
 
 let publicToken = null;
+
 
 
 async function abrirPublica(token){
@@ -1030,13 +2096,24 @@ async function abrirPublica(token){
     token;
 
 
-  $('login').classList.add('hidden');
+  $('login')
+    .classList
+    .add('hidden');
 
-  $('painel').classList.add('hidden');
 
-  $('btnSair').classList.add('hidden');
+  $('painel')
+    .classList
+    .add('hidden');
 
-  $('publico').classList.remove('hidden');
+
+  $('btnSair')
+    .classList
+    .add('hidden');
+
+
+  $('publico')
+    .classList
+    .remove('hidden');
 
 
   const {
@@ -1085,23 +2162,112 @@ async function abrirPublica(token){
     proposta.cliente || '';
 
 
-  $('pDesc').textContent =
-    proposta.descricao || '';
+  $('pCnpj').textContent =
+    proposta.cnpj || '';
 
 
-  $('pQtd').textContent =
-    (proposta.quantidade || 0) +
-    ' ' +
-    (proposta.unidade || '');
+  $('pContato').textContent =
+    proposta.contato || '';
+
+
+  $('pLocal').textContent =
+    proposta.local_servico || '';
 
 
   $('pTotal').textContent =
     brl(proposta.total);
 
 
-  $('pVal').textContent =
-    (proposta.validade || 30) +
-    ' dias';
+  let listaItens = [];
+
+
+  try{
+
+    if(Array.isArray(proposta.itens)){
+
+      listaItens =
+        proposta.itens;
+
+    }
+
+    else if(typeof proposta.itens === 'string'){
+
+      listaItens =
+        JSON.parse(
+          proposta.itens
+        );
+
+    }
+
+  }
+
+  catch(e){
+
+    listaItens = [];
+
+  }
+
+
+  if(listaItens.length === 0){
+
+    listaItens = [{
+
+      quantidade:
+        proposta.quantidade || 1,
+
+      unidade:
+        proposta.unidade || 'UNIDADE',
+
+      descricao:
+        proposta.descricao || '',
+
+      valor:
+        proposta.valor_unitario || 0
+
+    }];
+
+  }
+
+
+  $('pItens').innerHTML =
+    listaItens.map(item => `
+
+      <tr>
+
+        <td>
+          ${escapar(item.quantidade)}
+        </td>
+
+        <td>
+          ${escapar(item.unidade)}
+        </td>
+
+        <td>
+          ${escapar(item.descricao)}
+        </td>
+
+        <td>
+          ${item.cortesia
+            ? 'CORTESIA'
+            : brl(item.valor)}
+        </td>
+
+        <td>
+          ${item.cortesia
+            ? 'CORTESIA'
+            : brl(
+                (
+                  Number(item.quantidade) || 0
+                ) *
+                (
+                  Number(item.valor) || 0
+                )
+              )}
+        </td>
+
+      </tr>
+
+    `).join('');
 
 
   if(proposta.status !== 'Pendente'){
@@ -1128,9 +2294,10 @@ async function abrirPublica(token){
 }
 
 
-/* ================================
-   APROVAR / RECUSAR
-================================ */
+
+/* =====================================================
+APROVAR / RECUSAR
+===================================================== */
 
 async function decidir(status){
 
@@ -1154,20 +2321,23 @@ async function decidir(status){
 
 
   const {
-    data,
     error
   } =
     await sb.rpc(
       'decidir_orcamento',
       {
 
-        p_token:publicToken,
+        p_token:
+          publicToken,
 
-        p_status:status,
+        p_status:
+          status,
 
-        p_responsavel:nome,
+        p_responsavel:
+          nome,
 
-        p_documento:documento
+        p_documento:
+          documento
 
       }
     );
@@ -1195,7 +2365,9 @@ async function decidir(status){
 
     `;
 
-  }else{
+  }
+
+  else{
 
     $('pMsg').innerHTML = `
 
@@ -1212,11 +2384,13 @@ async function decidir(status){
 }
 
 
+
 function aprovar(){
 
   decidir('Aprovado');
 
 }
+
 
 
 function recusar(){
@@ -1226,9 +2400,10 @@ function recusar(){
 }
 
 
-/* ================================
-   INICIALIZAÇÃO
-================================ */
+
+/* =====================================================
+INICIALIZAÇÃO
+===================================================== */
 
 (async function(){
 
