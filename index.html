@@ -47,7 +47,24 @@ function form(){return {cliente:$('cliente').value,cnpj:$('cnpj').value,contato:
 async function login(){const {data,error}=await sb.auth.signInWithPassword({email:$('loginEmail').value,password:$('loginSenha').value});if(error){$('loginMsg').textContent=error.message;return}showPainel()}
 async function sair(){await sb.auth.signOut();location.reload()}
 async function showPainel(){$('login').classList.add('hidden');$('painel').classList.remove('hidden');await listar()}
-async function salvar(){let q=form();let {data:user}=await sb.auth.getUser();if(!user.user) return alert('Faça login.');q.user_id=user.user.id;q.public_token=crypto.randomUUID();let {error}=await sb.from('orcamentos').insert(q);if(error)return alert(error.message);alert('Orçamento salvo na nuvem. Nº '+q.numero);await listar()}
+async function salvar(){
+  let q=form();
+  let {data:user}=await sb.auth.getUser();
+  if(!user.user) return alert('Faça login.');
+  q.user_id=user.user.id;
+  q.public_token=crypto.randomUUID();
+
+  let {data,error}=await sb
+    .from('orcamentos')
+    .insert(q)
+    .select('numero')
+    .single();
+
+  if(error)return alert(error.message);
+
+  alert('Orçamento salvo na nuvem. Nº '+data.numero);
+  await listar();
+}let q=form();let {data:user}=await sb.auth.getUser();if(!user.user) return alert('Faça login.');q.user_id=user.user.id;q.public_token=crypto.randomUUID();let {error}=await sb.from('orcamentos').insert(q);if(error)return alert(error.message);alert('Orçamento salvo na nuvem. Nº '+q.numero);await listar()}
 async function listar(){let {data,error}=await sb.from('orcamentos').select('*').order('created_at',{ascending:false});if(error){$('lista').textContent=error.message;return}$('lista').innerHTML=data.map(q=>`<div style="padding:10px 0;border-bottom:1px solid #eee"><b>${q.numero}</b> — ${q.cliente||'Sem cliente'} — ${brl(q.total)} <span class="status ${q.status==='Aprovado'?'approved':q.status==='Recusado'?'rejected':''}">${q.status||'Pendente'}</span></div>`).join('')||'Nenhum orçamento.'}
 async function gerarLink(){let q=form();let {data:user}=await sb.auth.getUser();q.user_id=user.user.id;q.public_token=crypto.randomUUID();let {data,error}=await sb.from('orcamentos').insert(q).select().single();if(error)return alert(error.message);let url=location.origin+location.pathname+'?proposta='+data.public_token;$('link').textContent=url;$('linkCard').classList.remove('hidden');await listar()}
 function compartilhar(){let u=$('link').textContent;if(navigator.share)navigator.share({title:'Proposta Almeida',text:'Acesse sua proposta comercial:',url:u});else window.open('https://wa.me/?text='+encodeURIComponent('Acesse sua proposta comercial: '+u))}
