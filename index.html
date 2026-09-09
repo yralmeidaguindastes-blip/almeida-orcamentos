@@ -109,7 +109,9 @@ button{
   font-size:14px
 }
 
-button:hover{opacity:.88}
+button:hover{
+  opacity:.88
+}
 
 .yellow{background:#f7c600;color:#000}
 .green{background:#1f9d61;color:#fff}
@@ -277,13 +279,23 @@ button:hover{opacity:.88}
   display:flex;
   justify-content:space-between;
   gap:10px;
-  padding:8px 0;
+  padding:9px 0;
   border-bottom:1px solid #eee;
   align-items:center
 }
 
 .catalogo-item:last-child{
   border-bottom:0
+}
+
+.catalogo-botoes{
+  display:flex;
+  gap:5px
+}
+
+.mini{
+  padding:6px 9px;
+  font-size:11px
 }
 
 @media(max-width:850px){
@@ -336,176 +348,169 @@ button:hover{opacity:.88}
 
 <header>
 
-  <img src="logo-almeida.png" alt="Almeida Guindastes">
+<img src="logo-almeida.png" alt="Almeida Guindastes">
 
-  <h1>
-    ALMEIDA ORÇAMENTOS
-    <small>Sistema online de propostas</small>
-  </h1>
+<h1>
+ALMEIDA ORÇAMENTOS
+<small>Sistema online de propostas</small>
+</h1>
 
-  <button
-    id="btnSair"
-    class="yellow hidden"
-    onclick="sair()">
-    Sair
-  </button>
+<button
+id="btnSair"
+class="yellow hidden"
+onclick="sair()">
+Sair
+</button>
 
 </header>
 
 <div class="wrap">
 
-<!-- =========================
-     LOGIN
-========================= -->
+<!-- LOGIN -->
 
 <section id="login" class="card login-card">
 
-  <h2>Acesso da Almeida</h2>
+<h2>Acesso da Almeida</h2>
 
-  <p class="muted">
-    Entre com o e-mail e senha cadastrados.
-  </p>
+<p class="muted">
+Entre com o e-mail e senha cadastrados.
+</p>
 
-  <div class="grid">
+<div class="grid">
 
-    <label>
-      E-mail
-      <input
-        id="loginEmail"
-        type="email"
-        autocomplete="username"
-        placeholder="seu@email.com">
-    </label>
+<label>
+E-mail
+<input
+id="loginEmail"
+type="email"
+autocomplete="username"
+placeholder="seu@email.com">
+</label>
 
-    <label>
-      Senha
-      <input
-        id="loginSenha"
-        type="password"
-        autocomplete="current-password"
-        placeholder="Sua senha">
-    </label>
+<label>
+Senha
+<input
+id="loginSenha"
+type="password"
+autocomplete="current-password"
+placeholder="Sua senha">
+</label>
 
-  </div>
+</div>
 
-  <div class="actions">
+<div class="actions">
 
-    <button
-      class="black"
-      onclick="login()">
-      Entrar
-    </button>
+<button
+class="black"
+onclick="login()">
+Entrar
+</button>
 
-  </div>
+</div>
 
-  <div
-    id="loginMsg"
-    class="msg">
-  </div>
+<div id="loginMsg" class="msg"></div>
 
 </section>
 
 
-<!-- =========================
-     PAINEL
-========================= -->
+<!-- PAINEL -->
 
 <section id="painel" class="hidden">
 
 
-<!-- DADOS DO CLIENTE -->
+<!-- CLIENTE -->
 
 <div class="card">
 
-  <h2>Dados da contratante</h2>
+<h2>Dados da contratante</h2>
 
-  <div class="grid">
+<div class="grid">
 
-    <label>
-      Empresa contratante
-      <input
-        id="cliente"
-        placeholder="Nome da empresa">
-    </label>
+<label>
+Empresa contratante
+<input
+id="cliente"
+placeholder="Nome da empresa">
+</label>
 
-    <label>
-      CNPJ / CPF
-      <input
-        id="cnpj"
-        placeholder="CNPJ ou CPF">
-    </label>
+<label>
+CNPJ / CPF
+<input
+id="cnpj"
+placeholder="CNPJ ou CPF">
+</label>
 
-    <label>
-      Responsável
-      <input
-        id="contato"
-        placeholder="Nome do responsável">
-    </label>
+<label>
+Responsável
+<input
+id="contato"
+placeholder="Nome do responsável">
+</label>
 
-    <label>
-      Telefone
-      <input
-        id="telefone"
-        placeholder="Telefone">
-    </label>
+<label>
+Telefone
+<input
+id="telefone"
+placeholder="Telefone">
+</label>
 
-    <label>
-      E-mail
-      <input
-        id="email"
-        type="email"
-        placeholder="E-mail">
-    </label>
+<label>
+E-mail
+<input
+id="email"
+type="email"
+placeholder="E-mail">
+</label>
 
-    <label>
-      Endereço da contratante
-      <input
-        id="endereco"
-        placeholder="Endereço">
-    </label>
+<label>
+Endereço da contratante
+<input
+id="endereco"
+placeholder="Endereço">
+</label>
 
-    <label>
-      Local do serviço
-      <input
-        id="local"
-        placeholder="Local onde o equipamento será utilizado">
-    </label>
+<label>
+Local do serviço
+<input
+id="local"
+placeholder="Local onde o equipamento será utilizado">
+</label>
 
-    <label>
-      Validade do orçamento
-      <input
-        id="validade"
-        type="number"
-        value="30"
-        min="1">
-    </label>
+<label>
+Validade do orçamento
+<input
+id="validade"
+type="number"
+value="30"
+min="1">
+</label>
 
-    <label>
-      Forma de pagamento
-      <input
-        id="formaPagamento"
-        value="A COMBINAR"
-        placeholder="Ex.: A combinar">
-    </label>
+<label>
+Forma de pagamento
+<input
+id="formaPagamento"
+value="A COMBINAR"
+placeholder="Ex.: A combinar">
+</label>
 
-    <label>
-      Prazo / período
-      <input
-        id="periodo"
-        placeholder="Ex.: 12 meses">
-    </label>
+<label>
+Prazo / período
+<input
+id="periodo"
+placeholder="Ex.: 3 meses">
+</label>
 
-  </div>
+</div>
 
-  <label style="margin-top:13px">
+<label style="margin-top:13px">
 
-    Observações
+Observações
 
-    <textarea
-      id="obs"
-      placeholder="Observações adicionais"></textarea>
+<textarea
+id="obs"
+placeholder="Observações adicionais"></textarea>
 
-  </label>
+</label>
 
 </div>
 
@@ -514,319 +519,301 @@ button:hover{opacity:.88}
 
 <div class="card">
 
-  <div
-    style="
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      gap:10px;
-      flex-wrap:wrap">
+<div
+style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+flex-wrap:wrap">
 
-    <div>
+<div>
 
-      <h2 style="margin-bottom:4px">
-        Equipamentos e serviços
-      </h2>
+<h2 style="margin-bottom:4px">
+Equipamentos e serviços
+</h2>
 
-      <div class="muted">
-        Selecione um equipamento cadastrado ou adicione um item manualmente.
-      </div>
+<div class="muted">
+Agora seus equipamentos ficam cadastrados na nuvem.
+</div>
 
-    </div>
+</div>
 
+<div class="actions" style="margin-top:0">
 
-    <div
-      class="actions"
-      style="margin-top:0">
+<button
+class="blue"
+onclick="adicionarItem()">
++ ADICIONAR ITEM
+</button>
 
-      <button
-        class="blue"
-        onclick="adicionarItem()">
-        + ADICIONAR ITEM
-      </button>
+<button
+class="purple"
+onclick="cadastrarEquipamento()">
++ CADASTRAR EQUIPAMENTO
+</button>
 
-      <button
-        class="purple"
-        onclick="cadastrarEquipamento()">
-        + CADASTRAR EQUIPAMENTO
-      </button>
-
-      <button
-        class="red"
-        onclick="excluirEquipamentosCadastrados()">
-        APAGAR MEUS EQUIPAMENTOS
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div class="catalogo-box">
-
-    <b>Catálogo de equipamentos</b>
-
-    <div class="muted">
-      Os equipamentos cadastrados por você ficam salvos neste navegador.
-    </div>
-
-    <div
-      id="catalogoLista"
-      class="catalogo-lista">
-    </div>
-
-  </div>
-
-
-  <div
-    id="itens"
-    style="margin-top:15px">
-  </div>
-
-
-  <div class="total-box">
-
-    <span>TOTAL:</span>
-
-    <span
-      id="total"
-      class="total">
-      R$ 0,00
-    </span>
-
-  </div>
-
-
-  <label>
-
-    Desconto geral
-
-    <input
-      id="desconto"
-      type="number"
-      min="0"
-      step="0.01"
-      value="0"
-      oninput="calcularTotal()">
-
-  </label>
-
-
-  <div class="total-box">
-
-    <span>TOTAL COM DESCONTO:</span>
-
-    <span
-      id="totalFinal"
-      class="total">
-      R$ 0,00
-    </span>
-
-  </div>
-
-
-  <div class="actions">
-
-    <button
-      class="yellow"
-      onclick="calcularTotal()">
-      CALCULAR
-    </button>
-
-    <button
-      class="black"
-      onclick="salvar()">
-      SALVAR NA NUVEM
-    </button>
-
-    <button
-      class="green"
-      onclick="gerarLink()">
-      GERAR LINK DO CLIENTE
-    </button>
-
-  </div>
-
-
-  <div
-    id="linkCard"
-    class="hidden"
-    style="margin-top:18px">
-
-    <b>
-      Link da proposta para o cliente:
-    </b>
-
-    <div
-      id="link"
-      class="link">
-    </div>
-
-    <div class="actions">
-
-      <button
-        class="green"
-        onclick="compartilhar()">
-        COMPARTILHAR / WHATSAPP
-      </button>
-
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
-<!-- LISTAGEM -->
+<div class="catalogo-box">
+
+<b>Catálogo de equipamentos</b>
+
+<div class="muted">
+Os equipamentos cadastrados aparecem também em outros aparelhos.
+</div>
+
+<div
+id="catalogoLista"
+class="catalogo-lista">
+
+Carregando catálogo...
+
+</div>
+
+</div>
+
+
+<div
+id="itens"
+style="margin-top:15px">
+</div>
+
+
+<div class="total-box">
+
+<span>TOTAL:</span>
+
+<span
+id="total"
+class="total">
+R$ 0,00
+</span>
+
+</div>
+
+
+<label>
+
+Desconto geral
+
+<input
+id="desconto"
+type="number"
+min="0"
+step="0.01"
+value="0"
+oninput="calcularTotal()">
+
+</label>
+
+
+<div class="total-box">
+
+<span>TOTAL COM DESCONTO:</span>
+
+<span
+id="totalFinal"
+class="total">
+R$ 0,00
+</span>
+
+</div>
+
+
+<div class="actions">
+
+<button
+class="yellow"
+onclick="calcularTotal()">
+CALCULAR
+</button>
+
+<button
+class="black"
+onclick="salvar()">
+SALVAR NA NUVEM
+</button>
+
+<button
+class="green"
+onclick="gerarLink()">
+GERAR LINK DO CLIENTE
+</button>
+
+</div>
+
+
+<div
+id="linkCard"
+class="hidden"
+style="margin-top:18px">
+
+<b>
+Link da proposta para o cliente:
+</b>
+
+<div
+id="link"
+class="link">
+</div>
+
+<div class="actions">
+
+<button
+class="green"
+onclick="compartilhar()">
+COMPARTILHAR / WHATSAPP
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ORÇAMENTOS -->
 
 <div class="card">
 
-  <h2>
-    Orçamentos salvos
-  </h2>
+<h2>
+Orçamentos salvos
+</h2>
 
-  <div id="lista">
-    Carregando...
-  </div>
+<div id="lista">
+Carregando...
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-     PROPOSTA PÚBLICA
-========================= -->
+<!-- PROPOSTA PÚBLICA -->
 
 <section id="publico" class="hidden">
 
 <div class="card publico">
 
-  <img
-    src="logo-almeida.png"
-    class="publico-logo"
-    alt="Almeida Guindastes">
+<img
+src="logo-almeida.png"
+class="publico-logo"
+alt="Almeida Guindastes">
 
-  <h2>
-    PROPOSTA COMERCIAL
-  </h2>
+<h2>
+PROPOSTA COMERCIAL
+</h2>
 
-  <p>
-    Nº:
-    <b id="pNumero"></b>
-  </p>
+<p>
+Nº:
+<b id="pNumero"></b>
+</p>
 
-  <p>
-    <b>Empresa:</b>
-    <span id="pCliente"></span>
-  </p>
+<p>
+<b>Empresa:</b>
+<span id="pCliente"></span>
+</p>
 
-  <p>
-    <b>CNPJ/CPF:</b>
-    <span id="pCnpj"></span>
-  </p>
+<p>
+<b>CNPJ/CPF:</b>
+<span id="pCnpj"></span>
+</p>
 
-  <p>
-    <b>Responsável:</b>
-    <span id="pContato"></span>
-  </p>
+<p>
+<b>Responsável:</b>
+<span id="pContato"></span>
+</p>
 
-  <p>
-    <b>Local do serviço:</b>
-    <span id="pLocal"></span>
-  </p>
+<p>
+<b>Local do serviço:</b>
+<span id="pLocal"></span>
+</p>
 
+<h3>
+Equipamentos / Serviços
+</h3>
 
-  <h3>
-    Equipamentos / Serviços
-  </h3>
+<div style="overflow-x:auto">
 
+<table class="public-table">
 
-  <div style="overflow-x:auto">
+<thead>
 
-    <table class="public-table">
+<tr>
+<th>Qtd.</th>
+<th>Un.</th>
+<th>Descrição</th>
+<th>Valor</th>
+<th>Total</th>
+</tr>
 
-      <thead>
+</thead>
 
-        <tr>
+<tbody id="pItens"></tbody>
 
-          <th>Qtd.</th>
-          <th>Un.</th>
-          <th>Descrição</th>
-          <th>Valor</th>
-          <th>Total</th>
+</table>
 
-        </tr>
+</div>
 
-      </thead>
+<div class="total-box">
 
-      <tbody id="pItens"></tbody>
+TOTAL:
 
-    </table>
+<span
+id="pTotal"
+class="total">
+</span>
 
-  </div>
+</div>
 
+<hr>
 
-  <div class="total-box">
+<h3>
+Aprovação do cliente
+</h3>
 
-    TOTAL:
+<p class="muted">
+Para registrar a decisão, informe o responsável.
+</p>
 
-    <span
-      id="pTotal"
-      class="total">
-    </span>
+<div class="grid">
 
-  </div>
+<label>
+Nome do responsável
+<input id="pNome">
+</label>
 
+<label>
+CPF / CNPJ
+<input id="pDoc">
+</label>
 
-  <hr>
+</div>
 
+<div class="actions">
 
-  <h3>
-    Aprovação do cliente
-  </h3>
+<button
+class="green"
+onclick="aprovar()">
+✓ APROVAR ORÇAMENTO
+</button>
 
-  <p class="muted">
-    Para registrar a decisão, informe o responsável.
-  </p>
+<button
+class="red"
+onclick="recusar()">
+✕ RECUSAR
+</button>
 
+</div>
 
-  <div class="grid">
-
-    <label>
-      Nome do responsável
-      <input id="pNome">
-    </label>
-
-    <label>
-      CPF / CNPJ
-      <input id="pDoc">
-    </label>
-
-  </div>
-
-
-  <div class="actions">
-
-    <button
-      class="green"
-      onclick="aprovar()">
-      ✓ APROVAR ORÇAMENTO
-    </button>
-
-    <button
-      class="red"
-      onclick="recusar()">
-      ✕ RECUSAR
-    </button>
-
-  </div>
-
-
-  <div
-    id="pMsg"
-    class="msg">
-  </div>
+<div
+id="pMsg"
+class="msg">
+</div>
 
 </div>
 
@@ -837,9 +824,9 @@ button:hover{opacity:.88}
 
 <script>
 
-/* =========================
+/* =====================================================
    SUPABASE
-========================= */
+===================================================== */
 
 const SUPABASE_URL =
 'https://tkzwxveskwgfvvfalmcb.supabase.co';
@@ -849,1934 +836,1926 @@ const SUPABASE_KEY =
 
 const sb =
 supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
+SUPABASE_URL,
+SUPABASE_KEY
 );
 
 
-/* =========================
+/* =====================================================
    FUNÇÕES BÁSICAS
-========================= */
+===================================================== */
 
 const $ =
 id => document.getElementById(id);
 
 
-const brl =
-v =>
-new Intl.NumberFormat(
-  'pt-BR',
-  {
-    style:'currency',
-    currency:'BRL'
-  }
+function brl(v){
+
+return new Intl.NumberFormat(
+'pt-BR',
+{
+style:'currency',
+currency:'BRL'
+}
 ).format(Number(v)||0);
+
+}
 
 
 function escapar(t){
 
-  return String(t??'')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'",'&#039;');
+return String(t??'')
+.replaceAll('&','&amp;')
+.replaceAll('<','&lt;')
+.replaceAll('>','&gt;')
+.replaceAll('"','&quot;')
+.replaceAll("'","&#039;");
 
 }
 
 
-/* =========================
-   CATÁLOGO DE EQUIPAMENTOS
-========================= */
+/* =====================================================
+   EQUIPAMENTOS PADRÃO
+===================================================== */
 
-const equipamentosPadrao = [
+const equipamentosPadrao=[
 
-  {
-    id:'padrao-160',
-    nome:'Guindaste 160 toneladas',
-    descricao:
-    'GUINDASTE 160 TONELADAS COM LANÇA TELESCÓPICA DE 77,5 METROS E LANÇA AUXILIAR (JIB) DE 33,5 METROS (ANO/MODELO: 2025)',
-    unidade:'HORAS',
-    valor:700,
-    cortesia:false
-  },
+{
+id:'padrao-160',
+nome:'Guindaste 160 toneladas',
+descricao:
+'GUINDASTE 160 TONELADAS COM LANÇA TELESCÓPICA DE 77,5 METROS E LANÇA AUXILIAR (JIB) DE 33,5 METROS (ANO/MODELO: 2025)',
+unidade:'HORAS',
+valor:700,
+cortesia:false
+},
 
-  {
-    id:'padrao-110',
-    nome:'Guindaste 110 toneladas',
-    descricao:
-    'GUINDASTE 110 TONELADAS COM LANÇA TELESCÓPICA DE 60 METROS E LANÇA AUXILIAR (JIB) DE 27 METROS (ANO: 2024/2025)',
-    unidade:'HORAS',
-    valor:600,
-    cortesia:false
-  },
+{
+id:'padrao-110',
+nome:'Guindaste 110 toneladas',
+descricao:
+'GUINDASTE 110 TONELADAS COM LANÇA TELESCÓPICA DE 60 METROS E LANÇA AUXILIAR (JIB) DE 27 METROS (ANO: 2024/2025)',
+unidade:'HORAS',
+valor:600,
+cortesia:false
+},
 
-  {
-    id:'padrao-70',
-    nome:'Guindaste 70 toneladas',
-    descricao:
-    'GUINDASTE 70 TONELADAS',
-    unidade:'HORAS',
-    valor:450,
-    cortesia:false
-  },
+{
+id:'padrao-70',
+nome:'Guindaste 70 toneladas',
+descricao:
+'GUINDASTE 70 TONELADAS COM LANÇA TELESCÓPICA DE 46,5 METROS E LANÇA AUXILIAR (JIB) DE 16 METROS',
+unidade:'HORAS',
+valor:450,
+cortesia:false
+},
 
-  {
-    id:'padrao-munck45',
-    nome:'Caminhão Munck 45 toneladas',
-    descricao:
-    'CAMINHÃO MUNCK 45 TONELADAS COM LANÇA DE 21 METROS E CAPACIDADE MÁXIMA DE IÇAMENTO DE 10.900 KG',
-    unidade:'HORAS',
-    valor:300,
-    cortesia:false
-  },
+{
+id:'padrao-munck45',
+nome:'Caminhão Munck 45 toneladas',
+descricao:
+'CAMINHÃO MUNCK 45 TONELADAS COM LANÇA DE 21 METROS E CAPACIDADE MÁXIMA DE IÇAMENTO DE 10.900 KG',
+unidade:'HORAS',
+valor:300,
+cortesia:false
+},
 
-  {
-    id:'padrao-mob',
-    nome:'Mobilização',
-    descricao:
-    'MOBILIZAÇÃO DO EQUIPAMENTO',
-    unidade:'UNIDADE',
-    valor:0,
-    cortesia:false
-  },
+{
+id:'padrao-mob',
+nome:'Mobilização',
+descricao:
+'MOBILIZAÇÃO DO EQUIPAMENTO',
+unidade:'UNIDADE',
+valor:0,
+cortesia:false
+},
 
-  {
-    id:'padrao-desmob',
-    nome:'Desmobilização',
-    descricao:
-    'DESMOBILIZAÇÃO DO EQUIPAMENTO',
-    unidade:'UNIDADE',
-    valor:0,
-    cortesia:false
-  },
+{
+id:'padrao-desmob',
+nome:'Desmobilização',
+descricao:
+'DESMOBILIZAÇÃO DO EQUIPAMENTO',
+unidade:'UNIDADE',
+valor:0,
+cortesia:false
+},
 
-  {
-    id:'padrao-rigging',
-    nome:'Plano de Rigging + ART',
-    descricao:
-    'PLANO DE RIGGING + ART',
-    unidade:'UNIDADE',
-    valor:0,
-    cortesia:true
-  }
+{
+id:'padrao-rigging',
+nome:'Plano de Rigging + ART',
+descricao:
+'PLANO DE RIGGING + ART',
+unidade:'UNIDADE',
+valor:0,
+cortesia:true
+}
 
 ];
 
 
-function obterEquipamentos(){
+/* =====================================================
+   CATÁLOGO CLOUD
+===================================================== */
 
-  let personalizados=[];
+let equipamentosCloud=[];
 
-  try{
 
-    personalizados =
-    JSON.parse(
-      localStorage.getItem(
-        'almeida_equipamentos'
-      ) || '[]'
-    );
+async function carregarEquipamentos(){
 
-  }catch(e){
+const {
+data,
+error
+} =
+await sb
+.from('equipamentos')
+.select('*')
+.eq('ativo',true)
+.order('created_at',{ascending:true});
 
-    personalizados=[];
 
-  }
+if(error){
 
-  return [
-    ...equipamentosPadrao,
-    ...personalizados
-  ];
+console.error(error);
+
+equipamentosCloud=[];
+
+}else{
+
+equipamentosCloud =
+data || [];
 
 }
 
 
-function salvarEquipamentos(lista){
+renderCatalogo();
 
-  localStorage.setItem(
-    'almeida_equipamentos',
-    JSON.stringify(lista)
-  );
+renderItens();
+
+}
+
+
+function obterEquipamentos(){
+
+const cloud =
+equipamentosCloud.map(x => ({
+
+id:x.id,
+
+nome:x.nome,
+
+descricao:x.descricao,
+
+unidade:x.unidade,
+
+valor:Number(x.valor)||0,
+
+cortesia:!!x.cortesia
+
+}));
+
+
+return [
+
+...equipamentosPadrao,
+
+...cloud
+
+];
 
 }
 
 
 function renderCatalogo(){
 
-  const personalizados =
-  (()=>{
-
-    try{
-
-      return JSON.parse(
-        localStorage.getItem(
-          'almeida_equipamentos'
-        ) || '[]'
-      );
-
-    }catch(e){
-
-      return [];
-
-    }
-
-  })();
+const lista =
+obterEquipamentos();
 
 
-  const lista =
-  obterEquipamentos();
+if(!lista.length){
 
+$('catalogoLista').innerHTML =
+'<span class="muted">Nenhum equipamento cadastrado.</span>';
 
-  $('catalogoLista').innerHTML =
-  lista.map(x => `
-
-    <div class="catalogo-item">
-
-      <span>
-
-        <b>
-          ${escapar(x.nome)}
-        </b>
-
-        —
-        ${brl(x.valor)}
-        /
-        ${escapar(x.unidade)}
-
-        ${x.cortesia
-          ? ' — CORTESIA'
-          : ''}
-
-      </span>
-
-      <span class="muted">
-
-        ${
-          x.id.startsWith('padrao-')
-          ? 'Padrão'
-          : 'Meu cadastro'
-        }
-
-      </span>
-
-    </div>
-
-  `).join('')
-
-  ||
-  '<span class="muted">Nenhum equipamento.</span>';
+return;
 
 }
 
 
-function cadastrarEquipamento(){
+$('catalogoLista').innerHTML =
+lista.map(x=>`
 
-  const nome =
-  prompt(
-    'Nome do equipamento/serviço:'
-  );
+<div class="catalogo-item">
 
-  if(
-    !nome ||
-    !nome.trim()
-  ) return;
+<div>
 
+<b>
+${escapar(x.nome)}
+</b>
 
-  const descricao =
-  prompt(
-    'Descrição completa que aparecerá no orçamento:',
-    nome.trim()
-  );
+<br>
 
-  if(descricao===null)
-    return;
+<span class="muted">
 
+${brl(x.valor)}
+/
+${escapar(x.unidade)}
 
-  const valorTexto =
-  prompt(
-    'Valor unitário padrão (somente número):',
-    '0'
-  );
+${x.cortesia
+?' — CORTESIA'
+:''}
 
-  if(valorTexto===null)
-    return;
+</span>
 
+</div>
 
-  const unidade =
-  prompt(
-    'Unidade:',
-    'HORAS'
-  );
+<div>
 
-  if(unidade===null)
-    return;
+${
+String(x.id).startsWith('padrao-')
 
+? '<span class="muted">Padrão</span>'
 
-  const item={
+: `
 
-    id:
-    'custom-' +
-    Date.now(),
+<button
+class="red mini"
+onclick="excluirEquipamento('${escapar(x.id)}')">
 
-    nome:
-    nome.trim(),
+Excluir
 
-    descricao:
-    descricao.trim(),
+</button>
 
-    unidade:
-    unidade.trim()
-      .toUpperCase() ||
-    'UNIDADE',
+`
+}
 
-    valor:
-    Number(
-      String(valorTexto)
-      .replace(',','.')
-    ) || 0,
+</div>
 
-    cortesia:false
+</div>
 
-  };
-
-
-  let lista=[];
-
-  try{
-
-    lista =
-    JSON.parse(
-      localStorage.getItem(
-        'almeida_equipamentos'
-      ) || '[]'
-    );
-
-  }catch(e){
-
-    lista=[];
-
-  }
-
-
-  lista.push(item);
-
-  salvarEquipamentos(lista);
-
-  renderCatalogo();
-
-  alert(
-    'Equipamento cadastrado com sucesso.'
-  );
+`).join('');
 
 }
 
 
-function excluirEquipamentosCadastrados(){
+/* =====================================================
+   CADASTRAR EQUIPAMENTO NA NUVEM
+===================================================== */
 
-  const lista =
-  (()=>{
+async function cadastrarEquipamento(){
 
-    try{
-
-      return JSON.parse(
-        localStorage.getItem(
-          'almeida_equipamentos'
-        ) || '[]'
-      );
-
-    }catch(e){
-
-      return [];
-
-    }
-
-  })();
+const {
+data:userData
+} =
+await sb.auth.getUser();
 
 
-  if(!lista.length){
+if(!userData.user){
 
-    alert(
-      'Você ainda não cadastrou equipamentos próprios.'
-    );
+alert('Faça login primeiro.');
 
-    return;
-
-  }
-
-
-  if(
-    confirm(
-      'Apagar todos os equipamentos cadastrados por você neste navegador?'
-    )
-  ){
-
-    localStorage.removeItem(
-      'almeida_equipamentos'
-    );
-
-    renderCatalogo();
-
-    alert(
-      'Equipamentos cadastrados foram apagados.'
-    );
-
-  }
+return;
 
 }
 
 
-function selecionarEquipamento(
-  idEquipamento,
-  idItem
-){
-
-  const equipamento =
-  obterEquipamentos()
-    .find(
-      x => x.id === idEquipamento
-    );
+const nome =
+prompt(
+'Nome do equipamento/serviço:'
+);
 
 
-  const item =
-  itens.find(
-    x => x.id === Number(idItem)
-  );
+if(
+!nome ||
+!nome.trim()
+)
+return;
 
 
-  if(
-    !equipamento ||
-    !item
-  ) return;
+const descricao =
+prompt(
+'Descrição completa que aparecerá no orçamento:',
+nome.trim()
+);
 
 
-  item.equipamento =
-  equipamento.id;
-
-  item.descricao =
-  equipamento.descricao;
-
-  item.unidade =
-  equipamento.unidade;
-
-  item.valor =
-  equipamento.valor;
-
-  item.cortesia =
-  !!equipamento.cortesia;
+if(descricao===null)
+return;
 
 
-  renderItens();
+const valorTexto =
+prompt(
+'Valor unitário padrão:',
+'0'
+);
 
-  calcularTotal();
+
+if(valorTexto===null)
+return;
+
+
+const unidade =
+prompt(
+'Unidade:',
+'HORAS'
+);
+
+
+if(unidade===null)
+return;
+
+
+const valor =
+Number(
+String(valorTexto)
+.replace(',','.')
+) || 0;
+
+
+const {
+error
+} =
+await sb
+.from('equipamentos')
+.insert({
+
+user_id:
+userData.user.id,
+
+nome:
+nome.trim(),
+
+descricao:
+descricao.trim(),
+
+unidade:
+unidade.trim()
+.toUpperCase() ||
+'UNIDADE',
+
+valor:
+
+valor,
+
+cortesia:false,
+
+ativo:true
+
+});
+
+
+if(error){
+
+alert(
+'Erro ao cadastrar:\n\n' +
+error.message
+);
+
+return;
 
 }
 
 
-/* =========================
-   ITENS
-========================= */
+alert(
+'Equipamento cadastrado com sucesso!'
+);
+
+
+await carregarEquipamentos();
+
+}
+
+
+/* =====================================================
+   EXCLUIR EQUIPAMENTO CLOUD
+===================================================== */
+
+async function excluirEquipamento(id){
+
+if(
+!confirm(
+'Deseja excluir este equipamento?'
+)
+)
+return;
+
+
+const {
+error
+} =
+await sb
+.from('equipamentos')
+.delete()
+.eq('id',id);
+
+
+if(error){
+
+alert(
+'Erro ao excluir:\n\n' +
+error.message
+);
+
+return;
+
+}
+
+
+await carregarEquipamentos();
+
+}
+
+
+/* =====================================================
+   ITENS DO ORÇAMENTO
+===================================================== */
 
 let itens=[];
 
 let itemId=0;
 
 
-function adicionarItem(
-  dados={}
-){
+function adicionarItem(dados={}){
 
-  itemId++;
+itemId++;
 
 
-  itens.push({
+itens.push({
 
-    id:itemId,
+id:itemId,
 
-    equipamento:
-    dados.equipamento ?? '',
+equipamento:
+dados.equipamento ?? '',
 
-    quantidade:
-    dados.quantidade ?? 1,
+quantidade:
+dados.quantidade ?? 1,
 
-    unidade:
-    dados.unidade ?? 'UNIDADE',
+unidade:
+dados.unidade ?? 'UNIDADE',
 
-    descricao:
-    dados.descricao ?? '',
+descricao:
+dados.descricao ?? '',
 
-    valor:
-    dados.valor ?? 0,
+valor:
+dados.valor ?? 0,
 
-    combustivel:
-    dados.combustivel ??
-    'NÃO INCLUSO',
+combustivel:
+dados.combustivel ??
+'NÃO INCLUSO',
 
-    alimentacao:
-    dados.alimentacao ??
-    'NÃO INCLUSO',
+alimentacao:
+dados.alimentacao ??
+'NÃO INCLUSO',
 
-    hospedagem:
-    dados.hospedagem ??
-    'NÃO INCLUSO',
+hospedagem:
+dados.hospedagem ??
+'NÃO INCLUSO',
 
-    transporte:
-    dados.transporte ??
-    'NÃO INCLUSO',
+transporte:
+dados.transporte ??
+'NÃO INCLUSO',
 
-    cortesia:
-    dados.cortesia ??
-    false
+cortesia:
+dados.cortesia ??
+false
 
-  });
+});
 
 
-  renderItens();
+renderItens();
 
-  calcularTotal();
+calcularTotal();
 
 }
 
 
 function removerItem(id){
 
-  itens =
-  itens.filter(
-    x => x.id !== id
-  );
+itens =
+itens.filter(
+x=>x.id!==id
+);
 
-  renderItens();
+renderItens();
 
-  calcularTotal();
+calcularTotal();
 
 }
 
 
 function atualizarItem(
-  id,
-  campo,
-  valor
+id,
+campo,
+valor
 ){
 
-  const item =
-  itens.find(
-    x => x.id === id
-  );
-
-  if(!item)
-    return;
+const item =
+itens.find(
+x=>x.id===id
+);
 
 
-  if(
-    campo === 'quantidade' ||
-    campo === 'valor'
-  ){
-
-    item[campo] =
-    Number(valor) || 0;
-
-  }
-
-  else if(
-    campo === 'cortesia'
-  ){
-
-    item[campo] =
-    valor === true ||
-    valor === 'true';
-
-  }
-
-  else{
-
-    item[campo]=valor;
-
-  }
+if(!item)
+return;
 
 
-  calcularTotal();
+if(
+campo==='quantidade' ||
+campo==='valor'
+){
+
+item[campo]=
+Number(valor)||0;
+
+}else{
+
+item[campo]=valor;
+
+}
+
+
+calcularTotal();
+
+}
+
+
+function selecionarEquipamento(
+equipamentoId,
+itemIdAtual
+){
+
+const equipamento =
+obterEquipamentos()
+.find(
+x=>String(x.id)===String(equipamentoId)
+);
+
+
+const item =
+itens.find(
+x=>x.id===Number(itemIdAtual)
+);
+
+
+if(
+!equipamento ||
+!item
+)
+return;
+
+
+item.equipamento =
+equipamento.id;
+
+item.descricao =
+equipamento.descricao;
+
+item.unidade =
+equipamento.unidade;
+
+item.valor =
+equipamento.valor;
+
+item.cortesia =
+!!equipamento.cortesia;
+
+
+renderItens();
+
+calcularTotal();
 
 }
 
 
 function totalItem(item){
 
-  return item.cortesia
-    ? 0
-    : (
-        Number(item.quantidade)||0
-      ) *
-      (
-        Number(item.valor)||0
-      );
+if(item.cortesia)
+return 0;
+
+
+return
+(
+Number(item.quantidade)||0
+) *
+(
+Number(item.valor)||0
+);
 
 }
 
 
 function opcoesUnidade(atual){
 
-  return [
+return [
 
-    'UNIDADE',
-    'HORAS',
-    'H',
-    'KM',
-    'DIÁRIA',
-    'MÊS',
-    'SERVIÇO'
+'UNIDADE',
+'HORAS',
+'H',
+'KM',
+'DIÁRIA',
+'MÊS',
+'SERVIÇO'
 
-  ].map(
+].map(x=>`
 
-    x => `
+<option
+value="${escapar(x)}"
+${x===atual?'selected':''}>
 
-      <option
-        value="${escapar(x)}"
-        ${x===atual?'selected':''}>
+${escapar(x)}
 
-        ${escapar(x)}
+</option>
 
-      </option>
-
-    `
-
-  ).join('');
+`).join('');
 
 }
 
 
 function opcoesSimNao(atual){
 
-  return [
+return [
 
-    'NÃO INCLUSO',
-    'INCLUSO',
-    'A CALCULAR'
+'NÃO INCLUSO',
+'INCLUSO',
+'A CALCULAR'
 
-  ].map(
+].map(x=>`
 
-    x => `
+<option
+value="${escapar(x)}"
+${x===atual?'selected':''}>
 
-      <option
-        value="${escapar(x)}"
-        ${x===atual?'selected':''}>
+${escapar(x)}
 
-        ${escapar(x)}
+</option>
 
-      </option>
-
-    `
-
-  ).join('');
+`).join('');
 
 }
 
 
-function opcoesEquipamento(
-  atual
-){
+function opcoesEquipamento(atual){
 
-  return `
+return `
 
-    <option value="">
-      -- Selecionar equipamento --
-    </option>
+<option value="">
+-- Selecionar equipamento --
+</option>
 
-  ` +
+`+
 
-  obterEquipamentos()
-    .map(
+obterEquipamentos()
+.map(x=>`
 
-      x => `
+<option
+value="${escapar(x.id)}"
+${String(x.id)===String(atual)?'selected':''}>
 
-        <option
-          value="${escapar(x.id)}"
-          ${x.id===atual?'selected':''}>
+${escapar(x.nome)}
 
-          ${escapar(x.nome)}
+</option>
 
-        </option>
-
-      `
-
-    ).join('');
+`)
+.join('');
 
 }
 
 
 function renderItens(){
 
-  const container =
-  $('itens');
+const container =
+$('itens');
 
 
-  if(!itens.length){
+if(!itens.length){
 
-    container.innerHTML = `
+container.innerHTML=`
 
-      <div
-        class="muted"
-        style="
-          padding:20px;
-          text-align:center;
-          border:1px dashed #bbb;
-          border-radius:8px">
+<div
+class="muted"
+style="
+padding:20px;
+text-align:center;
+border:1px dashed #bbb;
+border-radius:8px">
 
-        Nenhum item adicionado.
+Nenhum item adicionado.
 
-        Clique em
-        <b>
-          + ADICIONAR ITEM
-        </b>.
+Clique em
+<b>+ ADICIONAR ITEM</b>.
 
-      </div>
+</div>
 
-    `;
+`;
 
-    return;
+return;
 
-  }
+}
 
 
-  container.innerHTML =
-  itens.map(
-    item => `
+container.innerHTML =
+itens.map(item=>`
 
-      <div class="item">
+<div class="item">
 
-        <div class="item-header">
+<div class="item-header">
 
-          <div class="item-title">
+<div class="item-title">
 
-            Item ${item.id}
+Item ${item.id}
 
-          </div>
+</div>
 
+<div>
 
-          <div>
+<span
+class="item-total"
+id="itemTotal${item.id}">
 
-            <span
-              class="item-total"
-              id="itemTotal${item.id}">
+${brl(totalItem(item))}
 
-              ${brl(totalItem(item))}
+</span>
 
-            </span>
+<button
+class="red"
+style="margin-left:8px"
+onclick="removerItem(${item.id})">
 
+Remover
 
-            <button
-              class="red"
-              style="margin-left:8px"
-              onclick="removerItem(${item.id})">
+</button>
 
-              Remover
+</div>
 
-            </button>
+</div>
 
-          </div>
 
-        </div>
+<label>
 
+Equipamento / serviço cadastrado
 
-        <label>
+<select
+onchange="
+selecionarEquipamento(
+this.value,
+${item.id}
+)">
 
-          Equipamento / serviço cadastrado
+${opcoesEquipamento(
+item.equipamento
+)}
 
-          <select
-            onchange="
-              selecionarEquipamento(
-                this.value,
-                ${item.id}
-              )">
+</select>
 
-            ${opcoesEquipamento(
-              item.equipamento
-            )}
+</label>
 
-          </select>
 
-        </label>
+<div
+class="grid3"
+style="margin-top:12px">
 
+<label>
 
-        <div
-          class="grid3"
-          style="margin-top:12px">
+Quantidade
 
-          <label>
+<input
+type="number"
+min="0"
+step="0.01"
+value="${item.quantidade}"
+oninput="
+atualizarItem(
+${item.id},
+'quantidade',
+this.value
+)">
 
-            Quantidade
+</label>
 
-            <input
-              type="number"
-              min="0"
-              step="0.01"
-              value="${item.quantidade}"
-              oninput="
-                atualizarItem(
-                  ${item.id},
-                  'quantidade',
-                  this.value
-                )">
 
-          </label>
+<label>
 
+Unidade
 
-          <label>
+<select
+onchange="
+atualizarItem(
+${item.id},
+'unidade',
+this.value
+)">
 
-            Unidade
+${opcoesUnidade(
+item.unidade
+)}
 
-            <select
-              onchange="
-                atualizarItem(
-                  ${item.id},
-                  'unidade',
-                  this.value
-                )">
+</select>
 
-              ${opcoesUnidade(
-                item.unidade
-              )}
+</label>
 
-            </select>
 
-          </label>
+<label>
 
+Preço unitário
 
-          <label>
+<input
+type="number"
+min="0"
+step="0.01"
+value="${item.valor}"
+oninput="
+atualizarItem(
+${item.id},
+'valor',
+this.value
+)">
 
-            Preço unitário
+</label>
 
-            <input
-              type="number"
-              min="0"
-              step="0.01"
-              value="${item.valor}"
-              oninput="
-                atualizarItem(
-                  ${item.id},
-                  'valor',
-                  this.value
-                )">
+</div>
 
-          </label>
 
-        </div>
+<label style="margin-top:12px">
 
+Descrição / Equipamento
 
-        <label style="margin-top:12px">
+<textarea
+oninput="
+atualizarItem(
+${item.id},
+'descricao',
+this.value
+)">${escapar(item.descricao)}</textarea>
 
-          Descrição / Equipamento
+</label>
 
-          <textarea
-            oninput="
-              atualizarItem(
-                ${item.id},
-                'descricao',
-                this.value
-              )">${escapar(item.descricao)}</textarea>
 
-        </label>
+<div
+class="grid3"
+style="margin-top:12px">
 
+<label>
 
-        <div
-          class="grid3"
-          style="margin-top:12px">
+Combustível
 
-          <label>
+<select
+onchange="
+atualizarItem(
+${item.id},
+'combustivel',
+this.value
+)">
 
-            Combustível
+${opcoesSimNao(
+item.combustivel
+)}
 
-            <select
-              onchange="
-                atualizarItem(
-                  ${item.id},
-                  'combustivel',
-                  this.value
-                )">
+</select>
 
-              ${opcoesSimNao(
-                item.combustivel
-              )}
+</label>
 
-            </select>
 
-          </label>
+<label>
 
+Alimentação
 
-          <label>
+<select
+onchange="
+atualizarItem(
+${item.id},
+'alimentacao',
+this.value
+)">
 
-            Alimentação
+${opcoesSimNao(
+item.alimentacao
+)}
 
-            <select
-              onchange="
-                atualizarItem(
-                  ${item.id},
-                  'alimentacao',
-                  this.value
-                )">
+</select>
 
-              ${opcoesSimNao(
-                item.alimentacao
-              )}
+</label>
 
-            </select>
 
-          </label>
+<label>
 
+Hospedagem
 
-          <label>
+<select
+onchange="
+atualizarItem(
+${item.id},
+'hospedagem',
+this.value
+)">
 
-            Hospedagem
+${opcoesSimNao(
+item.hospedagem
+)}
 
-            <select
-              onchange="
-                atualizarItem(
-                  ${item.id},
-                  'hospedagem',
-                  this.value
-                )">
+</select>
 
-              ${opcoesSimNao(
-                item.hospedagem
-              )}
+</label>
 
-            </select>
+</div>
 
-          </label>
 
-        </div>
+<div
+class="grid3"
+style="margin-top:12px">
 
+<label>
 
-        <div
-          class="grid3"
-          style="margin-top:12px">
+Transporte
 
-          <label>
+<select
+onchange="
+atualizarItem(
+${item.id},
+'transporte',
+this.value
+)">
 
-            Transporte
+${opcoesSimNao(
+item.transporte
+)}
 
-            <select
-              onchange="
-                atualizarItem(
-                  ${item.id},
-                  'transporte',
-                  this.value
-                )">
+</select>
 
-              ${opcoesSimNao(
-                item.transporte
-              )}
+</label>
 
-            </select>
 
-          </label>
+<label>
 
+Cortesia
 
-          <label>
+<span class="checkbox-line">
 
-            Cortesia
+<input
+type="checkbox"
+${item.cortesia?'checked':''}
+onchange="
+atualizarItem(
+${item.id},
+'cortesia',
+this.checked
+);
+renderItens()">
 
-            <span class="checkbox-line">
+Item sem custo
 
-              <input
-                type="checkbox"
-                ${item.cortesia?'checked':''}
-                onchange="
-                  atualizarItem(
-                    ${item.id},
-                    'cortesia',
-                    this.checked
-                  );
-                  renderItens()">
+</span>
 
-              Item sem custo
+</label>
 
-            </span>
+<div></div>
 
-          </label>
+</div>
 
+</div>
 
-          <div></div>
-
-        </div>
-
-      </div>
-
-    `
-  ).join('');
+`).join('');
 
 }
 
 
 function calcularTotal(){
 
-  let total =
-  itens.reduce(
-    (s,x) =>
-      s + totalItem(x),
-    0
-  );
+let total =
+itens.reduce(
+(s,x)=>s+totalItem(x),
+0
+);
 
 
-  const desconto =
-  Number(
-    $('desconto').value
-  ) || 0;
+const desconto =
+Number(
+$('desconto').value
+)||0;
 
 
-  const totalFinal =
-  Math.max(
-    0,
-    total - desconto
-  );
+const totalFinal =
+Math.max(
+0,
+total-desconto
+);
 
 
-  $('total').textContent =
-  brl(total);
+$('total').textContent =
+brl(total);
 
 
-  $('totalFinal').textContent =
-  brl(totalFinal);
+$('totalFinal').textContent =
+brl(totalFinal);
 
 
-  itens.forEach(
-    x => {
+itens.forEach(x=>{
 
-      const el =
-      $('itemTotal'+x.id);
+const el =
+$('itemTotal'+x.id);
 
-      if(el){
+if(el){
 
-        el.textContent =
-        brl(totalItem(x));
+el.textContent =
+brl(totalItem(x));
 
-      }
+}
 
-    }
-  );
+});
 
 
-  return {
-    total,
-    desconto,
-    totalFinal
-  };
+return {
+
+total,
+desconto,
+totalFinal
+
+};
 
 }
 
 
-/* =========================
-   FORMULÁRIO / LOGIN
-========================= */
+/* =====================================================
+   FORMULÁRIO
+===================================================== */
 
 function form(){
 
-  const calculo =
-  calcularTotal();
+const calculo =
+calcularTotal();
 
 
-  return {
+return {
 
-    cliente:
-    $('cliente').value.trim(),
+cliente:
+$('cliente').value.trim(),
 
-    cnpj:
-    $('cnpj').value.trim(),
+cnpj:
+$('cnpj').value.trim(),
 
-    contato:
-    $('contato').value.trim(),
+contato:
+$('contato').value.trim(),
 
-    telefone:
-    $('telefone').value.trim(),
+telefone:
+$('telefone').value.trim(),
 
-    email:
-    $('email').value.trim(),
+email:
+$('email').value.trim(),
 
-    endereco_cliente:
-    $('endereco').value.trim(),
+endereco_cliente:
+$('endereco').value.trim(),
 
-    local_servico:
-    $('local').value.trim(),
+local_servico:
+$('local').value.trim(),
 
-    forma_pagamento:
-    $('formaPagamento').value.trim(),
+forma_pagamento:
+$('formaPagamento').value.trim(),
 
-    descricao:
-    itens
-      .map(x => x.descricao)
-      .filter(Boolean)
-      .join(' | '),
+descricao:
+itens
+.map(x=>x.descricao)
+.filter(Boolean)
+.join(' | '),
 
-    unidade:
-    'DIVERSOS',
+unidade:
+'DIVERSOS',
 
-    quantidade:
-    itens.length,
+quantidade:
+itens.length,
 
-    valor_unitario:
-    0,
+valor_unitario:
+0,
 
-    desconto:
-    calculo.desconto,
+desconto:
+calculo.desconto,
 
-    total:
-    calculo.totalFinal,
+total:
+calculo.totalFinal,
 
-    validade:
-    Number(
-      $('validade').value
-    ) || 30,
+validade:
+Number(
+$('validade').value
+)||30,
 
-    observacoes:
-    $('obs').value.trim(),
+observacoes:
+$('obs').value.trim(),
 
-    itens:
-    itens.map(
-      x => ({...x})
-    ),
+itens:
+itens.map(x=>({...x})),
 
-    periodo:
-    $('periodo').value.trim()
+periodo:
+$('periodo').value.trim()
 
-  };
+};
 
 }
 
 
+/* =====================================================
+   LOGIN
+===================================================== */
+
 async function login(){
 
-  const email =
-  $('loginEmail').value.trim();
+const email =
+$('loginEmail').value.trim();
 
-  const senha =
-  $('loginSenha').value;
-
-
-  if(
-    !email ||
-    !senha
-  ){
-
-    $('loginMsg').textContent =
-    'Informe o e-mail e a senha.';
-
-    return;
-
-  }
+const senha =
+$('loginSenha').value;
 
 
-  $('loginMsg').textContent =
-  'Entrando...';
+if(!email || !senha){
+
+$('loginMsg').textContent =
+'Informe o e-mail e a senha.';
+
+return;
+
+}
 
 
-  const {
-    error
-  } =
-  await sb.auth.signInWithPassword({
-
-    email,
-    password:senha
-
-  });
+$('loginMsg').textContent =
+'Entrando...';
 
 
-  if(error){
+const {
+error
+} =
+await sb.auth.signInWithPassword({
 
-    $('loginMsg').textContent =
-    'Erro: ' +
-    error.message;
+email,
+password:senha
 
-    return;
-
-  }
+});
 
 
-  $('loginMsg').textContent =
-  '';
+if(error){
 
-  await showPainel();
+$('loginMsg').textContent =
+'Erro: '+
+error.message;
+
+return;
+
+}
+
+
+$('loginMsg').textContent='';
+
+await showPainel();
 
 }
 
 
 async function sair(){
 
-  await sb.auth.signOut();
+await sb.auth.signOut();
 
-  location.reload();
+location.reload();
 
 }
 
 
 async function showPainel(){
 
-  $('login')
-    .classList
-    .add('hidden');
+$('login')
+.classList
+.add('hidden');
 
-  $('painel')
-    .classList
-    .remove('hidden');
+$('painel')
+.classList
+.remove('hidden');
 
-  $('btnSair')
-    .classList
-    .remove('hidden');
-
-
-  renderCatalogo();
+$('btnSair')
+.classList
+.remove('hidden');
 
 
-  if(!itens.length)
-    adicionarItem();
+await carregarEquipamentos();
 
 
-  await listar();
+if(!itens.length)
+adicionarItem();
+
+
+await listar();
 
 }
 
 
-/* =========================
-   SALVAR / LINK
-========================= */
+/* =====================================================
+   SALVAR ORÇAMENTO
+===================================================== */
 
 async function inserirOrcamento(q){
 
-  let tentativa={
-    ...q
-  };
+let tentativa={
+...q
+};
 
 
-  let res =
-  await sb
-    .from('orcamentos')
-    .insert(tentativa)
-    .select(
-      'numero,public_token'
-    )
-    .single();
+let res =
+await sb
+.from('orcamentos')
+.insert(tentativa)
+.select(
+'numero,public_token'
+)
+.single();
 
 
-  /*
-    Se a coluna "itens" ainda não
-    existir no banco, tenta salvar
-    sem ela para não quebrar o sistema.
-  */
+if(
+res.error &&
+/itens/i.test(
+res.error.message
+)
+){
 
-  if(
-    res.error &&
-    /itens/i.test(
-      res.error.message
-    )
-  ){
-
-    delete tentativa.itens;
+delete tentativa.itens;
 
 
-    res =
-    await sb
-      .from('orcamentos')
-      .insert(tentativa)
-      .select(
-        'numero,public_token'
-      )
-      .single();
+res =
+await sb
+.from('orcamentos')
+.insert(tentativa)
+.select(
+'numero,public_token'
+)
+.single();
 
-  }
+}
 
 
-  return res;
+return res;
 
 }
 
 
 async function salvar(){
 
-  const q =
-  form();
+const q =
+form();
 
 
-  if(!q.cliente){
+if(!q.cliente){
 
-    alert(
-      'Informe a empresa contratante.'
-    );
+alert(
+'Informe a empresa contratante.'
+);
 
-    return;
-
-  }
-
-
-  if(!itens.length){
-
-    alert(
-      'Adicione pelo menos um item.'
-    );
-
-    return;
-
-  }
-
-
-  const {
-    data:userData
-  } =
-  await sb.auth.getUser();
-
-
-  if(!userData.user){
-
-    alert(
-      'Faça login.'
-    );
-
-    return;
-
-  }
-
-
-  q.user_id =
-  userData.user.id;
-
-
-  q.public_token =
-  crypto.randomUUID();
-
-
-  const {
-    data,
-    error
-  } =
-  await inserirOrcamento(q);
-
-
-  if(error){
-
-    alert(
-      'Erro ao salvar:\n\n' +
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  alert(
-    'Orçamento salvo na nuvem.\n\nNº ' +
-    data.numero
-  );
-
-
-  await listar();
+return;
 
 }
 
+
+if(!itens.length){
+
+alert(
+'Adicione pelo menos um item.'
+);
+
+return;
+
+}
+
+
+const {
+data:userData
+} =
+await sb.auth.getUser();
+
+
+if(!userData.user){
+
+alert('Faça login.');
+
+return;
+
+}
+
+
+q.user_id =
+userData.user.id;
+
+q.public_token =
+crypto.randomUUID();
+
+
+const {
+data,
+error
+} =
+await inserirOrcamento(q);
+
+
+if(error){
+
+alert(
+'Erro ao salvar:\n\n'+
+error.message
+);
+
+return;
+
+}
+
+
+alert(
+'Orçamento salvo na nuvem.\n\nNº '+
+data.numero
+);
+
+
+await listar();
+
+}
+
+
+/* =====================================================
+   GERAR LINK
+===================================================== */
 
 async function gerarLink(){
 
-  const q =
-  form();
+const q =
+form();
 
 
-  if(!q.cliente){
+if(!q.cliente){
 
-    alert(
-      'Informe a empresa contratante.'
-    );
+alert(
+'Informe a empresa contratante.'
+);
 
-    return;
-
-  }
-
-
-  if(!itens.length){
-
-    alert(
-      'Adicione pelo menos um item.'
-    );
-
-    return;
-
-  }
-
-
-  const {
-    data:userData
-  } =
-  await sb.auth.getUser();
-
-
-  if(!userData.user){
-
-    alert(
-      'Faça login.'
-    );
-
-    return;
-
-  }
-
-
-  q.user_id =
-  userData.user.id;
-
-
-  q.public_token =
-  crypto.randomUUID();
-
-
-  const {
-    data,
-    error
-  } =
-  await inserirOrcamento(q);
-
-
-  if(error){
-
-    alert(
-      'Erro ao gerar link:\n\n' +
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  const url =
-  location.origin +
-  location.pathname +
-  '?proposta=' +
-  data.public_token;
-
-
-  $('link').textContent =
-  url;
-
-
-  $('linkCard')
-    .classList
-    .remove('hidden');
-
-
-  alert(
-    'Proposta Nº ' +
-    data.numero +
-    ' criada.\n\n' +
-    'O link do cliente está abaixo.'
-  );
-
-
-  await listar();
+return;
 
 }
 
+
+if(!itens.length){
+
+alert(
+'Adicione pelo menos um item.'
+);
+
+return;
+
+}
+
+
+const {
+data:userData
+} =
+await sb.auth.getUser();
+
+
+if(!userData.user){
+
+alert('Faça login.');
+
+return;
+
+}
+
+
+q.user_id =
+userData.user.id;
+
+q.public_token =
+crypto.randomUUID();
+
+
+const {
+data,
+error
+} =
+await inserirOrcamento(q);
+
+
+if(error){
+
+alert(
+'Erro ao gerar link:\n\n'+
+error.message
+);
+
+return;
+
+}
+
+
+const url =
+location.origin+
+location.pathname+
+'?proposta='+
+data.public_token;
+
+
+$('link').textContent =
+url;
+
+
+$('linkCard')
+.classList
+.remove('hidden');
+
+
+alert(
+'Proposta Nº '+
+data.numero+
+' criada.'
+);
+
+
+await listar();
+
+}
+
+
+/* =====================================================
+   COMPARTILHAR
+===================================================== */
 
 function compartilhar(){
 
-  const url =
-  $('link').textContent;
+const url =
+$('link').textContent;
 
 
-  if(!url){
+if(!url){
 
-    alert(
-      'Gere primeiro o link.'
-    );
+alert(
+'Gere primeiro o link.'
+);
 
-    return;
-
-  }
-
-
-  const texto =
-  'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n' +
-  url;
-
-
-  if(navigator.share){
-
-    navigator.share({
-
-      title:
-      'Proposta Almeida Guindastes',
-
-      text:
-      texto,
-
-      url
-
-    });
-
-  }
-
-  else{
-
-    window.open(
-      'https://wa.me/?text=' +
-      encodeURIComponent(texto),
-      '_blank'
-    );
-
-  }
+return;
 
 }
 
 
-/* =========================
+const texto =
+'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n'+
+url;
+
+
+if(navigator.share){
+
+navigator.share({
+
+title:
+'Proposta Almeida Guindastes',
+
+text:
+texto,
+
+url
+
+});
+
+}else{
+
+window.open(
+'https://wa.me/?text='+
+encodeURIComponent(texto),
+'_blank'
+);
+
+}
+
+}
+
+
+/* =====================================================
    LISTAGEM
-========================= */
+===================================================== */
 
 async function listar(){
 
-  const {
-    data,
-    error
-  } =
-  await sb
-    .from('orcamentos')
-    .select('*')
-    .order(
-      'created_at',
-      {
-        ascending:false
-      }
-    );
+const {
+data,
+error
+} =
+await sb
+.from('orcamentos')
+.select('*')
+.order(
+'created_at',
+{ascending:false}
+);
 
 
-  if(error){
+if(error){
 
-    $('lista').textContent =
-    error.message;
+$('lista').textContent =
+error.message;
 
-    return;
-
-  }
-
-
-  if(
-    !data ||
-    !data.length
-  ){
-
-    $('lista').textContent =
-    'Nenhum orçamento cadastrado.';
-
-    return;
-
-  }
-
-
-  $('lista').innerHTML =
-  data.map(
-    q => {
-
-      let classe =
-      q.status === 'Aprovado'
-        ? 'approved'
-        : q.status === 'Recusado'
-        ? 'rejected'
-        : '';
-
-
-      return `
-
-        <div class="orcamento">
-
-          <b>
-            Nº ${escapar(q.numero)}
-          </b>
-
-          —
-
-          ${escapar(
-            q.cliente ||
-            'Sem cliente'
-          )}
-
-          —
-
-          ${brl(q.total)}
-
-          &nbsp;
-
-          <span
-            class="status ${classe}">
-
-            ${escapar(
-              q.status ||
-              'Pendente'
-            )}
-
-          </span>
-
-        </div>
-
-      `;
-
-    }
-  ).join('');
+return;
 
 }
 
 
-/* =========================
+if(
+!data ||
+!data.length
+){
+
+$('lista').textContent =
+'Nenhum orçamento cadastrado.';
+
+return;
+
+}
+
+
+$('lista').innerHTML =
+data.map(q=>{
+
+const classe =
+q.status==='Aprovado'
+?'approved'
+:q.status==='Recusado'
+?'rejected'
+:'';
+
+
+return `
+
+<div class="orcamento">
+
+<b>
+Nº ${escapar(q.numero)}
+</b>
+
+—
+
+${escapar(
+q.cliente||
+'Sem cliente'
+)}
+
+—
+
+${brl(q.total)}
+
+&nbsp;
+
+<span
+class="status ${classe}">
+
+${escapar(
+q.status||
+'Pendente'
+)}
+
+</span>
+
+</div>
+
+`;
+
+}).join('');
+
+}
+
+
+/* =====================================================
    PROPOSTA PÚBLICA
-========================= */
+===================================================== */
 
 let publicToken=null;
 
 
 async function abrirPublica(token){
 
-  publicToken =
-  token;
+publicToken=token;
 
 
-  $('login')
-    .classList
-    .add('hidden');
+$('login')
+.classList
+.add('hidden');
 
-  $('painel')
-    .classList
-    .add('hidden');
+$('painel')
+.classList
+.add('hidden');
 
-  $('btnSair')
-    .classList
-    .add('hidden');
+$('btnSair')
+.classList
+.add('hidden');
 
-  $('publico')
-    .classList
-    .remove('hidden');
+$('publico')
+.classList
+.remove('hidden');
 
 
-  const {
-    data,
-    error
-  } =
-  await sb.rpc(
-    'ver_orcamento_publico',
-    {
-      p_token:token
-    }
-  );
+const {
+data,
+error
+} =
+await sb.rpc(
+'ver_orcamento_publico',
+{
+p_token:token
+}
+);
 
 
-  if(error){
+if(error){
 
-    $('pMsg').textContent =
-    'Proposta não encontrada ou link inválido.';
+$('pMsg').textContent =
+'Proposta não encontrada ou link inválido.';
 
-    return;
-
-  }
-
-
-  const proposta =
-  Array.isArray(data)
-    ? data[0]
-    : data;
-
-
-  if(!proposta){
-
-    $('pMsg').textContent =
-    'Proposta não encontrada ou link inválido.';
-
-    return;
-
-  }
-
-
-  $('pNumero').textContent =
-  proposta.numero || '';
-
-
-  $('pCliente').textContent =
-  proposta.cliente || '';
-
-
-  $('pCnpj').textContent =
-  proposta.cnpj || '';
-
-
-  $('pContato').textContent =
-  proposta.contato || '';
-
-
-  $('pLocal').textContent =
-  proposta.local_servico || '';
-
-
-  $('pTotal').textContent =
-  brl(proposta.total);
-
-
-  let listaItens=[];
-
-
-  try{
-
-    if(
-      Array.isArray(
-        proposta.itens
-      )
-    ){
-
-      listaItens =
-      proposta.itens;
-
-    }
-
-    else if(
-      typeof proposta.itens ===
-      'string'
-    ){
-
-      listaItens =
-      JSON.parse(
-        proposta.itens
-      );
-
-    }
-
-  }
-
-  catch(e){
-
-    listaItens=[];
-
-  }
-
-
-  if(!listaItens.length){
-
-    listaItens=[{
-
-      quantidade:
-      proposta.quantidade || 1,
-
-      unidade:
-      proposta.unidade ||
-      'UNIDADE',
-
-      descricao:
-      proposta.descricao ||
-      '',
-
-      valor:
-      proposta.valor_unitario ||
-      0
-
-    }];
-
-  }
-
-
-  $('pItens').innerHTML =
-  listaItens.map(
-    item => `
-
-      <tr>
-
-        <td>
-          ${escapar(
-            item.quantidade
-          )}
-        </td>
-
-        <td>
-          ${escapar(
-            item.unidade
-          )}
-        </td>
-
-        <td>
-          ${escapar(
-            item.descricao
-          )}
-        </td>
-
-        <td>
-          ${
-            item.cortesia
-            ? 'CORTESIA'
-            : brl(item.valor)
-          }
-        </td>
-
-        <td>
-          ${
-            item.cortesia
-            ? 'CORTESIA'
-            : brl(
-                (
-                  Number(
-                    item.quantidade
-                  ) || 0
-                ) *
-                (
-                  Number(
-                    item.valor
-                  ) || 0
-                )
-              )
-          }
-        </td>
-
-      </tr>
-
-    `
-  ).join('');
-
-
-  if(
-    proposta.status &&
-    proposta.status !== 'Pendente'
-  ){
-
-    $('pMsg').innerHTML = `
-
-      <p
-        class="status
-        ${
-          proposta.status === 'Aprovado'
-          ? 'approved'
-          : 'rejected'
-        }">
-
-        Status:
-        ${escapar(
-          proposta.status
-        )}
-
-      </p>
-
-    `;
-
-  }
+return;
 
 }
 
 
+const proposta =
+Array.isArray(data)
+?data[0]
+:data;
+
+
+if(!proposta){
+
+$('pMsg').textContent =
+'Proposta não encontrada ou link inválido.';
+
+return;
+
+}
+
+
+$('pNumero').textContent =
+proposta.numero||'';
+
+$('pCliente').textContent =
+proposta.cliente||'';
+
+$('pCnpj').textContent =
+proposta.cnpj||'';
+
+$('pContato').textContent =
+proposta.contato||'';
+
+$('pLocal').textContent =
+proposta.local_servico||'';
+
+$('pTotal').textContent =
+brl(proposta.total);
+
+
+let listaItens=[];
+
+
+try{
+
+if(Array.isArray(proposta.itens)){
+
+listaItens =
+proposta.itens;
+
+}
+
+else if(
+typeof proposta.itens==='string'
+){
+
+listaItens =
+JSON.parse(
+proposta.itens
+);
+
+}
+
+}catch(e){
+
+listaItens=[];
+
+}
+
+
+if(!listaItens.length){
+
+listaItens=[{
+
+quantidade:
+proposta.quantidade||1,
+
+unidade:
+proposta.unidade||
+'UNIDADE',
+
+descricao:
+proposta.descricao||
+'',
+
+valor:
+proposta.valor_unitario||
+0
+
+}];
+
+}
+
+
+$('pItens').innerHTML =
+listaItens.map(item=>`
+
+<tr>
+
+<td>
+${escapar(item.quantidade)}
+</td>
+
+<td>
+${escapar(item.unidade)}
+</td>
+
+<td>
+${escapar(item.descricao)}
+</td>
+
+<td>
+${
+item.cortesia
+?'CORTESIA'
+:brl(item.valor)
+}
+</td>
+
+<td>
+${
+item.cortesia
+?'CORTESIA'
+:brl(
+(
+Number(item.quantidade)||0
+)*
+(
+Number(item.valor)||0
+)
+)
+}
+</td>
+
+</tr>
+
+`).join('');
+
+
+if(
+proposta.status &&
+proposta.status!=='Pendente'
+){
+
+$('pMsg').innerHTML=`
+
+<p
+class="status
+${
+proposta.status==='Aprovado'
+?'approved'
+:'rejected'
+}">
+
+Status:
+${escapar(
+proposta.status
+)}
+
+</p>
+
+`;
+
+}
+
+}
+
+
+/* =====================================================
+   APROVAÇÃO
+===================================================== */
+
 async function decidir(status){
 
-  const nome =
-  $('pNome').value.trim();
+const nome =
+$('pNome').value.trim();
 
-  const documento =
-  $('pDoc').value.trim();
-
-
-  if(!nome){
-
-    alert(
-      'Informe o nome do responsável.'
-    );
-
-    return;
-
-  }
+const documento =
+$('pDoc').value.trim();
 
 
-  const {
-    error
-  } =
-  await sb.rpc(
-    'decidir_orcamento',
-    {
-      p_token:publicToken,
-      p_status:status,
-      p_responsavel:nome,
-      p_documento:documento
-    }
-  );
+if(!nome){
+
+alert(
+'Informe o nome do responsável.'
+);
+
+return;
+
+}
 
 
-  if(error){
+const {
+error
+} =
+await sb.rpc(
+'decidir_orcamento',
+{
 
-    $('pMsg').textContent =
-    error.message;
+p_token:
+publicToken,
 
-    return;
+p_status:
+status,
 
-  }
+p_responsavel:
+nome,
+
+p_documento:
+documento
+
+}
+);
 
 
-  $('pMsg').innerHTML = `
+if(error){
 
-    <p
-      class="status
-      ${
-        status === 'Aprovado'
-        ? 'approved'
-        : 'rejected'
-      }">
+$('pMsg').textContent =
+error.message;
 
-      ${
-        status === 'Aprovado'
-        ? '✓ ORÇAMENTO APROVADO COM SUCESSO'
-        : 'ORÇAMENTO RECUSADO'
-      }
+return;
 
-    </p>
+}
 
-  `;
+
+$('pMsg').innerHTML=`
+
+<p
+class="status
+${
+status==='Aprovado'
+?'approved'
+:'rejected'
+}">
+
+${
+status==='Aprovado'
+?'✓ ORÇAMENTO APROVADO COM SUCESSO'
+:'ORÇAMENTO RECUSADO'
+}
+
+</p>
+
+`;
 
 }
 
 
 function aprovar(){
 
-  decidir(
-    'Aprovado'
-  );
+decidir('Aprovado');
 
 }
 
 
 function recusar(){
 
-  decidir(
-    'Recusado'
-  );
+decidir('Recusado');
 
 }
 
 
-/* =========================
+/* =====================================================
    INICIALIZAÇÃO
-========================= */
+===================================================== */
 
 (async function(){
 
-  const token =
-  new URLSearchParams(
-    location.search
-  ).get('proposta');
+const token =
+new URLSearchParams(
+location.search
+).get('proposta');
 
 
-  if(token){
+if(token){
 
-    await abrirPublica(
-      token
-    );
+await abrirPublica(token);
 
-    return;
+return;
 
-  }
+}
 
 
-  const {
-    data
-  } =
-  await sb.auth.getSession();
+const {
+data
+} =
+await sb.auth.getSession();
 
 
-  if(data.session){
+if(data.session){
 
-    await showPainel();
+await showPainel();
 
-  }
+}
 
 })();
 
