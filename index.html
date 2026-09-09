@@ -1,27 +1,20 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-
 <meta charset="utf-8">
-
-<meta name="viewport"
-      content="width=device-width,initial-scale=1">
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Almeida Orçamentos</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:#f3f5f7;
-  color:#161616;
+  color:#161616
 }
 
 header{
@@ -31,7 +24,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
+  gap:15px
 }
 
 header img{
@@ -40,26 +33,26 @@ header img{
   object-fit:contain;
   background:#fff;
   border-radius:6px;
-  padding:3px;
+  padding:3px
 }
 
 header h1{
   margin:0;
   font-size:20px;
-  text-align:center;
+  text-align:center
 }
 
 header small{
   display:block;
   font-size:12px;
   font-weight:normal;
-  margin-top:4px;
+  margin-top:4px
 }
 
 .wrap{
   max-width:1250px;
   margin:20px auto;
-  padding:0 14px;
+  padding:0 14px
 }
 
 .card{
@@ -68,50 +61,43 @@ header small{
   border-radius:12px;
   padding:20px;
   margin-bottom:18px;
-  box-shadow:0 3px 12px rgba(0,0,0,.06);
+  box-shadow:0 3px 12px rgba(0,0,0,.06)
 }
 
-h2{
-  margin-top:0;
-}
-
-h3{
-  margin-bottom:10px;
-}
+h2{margin-top:0}
+h3{margin-bottom:10px}
 
 .grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:13px;
+  gap:13px
 }
 
 .grid3{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:13px;
+  gap:13px
 }
 
 label{
   display:block;
   font-size:12px;
-  font-weight:bold;
+  font-weight:bold
 }
 
-input,
-textarea,
-select{
+input,textarea,select{
   width:100%;
   padding:11px;
   border:1px solid #ccd2d8;
   border-radius:7px;
   margin-top:5px;
   font-size:14px;
-  background:#fff;
+  background:#fff
 }
 
 textarea{
   min-height:90px;
-  resize:vertical;
+  resize:vertical
 }
 
 button{
@@ -120,52 +106,32 @@ button{
   padding:11px 16px;
   font-weight:bold;
   cursor:pointer;
-  font-size:14px;
+  font-size:14px
 }
 
-button:hover{
-  opacity:.88;
-}
+button:hover{opacity:.88}
 
-.yellow{
-  background:#f7c600;
-  color:#000;
-}
-
-.green{
-  background:#1f9d61;
-  color:#fff;
-}
-
-.black{
-  background:#111;
-  color:#fff;
-}
-
-.red{
-  background:#c93636;
-  color:#fff;
-}
-
-.blue{
-  background:#1769aa;
-  color:#fff;
-}
+.yellow{background:#f7c600;color:#000}
+.green{background:#1f9d61;color:#fff}
+.black{background:#111;color:#fff}
+.red{background:#c93636;color:#fff}
+.blue{background:#1769aa;color:#fff}
+.purple{background:#6b46c1;color:#fff}
 
 .actions{
   display:flex;
   gap:8px;
   flex-wrap:wrap;
-  margin-top:15px;
+  margin-top:15px
 }
 
 .hidden{
-  display:none!important;
+  display:none!important
 }
 
 .muted{
   color:#68717b;
-  font-size:13px;
+  font-size:13px
 }
 
 .total-box{
@@ -175,13 +141,13 @@ button:hover{
   gap:12px;
   padding:15px 0;
   font-size:18px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .total{
   font-size:27px;
   color:#16894e;
-  font-weight:900;
+  font-weight:900
 }
 
 .item{
@@ -189,7 +155,7 @@ button:hover{
   border-radius:10px;
   padding:15px;
   margin-bottom:12px;
-  background:#fafbfc;
+  background:#fafbfc
 }
 
 .item-header{
@@ -197,17 +163,18 @@ button:hover{
   justify-content:space-between;
   align-items:center;
   margin-bottom:12px;
+  gap:10px
 }
 
 .item-title{
   font-weight:bold;
-  font-size:16px;
+  font-size:16px
 }
 
 .item-total{
   font-weight:900;
   color:#16894e;
-  font-size:17px;
+  font-size:17px
 }
 
 .checkbox-line{
@@ -215,12 +182,12 @@ button:hover{
   align-items:center;
   gap:8px;
   margin-top:8px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .checkbox-line input{
   width:auto;
-  margin:0;
+  margin:0
 }
 
 .status{
@@ -228,32 +195,32 @@ button:hover{
   padding:5px 9px;
   border-radius:20px;
   background:#fff0b8;
-  display:inline-block;
+  display:inline-block
 }
 
 .approved{
   background:#dff7ea;
-  color:#176d45;
+  color:#176d45
 }
 
 .rejected{
   background:#ffe1e1;
-  color:#a22;
+  color:#a22
 }
 
 .orcamento{
   padding:13px 0;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid #eee
 }
 
 .login-card{
   max-width:700px;
-  margin:35px auto;
+  margin:35px auto
 }
 
 .msg{
   margin-top:12px;
-  font-weight:bold;
+  font-weight:bold
 }
 
 .link{
@@ -261,24 +228,24 @@ button:hover{
   padding:12px;
   border-radius:8px;
   word-break:break-all;
-  margin-top:10px;
+  margin-top:10px
 }
 
 .publico{
   max-width:900px;
-  margin:30px auto;
+  margin:30px auto
 }
 
 .publico-logo{
   width:230px;
   max-width:100%;
-  margin-bottom:10px;
+  margin-bottom:10px
 }
 
 .public-table{
   width:100%;
   border-collapse:collapse;
-  margin-top:15px;
+  margin-top:15px
 }
 
 .public-table th,
@@ -286,70 +253,90 @@ button:hover{
   border:1px solid #ddd;
   padding:9px;
   text-align:left;
-  font-size:13px;
+  font-size:13px
 }
 
 .public-table th{
   background:#111;
-  color:#fff;
+  color:#fff
+}
+
+.catalogo-box{
+  background:#fffdf0;
+  border:1px solid #eadc88;
+  border-radius:10px;
+  padding:12px;
+  margin-top:12px
+}
+
+.catalogo-lista{
+  margin-top:10px
+}
+
+.catalogo-item{
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  padding:8px 0;
+  border-bottom:1px solid #eee;
+  align-items:center
+}
+
+.catalogo-item:last-child{
+  border-bottom:0
 }
 
 @media(max-width:850px){
-
   .grid3{
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1fr 1fr
   }
-
 }
 
 @media(max-width:650px){
-
   header{
-    padding:10px;
+    padding:10px
   }
 
   header img{
     height:42px;
-    max-width:120px;
+    max-width:120px
   }
 
   header h1{
-    font-size:15px;
+    font-size:15px
   }
 
   .grid,
   .grid3{
-    grid-template-columns:1fr;
+    grid-template-columns:1fr
   }
 
   .card{
-    padding:14px;
+    padding:14px
   }
 
   .total-box{
-    display:block;
+    display:block
   }
 
   .total{
     display:block;
-    margin-top:5px;
+    margin-top:5px
   }
 
+  .item-header{
+    align-items:flex-start;
+    flex-direction:column
+  }
 }
-
 </style>
-
 </head>
 
 <body>
 
-
 <header>
 
-  <img
-    src="logo-almeida.png"
-    alt="Almeida Guindastes"
-  >
+  <img src="logo-almeida.png" alt="Almeida Guindastes">
 
   <h1>
     ALMEIDA ORÇAMENTOS
@@ -359,25 +346,19 @@ button:hover{
   <button
     id="btnSair"
     class="yellow hidden"
-    onclick="sair()"
-  >
+    onclick="sair()">
     Sair
   </button>
 
 </header>
 
-
 <div class="wrap">
 
+<!-- =========================
+     LOGIN
+========================= -->
 
-<!-- =====================================================
-LOGIN
-===================================================== -->
-
-<section
-  id="login"
-  class="card login-card"
->
+<section id="login" class="card login-card">
 
   <h2>Acesso da Almeida</h2>
 
@@ -389,66 +370,50 @@ LOGIN
 
     <label>
       E-mail
-
       <input
         id="loginEmail"
         type="email"
         autocomplete="username"
-        placeholder="seu@email.com"
-      >
-
+        placeholder="seu@email.com">
     </label>
-
 
     <label>
       Senha
-
       <input
         id="loginSenha"
         type="password"
         autocomplete="current-password"
-        placeholder="Sua senha"
-      >
-
+        placeholder="Sua senha">
     </label>
 
   </div>
-
 
   <div class="actions">
 
     <button
       class="black"
-      onclick="login()"
-    >
+      onclick="login()">
       Entrar
     </button>
 
   </div>
 
-
   <div
     id="loginMsg"
-    class="msg"
-  ></div>
+    class="msg">
+  </div>
 
 </section>
 
 
+<!-- =========================
+     PAINEL
+========================= -->
 
-<!-- =====================================================
-PAINEL
-===================================================== -->
-
-<section
-  id="painel"
-  class="hidden"
->
+<section id="painel" class="hidden">
 
 
-<!-- =====================================================
-DADOS DO CLIENTE
-===================================================== -->
+<!-- DADOS DO CLIENTE -->
 
 <div class="card">
 
@@ -456,122 +421,81 @@ DADOS DO CLIENTE
 
   <div class="grid">
 
-
     <label>
       Empresa contratante
-
       <input
         id="cliente"
-        placeholder="Nome da empresa"
-      >
-
+        placeholder="Nome da empresa">
     </label>
-
 
     <label>
       CNPJ / CPF
-
       <input
         id="cnpj"
-        placeholder="CNPJ ou CPF"
-      >
-
+        placeholder="CNPJ ou CPF">
     </label>
-
 
     <label>
       Responsável
-
       <input
         id="contato"
-        placeholder="Nome do responsável"
-      >
-
+        placeholder="Nome do responsável">
     </label>
-
 
     <label>
       Telefone
-
       <input
         id="telefone"
-        placeholder="Telefone"
-      >
-
+        placeholder="Telefone">
     </label>
-
 
     <label>
       E-mail
-
       <input
         id="email"
         type="email"
-        placeholder="E-mail"
-      >
-
+        placeholder="E-mail">
     </label>
-
 
     <label>
       Endereço da contratante
-
       <input
         id="endereco"
-        placeholder="Endereço"
-      >
-
+        placeholder="Endereço">
     </label>
-
 
     <label>
       Local do serviço
-
       <input
         id="local"
-        placeholder="Local onde o equipamento será utilizado"
-      >
-
+        placeholder="Local onde o equipamento será utilizado">
     </label>
-
 
     <label>
       Validade do orçamento
-
       <input
         id="validade"
         type="number"
         value="30"
-        min="1"
-      >
-
+        min="1">
     </label>
-
 
     <label>
       Forma de pagamento
-
       <input
         id="formaPagamento"
-        placeholder="Ex.: A combinar"
         value="A COMBINAR"
-      >
-
+        placeholder="Ex.: A combinar">
     </label>
-
 
     <label>
       Prazo / período
-
       <input
         id="periodo"
-        placeholder="Ex.: 12 meses"
-      >
-
+        placeholder="Ex.: 12 meses">
     </label>
 
   </div>
-
 
   <label style="margin-top:13px">
 
@@ -579,18 +503,14 @@ DADOS DO CLIENTE
 
     <textarea
       id="obs"
-      placeholder="Observações adicionais"
-    ></textarea>
+      placeholder="Observações adicionais"></textarea>
 
   </label>
 
 </div>
 
 
-
-<!-- =====================================================
-ITENS
-===================================================== -->
+<!-- EQUIPAMENTOS -->
 
 <div class="card">
 
@@ -600,9 +520,7 @@ ITENS
       justify-content:space-between;
       align-items:center;
       gap:10px;
-      flex-wrap:wrap;
-    "
-  >
+      flex-wrap:wrap">
 
     <div>
 
@@ -611,38 +529,68 @@ ITENS
       </h2>
 
       <div class="muted">
-        Adicione quantos itens forem necessários.
+        Selecione um equipamento cadastrado ou adicione um item manualmente.
       </div>
 
     </div>
 
 
-    <button
-      class="blue"
-      onclick="adicionarItem()"
-    >
-      + ADICIONAR ITEM
-    </button>
+    <div
+      class="actions"
+      style="margin-top:0">
+
+      <button
+        class="blue"
+        onclick="adicionarItem()">
+        + ADICIONAR ITEM
+      </button>
+
+      <button
+        class="purple"
+        onclick="cadastrarEquipamento()">
+        + CADASTRAR EQUIPAMENTO
+      </button>
+
+      <button
+        class="red"
+        onclick="excluirEquipamentosCadastrados()">
+        APAGAR MEUS EQUIPAMENTOS
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <div class="catalogo-box">
+
+    <b>Catálogo de equipamentos</b>
+
+    <div class="muted">
+      Os equipamentos cadastrados por você ficam salvos neste navegador.
+    </div>
+
+    <div
+      id="catalogoLista"
+      class="catalogo-lista">
+    </div>
 
   </div>
 
 
   <div
     id="itens"
-    style="margin-top:15px"
-  ></div>
+    style="margin-top:15px">
+  </div>
 
 
   <div class="total-box">
 
-    <span>
-      TOTAL:
-    </span>
+    <span>TOTAL:</span>
 
     <span
       id="total"
-      class="total"
-    >
+      class="total">
       R$ 0,00
     </span>
 
@@ -659,22 +607,18 @@ ITENS
       min="0"
       step="0.01"
       value="0"
-      oninput="calcularTotal()"
-    >
+      oninput="calcularTotal()">
 
   </label>
 
 
   <div class="total-box">
 
-    <span>
-      TOTAL COM DESCONTO:
-    </span>
+    <span>TOTAL COM DESCONTO:</span>
 
     <span
       id="totalFinal"
-      class="total"
-    >
+      class="total">
       R$ 0,00
     </span>
 
@@ -685,24 +629,19 @@ ITENS
 
     <button
       class="yellow"
-      onclick="calcularTotal()"
-    >
+      onclick="calcularTotal()">
       CALCULAR
     </button>
 
-
     <button
       class="black"
-      onclick="salvar()"
-    >
+      onclick="salvar()">
       SALVAR NA NUVEM
     </button>
 
-
     <button
       class="green"
-      onclick="gerarLink()"
-    >
+      onclick="gerarLink()">
       GERAR LINK DO CLIENTE
     </button>
 
@@ -712,8 +651,7 @@ ITENS
   <div
     id="linkCard"
     class="hidden"
-    style="margin-top:18px"
-  >
+    style="margin-top:18px">
 
     <b>
       Link da proposta para o cliente:
@@ -721,16 +659,14 @@ ITENS
 
     <div
       id="link"
-      class="link"
-    ></div>
-
+      class="link">
+    </div>
 
     <div class="actions">
 
       <button
         class="green"
-        onclick="compartilhar()"
-      >
+        onclick="compartilhar()">
         COMPARTILHAR / WHATSAPP
       </button>
 
@@ -741,10 +677,7 @@ ITENS
 </div>
 
 
-
-<!-- =====================================================
-LISTA
-===================================================== -->
+<!-- LISTAGEM -->
 
 <div class="card">
 
@@ -752,66 +685,51 @@ LISTA
     Orçamentos salvos
   </h2>
 
-  <div
-    id="lista"
-  >
+  <div id="lista">
     Carregando...
   </div>
 
 </div>
 
-
 </section>
 
 
+<!-- =========================
+     PROPOSTA PÚBLICA
+========================= -->
 
-<!-- =====================================================
-PROPOSTA PÚBLICA
-===================================================== -->
-
-<section
-  id="publico"
-  class="hidden"
->
+<section id="publico" class="hidden">
 
 <div class="card publico">
-
 
   <img
     src="logo-almeida.png"
     class="publico-logo"
-    alt="Almeida Guindastes"
-  >
-
+    alt="Almeida Guindastes">
 
   <h2>
     PROPOSTA COMERCIAL
   </h2>
-
 
   <p>
     Nº:
     <b id="pNumero"></b>
   </p>
 
-
   <p>
     <b>Empresa:</b>
     <span id="pCliente"></span>
   </p>
-
 
   <p>
     <b>CNPJ/CPF:</b>
     <span id="pCnpj"></span>
   </p>
 
-
   <p>
     <b>Responsável:</b>
     <span id="pContato"></span>
   </p>
-
 
   <p>
     <b>Local do serviço:</b>
@@ -824,13 +742,9 @@ PROPOSTA PÚBLICA
   </h3>
 
 
-  <div
-    style="overflow-x:auto"
-  >
+  <div style="overflow-x:auto">
 
-    <table
-      class="public-table"
-    >
+    <table class="public-table">
 
       <thead>
 
@@ -846,25 +760,21 @@ PROPOSTA PÚBLICA
 
       </thead>
 
-      <tbody
-        id="pItens"
-      ></tbody>
+      <tbody id="pItens"></tbody>
 
     </table>
 
   </div>
 
 
-  <div
-    class="total-box"
-  >
+  <div class="total-box">
 
     TOTAL:
 
     <span
       id="pTotal"
-      class="total"
-    ></span>
+      class="total">
+    </span>
 
   </div>
 
@@ -876,7 +786,6 @@ PROPOSTA PÚBLICA
     Aprovação do cliente
   </h3>
 
-
   <p class="muted">
     Para registrar a decisão, informe o responsável.
   </p>
@@ -884,28 +793,15 @@ PROPOSTA PÚBLICA
 
   <div class="grid">
 
-
     <label>
-
       Nome do responsável
-
-      <input
-        id="pNome"
-      >
-
+      <input id="pNome">
     </label>
-
 
     <label>
-
       CPF / CNPJ
-
-      <input
-        id="pDoc"
-      >
-
+      <input id="pDoc">
     </label>
-
 
   </div>
 
@@ -914,16 +810,13 @@ PROPOSTA PÚBLICA
 
     <button
       class="green"
-      onclick="aprovar()"
-    >
+      onclick="aprovar()">
       ✓ APROVAR ORÇAMENTO
     </button>
 
-
     <button
       class="red"
-      onclick="recusar()"
-    >
+      onclick="recusar()">
       ✕ RECUSAR
     </button>
 
@@ -932,128 +825,444 @@ PROPOSTA PÚBLICA
 
   <div
     id="pMsg"
-    class="msg"
-  ></div>
-
+    class="msg">
+  </div>
 
 </div>
 
 </section>
 
-
 </div>
-
 
 
 <script>
 
-
-/* =====================================================
-SUPABASE
-===================================================== */
+/* =========================
+   SUPABASE
+========================= */
 
 const SUPABASE_URL =
-  'https://tkzwxveskwgfvvfalmcb.supabase.co';
-
+'https://tkzwxveskwgfvvfalmcb.supabase.co';
 
 const SUPABASE_KEY =
-  'sb_publishable_lBD8I4QUQbDLsTlllmROUQ_Ek0kPBw3';
-
+'sb_publishable_lBD8I4QUQbDLsTlllmROUQ_Ek0kPBw3';
 
 const sb =
-  supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_KEY
-  );
+supabase.createClient(
+  SUPABASE_URL,
+  SUPABASE_KEY
+);
 
 
+/* =========================
+   FUNÇÕES BÁSICAS
+========================= */
 
-/* =====================================================
-AUXILIARES
-===================================================== */
-
-const $ = id =>
-  document.getElementById(id);
-
-
-function brl(valor){
-
-  return new Intl.NumberFormat(
-    'pt-BR',
-    {
-      style:'currency',
-      currency:'BRL'
-    }
-  ).format(
-    Number(valor) || 0
-  );
-
-}
+const $ =
+id => document.getElementById(id);
 
 
-function escapar(texto){
+const brl =
+v =>
+new Intl.NumberFormat(
+  'pt-BR',
+  {
+    style:'currency',
+    currency:'BRL'
+  }
+).format(Number(v)||0);
 
-  return String(texto ?? '')
+
+function escapar(t){
+
+  return String(t??'')
     .replaceAll('&','&amp;')
     .replaceAll('<','&lt;')
     .replaceAll('>','&gt;')
     .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
+    .replaceAll("'",'&#039;');
 
 }
 
 
+/* =========================
+   CATÁLOGO DE EQUIPAMENTOS
+========================= */
 
-/* =====================================================
-ITENS
-===================================================== */
+const equipamentosPadrao = [
 
-let itens = [];
+  {
+    id:'padrao-160',
+    nome:'Guindaste 160 toneladas',
+    descricao:
+    'GUINDASTE 160 TONELADAS COM LANÇA TELESCÓPICA DE 77,5 METROS E LANÇA AUXILIAR (JIB) DE 33,5 METROS (ANO/MODELO: 2025)',
+    unidade:'HORAS',
+    valor:700,
+    cortesia:false
+  },
 
-let itemId = 0;
+  {
+    id:'padrao-110',
+    nome:'Guindaste 110 toneladas',
+    descricao:
+    'GUINDASTE 110 TONELADAS COM LANÇA TELESCÓPICA DE 60 METROS E LANÇA AUXILIAR (JIB) DE 27 METROS (ANO: 2024/2025)',
+    unidade:'HORAS',
+    valor:600,
+    cortesia:false
+  },
+
+  {
+    id:'padrao-70',
+    nome:'Guindaste 70 toneladas',
+    descricao:
+    'GUINDASTE 70 TONELADAS',
+    unidade:'HORAS',
+    valor:450,
+    cortesia:false
+  },
+
+  {
+    id:'padrao-munck45',
+    nome:'Caminhão Munck 45 toneladas',
+    descricao:
+    'CAMINHÃO MUNCK 45 TONELADAS COM LANÇA DE 21 METROS E CAPACIDADE MÁXIMA DE IÇAMENTO DE 10.900 KG',
+    unidade:'HORAS',
+    valor:300,
+    cortesia:false
+  },
+
+  {
+    id:'padrao-mob',
+    nome:'Mobilização',
+    descricao:
+    'MOBILIZAÇÃO DO EQUIPAMENTO',
+    unidade:'UNIDADE',
+    valor:0,
+    cortesia:false
+  },
+
+  {
+    id:'padrao-desmob',
+    nome:'Desmobilização',
+    descricao:
+    'DESMOBILIZAÇÃO DO EQUIPAMENTO',
+    unidade:'UNIDADE',
+    valor:0,
+    cortesia:false
+  },
+
+  {
+    id:'padrao-rigging',
+    nome:'Plano de Rigging + ART',
+    descricao:
+    'PLANO DE RIGGING + ART',
+    unidade:'UNIDADE',
+    valor:0,
+    cortesia:true
+  }
+
+];
 
 
+function obterEquipamentos(){
 
-function adicionarItem(dados = {}){
+  let personalizados=[];
 
-  itemId++;
+  try{
+
+    personalizados =
+    JSON.parse(
+      localStorage.getItem(
+        'almeida_equipamentos'
+      ) || '[]'
+    );
+
+  }catch(e){
+
+    personalizados=[];
+
+  }
+
+  return [
+    ...equipamentosPadrao,
+    ...personalizados
+  ];
+
+}
 
 
-  const item = {
+function salvarEquipamentos(lista){
 
-    id:itemId,
+  localStorage.setItem(
+    'almeida_equipamentos',
+    JSON.stringify(lista)
+  );
 
-    quantidade:
-      dados.quantidade ?? 1,
+}
 
-    unidade:
-      dados.unidade ?? 'UNIDADE',
+
+function renderCatalogo(){
+
+  const personalizados =
+  (()=>{
+
+    try{
+
+      return JSON.parse(
+        localStorage.getItem(
+          'almeida_equipamentos'
+        ) || '[]'
+      );
+
+    }catch(e){
+
+      return [];
+
+    }
+
+  })();
+
+
+  const lista =
+  obterEquipamentos();
+
+
+  $('catalogoLista').innerHTML =
+  lista.map(x => `
+
+    <div class="catalogo-item">
+
+      <span>
+
+        <b>
+          ${escapar(x.nome)}
+        </b>
+
+        —
+        ${brl(x.valor)}
+        /
+        ${escapar(x.unidade)}
+
+        ${x.cortesia
+          ? ' — CORTESIA'
+          : ''}
+
+      </span>
+
+      <span class="muted">
+
+        ${
+          x.id.startsWith('padrao-')
+          ? 'Padrão'
+          : 'Meu cadastro'
+        }
+
+      </span>
+
+    </div>
+
+  `).join('')
+
+  ||
+  '<span class="muted">Nenhum equipamento.</span>';
+
+}
+
+
+function cadastrarEquipamento(){
+
+  const nome =
+  prompt(
+    'Nome do equipamento/serviço:'
+  );
+
+  if(
+    !nome ||
+    !nome.trim()
+  ) return;
+
+
+  const descricao =
+  prompt(
+    'Descrição completa que aparecerá no orçamento:',
+    nome.trim()
+  );
+
+  if(descricao===null)
+    return;
+
+
+  const valorTexto =
+  prompt(
+    'Valor unitário padrão (somente número):',
+    '0'
+  );
+
+  if(valorTexto===null)
+    return;
+
+
+  const unidade =
+  prompt(
+    'Unidade:',
+    'HORAS'
+  );
+
+  if(unidade===null)
+    return;
+
+
+  const item={
+
+    id:
+    'custom-' +
+    Date.now(),
+
+    nome:
+    nome.trim(),
 
     descricao:
-      dados.descricao ?? '',
+    descricao.trim(),
+
+    unidade:
+    unidade.trim()
+      .toUpperCase() ||
+    'UNIDADE',
 
     valor:
-      dados.valor ?? 0,
+    Number(
+      String(valorTexto)
+      .replace(',','.')
+    ) || 0,
 
-    combustivel:
-      dados.combustivel ?? 'NÃO INCLUSO',
-
-    alimentacao:
-      dados.alimentacao ?? 'NÃO INCLUSO',
-
-    hospedagem:
-      dados.hospedagem ?? 'NÃO INCLUSO',
-
-    transporte:
-      dados.transporte ?? 'NÃO INCLUSO',
-
-    cortesia:
-      dados.cortesia ?? false
+    cortesia:false
 
   };
 
 
-  itens.push(item);
+  let lista=[];
+
+  try{
+
+    lista =
+    JSON.parse(
+      localStorage.getItem(
+        'almeida_equipamentos'
+      ) || '[]'
+    );
+
+  }catch(e){
+
+    lista=[];
+
+  }
+
+
+  lista.push(item);
+
+  salvarEquipamentos(lista);
+
+  renderCatalogo();
+
+  alert(
+    'Equipamento cadastrado com sucesso.'
+  );
+
+}
+
+
+function excluirEquipamentosCadastrados(){
+
+  const lista =
+  (()=>{
+
+    try{
+
+      return JSON.parse(
+        localStorage.getItem(
+          'almeida_equipamentos'
+        ) || '[]'
+      );
+
+    }catch(e){
+
+      return [];
+
+    }
+
+  })();
+
+
+  if(!lista.length){
+
+    alert(
+      'Você ainda não cadastrou equipamentos próprios.'
+    );
+
+    return;
+
+  }
+
+
+  if(
+    confirm(
+      'Apagar todos os equipamentos cadastrados por você neste navegador?'
+    )
+  ){
+
+    localStorage.removeItem(
+      'almeida_equipamentos'
+    );
+
+    renderCatalogo();
+
+    alert(
+      'Equipamentos cadastrados foram apagados.'
+    );
+
+  }
+
+}
+
+
+function selecionarEquipamento(
+  idEquipamento,
+  idItem
+){
+
+  const equipamento =
+  obterEquipamentos()
+    .find(
+      x => x.id === idEquipamento
+    );
+
+
+  const item =
+  itens.find(
+    x => x.id === Number(idItem)
+  );
+
+
+  if(
+    !equipamento ||
+    !item
+  ) return;
+
+
+  item.equipamento =
+  equipamento.id;
+
+  item.descricao =
+  equipamento.descricao;
+
+  item.unidade =
+  equipamento.unidade;
+
+  item.valor =
+  equipamento.valor;
+
+  item.cortesia =
+  !!equipamento.cortesia;
 
 
   renderItens();
@@ -1062,21 +1271,84 @@ function adicionarItem(dados = {}){
 
 }
 
+
+/* =========================
+   ITENS
+========================= */
+
+let itens=[];
+
+let itemId=0;
+
+
+function adicionarItem(
+  dados={}
+){
+
+  itemId++;
+
+
+  itens.push({
+
+    id:itemId,
+
+    equipamento:
+    dados.equipamento ?? '',
+
+    quantidade:
+    dados.quantidade ?? 1,
+
+    unidade:
+    dados.unidade ?? 'UNIDADE',
+
+    descricao:
+    dados.descricao ?? '',
+
+    valor:
+    dados.valor ?? 0,
+
+    combustivel:
+    dados.combustivel ??
+    'NÃO INCLUSO',
+
+    alimentacao:
+    dados.alimentacao ??
+    'NÃO INCLUSO',
+
+    hospedagem:
+    dados.hospedagem ??
+    'NÃO INCLUSO',
+
+    transporte:
+    dados.transporte ??
+    'NÃO INCLUSO',
+
+    cortesia:
+    dados.cortesia ??
+    false
+
+  });
+
+
+  renderItens();
+
+  calcularTotal();
+
+}
 
 
 function removerItem(id){
 
   itens =
-    itens.filter(
-      item => item.id !== id
-    );
+  itens.filter(
+    x => x.id !== id
+  );
 
   renderItens();
 
   calcularTotal();
 
 }
-
 
 
 function atualizarItem(
@@ -1086,32 +1358,38 @@ function atualizarItem(
 ){
 
   const item =
-    itens.find(
-      x => x.id === id
-    );
+  itens.find(
+    x => x.id === id
+  );
+
+  if(!item)
+    return;
 
 
-  if(!item) return;
+  if(
+    campo === 'quantidade' ||
+    campo === 'valor'
+  ){
 
-
-  if(campo === 'quantidade'){
     item[campo] =
-      Number(valor) || 0;
+    Number(valor) || 0;
+
   }
 
-  else if(campo === 'valor'){
-    item[campo] =
-      Number(valor) || 0;
-  }
+  else if(
+    campo === 'cortesia'
+  ){
 
-  else if(campo === 'cortesia'){
     item[campo] =
-      valor === true ||
-      valor === 'true';
+    valor === true ||
+    valor === 'true';
+
   }
 
   else{
-    item[campo] = valor;
+
+    item[campo]=valor;
+
   }
 
 
@@ -1120,45 +1398,134 @@ function atualizarItem(
 }
 
 
-
 function totalItem(item){
 
-  if(item.cortesia)
-    return 0;
-
-
-  return (
-    Number(item.quantidade) || 0
-  ) *
-  (
-    Number(item.valor) || 0
-  );
+  return item.cortesia
+    ? 0
+    : (
+        Number(item.quantidade)||0
+      ) *
+      (
+        Number(item.valor)||0
+      );
 
 }
 
+
+function opcoesUnidade(atual){
+
+  return [
+
+    'UNIDADE',
+    'HORAS',
+    'H',
+    'KM',
+    'DIÁRIA',
+    'MÊS',
+    'SERVIÇO'
+
+  ].map(
+
+    x => `
+
+      <option
+        value="${escapar(x)}"
+        ${x===atual?'selected':''}>
+
+        ${escapar(x)}
+
+      </option>
+
+    `
+
+  ).join('');
+
+}
+
+
+function opcoesSimNao(atual){
+
+  return [
+
+    'NÃO INCLUSO',
+    'INCLUSO',
+    'A CALCULAR'
+
+  ].map(
+
+    x => `
+
+      <option
+        value="${escapar(x)}"
+        ${x===atual?'selected':''}>
+
+        ${escapar(x)}
+
+      </option>
+
+    `
+
+  ).join('');
+
+}
+
+
+function opcoesEquipamento(
+  atual
+){
+
+  return `
+
+    <option value="">
+      -- Selecionar equipamento --
+    </option>
+
+  ` +
+
+  obterEquipamentos()
+    .map(
+
+      x => `
+
+        <option
+          value="${escapar(x.id)}"
+          ${x.id===atual?'selected':''}>
+
+          ${escapar(x.nome)}
+
+        </option>
+
+      `
+
+    ).join('');
+
+}
 
 
 function renderItens(){
 
   const container =
-    $('itens');
+  $('itens');
 
 
-  if(itens.length === 0){
+  if(!itens.length){
 
     container.innerHTML = `
 
-      <div class="muted"
-           style="
-             padding:20px;
-             text-align:center;
-             border:1px dashed #bbb;
-             border-radius:8px;
-           ">
+      <div
+        class="muted"
+        style="
+          padding:20px;
+          text-align:center;
+          border:1px dashed #bbb;
+          border-radius:8px">
 
         Nenhum item adicionado.
+
         Clique em
-        <b>+ ADICIONAR ITEM</b>.
+        <b>
+          + ADICIONAR ITEM
+        </b>.
 
       </div>
 
@@ -1170,7 +1537,8 @@ function renderItens(){
 
 
   container.innerHTML =
-    itens.map(item => `
+  itens.map(
+    item => `
 
       <div class="item">
 
@@ -1182,21 +1550,25 @@ function renderItens(){
 
           </div>
 
+
           <div>
 
             <span
               class="item-total"
-              id="itemTotal${item.id}"
-            >
+              id="itemTotal${item.id}">
+
               ${brl(totalItem(item))}
+
             </span>
+
 
             <button
               class="red"
               style="margin-left:8px"
-              onclick="removerItem(${item.id})"
-            >
+              onclick="removerItem(${item.id})">
+
               Remover
+
             </button>
 
           </div>
@@ -1204,8 +1576,29 @@ function renderItens(){
         </div>
 
 
-        <div class="grid3">
+        <label>
 
+          Equipamento / serviço cadastrado
+
+          <select
+            onchange="
+              selecionarEquipamento(
+                this.value,
+                ${item.id}
+              )">
+
+            ${opcoesEquipamento(
+              item.equipamento
+            )}
+
+          </select>
+
+        </label>
+
+
+        <div
+          class="grid3"
+          style="margin-top:12px">
 
           <label>
 
@@ -1221,9 +1614,7 @@ function renderItens(){
                   ${item.id},
                   'quantidade',
                   this.value
-                )
-              "
-            >
+                )">
 
           </label>
 
@@ -1238,11 +1629,11 @@ function renderItens(){
                   ${item.id},
                   'unidade',
                   this.value
-                )
-              "
-            >
+                )">
 
-              ${opcoesUnidade(item.unidade)}
+              ${opcoesUnidade(
+                item.unidade
+              )}
 
             </select>
 
@@ -1263,18 +1654,14 @@ function renderItens(){
                   ${item.id},
                   'valor',
                   this.value
-                )
-              "
-            >
+                )">
 
           </label>
 
         </div>
 
 
-        <label
-          style="margin-top:12px"
-        >
+        <label style="margin-top:12px">
 
           Descrição / Equipamento
 
@@ -1284,18 +1671,14 @@ function renderItens(){
                 ${item.id},
                 'descricao',
                 this.value
-              )
-            "
-          >${escapar(item.descricao)}</textarea>
+              )">${escapar(item.descricao)}</textarea>
 
         </label>
 
 
         <div
           class="grid3"
-          style="margin-top:12px"
-        >
-
+          style="margin-top:12px">
 
           <label>
 
@@ -1307,11 +1690,11 @@ function renderItens(){
                   ${item.id},
                   'combustivel',
                   this.value
-                )
-              "
-            >
+                )">
 
-              ${opcoesSimNao(item.combustivel)}
+              ${opcoesSimNao(
+                item.combustivel
+              )}
 
             </select>
 
@@ -1328,11 +1711,11 @@ function renderItens(){
                   ${item.id},
                   'alimentacao',
                   this.value
-                )
-              "
-            >
+                )">
 
-              ${opcoesSimNao(item.alimentacao)}
+              ${opcoesSimNao(
+                item.alimentacao
+              )}
 
             </select>
 
@@ -1349,25 +1732,22 @@ function renderItens(){
                   ${item.id},
                   'hospedagem',
                   this.value
-                )
-              "
-            >
+                )">
 
-              ${opcoesSimNao(item.hospedagem)}
+              ${opcoesSimNao(
+                item.hospedagem
+              )}
 
             </select>
 
           </label>
-
 
         </div>
 
 
         <div
           class="grid3"
-          style="margin-top:12px"
-        >
-
+          style="margin-top:12px">
 
           <label>
 
@@ -1379,11 +1759,11 @@ function renderItens(){
                   ${item.id},
                   'transporte',
                   this.value
-                )
-              "
-            >
+                )">
 
-              ${opcoesSimNao(item.transporte)}
+              ${opcoesSimNao(
+                item.transporte
+              )}
 
             </select>
 
@@ -1398,16 +1778,14 @@ function renderItens(){
 
               <input
                 type="checkbox"
-                ${item.cortesia ? 'checked' : ''}
+                ${item.cortesia?'checked':''}
                 onchange="
                   atualizarItem(
                     ${item.id},
                     'cortesia',
                     this.checked
                   );
-                  renderItens();
-                "
-              >
+                  renderItens()">
 
               Item sem custo
 
@@ -1418,229 +1796,167 @@ function renderItens(){
 
           <div></div>
 
-
         </div>
 
       </div>
 
-    `).join('');
+    `
+  ).join('');
 
 }
 
-
-
-function opcoesUnidade(atual){
-
-  const lista = [
-
-    'UNIDADE',
-    'HORAS',
-    'H',
-    'KM',
-    'DIÁRIA',
-    'MÊS',
-    'SERVIÇO'
-
-  ];
-
-
-  return lista.map(x => `
-
-    <option
-      value="${x}"
-      ${x === atual ? 'selected' : ''}
-    >
-      ${x}
-    </option>
-
-  `).join('');
-
-}
-
-
-
-function opcoesSimNao(atual){
-
-  const lista = [
-
-    'NÃO INCLUSO',
-    'INCLUSO',
-    'A CALCULAR'
-
-  ];
-
-
-  return lista.map(x => `
-
-    <option
-      value="${x}"
-      ${x === atual ? 'selected' : ''}
-    >
-      ${x}
-    </option>
-
-  `).join('');
-
-}
-
-
-
-/* =====================================================
-CÁLCULO
-===================================================== */
 
 function calcularTotal(){
 
-  let total = 0;
-
-
-  itens.forEach(item => {
-
-    const valor =
-      totalItem(item);
-
-    total += valor;
-
-
-    const elemento =
-      $('itemTotal' + item.id);
-
-
-    if(elemento){
-
-      elemento.textContent =
-        brl(valor);
-
-    }
-
-  });
+  let total =
+  itens.reduce(
+    (s,x) =>
+      s + totalItem(x),
+    0
+  );
 
 
   const desconto =
-    Number($('desconto').value) || 0;
+  Number(
+    $('desconto').value
+  ) || 0;
 
 
   const totalFinal =
-    Math.max(
-      0,
-      total - desconto
-    );
+  Math.max(
+    0,
+    total - desconto
+  );
 
 
   $('total').textContent =
-    brl(total);
+  brl(total);
 
 
   $('totalFinal').textContent =
-    brl(totalFinal);
+  brl(totalFinal);
+
+
+  itens.forEach(
+    x => {
+
+      const el =
+      $('itemTotal'+x.id);
+
+      if(el){
+
+        el.textContent =
+        brl(totalItem(x));
+
+      }
+
+    }
+  );
 
 
   return {
-
-    total:total,
-
-    desconto:desconto,
-
-    totalFinal:totalFinal
-
+    total,
+    desconto,
+    totalFinal
   };
 
 }
 
 
-
-/* =====================================================
-FORMULÁRIO
-===================================================== */
+/* =========================
+   FORMULÁRIO / LOGIN
+========================= */
 
 function form(){
 
   const calculo =
-    calcularTotal();
+  calcularTotal();
 
 
   return {
 
     cliente:
-      $('cliente').value.trim(),
+    $('cliente').value.trim(),
 
     cnpj:
-      $('cnpj').value.trim(),
+    $('cnpj').value.trim(),
 
     contato:
-      $('contato').value.trim(),
+    $('contato').value.trim(),
 
     telefone:
-      $('telefone').value.trim(),
+    $('telefone').value.trim(),
 
     email:
-      $('email').value.trim(),
+    $('email').value.trim(),
 
     endereco_cliente:
-      $('endereco').value.trim(),
+    $('endereco').value.trim(),
 
     local_servico:
-      $('local').value.trim(),
+    $('local').value.trim(),
 
     forma_pagamento:
-      $('formaPagamento').value.trim(),
+    $('formaPagamento').value.trim(),
 
     descricao:
-      itens.map(
-        x => x.descricao
-      ).filter(Boolean).join(' | '),
+    itens
+      .map(x => x.descricao)
+      .filter(Boolean)
+      .join(' | '),
 
     unidade:
-      'DIVERSOS',
+    'DIVERSOS',
 
     quantidade:
-      itens.length,
+    itens.length,
 
     valor_unitario:
-      0,
+    0,
 
     desconto:
-      calculo.desconto,
+    calculo.desconto,
 
     total:
-      calculo.totalFinal,
+    calculo.totalFinal,
 
     validade:
-      Number($('validade').value) || 30,
+    Number(
+      $('validade').value
+    ) || 30,
 
     observacoes:
-      $('obs').value.trim(),
+    $('obs').value.trim(),
 
     itens:
-      itens,
+    itens.map(
+      x => ({...x})
+    ),
 
     periodo:
-      $('periodo').value.trim()
+    $('periodo').value.trim()
 
   };
 
 }
 
 
-
-/* =====================================================
-LOGIN
-===================================================== */
-
 async function login(){
 
   const email =
-    $('loginEmail').value.trim();
-
+  $('loginEmail').value.trim();
 
   const senha =
-    $('loginSenha').value;
+  $('loginSenha').value;
 
 
-  if(!email || !senha){
+  if(
+    !email ||
+    !senha
+  ){
 
     $('loginMsg').textContent =
-      'Informe o e-mail e a senha.';
+    'Informe o e-mail e a senha.';
 
     return;
 
@@ -1648,44 +1964,38 @@ async function login(){
 
 
   $('loginMsg').textContent =
-    'Entrando...';
+  'Entrando...';
 
 
   const {
-    data,
     error
   } =
-    await sb.auth.signInWithPassword({
+  await sb.auth.signInWithPassword({
 
-      email:email,
+    email,
+    password:senha
 
-      password:senha
-
-    });
+  });
 
 
   if(error){
 
     $('loginMsg').textContent =
-      'Erro: ' +
-      error.message;
+    'Erro: ' +
+    error.message;
 
     return;
 
   }
 
 
-  $('loginMsg').textContent = '';
+  $('loginMsg').textContent =
+  '';
 
   await showPainel();
 
 }
 
-
-
-/* =====================================================
-SAIR
-===================================================== */
 
 async function sair(){
 
@@ -1696,33 +2006,26 @@ async function sair(){
 }
 
 
-
-/* =====================================================
-MOSTRAR PAINEL
-===================================================== */
-
 async function showPainel(){
 
   $('login')
     .classList
     .add('hidden');
 
-
   $('painel')
     .classList
     .remove('hidden');
-
 
   $('btnSair')
     .classList
     .remove('hidden');
 
 
-  if(itens.length === 0){
+  renderCatalogo();
 
+
+  if(!itens.length)
     adicionarItem();
-
-  }
 
 
   await listar();
@@ -1730,15 +2033,64 @@ async function showPainel(){
 }
 
 
+/* =========================
+   SALVAR / LINK
+========================= */
 
-/* =====================================================
-SALVAR
-===================================================== */
+async function inserirOrcamento(q){
+
+  let tentativa={
+    ...q
+  };
+
+
+  let res =
+  await sb
+    .from('orcamentos')
+    .insert(tentativa)
+    .select(
+      'numero,public_token'
+    )
+    .single();
+
+
+  /*
+    Se a coluna "itens" ainda não
+    existir no banco, tenta salvar
+    sem ela para não quebrar o sistema.
+  */
+
+  if(
+    res.error &&
+    /itens/i.test(
+      res.error.message
+    )
+  ){
+
+    delete tentativa.itens;
+
+
+    res =
+    await sb
+      .from('orcamentos')
+      .insert(tentativa)
+      .select(
+        'numero,public_token'
+      )
+      .single();
+
+  }
+
+
+  return res;
+
+}
+
 
 async function salvar(){
 
   const q =
-    form();
+  form();
 
 
   if(!q.cliente){
@@ -1752,7 +2104,7 @@ async function salvar(){
   }
 
 
-  if(itens.length === 0){
+  if(!itens.length){
 
     alert(
       'Adicione pelo menos um item.'
@@ -1766,12 +2118,14 @@ async function salvar(){
   const {
     data:userData
   } =
-    await sb.auth.getUser();
+  await sb.auth.getUser();
 
 
   if(!userData.user){
 
-    alert('Faça login.');
+    alert(
+      'Faça login.'
+    );
 
     return;
 
@@ -1779,24 +2133,18 @@ async function salvar(){
 
 
   q.user_id =
-    userData.user.id;
+  userData.user.id;
 
 
   q.public_token =
-    crypto.randomUUID();
+  crypto.randomUUID();
 
 
   const {
     data,
     error
   } =
-    await sb
-      .from('orcamentos')
-      .insert(q)
-      .select(
-        'numero,public_token'
-      )
-      .single();
+  await inserirOrcamento(q);
 
 
   if(error){
@@ -1812,8 +2160,7 @@ async function salvar(){
 
 
   alert(
-    'Orçamento salvo na nuvem.\n\n' +
-    'Nº ' +
+    'Orçamento salvo na nuvem.\n\nNº ' +
     data.numero
   );
 
@@ -1823,15 +2170,10 @@ async function salvar(){
 }
 
 
-
-/* =====================================================
-GERAR LINK
-===================================================== */
-
 async function gerarLink(){
 
   const q =
-    form();
+  form();
 
 
   if(!q.cliente){
@@ -1845,7 +2187,7 @@ async function gerarLink(){
   }
 
 
-  if(itens.length === 0){
+  if(!itens.length){
 
     alert(
       'Adicione pelo menos um item.'
@@ -1859,12 +2201,14 @@ async function gerarLink(){
   const {
     data:userData
   } =
-    await sb.auth.getUser();
+  await sb.auth.getUser();
 
 
   if(!userData.user){
 
-    alert('Faça login.');
+    alert(
+      'Faça login.'
+    );
 
     return;
 
@@ -1872,24 +2216,18 @@ async function gerarLink(){
 
 
   q.user_id =
-    userData.user.id;
+  userData.user.id;
 
 
   q.public_token =
-    crypto.randomUUID();
+  crypto.randomUUID();
 
 
   const {
     data,
     error
   } =
-    await sb
-      .from('orcamentos')
-      .insert(q)
-      .select(
-        'numero,public_token'
-      )
-      .single();
+  await inserirOrcamento(q);
 
 
   if(error){
@@ -1905,14 +2243,14 @@ async function gerarLink(){
 
 
   const url =
-    location.origin +
-    location.pathname +
-    '?proposta=' +
-    data.public_token;
+  location.origin +
+  location.pathname +
+  '?proposta=' +
+  data.public_token;
 
 
   $('link').textContent =
-    url;
+  url;
 
 
   $('linkCard')
@@ -1933,15 +2271,10 @@ async function gerarLink(){
 }
 
 
-
-/* =====================================================
-COMPARTILHAR
-===================================================== */
-
 function compartilhar(){
 
   const url =
-    $('link').textContent;
+  $('link').textContent;
 
 
   if(!url){
@@ -1956,8 +2289,8 @@ function compartilhar(){
 
 
   const texto =
-    'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n' +
-    url;
+  'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n' +
+  url;
 
 
   if(navigator.share){
@@ -1965,11 +2298,12 @@ function compartilhar(){
     navigator.share({
 
       title:
-        'Proposta Almeida Guindastes',
+      'Proposta Almeida Guindastes',
 
-      text:texto,
+      text:
+      texto,
 
-      url:url
+      url
 
     });
 
@@ -1988,10 +2322,9 @@ function compartilhar(){
 }
 
 
-
-/* =====================================================
-LISTAR
-===================================================== */
+/* =========================
+   LISTAGEM
+========================= */
 
 async function listar(){
 
@@ -1999,31 +2332,34 @@ async function listar(){
     data,
     error
   } =
-    await sb
-      .from('orcamentos')
-      .select('*')
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      );
+  await sb
+    .from('orcamentos')
+    .select('*')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    );
 
 
   if(error){
 
     $('lista').textContent =
-      error.message;
+    error.message;
 
     return;
 
   }
 
 
-  if(!data || data.length === 0){
+  if(
+    !data ||
+    !data.length
+  ){
 
     $('lista').textContent =
-      'Nenhum orçamento cadastrado.';
+    'Nenhum orçamento cadastrado.';
 
     return;
 
@@ -2031,17 +2367,15 @@ async function listar(){
 
 
   $('lista').innerHTML =
-    data.map(q => {
+  data.map(
+    q => {
 
-      let classe = '';
-
-
-      if(q.status === 'Aprovado')
-        classe = 'approved';
-
-
-      if(q.status === 'Recusado')
-        classe = 'rejected';
+      let classe =
+      q.status === 'Aprovado'
+        ? 'approved'
+        : q.status === 'Recusado'
+        ? 'rejected'
+        : '';
 
 
       return `
@@ -2052,64 +2386,63 @@ async function listar(){
             Nº ${escapar(q.numero)}
           </b>
 
-          &nbsp;—
+          —
 
           ${escapar(
-            q.cliente || 'Sem cliente'
+            q.cliente ||
+            'Sem cliente'
           )}
 
-          &nbsp;—
+          —
 
           ${brl(q.total)}
 
           &nbsp;
 
           <span
-            class="status ${classe}"
-          >
+            class="status ${classe}">
+
             ${escapar(
-              q.status || 'Pendente'
+              q.status ||
+              'Pendente'
             )}
+
           </span>
 
         </div>
 
       `;
 
-    }).join('');
+    }
+  ).join('');
 
 }
 
 
+/* =========================
+   PROPOSTA PÚBLICA
+========================= */
 
-/* =====================================================
-PROPOSTA PÚBLICA
-===================================================== */
-
-let publicToken = null;
-
+let publicToken=null;
 
 
 async function abrirPublica(token){
 
   publicToken =
-    token;
+  token;
 
 
   $('login')
     .classList
     .add('hidden');
 
-
   $('painel')
     .classList
     .add('hidden');
 
-
   $('btnSair')
     .classList
     .add('hidden');
-
 
   $('publico')
     .classList
@@ -2120,18 +2453,18 @@ async function abrirPublica(token){
     data,
     error
   } =
-    await sb.rpc(
-      'ver_orcamento_publico',
-      {
-        p_token:token
-      }
-    );
+  await sb.rpc(
+    'ver_orcamento_publico',
+    {
+      p_token:token
+    }
+  );
 
 
   if(error){
 
     $('pMsg').textContent =
-      'Proposta não encontrada ou link inválido.';
+    'Proposta não encontrada ou link inválido.';
 
     return;
 
@@ -2139,15 +2472,15 @@ async function abrirPublica(token){
 
 
   const proposta =
-    Array.isArray(data)
-      ? data[0]
-      : data;
+  Array.isArray(data)
+    ? data[0]
+    : data;
 
 
   if(!proposta){
 
     $('pMsg').textContent =
-      'Proposta não encontrada ou link inválido.';
+    'Proposta não encontrada ou link inválido.';
 
     return;
 
@@ -2155,47 +2488,54 @@ async function abrirPublica(token){
 
 
   $('pNumero').textContent =
-    proposta.numero || '';
+  proposta.numero || '';
 
 
   $('pCliente').textContent =
-    proposta.cliente || '';
+  proposta.cliente || '';
 
 
   $('pCnpj').textContent =
-    proposta.cnpj || '';
+  proposta.cnpj || '';
 
 
   $('pContato').textContent =
-    proposta.contato || '';
+  proposta.contato || '';
 
 
   $('pLocal').textContent =
-    proposta.local_servico || '';
+  proposta.local_servico || '';
 
 
   $('pTotal').textContent =
-    brl(proposta.total);
+  brl(proposta.total);
 
 
-  let listaItens = [];
+  let listaItens=[];
 
 
   try{
 
-    if(Array.isArray(proposta.itens)){
+    if(
+      Array.isArray(
+        proposta.itens
+      )
+    ){
 
       listaItens =
-        proposta.itens;
+      proposta.itens;
 
     }
 
-    else if(typeof proposta.itens === 'string'){
+    else if(
+      typeof proposta.itens ===
+      'string'
+    ){
 
       listaItens =
-        JSON.parse(
-          proposta.itens
-        );
+      JSON.parse(
+        proposta.itens
+      );
 
     }
 
@@ -2203,26 +2543,29 @@ async function abrirPublica(token){
 
   catch(e){
 
-    listaItens = [];
+    listaItens=[];
 
   }
 
 
-  if(listaItens.length === 0){
+  if(!listaItens.length){
 
-    listaItens = [{
+    listaItens=[{
 
       quantidade:
-        proposta.quantidade || 1,
+      proposta.quantidade || 1,
 
       unidade:
-        proposta.unidade || 'UNIDADE',
+      proposta.unidade ||
+      'UNIDADE',
 
       descricao:
-        proposta.descricao || '',
+      proposta.descricao ||
+      '',
 
       valor:
-        proposta.valor_unitario || 0
+      proposta.valor_unitario ||
+      0
 
     }];
 
@@ -2230,60 +2573,81 @@ async function abrirPublica(token){
 
 
   $('pItens').innerHTML =
-    listaItens.map(item => `
+  listaItens.map(
+    item => `
 
       <tr>
 
         <td>
-          ${escapar(item.quantidade)}
+          ${escapar(
+            item.quantidade
+          )}
         </td>
 
         <td>
-          ${escapar(item.unidade)}
+          ${escapar(
+            item.unidade
+          )}
         </td>
 
         <td>
-          ${escapar(item.descricao)}
+          ${escapar(
+            item.descricao
+          )}
         </td>
 
         <td>
-          ${item.cortesia
+          ${
+            item.cortesia
             ? 'CORTESIA'
-            : brl(item.valor)}
+            : brl(item.valor)
+          }
         </td>
 
         <td>
-          ${item.cortesia
+          ${
+            item.cortesia
             ? 'CORTESIA'
             : brl(
                 (
-                  Number(item.quantidade) || 0
+                  Number(
+                    item.quantidade
+                  ) || 0
                 ) *
                 (
-                  Number(item.valor) || 0
+                  Number(
+                    item.valor
+                  ) || 0
                 )
-              )}
+              )
+          }
         </td>
 
       </tr>
 
-    `).join('');
+    `
+  ).join('');
 
 
-  if(proposta.status !== 'Pendente'){
-
-    const classe =
-      proposta.status === 'Aprovado'
-        ? 'approved'
-        : 'rejected';
-
+  if(
+    proposta.status &&
+    proposta.status !== 'Pendente'
+  ){
 
     $('pMsg').innerHTML = `
 
-      <p class="status ${classe}">
+      <p
+        class="status
+        ${
+          proposta.status === 'Aprovado'
+          ? 'approved'
+          : 'rejected'
+        }">
 
         Status:
-        ${escapar(proposta.status)}
+        ${escapar(
+          proposta.status
+        )}
 
       </p>
 
@@ -2294,19 +2658,13 @@ async function abrirPublica(token){
 }
 
 
-
-/* =====================================================
-APROVAR / RECUSAR
-===================================================== */
-
 async function decidir(status){
 
   const nome =
-    $('pNome').value.trim();
-
+  $('pNome').value.trim();
 
   const documento =
-    $('pDoc').value.trim();
+  $('pDoc').value.trim();
 
 
   if(!nome){
@@ -2323,103 +2681,85 @@ async function decidir(status){
   const {
     error
   } =
-    await sb.rpc(
-      'decidir_orcamento',
-      {
-
-        p_token:
-          publicToken,
-
-        p_status:
-          status,
-
-        p_responsavel:
-          nome,
-
-        p_documento:
-          documento
-
-      }
-    );
+  await sb.rpc(
+    'decidir_orcamento',
+    {
+      p_token:publicToken,
+      p_status:status,
+      p_responsavel:nome,
+      p_documento:documento
+    }
+  );
 
 
   if(error){
 
     $('pMsg').textContent =
-      error.message;
+    error.message;
 
     return;
 
   }
 
 
-  if(status === 'Aprovado'){
+  $('pMsg').innerHTML = `
 
-    $('pMsg').innerHTML = `
+    <p
+      class="status
+      ${
+        status === 'Aprovado'
+        ? 'approved'
+        : 'rejected'
+      }">
 
-      <p class="status approved">
+      ${
+        status === 'Aprovado'
+        ? '✓ ORÇAMENTO APROVADO COM SUCESSO'
+        : 'ORÇAMENTO RECUSADO'
+      }
 
-        ✓ ORÇAMENTO APROVADO COM SUCESSO
+    </p>
 
-      </p>
-
-    `;
-
-  }
-
-  else{
-
-    $('pMsg').innerHTML = `
-
-      <p class="status rejected">
-
-        ORÇAMENTO RECUSADO
-
-      </p>
-
-    `;
-
-  }
+  `;
 
 }
-
 
 
 function aprovar(){
 
-  decidir('Aprovado');
+  decidir(
+    'Aprovado'
+  );
 
 }
-
 
 
 function recusar(){
 
-  decidir('Recusado');
+  decidir(
+    'Recusado'
+  );
 
 }
 
 
-
-/* =====================================================
-INICIALIZAÇÃO
-===================================================== */
+/* =========================
+   INICIALIZAÇÃO
+========================= */
 
 (async function(){
 
-  const params =
-    new URLSearchParams(
-      location.search
-    );
-
-
   const token =
-    params.get('proposta');
+  new URLSearchParams(
+    location.search
+  ).get('proposta');
 
 
   if(token){
 
-    await abrirPublica(token);
+    await abrirPublica(
+      token
+    );
 
     return;
 
@@ -2429,7 +2769,7 @@ INICIALIZAÇÃO
   const {
     data
   } =
-    await sb.auth.getSession();
+  await sb.auth.getSession();
 
 
   if(data.session){
