@@ -14,7 +14,7 @@ body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   background:#f3f5f7;
-  color:#161616
+  color:#151515
 }
 
 header{
@@ -45,8 +45,8 @@ header h1{
 header small{
   display:block;
   font-size:12px;
-  font-weight:normal;
-  margin-top:4px
+  margin-top:4px;
+  font-weight:normal
 }
 
 .wrap{
@@ -96,7 +96,7 @@ input,textarea,select{
 }
 
 textarea{
-  min-height:90px;
+  min-height:100px;
   resize:vertical
 }
 
@@ -109,16 +109,13 @@ button{
   font-size:14px
 }
 
-button:hover{
-  opacity:.88
-}
+button:hover{opacity:.88}
 
 .yellow{background:#f7c600;color:#000}
 .green{background:#1f9d61;color:#fff}
 .black{background:#111;color:#fff}
 .red{background:#c93636;color:#fff}
 .blue{background:#1769aa;color:#fff}
-.purple{background:#6b46c1;color:#fff}
 
 .actions{
   display:flex;
@@ -127,13 +124,42 @@ button:hover{
   margin-top:15px
 }
 
-.hidden{
-  display:none!important
-}
+.hidden{display:none!important}
 
 .muted{
   color:#68717b;
   font-size:13px
+}
+
+.msg{
+  margin-top:12px;
+  font-weight:bold
+}
+
+.item{
+  border:1px solid #d8dde2;
+  border-radius:10px;
+  padding:15px;
+  margin-bottom:12px;
+  background:#fafbfc
+}
+
+.item-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:12px
+}
+
+.item-title{
+  font-weight:bold;
+  font-size:16px
+}
+
+.item-total{
+  font-weight:900;
+  color:#16894e;
+  font-size:17px
 }
 
 .total-box{
@@ -152,44 +178,12 @@ button:hover{
   font-weight:900
 }
 
-.item{
-  border:1px solid #d8dde2;
-  border-radius:10px;
-  padding:15px;
-  margin-bottom:12px;
-  background:#fafbfc
-}
-
-.item-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:12px;
-  gap:10px
-}
-
-.item-title{
-  font-weight:bold;
-  font-size:16px
-}
-
-.item-total{
-  font-weight:900;
-  color:#16894e;
-  font-size:17px
-}
-
-.checkbox-line{
-  display:flex;
-  align-items:center;
-  gap:8px;
-  margin-top:8px;
-  font-weight:bold
-}
-
-.checkbox-line input{
-  width:auto;
-  margin:0
+.link{
+  background:#f4f6f8;
+  padding:12px;
+  border-radius:8px;
+  word-break:break-all;
+  margin-top:10px
 }
 
 .status{
@@ -211,134 +205,176 @@ button:hover{
 }
 
 .orcamento{
-  padding:13px 0;
+  padding:14px 0;
   border-bottom:1px solid #eee
 }
 
-.login-card{
-  max-width:700px;
-  margin:35px auto
-}
-
-.msg{
-  margin-top:12px;
-  font-weight:bold
-}
-
-.link{
-  background:#f4f6f8;
-  padding:12px;
+.catalog-item{
+  padding:10px;
+  border:1px solid #ddd;
   border-radius:8px;
-  word-break:break-all;
-  margin-top:10px
+  margin-bottom:8px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center
 }
 
-.publico{
+/* PROPOSTA */
+.proposta{
   max-width:900px;
-  margin:30px auto
+  margin:20px auto;
+  background:#fff;
+  padding:35px;
+  box-shadow:0 3px 18px rgba(0,0,0,.12)
 }
 
-.publico-logo{
-  width:230px;
-  max-width:100%;
-  margin-bottom:10px
+.proposta-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  border-bottom:3px solid #111;
+  padding-bottom:18px;
+  margin-bottom:20px
 }
 
-.public-table{
+.proposta-header img{
+  width:190px;
+  max-width:40%
+}
+
+.proposta-numero{
+  text-align:right;
+  font-size:14px
+}
+
+.proposta h1{
+  font-size:25px;
+  margin:10px 0
+}
+
+.dados-box{
+  border:1px solid #ddd;
+  padding:14px;
+  margin:15px 0
+}
+
+.dados-box p{
+  margin:5px 0;
+  font-size:13px
+}
+
+.tabela{
   width:100%;
   border-collapse:collapse;
   margin-top:15px
 }
 
-.public-table th,
-.public-table td{
-  border:1px solid #ddd;
-  padding:9px;
-  text-align:left;
-  font-size:13px
+.tabela th,
+.tabela td{
+  border:1px solid #ccc;
+  padding:8px;
+  font-size:12px
 }
 
-.public-table th{
+.tabela th{
   background:#111;
   color:#fff
 }
 
-.catalogo-box{
-  background:#fffdf0;
-  border:1px solid #eadc88;
-  border-radius:10px;
-  padding:12px;
-  margin-top:12px
+.valor-final{
+  text-align:right;
+  font-size:23px;
+  font-weight:bold;
+  margin-top:15px
 }
 
-.catalogo-lista{
-  margin-top:10px
+.condicoes{
+  white-space:pre-wrap;
+  font-size:12px;
+  line-height:1.55;
+  border:1px solid #ddd;
+  padding:15px;
+  margin-top:15px
 }
 
-.catalogo-item{
-  display:flex;
-  justify-content:space-between;
-  gap:10px;
-  padding:9px 0;
-  border-bottom:1px solid #eee;
-  align-items:center
+.assinaturas{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  margin-top:70px;
+  text-align:center
 }
 
-.catalogo-item:last-child{
-  border-bottom:0
+.linha{
+  border-top:1px solid #111;
+  padding-top:8px;
+  font-size:12px
 }
 
-.catalogo-botoes{
-  display:flex;
-  gap:5px
-}
+@media(max-width:700px){
+  .grid,.grid3{grid-template-columns:1fr}
 
-.mini{
-  padding:6px 9px;
-  font-size:11px
-}
-
-@media(max-width:850px){
-  .grid3{
-    grid-template-columns:1fr 1fr
-  }
-}
-
-@media(max-width:650px){
-  header{
-    padding:10px
-  }
+  header h1{font-size:15px}
 
   header img{
     height:42px;
     max-width:120px
   }
 
-  header h1{
-    font-size:15px
+  .card{padding:14px}
+
+  .proposta{
+    padding:18px;
+    margin:0
   }
 
-  .grid,
-  .grid3{
+  .proposta-header{
+    display:block
+  }
+
+  .proposta-numero{
+    text-align:left;
+    margin-top:12px
+  }
+
+  .assinaturas{
     grid-template-columns:1fr
-  }
-
-  .card{
-    padding:14px
   }
 
   .total-box{
     display:block
   }
+}
 
-  .total{
-    display:block;
-    margin-top:5px
+@media print{
+  body{background:#fff}
+
+  body *{
+    visibility:hidden
   }
 
-  .item-header{
-    align-items:flex-start;
-    flex-direction:column
+  #impressao,
+  #impressao *{
+    visibility:visible
+  }
+
+  #impressao{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%
+  }
+
+  .nao-imprimir{
+    display:none!important
+  }
+
+  .proposta{
+    box-shadow:none;
+    margin:0;
+    max-width:none
   }
 }
 </style>
@@ -347,346 +383,351 @@ button:hover{
 <body>
 
 <header>
+  <img src="logo-almeida.png" alt="Almeida Guindastes">
 
-<img src="logo-almeida.png" alt="Almeida Guindastes">
+  <h1>
+    ALMEIDA ORÇAMENTOS
+    <small>Sistema de propostas comerciais</small>
+  </h1>
 
-<h1>
-ALMEIDA ORÇAMENTOS
-<small>Sistema online de propostas</small>
-</h1>
-
-<button
-id="btnSair"
-class="yellow hidden"
-onclick="sair()">
-Sair
-</button>
-
+  <button id="btnSair" class="yellow hidden" onclick="sair()">SAIR</button>
 </header>
 
 <div class="wrap">
 
 <!-- LOGIN -->
+<section id="login" class="card" style="max-width:700px;margin:35px auto">
 
-<section id="login" class="card login-card">
+  <h2>Acesso da Almeida</h2>
 
-<h2>Acesso da Almeida</h2>
+  <p class="muted">
+    Entre com o e-mail e senha cadastrados no sistema.
+  </p>
 
-<p class="muted">
-Entre com o e-mail e senha cadastrados.
-</p>
+  <div class="grid">
 
-<div class="grid">
+    <label>
+      E-mail
+      <input id="loginEmail" type="email">
+    </label>
 
-<label>
-E-mail
-<input
-id="loginEmail"
-type="email"
-autocomplete="username"
-placeholder="seu@email.com">
-</label>
+    <label>
+      Senha
+      <input id="loginSenha" type="password">
+    </label>
 
-<label>
-Senha
-<input
-id="loginSenha"
-type="password"
-autocomplete="current-password"
-placeholder="Sua senha">
-</label>
+  </div>
 
-</div>
+  <div class="actions">
+    <button class="black" onclick="login()">ENTRAR</button>
+  </div>
 
-<div class="actions">
-
-<button
-class="black"
-onclick="login()">
-Entrar
-</button>
-
-</div>
-
-<div id="loginMsg" class="msg"></div>
+  <div id="loginMsg" class="msg"></div>
 
 </section>
 
 
-<!-- PAINEL -->
-
+<!-- SISTEMA -->
 <section id="painel" class="hidden">
 
-
 <!-- CLIENTE -->
-
 <div class="card">
 
-<h2>Dados da contratante</h2>
+<h2>1. Dados da contratante</h2>
 
 <div class="grid">
 
 <label>
 Empresa contratante
-<input
-id="cliente"
-placeholder="Nome da empresa">
+<input id="cliente" placeholder="Nome da empresa">
 </label>
 
 <label>
 CNPJ / CPF
-<input
-id="cnpj"
-placeholder="CNPJ ou CPF">
+<input id="cnpj" placeholder="CNPJ ou CPF">
 </label>
 
 <label>
 Responsável
-<input
-id="contato"
-placeholder="Nome do responsável">
+<input id="contato" placeholder="Nome do responsável">
 </label>
 
 <label>
 Telefone
-<input
-id="telefone"
-placeholder="Telefone">
+<input id="telefone" placeholder="Telefone">
 </label>
 
 <label>
 E-mail
-<input
-id="email"
-type="email"
-placeholder="E-mail">
+<input id="email" type="email" placeholder="E-mail">
 </label>
 
 <label>
-Endereço da contratante
-<input
-id="endereco"
-placeholder="Endereço">
+Endereço
+<input id="endereco" placeholder="Endereço da contratante">
 </label>
 
 <label>
 Local do serviço
-<input
-id="local"
-placeholder="Local onde o equipamento será utilizado">
+<input id="local" placeholder="Local onde será realizado o serviço">
 </label>
 
 <label>
-Validade do orçamento
-<input
-id="validade"
-type="number"
-value="30"
-min="1">
+Validade da proposta
+<input id="validade" type="number" value="30">
 </label>
 
 <label>
 Forma de pagamento
-<input
-id="formaPagamento"
-value="A COMBINAR"
-placeholder="Ex.: A combinar">
+<input id="formaPagamento" value="A COMBINAR">
 </label>
 
 <label>
 Prazo / período
-<input
-id="periodo"
-placeholder="Ex.: 3 meses">
+<input id="periodo" placeholder="Ex.: 3 meses">
 </label>
 
 </div>
 
 <label style="margin-top:13px">
-
 Observações
-
-<textarea
-id="obs"
-placeholder="Observações adicionais"></textarea>
-
+<textarea id="obs" placeholder="Observações específicas deste orçamento"></textarea>
 </label>
 
 </div>
 
 
 <!-- EQUIPAMENTOS -->
-
 <div class="card">
 
-<div
-style="
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-flex-wrap:wrap">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap">
 
 <div>
-
-<h2 style="margin-bottom:4px">
-Equipamentos e serviços
-</h2>
-
-<div class="muted">
-Agora seus equipamentos ficam cadastrados na nuvem.
+<h2 style="margin-bottom:4px">2. Equipamentos e serviços</h2>
+<div class="muted">Escolha os equipamentos cadastrados ou adicione novos itens.</div>
 </div>
+
+<button class="blue" onclick="adicionarItem()">+ ADICIONAR ITEM</button>
 
 </div>
 
-<div class="actions" style="margin-top:0">
-
-<button
-class="blue"
-onclick="adicionarItem()">
-+ ADICIONAR ITEM
-</button>
-
-<button
-class="purple"
-onclick="cadastrarEquipamento()">
-+ CADASTRAR EQUIPAMENTO
-</button>
-
-</div>
-
-</div>
-
-
-<div class="catalogo-box">
-
-<b>Catálogo de equipamentos</b>
-
-<div class="muted">
-Os equipamentos cadastrados aparecem também em outros aparelhos.
-</div>
-
-<div
-id="catalogoLista"
-class="catalogo-lista">
-
-Carregando catálogo...
-
-</div>
-
-</div>
-
-
-<div
-id="itens"
-style="margin-top:15px">
-</div>
-
+<div id="itens" style="margin-top:15px"></div>
 
 <div class="total-box">
-
-<span>TOTAL:</span>
-
-<span
-id="total"
-class="total">
-R$ 0,00
-</span>
-
+TOTAL:
+<span id="total" class="total">R$ 0,00</span>
 </div>
-
 
 <label>
-
 Desconto geral
-
-<input
-id="desconto"
-type="number"
-min="0"
-step="0.01"
-value="0"
-oninput="calcularTotal()">
-
+<input id="desconto" type="number" min="0" step="0.01" value="0" oninput="calcularTotal()">
 </label>
 
-
 <div class="total-box">
-
-<span>TOTAL COM DESCONTO:</span>
-
-<span
-id="totalFinal"
-class="total">
-R$ 0,00
-</span>
+TOTAL FINAL:
+<span id="totalFinal" class="total">R$ 0,00</span>
+</div>
 
 </div>
 
+
+<!-- CONDIÇÕES -->
+<div class="card">
+
+<h2>3. Condições comerciais</h2>
+
+<p class="muted">
+Estas são as condições padrão da Almeida. Você pode alterar qualquer uma antes de salvar.
+</p>
+
+<label>
+Horário de trabalho
+<input id="condHorario" value="07:00 às 17:00">
+</label>
+
+<br>
+
+<label>
+Prazo mínimo / período
+<input id="condPrazo" value="3 meses">
+</label>
+
+<br>
+
+<label>
+Horas mínimas mensais
+<input id="condHoras" value="200 horas/mês">
+</label>
+
+<br>
+
+<label>
+Combustível
+<select id="condCombustivel">
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+</label>
+
+<br>
+
+<label>
+Transporte
+<select id="condTransporte">
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+</label>
+
+<br>
+
+<label>
+Alimentação
+<select id="condAlimentacao">
+<option>NÃO INCLUSO</option>
+<option>INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+</label>
+
+<br>
+
+<label>
+Hospedagem
+<select id="condHospedagem">
+<option>NÃO INCLUSO</option>
+<option>INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+</label>
+
+<br>
+
+<label>
+Plano de Rigging + ART
+<select id="condRigging">
+<option>CORTESIA</option>
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+</label>
+
+<br>
+
+<label>
+Condições comerciais adicionais
+<textarea id="condicoesAdicionais">• Os serviços serão realizados conforme programação acordada entre as partes.
+• Eventuais horas excedentes serão cobradas conforme valor estabelecido na proposta.
+• O equipamento deverá operar em local adequado e com condições de segurança.
+• A contratante deverá disponibilizar acesso e condições necessárias para execução dos serviços.</textarea>
+</label>
+
+</div>
+
+
+<!-- AÇÕES -->
+<div class="card">
+
+<h2>4. Finalizar proposta</h2>
 
 <div class="actions">
 
-<button
-class="yellow"
-onclick="calcularTotal()">
+<button class="yellow" onclick="calcularTotal()">
 CALCULAR
 </button>
 
-<button
-class="black"
-onclick="salvar()">
+<button class="black" onclick="salvar()">
 SALVAR NA NUVEM
 </button>
 
-<button
-class="green"
-onclick="gerarLink()">
+<button class="green" onclick="gerarLink()">
 GERAR LINK DO CLIENTE
 </button>
 
-</div>
-
-
-<div
-id="linkCard"
-class="hidden"
-style="margin-top:18px">
-
-<b>
-Link da proposta para o cliente:
-</b>
-
-<div
-id="link"
-class="link">
-</div>
-
-<div class="actions">
-
-<button
-class="green"
-onclick="compartilhar()">
-COMPARTILHAR / WHATSAPP
+<button class="blue" onclick="abrirPropostaAtual()">
+VER PROPOSTA / PDF
 </button>
 
 </div>
 
+<div id="linkCard" class="hidden" style="margin-top:18px">
+
+<b>Link da proposta para o cliente:</b>
+
+<div id="link" class="link"></div>
+
+<div class="actions">
+<button class="green" onclick="compartilhar()">
+COMPARTILHAR / WHATSAPP
+</button>
 </div>
 
 </div>
 
+<div id="acaoMsg" class="msg"></div>
 
-<!-- ORÇAMENTOS -->
+</div>
 
+
+<!-- EQUIPAMENTOS CADASTRADOS -->
 <div class="card">
 
-<h2>
-Orçamentos salvos
-</h2>
+<h2>5. Cadastro de equipamentos</h2>
 
-<div id="lista">
-Carregando...
+<p class="muted">
+Os equipamentos ficam salvos na nuvem e podem ser usados nos próximos orçamentos.
+</p>
+
+<div class="grid">
+
+<label>
+Nome do equipamento
+<input id="novoNome" placeholder="Ex.: Guindaste 200 toneladas">
+</label>
+
+<label>
+Unidade
+<select id="novoUnidade">
+<option>HORAS</option>
+<option>UNIDADE</option>
+<option>KM</option>
+<option>DIÁRIA</option>
+<option>MÊS</option>
+</select>
+</label>
+
+<label>
+Valor unitário
+<input id="novoValor" type="number" step="0.01" value="0">
+</label>
+
+<label>
+Descrição
+<input id="novoDescricao" placeholder="Descrição completa do equipamento">
+</label>
+
 </div>
+
+<div class="actions">
+<button class="blue" onclick="cadastrarEquipamento()">
++ CADASTRAR EQUIPAMENTO
+</button>
+</div>
+
+<div id="catalogo"></div>
+
+</div>
+
+
+<!-- HISTÓRICO -->
+<div class="card">
+
+<h2>6. Orçamentos salvos</h2>
+
+<div id="lista">Carregando...</div>
 
 </div>
 
@@ -694,90 +735,96 @@ Carregando...
 
 
 <!-- PROPOSTA PÚBLICA -->
-
 <section id="publico" class="hidden">
 
-<div class="card publico">
+<div id="impressao" class="proposta">
 
-<img
-src="logo-almeida.png"
-class="publico-logo"
-alt="Almeida Guindastes">
+<div class="proposta-header">
 
-<h2>
-PROPOSTA COMERCIAL
-</h2>
+<img src="logo-almeida.png" alt="Almeida Guindastes">
 
-<p>
-Nº:
-<b id="pNumero"></b>
-</p>
+<div class="proposta-numero">
+<b>PROPOSTA COMERCIAL</b><br>
+Nº <span id="pNumero"></span><br>
+Validade: <span id="pValidade"></span> dias
+</div>
 
-<p>
-<b>Empresa:</b>
-<span id="pCliente"></span>
-</p>
+</div>
 
-<p>
-<b>CNPJ/CPF:</b>
-<span id="pCnpj"></span>
-</p>
+<h1>PROPOSTA COMERCIAL</h1>
 
-<p>
-<b>Responsável:</b>
-<span id="pContato"></span>
-</p>
+<div class="dados-box">
 
-<p>
-<b>Local do serviço:</b>
-<span id="pLocal"></span>
-</p>
+<p><b>CONTRATANTE:</b> <span id="pCliente"></span></p>
+<p><b>CNPJ / CPF:</b> <span id="pCnpj"></span></p>
+<p><b>RESPONSÁVEL:</b> <span id="pContato"></span></p>
+<p><b>TELEFONE:</b> <span id="pTelefone"></span></p>
+<p><b>E-MAIL:</b> <span id="pEmail"></span></p>
+<p><b>ENDEREÇO:</b> <span id="pEndereco"></span></p>
+<p><b>LOCAL DO SERVIÇO:</b> <span id="pLocal"></span></p>
 
-<h3>
-Equipamentos / Serviços
-</h3>
+</div>
 
-<div style="overflow-x:auto">
+<h3>EQUIPAMENTOS E SERVIÇOS</h3>
 
-<table class="public-table">
+<table class="tabela">
 
 <thead>
-
 <tr>
 <th>Qtd.</th>
 <th>Un.</th>
 <th>Descrição</th>
-<th>Valor</th>
+<th>Valor unit.</th>
 <th>Total</th>
 </tr>
-
 </thead>
 
 <tbody id="pItens"></tbody>
 
 </table>
 
+<div class="valor-final">
+TOTAL: <span id="pTotal"></span>
 </div>
 
-<div class="total-box">
+<div id="pDescontoBox"></div>
 
-TOTAL:
+<h3>CONDIÇÕES COMERCIAIS</h3>
 
-<span
-id="pTotal"
-class="total">
-</span>
+<div class="condicoes" id="pCondicoes"></div>
+
+<div class="dados-box">
+
+<p><b>FORMA DE PAGAMENTO:</b> <span id="pPagamento"></span></p>
+<p><b>PRAZO / PERÍODO:</b> <span id="pPeriodo"></span></p>
+<p><b>OBSERVAÇÕES:</b> <span id="pObs"></span></p>
 
 </div>
 
-<hr>
+<div class="assinaturas">
 
-<h3>
-Aprovação do cliente
-</h3>
+<div>
+<div class="linha">
+ALMEIDA LOCAÇÃO DE GUINDASTES LTDA
+</div>
+</div>
+
+<div>
+<div class="linha">
+CONTRATANTE / RESPONSÁVEL
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="card nao-imprimir">
+
+<h2>Decisão do cliente</h2>
 
 <p class="muted">
-Para registrar a decisão, informe o responsável.
+Informe os dados do responsável para registrar a decisão.
 </p>
 
 <div class="grid">
@@ -796,24 +843,21 @@ CPF / CNPJ
 
 <div class="actions">
 
-<button
-class="green"
-onclick="aprovar()">
+<button class="green" onclick="aprovar()">
 ✓ APROVAR ORÇAMENTO
 </button>
 
-<button
-class="red"
-onclick="recusar()">
+<button class="red" onclick="recusar()">
 ✕ RECUSAR
+</button>
+
+<button class="black" onclick="window.print()">
+🖨️ IMPRIMIR / SALVAR PDF
 </button>
 
 </div>
 
-<div
-id="pMsg"
-class="msg">
-</div>
+<div id="pMsg" class="msg"></div>
 
 </div>
 
@@ -823,10 +867,6 @@ class="msg">
 
 
 <script>
-
-/* =====================================================
-   SUPABASE
-===================================================== */
 
 const SUPABASE_URL =
 'https://tkzwxveskwgfvvfalmcb.supabase.co';
@@ -840,1474 +880,764 @@ SUPABASE_URL,
 SUPABASE_KEY
 );
 
+const $ = id => document.getElementById(id);
 
-/* =====================================================
-   FUNÇÕES BÁSICAS
-===================================================== */
+let itens=[];
+let itemId=0;
+let equipamentos=[];
 
-const $ =
-id => document.getElementById(id);
 
+/* =========================
+UTILITÁRIOS
+========================= */
 
 function brl(v){
-
 return new Intl.NumberFormat(
 'pt-BR',
-{
-style:'currency',
-currency:'BRL'
-}
+{style:'currency',currency:'BRL'}
 ).format(Number(v)||0);
-
 }
 
-
-function escapar(t){
-
-return String(t??'')
+function escapar(v){
+return String(v ?? '')
 .replaceAll('&','&amp;')
 .replaceAll('<','&lt;')
 .replaceAll('>','&gt;')
 .replaceAll('"','&quot;')
 .replaceAll("'","&#039;");
-
 }
 
 
-/* =====================================================
-   EQUIPAMENTOS PADRÃO
-===================================================== */
+/* =========================
+LOGIN
+========================= */
 
-const equipamentosPadrao=[
+async function login(){
 
-{
-id:'padrao-160',
-nome:'Guindaste 160 toneladas',
-descricao:
-'GUINDASTE 160 TONELADAS COM LANÇA TELESCÓPICA DE 77,5 METROS E LANÇA AUXILIAR (JIB) DE 33,5 METROS (ANO/MODELO: 2025)',
-unidade:'HORAS',
-valor:700,
-cortesia:false
-},
+$('loginMsg').textContent='Entrando...';
 
-{
-id:'padrao-110',
-nome:'Guindaste 110 toneladas',
-descricao:
-'GUINDASTE 110 TONELADAS COM LANÇA TELESCÓPICA DE 60 METROS E LANÇA AUXILIAR (JIB) DE 27 METROS (ANO: 2024/2025)',
-unidade:'HORAS',
-valor:600,
-cortesia:false
-},
-
-{
-id:'padrao-70',
-nome:'Guindaste 70 toneladas',
-descricao:
-'GUINDASTE 70 TONELADAS COM LANÇA TELESCÓPICA DE 46,5 METROS E LANÇA AUXILIAR (JIB) DE 16 METROS',
-unidade:'HORAS',
-valor:450,
-cortesia:false
-},
-
-{
-id:'padrao-munck45',
-nome:'Caminhão Munck 45 toneladas',
-descricao:
-'CAMINHÃO MUNCK 45 TONELADAS COM LANÇA DE 21 METROS E CAPACIDADE MÁXIMA DE IÇAMENTO DE 10.900 KG',
-unidade:'HORAS',
-valor:300,
-cortesia:false
-},
-
-{
-id:'padrao-mob',
-nome:'Mobilização',
-descricao:
-'MOBILIZAÇÃO DO EQUIPAMENTO',
-unidade:'UNIDADE',
-valor:0,
-cortesia:false
-},
-
-{
-id:'padrao-desmob',
-nome:'Desmobilização',
-descricao:
-'DESMOBILIZAÇÃO DO EQUIPAMENTO',
-unidade:'UNIDADE',
-valor:0,
-cortesia:false
-},
-
-{
-id:'padrao-rigging',
-nome:'Plano de Rigging + ART',
-descricao:
-'PLANO DE RIGGING + ART',
-unidade:'UNIDADE',
-valor:0,
-cortesia:true
-}
-
-];
-
-
-/* =====================================================
-   CATÁLOGO CLOUD
-===================================================== */
-
-let equipamentosCloud=[];
-
-
-async function carregarEquipamentos(){
-
-const {
-data,
-error
-} =
-await sb
-.from('equipamentos')
-.select('*')
-.eq('ativo',true)
-.order('created_at',{ascending:true});
-
-
-if(error){
-
-console.error(error);
-
-equipamentosCloud=[];
-
-}else{
-
-equipamentosCloud =
-data || [];
-
-}
-
-
-renderCatalogo();
-
-renderItens();
-
-}
-
-
-function obterEquipamentos(){
-
-const cloud =
-equipamentosCloud.map(x => ({
-
-id:x.id,
-
-nome:x.nome,
-
-descricao:x.descricao,
-
-unidade:x.unidade,
-
-valor:Number(x.valor)||0,
-
-cortesia:!!x.cortesia
-
-}));
-
-
-return [
-
-...equipamentosPadrao,
-
-...cloud
-
-];
-
-}
-
-
-function renderCatalogo(){
-
-const lista =
-obterEquipamentos();
-
-
-if(!lista.length){
-
-$('catalogoLista').innerHTML =
-'<span class="muted">Nenhum equipamento cadastrado.</span>';
-
-return;
-
-}
-
-
-$('catalogoLista').innerHTML =
-lista.map(x=>`
-
-<div class="catalogo-item">
-
-<div>
-
-<b>
-${escapar(x.nome)}
-</b>
-
-<br>
-
-<span class="muted">
-
-${brl(x.valor)}
-/
-${escapar(x.unidade)}
-
-${x.cortesia
-?' — CORTESIA'
-:''}
-
-</span>
-
-</div>
-
-<div>
-
-${
-String(x.id).startsWith('padrao-')
-
-? '<span class="muted">Padrão</span>'
-
-: `
-
-<button
-class="red mini"
-onclick="excluirEquipamento('${escapar(x.id)}')">
-
-Excluir
-
-</button>
-
-`
-}
-
-</div>
-
-</div>
-
-`).join('');
-
-}
-
-
-/* =====================================================
-   CADASTRAR EQUIPAMENTO NA NUVEM
-===================================================== */
-
-async function cadastrarEquipamento(){
-
-const {
-data:userData
-} =
-await sb.auth.getUser();
-
-
-if(!userData.user){
-
-alert('Faça login primeiro.');
-
-return;
-
-}
-
-
-const nome =
-prompt(
-'Nome do equipamento/serviço:'
-);
-
-
-if(
-!nome ||
-!nome.trim()
-)
-return;
-
-
-const descricao =
-prompt(
-'Descrição completa que aparecerá no orçamento:',
-nome.trim()
-);
-
-
-if(descricao===null)
-return;
-
-
-const valorTexto =
-prompt(
-'Valor unitário padrão:',
-'0'
-);
-
-
-if(valorTexto===null)
-return;
-
-
-const unidade =
-prompt(
-'Unidade:',
-'HORAS'
-);
-
-
-if(unidade===null)
-return;
-
-
-const valor =
-Number(
-String(valorTexto)
-.replace(',','.')
-) || 0;
-
-
-const {
-error
-} =
-await sb
-.from('equipamentos')
-.insert({
-
-user_id:
-userData.user.id,
-
-nome:
-nome.trim(),
-
-descricao:
-descricao.trim(),
-
-unidade:
-unidade.trim()
-.toUpperCase() ||
-'UNIDADE',
-
-valor:
-
-valor,
-
-cortesia:false,
-
-ativo:true
-
+const {error}=await sb.auth.signInWithPassword({
+email:$('loginEmail').value.trim(),
+password:$('loginSenha').value
 });
 
-
 if(error){
-
-alert(
-'Erro ao cadastrar:\n\n' +
-error.message
-);
-
+$('loginMsg').textContent='Erro: '+error.message;
 return;
-
 }
 
+iniciarSistema();
+}
 
-alert(
-'Equipamento cadastrado com sucesso!'
-);
+async function sair(){
+await sb.auth.signOut();
+location.reload();
+}
 
+async function iniciarSistema(){
+
+const {data:{session}}=await sb.auth.getSession();
+
+if(!session){
+$('login').classList.remove('hidden');
+$('painel').classList.add('hidden');
+$('btnSair').classList.add('hidden');
+return;
+}
+
+$('login').classList.add('hidden');
+$('painel').classList.remove('hidden');
+$('btnSair').classList.remove('hidden');
+
+if(itens.length===0)
+adicionarItem();
 
 await carregarEquipamentos();
-
+await carregarLista();
 }
 
 
-/* =====================================================
-   EXCLUIR EQUIPAMENTO CLOUD
-===================================================== */
+/* =========================
+ITENS
+========================= */
 
-async function excluirEquipamento(id){
-
-if(
-!confirm(
-'Deseja excluir este equipamento?'
-)
-)
-return;
-
-
-const {
-error
-} =
-await sb
-.from('equipamentos')
-.delete()
-.eq('id',id);
-
-
-if(error){
-
-alert(
-'Erro ao excluir:\n\n' +
-error.message
-);
-
-return;
-
-}
-
-
-await carregarEquipamentos();
-
-}
-
-
-/* =====================================================
-   ITENS DO ORÇAMENTO
-===================================================== */
-
-let itens=[];
-
-let itemId=0;
-
-
-function adicionarItem(dados={}){
+function adicionarItem(d={}){
 
 itemId++;
 
-
 itens.push({
-
 id:itemId,
-
-equipamento:
-dados.equipamento ?? '',
-
-quantidade:
-dados.quantidade ?? 1,
-
-unidade:
-dados.unidade ?? 'UNIDADE',
-
-descricao:
-dados.descricao ?? '',
-
-valor:
-dados.valor ?? 0,
-
-combustivel:
-dados.combustivel ??
-'NÃO INCLUSO',
-
-alimentacao:
-dados.alimentacao ??
-'NÃO INCLUSO',
-
-hospedagem:
-dados.hospedagem ??
-'NÃO INCLUSO',
-
-transporte:
-dados.transporte ??
-'NÃO INCLUSO',
-
-cortesia:
-dados.cortesia ??
-false
-
+equipamento:d.equipamento||'',
+quantidade:Number(d.quantidade??1),
+unidade:d.unidade||'UNIDADE',
+descricao:d.descricao||'',
+valor:Number(d.valor??0),
+cortesia:!!d.cortesia
 });
 
-
 renderItens();
-
 calcularTotal();
-
 }
-
 
 function removerItem(id){
 
-itens =
-itens.filter(
-x=>x.id!==id
-);
+itens=itens.filter(x=>x.id!==id);
 
 renderItens();
+calcularTotal();
+}
+
+function atualizarItem(id,campo,valor){
+
+const i=itens.find(x=>x.id===id);
+if(!i)return;
+
+if(campo==='quantidade'||campo==='valor')
+i[campo]=Number(valor)||0;
+else if(campo==='cortesia')
+i[campo]=valor==='true'||valor===true;
+else
+i[campo]=valor;
 
 calcularTotal();
-
 }
 
+function selecionarEquipamento(id,equipamentoId){
 
-function atualizarItem(
-id,
-campo,
-valor
-){
+const eq=equipamentos.find(x=>x.id===equipamentoId);
 
-const item =
-itens.find(
-x=>x.id===id
-);
+if(!eq)return;
 
+id=Number(id);
 
-if(!item)
-return;
+const item=itens.find(x=>x.id===id);
 
+if(!item)return;
 
-if(
-campo==='quantidade' ||
-campo==='valor'
-){
-
-item[campo]=
-Number(valor)||0;
-
-}else{
-
-item[campo]=valor;
-
-}
-
-
-calcularTotal();
-
-}
-
-
-function selecionarEquipamento(
-equipamentoId,
-itemIdAtual
-){
-
-const equipamento =
-obterEquipamentos()
-.find(
-x=>String(x.id)===String(equipamentoId)
-);
-
-
-const item =
-itens.find(
-x=>x.id===Number(itemIdAtual)
-);
-
-
-if(
-!equipamento ||
-!item
-)
-return;
-
-
-item.equipamento =
-equipamento.id;
-
-item.descricao =
-equipamento.descricao;
-
-item.unidade =
-equipamento.unidade;
-
-item.valor =
-equipamento.valor;
-
-item.cortesia =
-!!equipamento.cortesia;
-
+item.equipamento=eq.id;
+item.unidade=eq.unidade;
+item.descricao=eq.descricao;
+item.valor=Number(eq.valor)||0;
+item.cortesia=!!eq.cortesia;
 
 renderItens();
-
 calcularTotal();
-
 }
 
+function totalItem(i){
 
-function totalItem(item){
+if(i.cortesia)return 0;
 
-if(item.cortesia)
-return 0;
-
-
-return
-(
-Number(item.quantidade)||0
-) *
-(
-Number(item.valor)||0
-);
-
+return (Number(i.quantidade)||0)*
+(Number(i.valor)||0);
 }
-
-
-function opcoesUnidade(atual){
-
-return [
-
-'UNIDADE',
-'HORAS',
-'H',
-'KM',
-'DIÁRIA',
-'MÊS',
-'SERVIÇO'
-
-].map(x=>`
-
-<option
-value="${escapar(x)}"
-${x===atual?'selected':''}>
-
-${escapar(x)}
-
-</option>
-
-`).join('');
-
-}
-
-
-function opcoesSimNao(atual){
-
-return [
-
-'NÃO INCLUSO',
-'INCLUSO',
-'A CALCULAR'
-
-].map(x=>`
-
-<option
-value="${escapar(x)}"
-${x===atual?'selected':''}>
-
-${escapar(x)}
-
-</option>
-
-`).join('');
-
-}
-
-
-function opcoesEquipamento(atual){
-
-return `
-
-<option value="">
--- Selecionar equipamento --
-</option>
-
-`+
-
-obterEquipamentos()
-.map(x=>`
-
-<option
-value="${escapar(x.id)}"
-${String(x.id)===String(atual)?'selected':''}>
-
-${escapar(x.nome)}
-
-</option>
-
-`)
-.join('');
-
-}
-
 
 function renderItens(){
 
-const container =
-$('itens');
-
+const c=$('itens');
 
 if(!itens.length){
-
-container.innerHTML=`
-
-<div
-class="muted"
-style="
-padding:20px;
-text-align:center;
-border:1px dashed #bbb;
-border-radius:8px">
-
-Nenhum item adicionado.
-
-Clique em
-<b>+ ADICIONAR ITEM</b>.
-
-</div>
-
-`;
-
+c.innerHTML='<div class="muted">Nenhum item adicionado.</div>';
 return;
-
 }
 
-
-container.innerHTML =
-itens.map(item=>`
+c.innerHTML=itens.map(i=>`
 
 <div class="item">
 
 <div class="item-header">
 
 <div class="item-title">
+Item ${i.id}
+</div>
 
-Item ${item.id}
+<div class="item-total">
+${brl(totalItem(i))}
+</div>
 
 </div>
 
-<div>
+<div class="grid">
 
-<span
-class="item-total"
-id="itemTotal${item.id}">
+<label>
+Equipamento cadastrado
+<select
+onchange="selecionarEquipamento(${i.id},this.value)"
+>
 
-${brl(totalItem(item))}
+<option value="">Selecione...</option>
 
-</span>
+${equipamentos.map(e=>`
+<option
+value="${e.id}"
+${i.equipamento===e.id?'selected':''}
+>
+${escapar(e.nome)}
+</option>
+`).join('')}
 
-<button
-class="red"
-style="margin-left:8px"
-onclick="removerItem(${item.id})">
+</select>
+</label>
 
-Remover
+<label>
+Quantidade
+<input
+type="number"
+min="0"
+step="0.01"
+value="${i.quantidade}"
+oninput="atualizarItem(${i.id},'quantidade',this.value)"
+>
+</label>
 
+<label>
+Unidade
+<select
+onchange="atualizarItem(${i.id},'unidade',this.value)"
+>
+
+${['HORAS','UNIDADE','KM','DIÁRIA','MÊS'].map(u=>`
+<option ${i.unidade===u?'selected':''}>${u}</option>
+`).join('')}
+
+</select>
+</label>
+
+<label>
+Valor unitário
+<input
+type="number"
+min="0"
+step="0.01"
+value="${i.valor}"
+oninput="atualizarItem(${i.id},'valor',this.value)"
+>
+</label>
+
+</div>
+
+<label style="margin-top:12px">
+Descrição
+<textarea
+oninput="atualizarItem(${i.id},'descricao',this.value)"
+>${escapar(i.descricao)}</textarea>
+</label>
+
+<label class="checkbox-line">
+
+<input
+type="checkbox"
+${i.cortesia?'checked':''}
+onchange="atualizarItem(${i.id},'cortesia',this.checked)"
+>
+
+ITEM DE CORTESIA / SEM CUSTO
+
+</label>
+
+<div class="actions">
+
+<button class="red"
+onclick="removerItem(${i.id})">
+REMOVER ITEM
 </button>
 
 </div>
 
 </div>
 
+`).join('');
+}
 
-<label>
 
-Equipamento / serviço cadastrado
+/* =========================
+CÁLCULO
+========================= */
 
-<select
-onchange="
-selecionarEquipamento(
-this.value,
-${item.id}
-)">
+function calcularTotal(){
 
-${opcoesEquipamento(
-item.equipamento
-)}
-
-</select>
-
-</label>
-
-
-<div
-class="grid3"
-style="margin-top:12px">
-
-<label>
-
-Quantidade
-
-<input
-type="number"
-min="0"
-step="0.01"
-value="${item.quantidade}"
-oninput="
-atualizarItem(
-${item.id},
-'quantidade',
-this.value
-)">
-
-</label>
-
-
-<label>
-
-Unidade
-
-<select
-onchange="
-atualizarItem(
-${item.id},
-'unidade',
-this.value
-)">
-
-${opcoesUnidade(
-item.unidade
-)}
-
-</select>
-
-</label>
-
-
-<label>
-
-Preço unitário
-
-<input
-type="number"
-min="0"
-step="0.01"
-value="${item.valor}"
-oninput="
-atualizarItem(
-${item.id},
-'valor',
-this.value
-)">
-
-</label>
-
-</div>
-
-
-<label style="margin-top:12px">
-
-Descrição / Equipamento
-
-<textarea
-oninput="
-atualizarItem(
-${item.id},
-'descricao',
-this.value
-)">${escapar(item.descricao)}</textarea>
-
-</label>
-
-
-<div
-class="grid3"
-style="margin-top:12px">
-
-<label>
-
-Combustível
-
-<select
-onchange="
-atualizarItem(
-${item.id},
-'combustivel',
-this.value
-)">
-
-${opcoesSimNao(
-item.combustivel
-)}
-
-</select>
-
-</label>
-
-
-<label>
-
-Alimentação
-
-<select
-onchange="
-atualizarItem(
-${item.id},
-'alimentacao',
-this.value
-)">
-
-${opcoesSimNao(
-item.alimentacao
-)}
-
-</select>
-
-</label>
-
-
-<label>
-
-Hospedagem
-
-<select
-onchange="
-atualizarItem(
-${item.id},
-'hospedagem',
-this.value
-)">
-
-${opcoesSimNao(
-item.hospedagem
-)}
-
-</select>
-
-</label>
-
-</div>
-
-
-<div
-class="grid3"
-style="margin-top:12px">
-
-<label>
-
-Transporte
-
-<select
-onchange="
-atualizarItem(
-${item.id},
-'transporte',
-this.value
-)">
-
-${opcoesSimNao(
-item.transporte
-)}
-
-</select>
-
-</label>
-
-
-<label>
-
-Cortesia
-
-<span class="checkbox-line">
-
-<input
-type="checkbox"
-${item.cortesia?'checked':''}
-onchange="
-atualizarItem(
-${item.id},
-'cortesia',
-this.checked
+const bruto=itens.reduce(
+(s,i)=>s+totalItem(i),0
 );
-renderItens()">
 
-Item sem custo
+const desconto=Math.max(
+0,
+Number($('desconto').value)||0
+);
 
+const final=Math.max(
+0,
+bruto-desconto
+);
+
+$('total').textContent=brl(bruto);
+$('totalFinal').textContent=brl(final);
+
+return {bruto,desconto,final};
+}
+
+
+/* =========================
+EQUIPAMENTOS
+========================= */
+
+async function carregarEquipamentos(){
+
+const {data,error}=await sb
+.from('equipamentos')
+.select('*')
+.eq('ativo',true)
+.order('created_at',{ascending:true});
+
+if(error){
+console.error(error);
+return;
+}
+
+equipamentos=data||[];
+
+renderItens();
+renderCatalogo();
+}
+
+async function cadastrarEquipamento(){
+
+const nome=$('novoNome').value.trim();
+
+if(!nome){
+alert('Informe o nome do equipamento.');
+return;
+}
+
+const {data:{user}}=
+await sb.auth.getUser();
+
+const payload={
+user_id:user.id,
+nome,
+descricao:$('novoDescricao').value.trim(),
+unidade:$('novoUnidade').value,
+valor:Number($('novoValor').value)||0,
+cortesia:false,
+ativo:true
+};
+
+const {error}=await sb
+.from('equipamentos')
+.insert(payload);
+
+if(error){
+alert('Erro ao cadastrar: '+error.message);
+return;
+}
+
+$('novoNome').value='';
+$('novoDescricao').value='';
+$('novoValor').value='0';
+
+await carregarEquipamentos();
+
+alert('Equipamento cadastrado com sucesso.');
+}
+
+async function excluirEquipamento(id){
+
+if(!confirm('Excluir este equipamento do cadastro?'))
+return;
+
+const {error}=await sb
+.from('equipamentos')
+.delete()
+.eq('id',id);
+
+if(error){
+alert('Erro: '+error.message);
+return;
+}
+
+await carregarEquipamentos();
+}
+
+function renderCatalogo(){
+
+const c=$('catalogo');
+
+if(!equipamentos.length){
+c.innerHTML='<p class="muted">Nenhum equipamento cadastrado.</p>';
+return;
+}
+
+c.innerHTML=equipamentos.map(e=>`
+
+<div class="catalog-item">
+
+<div>
+<b>${escapar(e.nome)}</b><br>
+<span class="muted">
+${escapar(e.unidade)} —
+${brl(e.valor)}
+</span>
+</div>
+
+<button class="red"
+onclick="excluirEquipamento('${e.id}')">
+EXCLUIR
+</button>
+
+</div>
+
+`).join('');
+}
+
+
+/* =========================
+CONDIÇÕES
+========================= */
+
+function obterCondicoes(){
+
+return `
+HORÁRIO DE TRABALHO:
+${$('condHorario').value}
+
+PRAZO MÍNIMO / PERÍODO:
+${$('condPrazo').value}
+
+HORAS MÍNIMAS:
+${$('condHoras').value}
+
+COMBUSTÍVEL:
+${$('condCombustivel').value}
+
+TRANSPORTE:
+${$('condTransporte').value}
+
+ALIMENTAÇÃO:
+${$('condAlimentacao').value}
+
+HOSPEDAGEM:
+${$('condHospedagem').value}
+
+PLANO DE RIGGING + ART:
+${$('condRigging').value}
+
+CONDIÇÕES ADICIONAIS:
+${$('condicoesAdicionais').value}
+`;
+}
+
+
+/* =========================
+MONTAR ORÇAMENTO
+========================= */
+
+function montarOrcamento(){
+
+const calc=calcularTotal();
+
+return {
+
+cliente:$('cliente').value.trim(),
+cnpj:$('cnpj').value.trim(),
+contato:$('contato').value.trim(),
+telefone:$('telefone').value.trim(),
+email:$('email').value.trim(),
+endereco:$('endereco').value.trim(),
+local:$('local').value.trim(),
+
+validade:Number($('validade').value)||30,
+formaPagamento:$('formaPagamento').value,
+periodo:$('periodo').value,
+obs:$('obs').value,
+
+desconto:calc.desconto,
+total:calc.final,
+
+itens:itens.map(i=>({
+equipamento:i.equipamento,
+quantidade:i.quantidade,
+unidade:i.unidade,
+descricao:i.descricao,
+valor:i.valor,
+cortesia:i.cortesia
+})),
+
+condicoes:{
+horario:$('condHorario').value,
+prazo:$('condPrazo').value,
+horas:$('condHoras').value,
+combustivel:$('condCombustivel').value,
+transporte:$('condTransporte').value,
+alimentacao:$('condAlimentacao').value,
+hospedagem:$('condHospedagem').value,
+rigging:$('condRigging').value,
+adicionais:$('condicoesAdicionais').value
+}
+
+};
+}
+
+
+/* =========================
+SALVAR
+========================= */
+
+async function salvar(){
+
+const {data:{user}}=
+await sb.auth.getUser();
+
+if(!user){
+alert('Faça login novamente.');
+return;
+}
+
+const q=montarOrcamento();
+
+if(!q.cliente){
+alert('Informe a empresa contratante.');
+return;
+}
+
+const tentativa={
+user_id:user.id,
+cliente:q.cliente,
+cnpj:q.cnpj,
+contato:q.contato,
+telefone:q.telefone,
+email:q.email,
+endereco:q.endereco,
+local:q.local,
+validade:q.validade,
+forma_pagamento:q.formaPagamento,
+periodo:q.periodo,
+obs:q.obs,
+desconto:q.desconto,
+total:q.total,
+itens:q.itens,
+condicoes:JSON.stringify(q.condicoes)
+};
+
+let resultado=
+await sb
+.from('orcamentos')
+.insert(tentativa)
+.select('numero')
+.single();
+
+/* compatibilidade com banco antigo */
+if(resultado.error && /itens/i.test(resultado.error.message)){
+
+delete tentativa.itens;
+
+resultado=
+await sb
+.from('orcamentos')
+.insert(tentativa)
+.select('numero')
+.single();
+}
+
+if(resultado.error){
+
+alert('Erro ao salvar: '+resultado.error.message);
+return;
+}
+
+$('acaoMsg').textContent=
+'Orçamento '+resultado.data.numero+' salvo com sucesso.';
+
+await carregarLista();
+
+return resultado.data.numero;
+}
+
+
+/* =========================
+HISTÓRICO
+========================= */
+
+async function carregarLista(){
+
+const {data,error}=await sb
+.from('orcamentos')
+.select('*')
+.order('created_at',{ascending:false})
+.limit(30);
+
+if(error){
+$('lista').textContent='Erro ao carregar.';
+return;
+}
+
+if(!data?.length){
+$('lista').innerHTML=
+'<p class="muted">Nenhum orçamento salvo.</p>';
+return;
+}
+
+$('lista').innerHTML=data.map(o=>`
+
+<div class="orcamento">
+
+<b>Orçamento Nº ${escapar(o.numero)}</b>
+
+<br>
+
+${escapar(o.cliente||'')}
+
+<br>
+
+<span class="muted">
+${brl(o.total)}
 </span>
 
-</label>
+<div class="actions">
 
-<div></div>
+<button class="blue"
+onclick="abrirSalvo('${o.id}')">
+ABRIR
+</button>
 
 </div>
 
 </div>
 
 `).join('');
-
 }
 
-
-function calcularTotal(){
-
-let total =
-itens.reduce(
-(s,x)=>s+totalItem(x),
-0
-);
-
-
-const desconto =
-Number(
-$('desconto').value
-)||0;
-
-
-const totalFinal =
-Math.max(
-0,
-total-desconto
-);
-
-
-$('total').textContent =
-brl(total);
-
-
-$('totalFinal').textContent =
-brl(totalFinal);
-
-
-itens.forEach(x=>{
-
-const el =
-$('itemTotal'+x.id);
-
-if(el){
-
-el.textContent =
-brl(totalItem(x));
-
-}
-
-});
-
-
-return {
-
-total,
-desconto,
-totalFinal
-
-};
-
-}
-
-
-/* =====================================================
-   FORMULÁRIO
-===================================================== */
-
-function form(){
-
-const calculo =
-calcularTotal();
-
-
-return {
-
-cliente:
-$('cliente').value.trim(),
-
-cnpj:
-$('cnpj').value.trim(),
-
-contato:
-$('contato').value.trim(),
-
-telefone:
-$('telefone').value.trim(),
-
-email:
-$('email').value.trim(),
-
-endereco_cliente:
-$('endereco').value.trim(),
-
-local_servico:
-$('local').value.trim(),
-
-forma_pagamento:
-$('formaPagamento').value.trim(),
-
-descricao:
-itens
-.map(x=>x.descricao)
-.filter(Boolean)
-.join(' | '),
-
-unidade:
-'DIVERSOS',
-
-quantidade:
-itens.length,
-
-valor_unitario:
-0,
-
-desconto:
-calculo.desconto,
-
-total:
-calculo.totalFinal,
-
-validade:
-Number(
-$('validade').value
-)||30,
-
-observacoes:
-$('obs').value.trim(),
-
-itens:
-itens.map(x=>({...x})),
-
-periodo:
-$('periodo').value.trim()
-
-};
-
-}
-
-
-/* =====================================================
-   LOGIN
-===================================================== */
-
-async function login(){
-
-const email =
-$('loginEmail').value.trim();
-
-const senha =
-$('loginSenha').value;
-
-
-if(!email || !senha){
-
-$('loginMsg').textContent =
-'Informe o e-mail e a senha.';
-
-return;
-
-}
-
-
-$('loginMsg').textContent =
-'Entrando...';
-
-
-const {
-error
-} =
-await sb.auth.signInWithPassword({
-
-email,
-password:senha
-
-});
-
+async function abrirSalvo(id){
+
+const {data,error}=await sb
+.from('orcamentos')
+.select('*')
+.eq('id',id)
+.single();
 
 if(error){
-
-$('loginMsg').textContent =
-'Erro: '+
-error.message;
-
+alert(error.message);
 return;
+}
+
+preencherFormulario(data);
+
+window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function preencherFormulario(o){
+
+$('cliente').value=o.cliente||'';
+$('cnpj').value=o.cnpj||'';
+$('contato').value=o.contato||'';
+$('telefone').value=o.telefone||'';
+$('email').value=o.email||'';
+$('endereco').value=o.endereco||'';
+$('local').value=o.local||'';
+$('validade').value=o.validade||30;
+$('formaPagamento').value=o.forma_pagamento||'';
+$('periodo').value=o.periodo||'';
+$('obs').value=o.obs||'';
+$('desconto').value=o.desconto||0;
+
+if(o.condicoes){
+
+try{
+
+const c=
+typeof o.condicoes==='string'
+?JSON.parse(o.condicoes)
+:o.condicoes;
+
+$('condHorario').value=c.horario||'07:00 às 17:00';
+$('condPrazo').value=c.prazo||'3 meses';
+$('condHoras').value=c.horas||'200 horas/mês';
+$('condCombustivel').value=c.combustivel||'INCLUSO';
+$('condTransporte').value=c.transporte||'INCLUSO';
+$('condAlimentacao').value=c.alimentacao||'NÃO INCLUSO';
+$('condHospedagem').value=c.hospedagem||'NÃO INCLUSO';
+$('condRigging').value=c.rigging||'CORTESIA';
+$('condicoesAdicionais').value=c.adicionais||'';
+
+}catch(e){}
+}
+
+itens=[];
+
+let lista=[];
+
+if(Array.isArray(o.itens))
+lista=o.itens;
+
+if(!lista.length && o.descricao){
+
+lista=[{
+quantidade:o.quantidade||1,
+unidade:o.unidade||'UNIDADE',
+descricao:o.descricao,
+valor:o.valor||0,
+cortesia:o.cortesia||false
+}];
 
 }
 
+lista.forEach(x=>adicionarItem(x));
 
-$('loginMsg').textContent='';
-
-await showPainel();
-
-}
-
-
-async function sair(){
-
-await sb.auth.signOut();
-
-location.reload();
-
-}
-
-
-async function showPainel(){
-
-$('login')
-.classList
-.add('hidden');
-
-$('painel')
-.classList
-.remove('hidden');
-
-$('btnSair')
-.classList
-.remove('hidden');
-
-
-await carregarEquipamentos();
-
-
-if(!itens.length)
+if(!lista.length)
 adicionarItem();
 
-
-await listar();
-
+calcularTotal();
 }
 
 
-/* =====================================================
-   SALVAR ORÇAMENTO
-===================================================== */
-
-async function inserirOrcamento(q){
-
-let tentativa={
-...q
-};
-
-
-let res =
-await sb
-.from('orcamentos')
-.insert(tentativa)
-.select(
-'numero,public_token'
-)
-.single();
-
-
-if(
-res.error &&
-/itens/i.test(
-res.error.message
-)
-){
-
-delete tentativa.itens;
-
-
-res =
-await sb
-.from('orcamentos')
-.insert(tentativa)
-.select(
-'numero,public_token'
-)
-.single();
-
-}
-
-
-return res;
-
-}
-
-
-async function salvar(){
-
-const q =
-form();
-
-
-if(!q.cliente){
-
-alert(
-'Informe a empresa contratante.'
-);
-
-return;
-
-}
-
-
-if(!itens.length){
-
-alert(
-'Adicione pelo menos um item.'
-);
-
-return;
-
-}
-
-
-const {
-data:userData
-} =
-await sb.auth.getUser();
-
-
-if(!userData.user){
-
-alert('Faça login.');
-
-return;
-
-}
-
-
-q.user_id =
-userData.user.id;
-
-q.public_token =
-crypto.randomUUID();
-
-
-const {
-data,
-error
-} =
-await inserirOrcamento(q);
-
-
-if(error){
-
-alert(
-'Erro ao salvar:\n\n'+
-error.message
-);
-
-return;
-
-}
-
-
-alert(
-'Orçamento salvo na nuvem.\n\nNº '+
-data.numero
-);
-
-
-await listar();
-
-}
-
-
-/* =====================================================
-   GERAR LINK
-===================================================== */
+/* =========================
+LINK PÚBLICO
+========================= */
 
 async function gerarLink(){
 
-const q =
-form();
+const numero=await salvar();
 
+if(!numero)return;
 
-if(!q.cliente){
+const {data,error}=await sb
+.from('orcamentos')
+.select('token')
+.eq('numero',numero)
+.single();
 
-alert(
-'Informe a empresa contratante.'
-);
+if(error || !data?.token){
 
+alert('Orçamento salvo, mas não foi possível gerar o link.');
 return;
-
 }
 
-
-if(!itens.length){
-
-alert(
-'Adicione pelo menos um item.'
-);
-
-return;
-
-}
-
-
-const {
-data:userData
-} =
-await sb.auth.getUser();
-
-
-if(!userData.user){
-
-alert('Faça login.');
-
-return;
-
-}
-
-
-q.user_id =
-userData.user.id;
-
-q.public_token =
-crypto.randomUUID();
-
-
-const {
-data,
-error
-} =
-await inserirOrcamento(q);
-
-
-if(error){
-
-alert(
-'Erro ao gerar link:\n\n'+
-error.message
-);
-
-return;
-
-}
-
-
-const url =
+const url=
 location.origin+
 location.pathname+
 '?proposta='+
-data.public_token;
+data.token;
 
+$('linkCard').classList.remove('hidden');
+$('link').textContent=url;
 
-$('link').textContent =
-url;
-
-
-$('linkCard')
-.classList
-.remove('hidden');
-
-
-alert(
-'Proposta Nº '+
-data.numero+
-' criada.'
-);
-
-
-await listar();
-
+$('linkCard').scrollIntoView({
+behavior:'smooth'
+});
 }
-
-
-/* =====================================================
-   COMPARTILHAR
-===================================================== */
 
 function compartilhar(){
 
-const url =
-$('link').textContent;
+const url=$('link').textContent;
 
-
-if(!url){
-
-alert(
-'Gere primeiro o link.'
-);
-
-return;
-
-}
-
-
-const texto =
-'Olá! Segue a proposta comercial da Almeida Guindastes:\n\n'+
-url;
-
+const texto=
+`Olá! Segue a proposta comercial da Almeida Guindastes:\n\n${url}`;
 
 if(navigator.share){
 
 navigator.share({
-
-title:
-'Proposta Almeida Guindastes',
-
-text:
-texto,
-
+title:'Proposta Comercial Almeida',
+text:texto,
 url
-
 });
 
 }else{
@@ -2319,443 +1649,259 @@ encodeURIComponent(texto),
 );
 
 }
-
 }
 
 
-/* =====================================================
-   LISTAGEM
-===================================================== */
+/* =========================
+PROPOSTA
+========================= */
 
-async function listar(){
+function preencherProposta(o){
 
-const {
-data,
-error
-} =
-await sb
-.from('orcamentos')
-.select('*')
-.order(
-'created_at',
-{ascending:false}
-);
+$('pNumero').textContent=o.numero||'';
+$('pValidade').textContent=o.validade||30;
 
+$('pCliente').textContent=o.cliente||'';
+$('pCnpj').textContent=o.cnpj||'';
+$('pContato').textContent=o.contato||'';
+$('pTelefone').textContent=o.telefone||'';
+$('pEmail').textContent=o.email||'';
+$('pEndereco').textContent=o.endereco||'';
+$('pLocal').textContent=o.local||'';
 
-if(error){
+$('pPagamento').textContent=o.forma_pagamento||'';
+$('pPeriodo').textContent=o.periodo||'';
+$('pObs').textContent=o.obs||'';
 
-$('lista').textContent =
-error.message;
+let lista=o.itens||[];
 
-return;
-
+if(typeof lista==='string'){
+try{lista=JSON.parse(lista)}catch(e){lista=[]}
 }
 
-
-if(
-!data ||
-!data.length
-){
-
-$('lista').textContent =
-'Nenhum orçamento cadastrado.';
-
-return;
-
-}
-
-
-$('lista').innerHTML =
-data.map(q=>{
-
-const classe =
-q.status==='Aprovado'
-?'approved'
-:q.status==='Recusado'
-?'rejected'
-:'';
-
-
-return `
-
-<div class="orcamento">
-
-<b>
-Nº ${escapar(q.numero)}
-</b>
-
-—
-
-${escapar(
-q.cliente||
-'Sem cliente'
-)}
-
-—
-
-${brl(q.total)}
-
-&nbsp;
-
-<span
-class="status ${classe}">
-
-${escapar(
-q.status||
-'Pendente'
-)}
-
-</span>
-
-</div>
-
-`;
-
-}).join('');
-
-}
-
-
-/* =====================================================
-   PROPOSTA PÚBLICA
-===================================================== */
-
-let publicToken=null;
-
-
-async function abrirPublica(token){
-
-publicToken=token;
-
-
-$('login')
-.classList
-.add('hidden');
-
-$('painel')
-.classList
-.add('hidden');
-
-$('btnSair')
-.classList
-.add('hidden');
-
-$('publico')
-.classList
-.remove('hidden');
-
-
-const {
-data,
-error
-} =
-await sb.rpc(
-'ver_orcamento_publico',
-{
-p_token:token
-}
-);
-
-
-if(error){
-
-$('pMsg').textContent =
-'Proposta não encontrada ou link inválido.';
-
-return;
-
-}
-
-
-const proposta =
-Array.isArray(data)
-?data[0]
-:data;
-
-
-if(!proposta){
-
-$('pMsg').textContent =
-'Proposta não encontrada ou link inválido.';
-
-return;
-
-}
-
-
-$('pNumero').textContent =
-proposta.numero||'';
-
-$('pCliente').textContent =
-proposta.cliente||'';
-
-$('pCnpj').textContent =
-proposta.cnpj||'';
-
-$('pContato').textContent =
-proposta.contato||'';
-
-$('pLocal').textContent =
-proposta.local_servico||'';
-
-$('pTotal').textContent =
-brl(proposta.total);
-
-
-let listaItens=[];
-
-
-try{
-
-if(Array.isArray(proposta.itens)){
-
-listaItens =
-proposta.itens;
-
-}
-
-else if(
-typeof proposta.itens==='string'
-){
-
-listaItens =
-JSON.parse(
-proposta.itens
-);
-
-}
-
-}catch(e){
-
-listaItens=[];
-
-}
-
-
-if(!listaItens.length){
-
-listaItens=[{
-
-quantidade:
-proposta.quantidade||1,
-
-unidade:
-proposta.unidade||
-'UNIDADE',
-
-descricao:
-proposta.descricao||
-'',
-
-valor:
-proposta.valor_unitario||
-0
-
+if(!lista.length && o.descricao){
+
+lista=[{
+quantidade:o.quantidade||1,
+unidade:o.unidade||'UNIDADE',
+descricao:o.descricao,
+valor:o.valor||0,
+cortesia:o.cortesia||false
 }];
 
 }
 
+$('pItens').innerHTML=lista.map(i=>{
 
-$('pItens').innerHTML =
-listaItens.map(item=>`
+const total=
+i.cortesia
+?0
+:(Number(i.quantidade)||0)*
+(Number(i.valor)||0);
 
+return `
 <tr>
-
-<td>
-${escapar(item.quantidade)}
-</td>
-
-<td>
-${escapar(item.unidade)}
-</td>
-
-<td>
-${escapar(item.descricao)}
-</td>
-
-<td>
-${
-item.cortesia
-?'CORTESIA'
-:brl(item.valor)
-}
-</td>
-
-<td>
-${
-item.cortesia
-?'CORTESIA'
-:brl(
-(
-Number(item.quantidade)||0
-)*
-(
-Number(item.valor)||0
-)
-)
-}
-</td>
-
+<td>${escapar(i.quantidade)}</td>
+<td>${escapar(i.unidade)}</td>
+<td>${escapar(i.descricao)}</td>
+<td>${brl(i.valor)}</td>
+<td>${brl(total)}</td>
 </tr>
-
-`).join('');
-
-
-if(
-proposta.status &&
-proposta.status!=='Pendente'
-){
-
-$('pMsg').innerHTML=`
-
-<p
-class="status
-${
-proposta.status==='Aprovado'
-?'approved'
-:'rejected'
-}">
-
-Status:
-${escapar(
-proposta.status
-)}
-
-</p>
-
 `;
 
+}).join('');
+
+$('pTotal').textContent=brl(o.total);
+
+if(Number(o.desconto)>0){
+
+$('pDescontoBox').innerHTML=
+`<p style="text-align:right"><b>Desconto:</b> ${brl(o.desconto)}</p>`;
+
+}else{
+
+$('pDescontoBox').innerHTML='';
 }
 
+let c=o.condicoes||{};
+
+if(typeof c==='string'){
+try{c=JSON.parse(c)}catch(e){c={}}
+}
+
+$('pCondicoes').textContent=`
+
+HORÁRIO DE TRABALHO:
+${c.horario||''}
+
+PRAZO MÍNIMO / PERÍODO:
+${c.prazo||''}
+
+HORAS MÍNIMAS:
+${c.horas||''}
+
+COMBUSTÍVEL:
+${c.combustivel||''}
+
+TRANSPORTE:
+${c.transporte||''}
+
+ALIMENTAÇÃO:
+${c.alimentacao||''}
+
+HOSPEDAGEM:
+${c.hospedagem||''}
+
+PLANO DE RIGGING + ART:
+${c.rigging||''}
+
+CONDIÇÕES ADICIONAIS:
+${c.adicionais||''}
+`;
+
+$('painel').classList.add('hidden');
+$('login').classList.add('hidden');
+$('publico').classList.remove('hidden');
+$('btnSair').classList.add('hidden');
+
+window.scrollTo(0,0);
 }
 
 
-/* =====================================================
-   APROVAÇÃO
-===================================================== */
+/* =========================
+PROPOSTA ATUAL
+========================= */
 
-async function decidir(status){
+async function abrirPropostaAtual(){
 
-const nome =
-$('pNome').value.trim();
+const numero=await salvar();
 
-const documento =
-$('pDoc').value.trim();
+if(!numero)return;
 
-
-if(!nome){
-
-alert(
-'Informe o nome do responsável.'
-);
-
-return;
-
-}
-
-
-const {
-error
-} =
-await sb.rpc(
-'decidir_orcamento',
-{
-
-p_token:
-publicToken,
-
-p_status:
-status,
-
-p_responsavel:
-nome,
-
-p_documento:
-documento
-
-}
-);
-
+const {data,error}=await sb
+.from('orcamentos')
+.select('*')
+.eq('numero',numero)
+.single();
 
 if(error){
-
-$('pMsg').textContent =
-error.message;
-
+alert(error.message);
 return;
+}
 
+preencherProposta(data);
 }
 
 
-$('pMsg').innerHTML=`
+/* =========================
+APROVAÇÃO
+========================= */
 
-<p
-class="status
-${
-status==='Aprovado'
-?'approved'
-:'rejected'
-}">
+async function decidir(decisao){
 
-${
-status==='Aprovado'
-?'✓ ORÇAMENTO APROVADO COM SUCESSO'
-:'ORÇAMENTO RECUSADO'
+const token=
+new URLSearchParams(location.search)
+.get('proposta');
+
+if(!token){
+alert('Proposta não identificada.');
+return;
 }
 
-</p>
+const nome=$('pNome').value.trim();
+const doc=$('pDoc').value.trim();
 
-`;
-
+if(!nome){
+alert('Informe o nome do responsável.');
+return;
 }
 
+const {error}=await sb.rpc(
+'decidir_orcamento',
+{
+p_token:token,
+p_decisao:decisao,
+p_nome:nome,
+p_documento:doc
+});
+
+if(error){
+$('pMsg').textContent=
+'Erro: '+error.message;
+return;
+}
+
+$('pMsg').textContent=
+decisao==='APROVADO'
+?'✓ Orçamento aprovado com sucesso!'
+:'Orçamento recusado.';
+
+$('pMsg').className=
+'msg '+
+(decisao==='APROVADO'
+?'status approved'
+:'status rejected');
+}
 
 function aprovar(){
-
-decidir('Aprovado');
-
+decidir('APROVADO');
 }
-
 
 function recusar(){
-
-decidir('Recusado');
-
+decidir('RECUSADO');
 }
 
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
+/* =========================
+ABRIR PROPOSTA POR TOKEN
+========================= */
+
+async function abrirPublica(){
+
+const token=
+new URLSearchParams(location.search)
+.get('proposta');
+
+if(!token)return;
+
+const {data,error}=await sb.rpc(
+'ver_orcamento_publico',
+{
+p_token:token
+});
+
+if(error || !data){
+
+document.body.innerHTML=
+'<div style="padding:40px;font-family:Arial"><h2>Proposta não encontrada.</h2></div>';
+
+return;
+}
+
+const o=
+Array.isArray(data)
+?data[0]
+:data;
+
+preencherProposta(o);
+}
+
+
+/* =========================
+INÍCIO
+========================= */
 
 (async function(){
 
-const token =
-new URLSearchParams(
-location.search
-).get('proposta');
+await abrirPublica();
 
+const token=
+new URLSearchParams(location.search)
+.get('proposta');
 
-if(token){
+if(token)return;
 
-await abrirPublica(token);
-
-return;
-
-}
-
-
-const {
-data
-} =
-await sb.auth.getSession();
-
-
-if(data.session){
-
-await showPainel();
-
-}
+await iniciarSistema();
 
 })();
 
