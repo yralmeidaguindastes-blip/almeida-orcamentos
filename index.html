@@ -392,7 +392,212 @@ button:hover{
   padding-top:8px;
   font-size:12px;
 }
+/* ==========================================
+   MELHORIA VISUAL DA PROPOSTA ALMEIDA
+========================================== */
 
+.proposta{
+  max-width:900px;
+  margin:25px auto;
+  background:#fff;
+  padding:42px;
+  box-shadow:0 5px 25px rgba(0,0,0,.14);
+  border-radius:10px;
+  color:#1b1b1b;
+}
+
+.proposta-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:30px;
+  border-bottom:4px solid #111;
+  padding-bottom:22px;
+  margin-bottom:28px;
+}
+
+.proposta-header img{
+  width:220px;
+  max-width:45%;
+  height:auto;
+  object-fit:contain;
+}
+
+.proposta-numero{
+  text-align:right;
+  font-size:12px;
+  line-height:1.7;
+}
+
+.proposta-numero b{
+  font-size:18px;
+}
+
+.proposta h1{
+  font-size:28px;
+  margin:18px 0 25px;
+  letter-spacing:.3px;
+}
+
+.proposta h3{
+  margin-top:30px;
+  margin-bottom:12px;
+  font-size:15px;
+  border-left:5px solid #111;
+  padding-left:10px;
+}
+
+.dados-box{
+  border:1px solid #d5d5d5;
+  border-radius:8px;
+  padding:18px;
+  margin:18px 0;
+  background:#fafafa;
+}
+
+.dados-box p{
+  margin:7px 0;
+  font-size:12px;
+  line-height:1.5;
+}
+
+.tabela{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:14px;
+}
+
+.tabela th{
+  background:#111;
+  color:#fff;
+  border:1px solid #111;
+  padding:11px 8px;
+  font-size:10px;
+  text-transform:uppercase;
+}
+
+.tabela td{
+  border:1px solid #d0d0d0;
+  padding:11px 8px;
+  font-size:11px;
+  vertical-align:top;
+}
+
+.tabela td:nth-child(1),
+.tabela td:nth-child(2){
+  text-align:center;
+}
+
+.tabela td:nth-child(4),
+.tabela td:nth-child(5){
+  text-align:right;
+  white-space:nowrap;
+}
+
+.valor-final{
+  margin-top:20px;
+  padding:18px;
+  background:#f3f3f3;
+  border:2px solid #111;
+  border-radius:8px;
+  text-align:right;
+  font-size:14px;
+  font-weight:bold;
+}
+
+.valor-final span{
+  font-size:26px;
+  margin-left:12px;
+}
+
+.condicoes{
+  white-space:pre-wrap;
+  font-size:11px;
+  line-height:1.7;
+  border:1px solid #d5d5d5;
+  border-radius:8px;
+  padding:20px;
+  margin-top:14px;
+  background:#fafafa;
+}
+
+.assinaturas{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  margin-top:90px;
+  text-align:center;
+}
+
+.linha{
+  border-top:1px solid #222;
+  padding-top:10px;
+  font-size:11px;
+  font-weight:bold;
+}
+
+.proposta::after{
+  content:
+  "ALMEIDA LOCAÇÃO DE GUINDASTES LTDA  •  CNPJ 40.489.197/0001-99  •  (63) 99979-4010 / (63) 99200-6262";
+  display:block;
+  border-top:1px solid #ddd;
+  margin-top:50px;
+  padding-top:14px;
+  text-align:center;
+  font-size:9px;
+  color:#666;
+  line-height:1.5;
+}
+
+/* Visualização no celular */
+
+@media(max-width:700px){
+
+  .proposta{
+    margin:0;
+    padding:18px;
+    border-radius:0;
+    box-shadow:none;
+  }
+
+  .proposta-header{
+    display:block;
+  }
+
+  .proposta-header img{
+    width:180px;
+    max-width:70%;
+    margin-bottom:18px;
+  }
+
+  .proposta-numero{
+    text-align:left;
+  }
+
+  .proposta h1{
+    font-size:22px;
+  }
+
+  .tabela th,
+  .tabela td{
+    padding:7px 5px;
+    font-size:9px;
+  }
+
+  .valor-final{
+    text-align:right;
+  }
+
+  .valor-final span{
+    font-size:21px;
+  }
+
+  .assinaturas{
+    grid-template-columns:1fr;
+    gap:60px;
+  }
+
+}
 @media(max-width:700px){
 
   .grid,
