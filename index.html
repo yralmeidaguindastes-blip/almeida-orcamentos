@@ -3042,6 +3042,110 @@ async function salvar(){
   const q =
     montarOrcamento();
 
+  /* SALVAR / ATUALIZAR CLIENTE */
+
+const documento =
+  normalizarDocumento(
+    q.cnpj
+  );
+
+
+if(documento){
+
+  const clienteExistente =
+    clientesCloud.find(
+      c =>
+        normalizarDocumento(
+          c.cnpj
+        ) === documento
+    );
+
+
+  const dadosCliente = {
+
+    user_id:user.id,
+
+    cliente:q.cliente,
+
+    cnpj:q.cnpj,
+
+    contato:q.contato,
+
+    telefone:q.telefone,
+
+    email:q.email,
+
+    endereco:q.endereco,
+
+    updated_at:
+      new Date().toISOString()
+
+  };
+
+
+  if(clienteExistente){
+
+    const {
+      error:
+      erroCliente
+    } =
+      await sb
+        .from('clientes')
+        .update(
+          dadosCliente
+        )
+        .eq(
+          'id',
+          clienteExistente.id
+        );
+
+
+    if(erroCliente){
+
+      console.error(
+        'Erro ao atualizar cliente:',
+        erroCliente
+      );
+
+    }
+
+  }
+  else{
+
+    const {
+      data:
+      novoCliente,
+      error:
+      erroCliente
+    } =
+      await sb
+        .from('clientes')
+        .insert(
+          dadosCliente
+        )
+        .select('*')
+        .single();
+
+
+    if(erroCliente){
+
+      console.error(
+        'Erro ao cadastrar cliente:',
+        erroCliente
+      );
+
+    }
+    else if(novoCliente){
+
+      clientesCloud.push(
+        novoCliente
+      );
+
+    }
+
+  }
+
+}
 
   if(!q.cliente){
 
