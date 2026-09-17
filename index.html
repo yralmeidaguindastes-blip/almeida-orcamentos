@@ -1749,7 +1749,240 @@ function obterEquipamentos(){
 
 }
 
+/* ==================================================
+CLIENTES
+================================================== */
 
+function normalizarDocumento(valor){
+
+  return String(valor || '')
+    .replace(/\D/g,'');
+
+}
+
+
+async function carregarClientes(){
+
+  const {
+    data,
+    error
+  } = await sb
+    .from('clientes')
+    .select('*')
+    .order(
+      'cliente',
+      {
+        ascending:true
+      }
+    );
+
+  if(error){
+
+    console.error(
+      'Erro ao carregar clientes:',
+      error
+    );
+
+    clientesCloud=[];
+
+    return;
+
+  }
+
+  clientesCloud =
+    data || [];
+
+  prepararBuscaClientes();
+
+}
+
+
+function prepararBuscaClientes(){
+
+  const campo =
+    $('cliente');
+
+  const cnpj =
+    $('cnpj');
+
+
+  if(!campo || !cnpj){
+
+    return;
+
+  }
+
+
+  campo.setAttribute(
+    'list',
+    'listaClientes'
+  );
+
+
+  let lista =
+    $('listaClientes');
+
+
+  if(!lista){
+
+    lista =
+      document.createElement(
+        'datalist'
+      );
+
+    lista.id =
+      'listaClientes';
+
+    document.body.appendChild(
+      lista
+    );
+
+  }
+
+
+  lista.innerHTML =
+    clientesCloud
+      .map(c=>`
+        <option
+          value="${escapar(c.cliente)}"
+        >
+          ${escapar(c.cnpj)}
+        </option>
+      `)
+      .join('');
+
+
+  campo.oninput =
+    function(){
+
+      preencherClientePorNome(
+        this.value
+      );
+
+    };
+
+
+  cnpj.oninput =
+    function(){
+
+      preencherClientePorCnpj(
+        this.value
+      );
+
+    };
+
+}
+
+
+function preencherClientePorNome(
+  nome
+){
+
+  const busca =
+    String(nome || '')
+      .trim()
+      .toLowerCase();
+
+
+  if(!busca){
+
+    return;
+
+  }
+
+
+  const cliente =
+    clientesCloud.find(
+      c =>
+        String(c.cliente || '')
+          .trim()
+          .toLowerCase()
+        ===
+        busca
+    );
+
+
+  if(!cliente){
+
+    return;
+
+  }
+
+
+  preencherDadosCliente(
+    cliente
+  );
+
+}
+
+
+function preencherClientePorCnpj(
+  documento
+){
+
+  const busca =
+    normalizarDocumento(
+      documento
+    );
+
+
+  if(!busca){
+
+    return;
+
+  }
+
+
+  const cliente =
+    clientesCloud.find(
+      c =>
+        normalizarDocumento(
+          c.cnpj
+        ) === busca
+    );
+
+
+  if(!cliente){
+
+    return;
+
+  }
+
+
+  preencherDadosCliente(
+    cliente
+  );
+
+}
+
+
+function preencherDadosCliente(
+  cliente
+){
+
+  $('cliente').value =
+    cliente.cliente || '';
+
+  $('cnpj').value =
+    cliente.cnpj || '';
+
+  $('contato').value =
+    cliente.contato || '';
+
+  $('telefone').value =
+    cliente.telefone || '';
+
+  $('email').value =
+    cliente.email || '';
+
+  $('endereco').value =
+    cliente.endereco || '';
+
+
+  $('acaoMsg').textContent =
+    'Cliente encontrado e cadastro preenchido.';
+
+}
 
 /* ==================================================
 LOGIN
