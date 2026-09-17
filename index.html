@@ -2648,6 +2648,14 @@ async function iniciarSistema(){
 
   await carregarEquipamentos();
 
+await carregarCidadesBrasil();
+
+prepararBuscaCidade();
+
+prepararValoresTransporte();
+
+await carregarClientes();
+
   await carregarClientes();
 
   if(itens.length===0){
