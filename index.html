@@ -1775,6 +1775,562 @@ function obterEquipamentos(){
 
 }
 
+
+
+  /* ==================================================
+CIDADES DO BRASIL + DISTÂNCIA
+================================================== */
+
+let cidadesBrasil = [];
+let cidadeSelecionada = null;
+let distanciaServicoKm = 0;
+
+
+/* CARREGAR MUNICÍPIOS DO BRASIL */
+
+async function carregarCidadesBrasil(){
+
+  const lista = $('listaCidadesBrasil');
+
+  if(!lista){
+    return;
+  }
+
+  try{
+
+    const resposta =
+      await fetch(
+        'https://servicodados.ibge.gov.br/api/v1/localidades/municipios'
+      );
+
+    if(!resposta.ok){
+      throw new Error('Não foi possível carregar as cidades.');
+    }
+
+    const dados =
+      await resposta.json();
+
+    cidadesBrasil =
+      dados.map(c=>({
+
+        nome:c.nome,
+
+        uf:
+          c?.microrregiao
+            ?.mesorregiao
+            ?.UF
+            ?.sigla || ''
+
+      }))
+      .filter(c=>c.uf)
+      .sort(
+        (a,b)=>
+          a.nome.localeCompare(
+            b.nome,
+            'pt-BR'
+          )
+      );
+
+
+    lista.innerHTML =
+      cidadesBrasil
+        .map(c=>`
+          <option
+            value="${escapar(c.nome + ' - ' + c.uf)}"
+          ></option>
+        `)
+        .join('');
+
+
+    console.log(
+      'Cidades carregadas:',
+      cidadesBrasil.length
+    );
+
+  }
+  catch(error){
+
+    console.error(
+      'Erro ao carregar cidades:',
+      error
+    );
+
+  }
+
+}
+
+
+/* PREPARAR CAMPO DE CIDADE */
+
+function prepararBuscaCidade(){
+
+  const campo =
+    $('local');
+
+  if(!campo){
+    return;
+  }
+
+  campo.onchange =
+    calcularDistanciaServico;
+
+  campo.onblur =
+    calcularDistanciaServico;
+
+}
+
+
+/* LOCALIZAR COORDENADAS DA CIDADE */
+
+async function geocodificarCidade(
+  nomeCidade,
+  uf
+){
+
+  const consulta =
+    `${nomeCidade}, ${uf}, Brasil`;
+
+  const url =
+    'https://nominatim.openstreetmap.org/search?' +
+    new URLSearchParams({
+
+      q:consulta,
+
+      format:'jsonv2',
+
+      limit:'1',
+
+      countrycodes:'br'
+
+    });
+
+
+  const resposta =
+    await fetch(url);
+
+  if(!resposta.ok){
+
+    throw new Error(
+      'Erro ao localizar a cidade.'
+    );
+
+  }
+
+  const dados =
+    await resposta.json();
+
+
+  if(!dados.length){
+
+    throw new Error(
+      'Não foi possível localizar esta cidade.'
+    );
+
+  }
+
+
+  return {
+
+    lat:Number(
+      dados[0].lat
+    ),
+
+    lon:Number(
+      dados[0].lon
+    )
+
+  };
+
+}
+
+
+/* CALCULAR DISTÂNCIA PALMAS → DESTINO */
+
+async function calcularDistanciaServico(){
+
+  const campo =
+    $('local');
+
+  const caixa =
+    $('calculoDistancia');
+
+  if(!campo || !caixa){
+    return;
+  }
+
+
+  const valor =
+    campo.value.trim();
+
+
+  if(!valor){
+
+    caixa.style.display='none';
+
+    cidadeSelecionada=null;
+
+    distanciaServicoKm=0;
+
+    return;
+
+  }
+
+
+  const partes =
+    valor.split(' - ');
+
+  if(partes.length < 2){
+
+    caixa.style.display='block';
+
+    $('cidadeDestinoTexto').textContent =
+      'Digite e selecione uma cidade da lista.';
+
+    $('distanciaTexto').textContent='';
+
+    return;
+
+  }
+
+
+  const nomeCidade =
+    partes.slice(0,-1).join(' - ').trim();
+
+  const uf =
+    partes[partes.length-1]
+      .trim()
+      .toUpperCase();
+
+
+  const cidade =
+    cidadesBrasil.find(
+      c =>
+        c.nome.toLowerCase() ===
+          nomeCidade.toLowerCase()
+        &&
+        c.uf === uf
+    );
+
+
+  if(!cidade){
+
+    caixa.style.display='block';
+
+    $('cidadeDestinoTexto').textContent =
+      'Selecione uma cidade da lista de sugestões.';
+
+    $('distanciaTexto').textContent='';
+
+    return;
+
+  }
+
+
+  caixa.style.display='block';
+
+  $('cidadeDestinoTexto').textContent =
+    `Destino: ${cidade.nome} - ${cidade.uf}`;
+
+  $('distanciaTexto').textContent =
+    'Calculando distância rodoviária...';
+
+
+  try{
+
+    cidadeSelecionada =
+      cidade;
+
+
+    /* PALMAS - TO */
+
+    const origem =
+      await geocodificarCidade(
+        'Palmas',
+        'TO'
+      );
+
+
+    /* CIDADE DO SERVIÇO */
+
+    const destino =
+      await geocodificarCidade(
+        cidade.nome,
+        cidade.uf
+      );
+
+
+    const rotaUrl =
+      'https://router.project-osrm.org/route/v1/driving/' +
+      `${origem.lon},${origem.lat};` +
+      `${destino.lon},${destino.lat}` +
+      '?overview=false';
+
+
+    const resposta =
+      await fetch(rotaUrl);
+
+
+    if(!resposta.ok){
+
+      throw new Error(
+        'Erro ao calcular a rota.'
+      );
+
+    }
+
+
+    const dados =
+      await resposta.json();
+
+
+    if(
+      dados.code !== 'Ok' ||
+      !dados.routes ||
+      !dados.routes.length
+    ){
+
+      throw new Error(
+        'Não foi encontrada uma rota.'
+      );
+
+    }
+
+
+    distanciaServicoKm =
+      Math.ceil(
+        dados.routes[0].distance / 1000
+      );
+
+
+    $('distanciaTexto').textContent =
+      `Distância rodoviária: ${distanciaServicoKm} km`;
+
+
+    atualizarValoresTransporte();
+
+
+  }
+  catch(error){
+
+    console.error(error);
+
+    distanciaServicoKm=0;
+
+    $('distanciaTexto').textContent =
+      'Não foi possível calcular a distância.';
+
+
+  }
+
+}
+
+
+/* ATUALIZAR VALORES DE MOBILIZAÇÃO */
+
+function atualizarValoresTransporte(){
+
+  const distancia =
+    Number(distanciaServicoKm)||0;
+
+
+  const valorMob =
+    Number(
+      $('valorMobilizacaoKm')?.value
+    )||0;
+
+
+  const valorDesmob =
+    Number(
+      $('valorDesmobilizacaoKm')?.value
+    )||0;
+
+
+  if(!distancia){
+
+    $('resumoMobilizacao').textContent='';
+
+    return;
+
+  }
+
+
+  const totalMob =
+    distancia * valorMob;
+
+
+  const totalDesmob =
+    distancia * valorDesmob;
+
+
+  $('resumoMobilizacao').innerHTML =
+    `Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>` +
+    `Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
+
+
+  aplicarValoresTransporte(
+    distancia,
+    valorMob,
+    valorDesmob
+  );
+
+}
+
+
+/* COLOCAR MOBILIZAÇÃO E DESMOBILIZAÇÃO NO ORÇAMENTO */
+
+function aplicarValoresTransporte(
+  distancia,
+  valorMob,
+  valorDesmob
+){
+
+  if(!distancia){
+    return;
+  }
+
+
+  let mobilizacao =
+    itens.find(
+      i =>
+        i.equipamento ===
+        'padrao-mob'
+    );
+
+
+  let desmobilizacao =
+    itens.find(
+      i =>
+        i.equipamento ===
+        'padrao-desmob'
+    );
+
+
+  if(!mobilizacao){
+
+    adicionarItem({
+
+      equipamento:'padrao-mob',
+
+      quantidade:distancia,
+
+      unidade:'KM',
+
+      descricao:
+        `Mobilização do equipamento de Palmas - TO até ${$('local').value}`,
+
+      valor:valorMob,
+
+      cortesia:false
+
+    });
+
+    mobilizacao =
+      itens.find(
+        i =>
+          i.equipamento ===
+          'padrao-mob'
+      );
+
+  }
+
+
+  if(!desmobilizacao){
+
+    adicionarItem({
+
+      equipamento:'padrao-desmob',
+
+      quantidade:distancia,
+
+      unidade:'KM',
+
+      descricao:
+        `Desmobilização do equipamento de ${$('local').value} até Palmas - TO`,
+
+      valor:valorDesmob,
+
+      cortesia:false
+
+    });
+
+    desmobilizacao =
+      itens.find(
+        i =>
+          i.equipamento ===
+          'padrao-desmob'
+      );
+
+  }
+
+
+  if(mobilizacao){
+
+    mobilizacao.quantidade =
+      distancia;
+
+    mobilizacao.unidade =
+      'KM';
+
+    mobilizacao.valor =
+      valorMob;
+
+    mobilizacao.descricao =
+      `Mobilização do equipamento de Palmas - TO até ${$('local').value}`;
+
+  }
+
+
+  if(desmobilizacao){
+
+    desmobilizacao.quantidade =
+      distancia;
+
+    desmobilizacao.unidade =
+      'KM';
+
+    desmobilizacao.valor =
+      valorDesmob;
+
+    desmobilizacao.descricao =
+      `Desmobilização do equipamento de ${$('local').value} até Palmas - TO`;
+
+  }
+
+
+  renderItens();
+
+  calcularTotal();
+
+}
+
+
+/* ATUALIZAR AUTOMATICAMENTE QUANDO MUDAR O VALOR/KM */
+
+function prepararValoresTransporte(){
+
+  const mob =
+    $('valorMobilizacaoKm');
+
+  const desmob =
+    $('valorDesmobilizacaoKm');
+
+
+  if(mob){
+
+    mob.oninput =
+      atualizarValoresTransporte;
+
+  }
+
+
+  if(desmob){
+
+    desmob.oninput =
+      atualizarValoresTransporte;
+
+  }
+
+}
 /* ==================================================
 CLIENTES
 ================================================== */
