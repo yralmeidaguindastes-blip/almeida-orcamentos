@@ -1987,22 +1987,14 @@ async function calcularDistanciaServico(){
   }
 
 
-  const nomeCidade =
-    partes.slice(0,-1).join(' - ').trim();
-
-  const uf =
-    partes[partes.length-1]
-      .trim()
-      .toUpperCase();
-
-
   const cidade =
     cidadesBrasil.find(
       c =>
-        c.nome.toLowerCase() ===
-          nomeCidade.toLowerCase()
+        normalizarTexto(c.nome) ===
+          normalizarTexto(nomeCidade)
         &&
-        c.uf === uf
+        normalizarTexto(c.uf) ===
+          normalizarTexto(uf)
     );
 
 
