@@ -1953,10 +1953,15 @@ function prepararBuscaCidade(){
 ];
 
 const resultados =
-  cidadesOrigem
+  [
+    {nome:'Luzimangues',uf:'TO'},
+    ...cidadesBrasil
+  ]
     .filter(c=>
+
       normalizarTexto(c.nome)
         .includes(busca)
+
     )
     .slice(0,12);
 
