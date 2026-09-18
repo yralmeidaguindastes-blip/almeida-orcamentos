@@ -1832,32 +1832,26 @@ async function carregarCidadesBrasil(){
       );
 
 
-    lista.innerHTML =
+    function normalizarTexto(valor){
+
+  return String(valor || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim();
+
+}
+
+lista.innerHTML =
       cidadesBrasil
         .map(c=>`
           <option
-            value="${escapar(c.nome + ' - ' + c.uf)}"
+            value="${escapar(
+              normalizarTexto(c.nome) + ' - ' + c.uf
+            )}"
           ></option>
         `)
         .join('');
-
-
-    console.log(
-      'Cidades carregadas:',
-      cidadesBrasil.length
-    );
-
-  }
-  catch(error){
-
-    console.error(
-      'Erro ao carregar cidades:',
-      error
-    );
-
-  }
-
-}
 
 
 /* PREPARAR CAMPO DE CIDADE */
