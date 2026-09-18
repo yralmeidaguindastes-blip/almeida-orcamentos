@@ -2063,24 +2063,28 @@ function prepararBuscaOrigem(){
           this.value
         );
 
+
       if(!busca){
 
         caixa.innerHTML='';
         caixa.classList.add('hidden');
 
         return;
+
       }
 
 
+      const luzimangues = {
+        nome:'Luzimangues',
+        uf:'TO'
+      };
+
+
       const resultados =
-        cidadesBrasil
-          .filter(c=>
-
-            normalizarTexto(c.nome)
-              .includes(busca)
-
-          )
-          .slice(0,12);
+        normalizarTexto(luzimangues.nome)
+          .includes(busca)
+          ? [luzimangues]
+          : [];
 
 
       if(!resultados.length){
@@ -2091,6 +2095,7 @@ function prepararBuscaOrigem(){
         caixa.classList.remove('hidden');
 
         return;
+
       }
 
 
@@ -2134,6 +2139,24 @@ function prepararBuscaOrigem(){
     }
   );
 
+
+  document.addEventListener(
+    'click',
+    function(e){
+
+      if(
+        !campo.contains(e.target) &&
+        !caixa.contains(e.target)
+      ){
+
+        caixa.classList.add('hidden');
+
+      }
+
+    }
+  );
+
+}
 
   document.addEventListener(
     'click',
