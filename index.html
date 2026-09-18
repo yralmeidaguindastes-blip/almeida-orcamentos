@@ -1,24 +1,14 @@
 <!doctype html>
 <html lang="pt-BR">
-
 <head>
-
 <meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1"
->
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Almeida Orçamentos</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-
-*{
-  box-sizing:border-box;
-}
+*{box-sizing:border-box}
 
 body{
   margin:0;
@@ -130,6 +120,11 @@ button:hover{
   opacity:.88;
 }
 
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed;
+}
+
 .yellow{
   background:#f7c600;
   color:#000;
@@ -160,13 +155,6 @@ button:hover{
   color:#111;
 }
 
-.actions{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:15px;
-}
-
 .hidden{
   display:none!important;
 }
@@ -179,6 +167,13 @@ button:hover{
 .msg{
   margin-top:12px;
   font-weight:bold;
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:15px;
 }
 
 .item{
@@ -194,6 +189,7 @@ button:hover{
   justify-content:space-between;
   align-items:center;
   margin-bottom:12px;
+  gap:10px;
 }
 
 .item-title{
@@ -212,7 +208,7 @@ button:hover{
   justify-content:flex-end;
   align-items:center;
   gap:12px;
-  padding:15px 0;
+  padding:12px 0;
   font-size:18px;
   font-weight:bold;
 }
@@ -229,24 +225,6 @@ button:hover{
   border-radius:8px;
   word-break:break-all;
   margin-top:10px;
-}
-
-.status{
-  font-weight:900;
-  padding:5px 9px;
-  border-radius:20px;
-  background:#fff0b8;
-  display:inline-block;
-}
-
-.approved{
-  background:#dff7ea;
-  color:#176d45;
-}
-
-.rejected{
-  background:#ffe1e1;
-  color:#a22;
 }
 
 .catalog-box{
@@ -301,7 +279,11 @@ button:hover{
   flex-wrap:wrap;
 }
 
-.cidade-box{
+/* ==============================
+   CIDADES
+============================== */
+
+.cidade-wrapper{
   position:relative;
 }
 
@@ -313,32 +295,66 @@ button:hover{
   z-index:1000;
   background:#fff;
   border:1px solid #ccd2d8;
-  border-top:0;
   border-radius:0 0 8px 8px;
   max-height:280px;
-  overflow:auto;
-  box-shadow:0 5px 15px rgba(0,0,0,.15);
+  overflow-y:auto;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
 .cidade-sugestao{
-  padding:11px 12px;
+  padding:12px;
   cursor:pointer;
   border-bottom:1px solid #eee;
   font-size:14px;
 }
 
 .cidade-sugestao:hover{
-  background:#f1f5f9;
+  background:#f2f5f8;
 }
 
-.calculo-distancia{
+.cidade-sugestao:last-child{
+  border-bottom:0;
+}
+
+.distancia-box{
   display:none;
-  margin-top:10px;
-  padding:12px;
+  margin-top:12px;
+  padding:14px;
   border:1px solid #d9dee7;
-  border-radius:8px;
+  border-radius:10px;
   background:#f8fafc;
 }
+
+.partida-box{
+  margin-top:12px;
+  padding:14px;
+  border:1px solid #d9dee7;
+  border-radius:10px;
+  background:#fff;
+}
+
+.partida-atual{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.partida-nome{
+  font-size:16px;
+  font-weight:bold;
+}
+
+.partida-editor{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:1px solid #ddd;
+}
+
+/* ==============================
+   PROPOSTA
+============================== */
 
 .proposta{
   max-width:900px;
@@ -347,6 +363,7 @@ button:hover{
   padding:42px;
   box-shadow:0 5px 25px rgba(0,0,0,.14);
   border-radius:10px;
+  color:#1b1b1b;
 }
 
 .proposta-header{
@@ -469,7 +486,7 @@ button:hover{
 
 .proposta::after{
   content:
-  "ALMEIDA LOCAÇÃO DE GUINDASTES LTDA  •  CNPJ 40.489.197/0001-99  •  (63) 99979-4010 / (63) 99200-6262";
+  "ALMEIDA LOCAÇÃO DE GUINDASTES LTDA • CNPJ 40.489.197/0001-99 • (63) 99979-4010 / (63) 99200-6262";
   display:block;
   border-top:1px solid #ddd;
   margin-top:50px;
@@ -477,8 +494,11 @@ button:hover{
   text-align:center;
   font-size:9px;
   color:#666;
-  line-height:1.5;
 }
+
+/* ==============================
+   RESPONSIVO
+============================== */
 
 @media(max-width:700px){
 
@@ -521,6 +541,10 @@ button:hover{
     text-align:left;
   }
 
+  .proposta h1{
+    font-size:22px;
+  }
+
   .tabela th,
   .tabela td{
     padding:7px 5px;
@@ -540,6 +564,9 @@ button:hover{
     display:block;
   }
 
+  .partida-atual{
+    align-items:flex-start;
+  }
 }
 
 @media print{
@@ -573,11 +600,8 @@ button:hover{
     margin:0;
     max-width:none;
   }
-
 }
-
 </style>
-
 </head>
 
 <body>
@@ -605,6 +629,10 @@ button:hover{
 </header>
 
 <div class="wrap">
+
+<!-- =========================
+LOGIN
+========================= -->
 
 <section
   id="login"
@@ -659,10 +687,18 @@ button:hover{
 </section>
 
 
+<!-- =========================
+PAINEL
+========================= -->
+
 <section
   id="painel"
   class="hidden"
 >
+
+<!-- =========================
+CLIENTE
+========================= -->
 
 <div class="card">
 
@@ -673,7 +709,7 @@ button:hover{
       <h2>1. Dados da contratante</h2>
 
       <div class="muted">
-        Preencha os dados do cliente.
+        Digite o nome da empresa ou o CNPJ para preencher automaticamente.
       </div>
 
     </div>
@@ -712,7 +748,6 @@ button:hover{
         id="cnpj"
         placeholder="CNPJ ou CPF"
       >
-
     </label>
 
 
@@ -723,7 +758,6 @@ button:hover{
         id="contato"
         placeholder="Nome do responsável"
       >
-
     </label>
 
 
@@ -734,7 +768,6 @@ button:hover{
         id="telefone"
         placeholder="Telefone"
       >
-
     </label>
 
 
@@ -746,7 +779,6 @@ button:hover{
         type="email"
         placeholder="E-mail"
       >
-
     </label>
 
 
@@ -757,22 +789,28 @@ button:hover{
         id="endereco"
         placeholder="Endereço da contratante"
       >
-
     </label>
 
+  </div>
 
-    <div class="cidade-box">
 
-      <label>
-        Local do serviço
+  <!-- =========================
+  LOCAL DO SERVIÇO
+  ========================= -->
 
-        <input
-          id="local"
-          placeholder="Digite a cidade"
-          autocomplete="off"
-        >
+  <div style="margin-top:15px">
 
-      </label>
+    <label>
+      Local do serviço
+    </label>
+
+    <div class="cidade-wrapper">
+
+      <input
+        id="local"
+        placeholder="Digite a cidade do serviço"
+        autocomplete="off"
+      >
 
       <div
         id="cidadeSugestoes"
@@ -781,6 +819,162 @@ button:hover{
 
     </div>
 
+  </div>
+
+
+  <!-- =========================
+  PARTIDA
+  ========================= -->
+
+  <div
+    id="partidaBox"
+    class="partida-box hidden"
+  >
+
+    <div class="partida-atual">
+
+      <div>
+
+        <div class="muted">
+          LOCAL DE PARTIDA
+        </div>
+
+        <div
+          id="partidaAtual"
+          class="partida-nome"
+        >
+          Palmas - TO
+        </div>
+
+      </div>
+
+      <div class="actions" style="margin-top:0">
+
+        <button
+          class="blue"
+          onclick="abrirAlteracaoPartida()"
+        >
+          ALTERAR LOCAL DE PARTIDA
+        </button>
+
+        <button
+          class="gray"
+          onclick="usarPalmas()"
+        >
+          USAR PALMAS COMO PARTIDA
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div
+      id="partidaEditor"
+      class="partida-editor hidden"
+    >
+
+      <label>
+        Pesquisar nova cidade de partida
+      </label>
+
+      <div class="cidade-wrapper">
+
+        <input
+          id="origem"
+          placeholder="Digite a cidade de partida"
+          autocomplete="off"
+        >
+
+        <div
+          id="origemSugestoes"
+          class="cidade-sugestoes hidden"
+        ></div>
+
+      </div>
+
+      <div class="muted" style="margin-top:8px">
+        Exemplo: São Paulo, Goiânia, Paraíso do Tocantins, Brasília...
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+  DISTÂNCIA
+  ========================= -->
+
+  <div
+    id="calculoDistancia"
+    class="distancia-box"
+  >
+
+    <div>
+      <strong>Partida:</strong>
+      <span id="origemTexto">
+        Palmas - TO
+      </span>
+    </div>
+
+    <div style="margin-top:5px">
+      <strong>Destino:</strong>
+      <span id="cidadeDestinoTexto"></span>
+    </div>
+
+    <div
+      id="distanciaTexto"
+      style="margin-top:5px"
+    ></div>
+
+
+    <div
+      class="grid"
+      style="margin-top:12px"
+    >
+
+      <label>
+
+        Valor mobilização / km
+
+        <input
+          id="valorMobilizacaoKm"
+          type="number"
+          min="0"
+          step="0.01"
+          value="0"
+        >
+
+      </label>
+
+
+      <label>
+
+        Valor desmobilização / km
+
+        <input
+          id="valorDesmobilizacaoKm"
+          type="number"
+          min="0"
+          step="0.01"
+          value="0"
+        >
+
+      </label>
+
+    </div>
+
+
+    <div
+      id="resumoMobilizacao"
+      style="margin-top:10px;font-weight:600"
+    ></div>
+
+  </div>
+
+
+  <div class="grid" style="margin-top:15px">
 
     <label>
       Validade da proposta
@@ -818,70 +1012,6 @@ button:hover{
   </div>
 
 
-  <div
-    id="calculoDistancia"
-    class="calculo-distancia"
-  >
-
-    <div>
-      <strong>Origem:</strong>
-      Palmas - TO
-    </div>
-
-    <div
-      id="cidadeDestinoTexto"
-      style="margin-top:5px"
-    ></div>
-
-    <div
-      id="distanciaTexto"
-      style="margin-top:5px"
-    ></div>
-
-
-    <div
-      class="grid"
-      style="margin-top:10px"
-    >
-
-      <label>
-        Valor mobilização / km
-
-        <input
-          id="valorMobilizacaoKm"
-          type="number"
-          min="0"
-          step="0.01"
-          value="0"
-        >
-
-      </label>
-
-
-      <label>
-        Valor desmobilização / km
-
-        <input
-          id="valorDesmobilizacaoKm"
-          type="number"
-          min="0"
-          step="0.01"
-          value="0"
-        >
-
-      </label>
-
-    </div>
-
-
-    <div
-      id="resumoMobilizacao"
-      style="margin-top:10px;font-weight:600"
-    ></div>
-
-  </div>
-
-
   <label style="margin-top:13px">
 
     Observações
@@ -895,6 +1025,10 @@ button:hover{
 
 </div>
 
+
+<!-- =========================
+EQUIPAMENTOS
+========================= -->
 
 <div class="card">
 
@@ -972,6 +1106,10 @@ button:hover{
 </div>
 
 
+<!-- =========================
+CONDIÇÕES
+========================= -->
+
 <div class="card">
 
   <h2>3. Condições comerciais</h2>
@@ -990,7 +1128,6 @@ button:hover{
         id="condHorario"
         value="07:00 às 17:00"
       >
-
     </label>
 
 
@@ -1001,7 +1138,6 @@ button:hover{
         id="condPrazo"
         value="3 meses"
       >
-
     </label>
 
 
@@ -1012,7 +1148,6 @@ button:hover{
         id="condHoras"
         value="200 horas/mês"
       >
-
     </label>
 
 
@@ -1020,11 +1155,9 @@ button:hover{
       Combustível
 
       <select id="condCombustivel">
-
         <option>INCLUSO</option>
         <option>NÃO INCLUSO</option>
         <option>A COMBINAR</option>
-
       </select>
 
     </label>
@@ -1034,11 +1167,9 @@ button:hover{
       Transporte
 
       <select id="condTransporte">
-
         <option>INCLUSO</option>
         <option>NÃO INCLUSO</option>
         <option>A COMBINAR</option>
-
       </select>
 
     </label>
@@ -1048,11 +1179,9 @@ button:hover{
       Alimentação
 
       <select id="condAlimentacao">
-
         <option>NÃO INCLUSO</option>
         <option>INCLUSO</option>
         <option>A COMBINAR</option>
-
       </select>
 
     </label>
@@ -1062,11 +1191,9 @@ button:hover{
       Hospedagem
 
       <select id="condHospedagem">
-
         <option>NÃO INCLUSO</option>
         <option>INCLUSO</option>
         <option>A COMBINAR</option>
-
       </select>
 
     </label>
@@ -1076,12 +1203,10 @@ button:hover{
       Plano de Rigging + ART
 
       <select id="condRigging">
-
         <option>CORTESIA</option>
         <option>INCLUSO</option>
         <option>NÃO INCLUSO</option>
         <option>A COMBINAR</option>
-
       </select>
 
     </label>
@@ -1102,6 +1227,10 @@ button:hover{
 
 </div>
 
+
+<!-- =========================
+FINALIZAR
+========================= -->
 
 <div class="card">
 
@@ -1180,6 +1309,10 @@ button:hover{
 </div>
 
 
+<!-- =========================
+CADASTRO EQUIPAMENTOS
+========================= -->
+
 <div class="card">
 
   <h2>5. Cadastro de equipamentos</h2>
@@ -1198,7 +1331,6 @@ button:hover{
         id="novoNome"
         placeholder="Ex.: Guindaste 200 toneladas"
       >
-
     </label>
 
 
@@ -1206,13 +1338,11 @@ button:hover{
       Unidade
 
       <select id="novoUnidade">
-
         <option>HORAS</option>
         <option>UNIDADE</option>
         <option>KM</option>
         <option>DIÁRIA</option>
         <option>MÊS</option>
-
       </select>
 
     </label>
@@ -1227,7 +1357,6 @@ button:hover{
         step="0.01"
         value="0"
       >
-
     </label>
 
 
@@ -1238,7 +1367,6 @@ button:hover{
         id="novoDescricao"
         placeholder="Descrição completa"
       >
-
     </label>
 
   </div>
@@ -1264,6 +1392,10 @@ button:hover{
 </div>
 
 
+<!-- =========================
+HISTÓRICO
+========================= -->
+
 <div class="card">
 
   <h2>6. Orçamentos salvos</h2>
@@ -1276,6 +1408,10 @@ button:hover{
 
 </section>
 
+
+<!-- =========================
+PROPOSTA PÚBLICA
+========================= -->
 
 <section
   id="publico"
@@ -1352,6 +1488,11 @@ button:hover{
     </p>
 
     <p>
+      <b>LOCAL DE PARTIDA:</b>
+      <span id="pOrigem"></span>
+    </p>
+
+    <p>
       <b>LOCAL DO SERVIÇO:</b>
       <span id="pLocal"></span>
     </p>
@@ -1369,13 +1510,11 @@ button:hover{
     <thead>
 
       <tr>
-
         <th>Qtd.</th>
         <th>Un.</th>
         <th>Descrição</th>
         <th>Valor unit.</th>
         <th>Total</th>
-
       </tr>
 
     </thead>
@@ -1556,6 +1695,11 @@ let cidadesBrasil = [];
 
 let cidadeSelecionada = null;
 
+let cidadeOrigem = {
+  nome:'Palmas',
+  uf:'TO'
+};
+
 let distanciaServicoKm = 0;
 
 
@@ -1604,7 +1748,7 @@ const equipamentosPadrao = [
   {
     id:'padrao-mob',
     nome:'Mobilização',
-    descricao:'Mobilização de equipamento para o local do serviço.',
+    descricao:'Mobilização do equipamento.',
     unidade:'KM',
     valor:0,
     cortesia:false
@@ -1613,7 +1757,7 @@ const equipamentosPadrao = [
   {
     id:'padrao-desmob',
     nome:'Desmobilização',
-    descricao:'Desmobilização de equipamento após conclusão dos serviços.',
+    descricao:'Desmobilização do equipamento.',
     unidade:'KM',
     valor:0,
     cortesia:false
@@ -1709,9 +1853,11 @@ async function carregarCidadesBrasil(){
       );
 
     if(!resposta.ok){
+
       throw new Error(
         'Não foi possível carregar as cidades.'
       );
+
     }
 
     const dados =
@@ -1759,6 +1905,10 @@ async function carregarCidadesBrasil(){
 }
 
 
+/* ==================================================
+BUSCA CIDADE DO SERVIÇO
+================================================== */
+
 function prepararBuscaCidade(){
 
   const campo =
@@ -1776,6 +1926,8 @@ function prepararBuscaCidade(){
     'input',
     function(){
 
+      cidadeSelecionada=null;
+
       const busca =
         normalizarTexto(
           this.value
@@ -1784,28 +1936,25 @@ function prepararBuscaCidade(){
       if(!busca){
 
         caixa.innerHTML='';
-
         caixa.classList.add('hidden');
 
-        return;
+        $('partidaBox').classList.add('hidden');
+        $('calculoDistancia').style.display='none';
 
+        distanciaServicoKm=0;
+
+        return;
       }
 
 
       const resultados =
         cidadesBrasil
-          .filter(c=>{
+          .filter(c=>
 
-            const texto =
-              normalizarTexto(
-                c.nome
-              );
+            normalizarTexto(c.nome)
+              .includes(busca)
 
-            return texto.includes(
-              busca
-            );
-
-          })
+          )
           .slice(0,12);
 
 
@@ -1817,7 +1966,6 @@ function prepararBuscaCidade(){
         caixa.classList.remove('hidden');
 
         return;
-
       }
 
 
@@ -1837,15 +1985,11 @@ function prepararBuscaCidade(){
           .join('');
 
 
-      caixa.classList.remove(
-        'hidden'
-      );
+      caixa.classList.remove('hidden');
 
 
       caixa
-        .querySelectorAll(
-          '.cidade-sugestao'
-        )
+        .querySelectorAll('.cidade-sugestao')
         .forEach(el=>{
 
           el.addEventListener(
@@ -1875,9 +2019,7 @@ function prepararBuscaCidade(){
         !caixa.contains(e.target)
       ){
 
-        caixa.classList.add(
-          'hidden'
-        );
+        caixa.classList.add('hidden');
 
       }
 
@@ -1886,6 +2028,127 @@ function prepararBuscaCidade(){
 
 }
 
+
+/* ==================================================
+BUSCA CIDADE DE ORIGEM
+================================================== */
+
+function prepararBuscaOrigem(){
+
+  const campo =
+    $('origem');
+
+  const caixa =
+    $('origemSugestoes');
+
+  if(!campo || !caixa){
+    return;
+  }
+
+
+  campo.addEventListener(
+    'input',
+    function(){
+
+      const busca =
+        normalizarTexto(
+          this.value
+        );
+
+      if(!busca){
+
+        caixa.innerHTML='';
+        caixa.classList.add('hidden');
+
+        return;
+      }
+
+
+      const resultados =
+        cidadesBrasil
+          .filter(c=>
+
+            normalizarTexto(c.nome)
+              .includes(busca)
+
+          )
+          .slice(0,12);
+
+
+      if(!resultados.length){
+
+        caixa.innerHTML =
+          '<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
+
+        caixa.classList.remove('hidden');
+
+        return;
+      }
+
+
+      caixa.innerHTML =
+        resultados
+          .map(c=>`
+
+            <div
+              class="cidade-sugestao"
+              data-nome="${escapar(c.nome)}"
+              data-uf="${escapar(c.uf)}"
+            >
+              ${escapar(c.nome)} - ${escapar(c.uf)}
+            </div>
+
+          `)
+          .join('');
+
+
+      caixa.classList.remove('hidden');
+
+
+      caixa
+        .querySelectorAll('.cidade-sugestao')
+        .forEach(el=>{
+
+          el.addEventListener(
+            'click',
+            function(){
+
+              selecionarOrigem(
+                this.dataset.nome,
+                this.dataset.uf
+              );
+
+            }
+          );
+
+        });
+
+    }
+  );
+
+
+  document.addEventListener(
+    'click',
+    function(e){
+
+      if(
+        !campo.contains(e.target) &&
+        !caixa.contains(e.target)
+      ){
+
+        caixa.classList.add('hidden');
+
+      }
+
+    }
+  );
+
+}
+
+
+/* ==================================================
+SELECIONAR DESTINO
+================================================== */
 
 async function selecionarCidade(
   nome,
@@ -1902,19 +2165,123 @@ async function selecionarCidade(
   campo.value =
     `${nome} - ${uf}`;
 
-  caixa.classList.add(
-    'hidden'
-  );
+
+  caixa.classList.add('hidden');
+
 
   cidadeSelecionada = {
     nome,
     uf
   };
 
+
+  $('partidaBox')
+    .classList
+    .remove('hidden');
+
+
+  atualizarTextoPartida();
+
+
   await calcularDistanciaServico();
 
 }
 
+
+/* ==================================================
+ALTERAR ORIGEM
+================================================== */
+
+function abrirAlteracaoPartida(){
+
+  $('partidaEditor')
+    .classList
+    .remove('hidden');
+
+  $('origem').focus();
+
+}
+
+
+function usarPalmas(){
+
+  cidadeOrigem = {
+    nome:'Palmas',
+    uf:'TO'
+  };
+
+  $('origem').value='';
+
+  $('partidaEditor')
+    .classList
+    .add('hidden');
+
+  atualizarTextoPartida();
+
+  if(cidadeSelecionada){
+
+    calcularDistanciaServico();
+
+  }
+
+}
+
+
+async function selecionarOrigem(
+  nome,
+  uf
+){
+
+  cidadeOrigem = {
+    nome,
+    uf
+  };
+
+
+  $('origem').value =
+    `${nome} - ${uf}`;
+
+
+  $('origemSugestoes')
+    .classList
+    .add('hidden');
+
+
+  $('partidaEditor')
+    .classList
+    .add('hidden');
+
+
+  atualizarTextoPartida();
+
+
+  if(cidadeSelecionada){
+
+    await calcularDistanciaServico();
+
+  }
+
+}
+
+
+function atualizarTextoPartida(){
+
+  const texto =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+
+
+  $('partidaAtual').textContent =
+    texto;
+
+  $('origemTexto').textContent =
+    texto;
+
+}
+
+
+/* ==================================================
+GEOCODIFICAR
+================================================== */
 
 async function geocodificarCidade(
   nomeCidade,
@@ -1923,6 +2290,7 @@ async function geocodificarCidade(
 
   const consulta =
     `${nomeCidade}, ${uf}, Brasil`;
+
 
   const url =
     'https://nominatim.openstreetmap.org/search?' +
@@ -1980,6 +2348,10 @@ async function geocodificarCidade(
 }
 
 
+/* ==================================================
+CALCULAR DISTÂNCIA
+================================================== */
+
 async function calcularDistanciaServico(){
 
   const campo =
@@ -2011,51 +2383,7 @@ async function calcularDistanciaServico(){
   }
 
 
-  let cidade =
-    cidadeSelecionada;
-
-
-  if(!cidade){
-
-    const partes =
-      valor.split(' - ');
-
-    if(partes.length>=2){
-
-      const nome =
-        partes
-          .slice(0,-1)
-          .join(' - ')
-          .trim();
-
-      const uf =
-        partes[partes.length-1]
-          .trim()
-          .toUpperCase();
-
-      cidade =
-        cidadesBrasil.find(
-          c =>
-            normalizarTexto(c.nome) ===
-            normalizarTexto(nome)
-            &&
-            normalizarTexto(c.uf) ===
-            normalizarTexto(uf)
-        );
-
-    }
-
-  }
-
-
-  if(!cidade){
-
-    caixa.style.display='block';
-
-    $('cidadeDestinoTexto').textContent =
-      'Digite e selecione uma cidade da lista.';
-
-    $('distanciaTexto').textContent='';
+  if(!cidadeSelecionada){
 
     return;
 
@@ -2064,8 +2392,14 @@ async function calcularDistanciaServico(){
 
   caixa.style.display='block';
 
+
   $('cidadeDestinoTexto').textContent =
-    `Destino: ${cidade.nome} - ${cidade.uf}`;
+    `${cidadeSelecionada.nome} - ${cidadeSelecionada.uf}`;
+
+
+  $('origemTexto').textContent =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+
 
   $('distanciaTexto').textContent =
     'Calculando distância rodoviária...';
@@ -2075,35 +2409,33 @@ async function calcularDistanciaServico(){
 
     const origem =
       await geocodificarCidade(
-        'Palmas',
-        'TO'
+        cidadeOrigem.nome,
+        cidadeOrigem.uf
       );
 
 
     const destino =
       await geocodificarCidade(
-        cidade.nome,
-        cidade.uf
+        cidadeSelecionada.nome,
+        cidadeSelecionada.uf
       );
 
 
     const rotaUrl =
-      'https://router.project-osrm.org/route/v1/driving/' +
+      `https://router.project-osrm.org/route/v1/driving/` +
       `${origem.lon},${origem.lat};` +
       `${destino.lon},${destino.lat}` +
-      '?overview=false';
+      `?overview=false`;
 
 
     const resposta =
-      await fetch(
-        rotaUrl
-      );
+      await fetch(rotaUrl);
 
 
     if(!resposta.ok){
 
       throw new Error(
-        'Erro ao calcular a rota.'
+        'Não foi possível calcular a rota.'
       );
 
     }
@@ -2114,7 +2446,6 @@ async function calcularDistanciaServico(){
 
 
     if(
-      dados.code !== 'Ok' ||
       !dados.routes ||
       !dados.routes.length
     ){
@@ -2128,8 +2459,7 @@ async function calcularDistanciaServico(){
 
     distanciaServicoKm =
       Math.ceil(
-        dados.routes[0].distance /
-        1000
+        dados.routes[0].distance / 1000
       );
 
 
@@ -2163,19 +2493,19 @@ function atualizarValoresTransporte(){
   const distancia =
     Number(
       distanciaServicoKm
-    )||0;
+    ) || 0;
 
 
   const valorMob =
     Number(
       $('valorMobilizacaoKm')?.value
-    )||0;
+    ) || 0;
 
 
   const valorDesmob =
     Number(
       $('valorDesmobilizacaoKm')?.value
-    )||0;
+    ) || 0;
 
 
   if(!distancia){
@@ -2242,6 +2572,10 @@ function prepararValoresTransporte(){
 }
 
 
+/* ==================================================
+APLICAR MOBILIZAÇÃO
+================================================== */
+
 function aplicarValoresTransporte(
   distancia,
   valorMob,
@@ -2253,19 +2587,24 @@ function aplicarValoresTransporte(
   }
 
 
+  const origem =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+
+  const destino =
+    $('local').value;
+
+
   let mobilizacao =
     itens.find(
       i =>
-        i.equipamento ===
-        'padrao-mob'
+        i.equipamento === 'padrao-mob'
     );
 
 
   let desmobilizacao =
     itens.find(
       i =>
-        i.equipamento ===
-        'padrao-desmob'
+        i.equipamento === 'padrao-desmob'
     );
 
 
@@ -2280,7 +2619,7 @@ function aplicarValoresTransporte(
       unidade:'KM',
 
       descricao:
-        `Mobilização do equipamento de Palmas - TO até ${$('local').value}`,
+        `Mobilização do equipamento de ${origem} até ${destino}`,
 
       valor:valorMob,
 
@@ -2302,7 +2641,7 @@ function aplicarValoresTransporte(
       unidade:'KM',
 
       descricao:
-        `Desmobilização do equipamento de ${$('local').value} até Palmas - TO`,
+        `Desmobilização do equipamento de ${destino} até ${origem}`,
 
       valor:valorDesmob,
 
@@ -2316,16 +2655,14 @@ function aplicarValoresTransporte(
   mobilizacao =
     itens.find(
       i =>
-        i.equipamento ===
-        'padrao-mob'
+        i.equipamento === 'padrao-mob'
     );
 
 
   desmobilizacao =
     itens.find(
       i =>
-        i.equipamento ===
-        'padrao-desmob'
+        i.equipamento === 'padrao-desmob'
     );
 
 
@@ -2341,7 +2678,7 @@ function aplicarValoresTransporte(
       valorMob;
 
     mobilizacao.descricao =
-      `Mobilização do equipamento de Palmas - TO até ${$('local').value}`;
+      `Mobilização do equipamento de ${origem} até ${destino}`;
 
   }
 
@@ -2358,7 +2695,7 @@ function aplicarValoresTransporte(
       valorDesmob;
 
     desmobilizacao.descricao =
-      `Desmobilização do equipamento de ${$('local').value} até Palmas - TO`;
+      `Desmobilização do equipamento de ${destino} até ${origem}`;
 
   }
 
@@ -2439,8 +2776,6 @@ function prepararBuscaClientes(){
         <option
           value="${escapar(c.cliente)}"
         >
-          ${escapar(c.cnpj)}
-        </option>
 
       `)
       .join('');
@@ -2477,9 +2812,7 @@ function preencherClientePorNome(
 ){
 
   const busca =
-    normalizarTexto(
-      nome
-    );
+    normalizarTexto(nome);
 
 
   if(!busca){
@@ -2623,7 +2956,7 @@ async function sair(){
 
 
 /* ==================================================
-INICIAR
+INICIAR SISTEMA
 ================================================== */
 
 async function iniciarSistema(){
@@ -2638,34 +2971,36 @@ async function iniciarSistema(){
 
   if(!session){
 
-    $('login').classList.remove(
-      'hidden'
-    );
+    $('login')
+      .classList
+      .remove('hidden');
 
-    $('painel').classList.add(
-      'hidden'
-    );
+    $('painel')
+      .classList
+      .add('hidden');
 
-    $('btnSair').classList.add(
-      'hidden'
-    );
+    $('btnSair')
+      .classList
+      .add('hidden');
 
     return;
 
   }
 
 
-  $('login').classList.add(
-    'hidden'
-  );
+  $('login')
+    .classList
+    .add('hidden');
 
-  $('painel').classList.remove(
-    'hidden'
-  );
 
-  $('btnSair').classList.remove(
-    'hidden'
-  );
+  $('painel')
+    .classList
+    .remove('hidden');
+
+
+  $('btnSair')
+    .classList
+    .remove('hidden');
 
 
   await carregarEquipamentos();
@@ -2673,6 +3008,8 @@ async function iniciarSistema(){
   await carregarClientes();
 
   prepararBuscaCidade();
+
+  prepararBuscaOrigem();
 
   prepararValoresTransporte();
 
@@ -2713,39 +3050,52 @@ function novoOrcamento(){
   $('email').value='';
   $('endereco').value='';
   $('local').value='';
+
   $('validade').value=30;
+
   $('formaPagamento').value='A COMBINAR';
+
   $('periodo').value='';
+
   $('obs').value='';
+
   $('desconto').value=0;
 
   $('valorMobilizacaoKm').value=0;
+
   $('valorDesmobilizacaoKm').value=0;
 
-  $('calculoDistancia').style.display='none';
 
-  $('cidadeDestinoTexto').textContent='';
-  $('distanciaTexto').textContent='';
-  $('resumoMobilizacao').textContent='';
+  cidadeSelecionada=null;
 
 
-  $('condHorario').value='07:00 às 17:00';
-  $('condPrazo').value='3 meses';
-  $('condHoras').value='200 horas/mês';
-  $('condCombustivel').value='INCLUSO';
-  $('condTransporte').value='INCLUSO';
-  $('condAlimentacao').value='NÃO INCLUSO';
-  $('condHospedagem').value='NÃO INCLUSO';
-  $('condRigging').value='CORTESIA';
+  cidadeOrigem={
+    nome:'Palmas',
+    uf:'TO'
+  };
+
+
+  atualizarTextoPartida();
+
+
+  $('partidaBox')
+    .classList
+    .add('hidden');
+
+
+  $('partidaEditor')
+    .classList
+    .add('hidden');
+
+
+  $('calculoDistancia')
+    .style
+    .display='none';
 
 
   itens=[];
 
   itemId=0;
-
-  cidadeSelecionada=null;
-
-  distanciaServicoKm=0;
 
 
   adicionarItem();
@@ -2753,13 +3103,7 @@ function novoOrcamento(){
   calcularTotal();
 
 
-  $('acaoMsg').textContent =
-    'Novo orçamento iniciado.';
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+  $('acaoMsg').textContent='';
 
 }
 
@@ -2768,42 +3112,45 @@ function novoOrcamento(){
 ITENS
 ================================================== */
 
-function adicionarItem(d={}){
+function adicionarItem(
+  dados={}
+){
 
   itemId++;
 
 
-  itens.push({
+  const item={
 
     id:itemId,
 
     equipamento:
-      d.equipamento||'',
+      dados.equipamento || '',
 
     quantidade:
       Number(
-        d.quantidade ??
-        1
+        dados.quantidade ?? 1
       ),
 
     unidade:
-      d.unidade||
+      dados.unidade ||
       'UNIDADE',
 
     descricao:
-      d.descricao||
+      dados.descricao ||
       '',
 
     valor:
       Number(
-        d.valor ??
-        0
+        dados.valor ?? 0
       ),
 
     cortesia:
-      !!d.cortesia
+      !!dados.cortesia
 
-  });
+  };
+
+
+  itens.push(item);
 
 
   renderItens();
@@ -2817,8 +3164,10 @@ function removerItem(id){
 
   itens =
     itens.filter(
-      x=>x.id!==id
+      i =>
+        i.id !== Number(id)
     );
+
 
   renderItens();
 
@@ -2835,7 +3184,8 @@ function atualizarItem(
 
   const item =
     itens.find(
-      x=>x.id===Number(id)
+      x =>
+        x.id === Number(id)
     );
 
 
@@ -2883,13 +3233,15 @@ function selecionarEquipamento(
   const eq =
     obterEquipamentos()
       .find(
-        x=>x.id===equipamentoId
+        x =>
+          x.id===equipamentoId
       );
 
 
   const item =
     itens.find(
-      x=>x.id===Number(id)
+      x =>
+        x.id===Number(id)
     );
 
 
@@ -2928,15 +3280,21 @@ function totalItem(i){
   }
 
 
-  return (
+  return
+  (
     Number(i.quantidade)||0
-  ) *
+  )
+  *
   (
     Number(i.valor)||0
   );
 
 }
 
+
+/* ==================================================
+RENDER ITENS
+================================================== */
 
 function renderItens(){
 
@@ -2985,6 +3343,7 @@ function renderItens(){
           <div class="grid">
 
             <label>
+
               Equipamento cadastrado
 
               <select
@@ -3016,6 +3375,7 @@ function renderItens(){
 
 
             <label>
+
               Quantidade
 
               <input
@@ -3030,6 +3390,7 @@ function renderItens(){
 
 
             <label>
+
               Unidade
 
               <select
@@ -3062,6 +3423,7 @@ function renderItens(){
 
 
             <label>
+
               Valor unitário
 
               <input
@@ -3129,7 +3491,7 @@ function calcularTotal(){
   const bruto =
     itens.reduce(
       (s,i)=>
-        s+totalItem(i),
+        s + totalItem(i),
       0
     );
 
@@ -3153,16 +3515,15 @@ function calcularTotal(){
   $('total').textContent =
     brl(bruto);
 
+
   $('totalFinal').textContent =
     brl(final);
 
 
   return {
-
     bruto,
     desconto,
     final
-
   };
 
 }
@@ -3426,9 +3787,11 @@ function renderCatalogo(){
   if(!equipamentosCloud.length){
 
     html += `
+
       <p class="muted">
         Nenhum equipamento novo cadastrado.
       </p>
+
     `;
 
   }
@@ -3647,7 +4010,7 @@ async function salvar(){
   }
 
 
-  /* SALVAR / ATUALIZAR CLIENTE */
+  /* SALVAR CLIENTE */
 
   const documento =
     normalizarDocumento(
@@ -3853,7 +4216,10 @@ async function carregarLista(){
       .map(o=>`
 
         <div
-          style="padding:14px 0;border-bottom:1px solid #eee"
+          style="
+            padding:14px 0;
+            border-bottom:1px solid #eee
+          "
         >
 
           <b>
@@ -3928,6 +4294,91 @@ async function abrirSalvo(id){
 
 
 /* ==================================================
+RECUPERAR ORIGEM DE ORÇAMENTO SALVO
+================================================== */
+
+function descobrirOrigemDosItens(lista){
+
+  const item =
+    lista.find(
+      i =>
+        i.equipamento === 'padrao-mob'
+    );
+
+
+  if(!item?.descricao){
+    return;
+  }
+
+
+  const texto =
+    String(
+      item.descricao
+    );
+
+
+  const encontrado =
+    texto.match(
+      /Mobilização do equipamento de (.+) até/i
+    );
+
+
+  if(!encontrado){
+    return;
+  }
+
+
+  const origemTexto =
+    encontrado[1]
+      .trim();
+
+
+  const partes =
+    origemTexto.split(' - ');
+
+
+  if(partes.length < 2){
+    return;
+  }
+
+
+  const uf =
+    partes
+      .pop()
+      .trim()
+      .toUpperCase();
+
+
+  const nome =
+    partes
+      .join(' - ')
+      .trim();
+
+
+  const cidade =
+    cidadesBrasil.find(
+      c =>
+        normalizarTexto(c.nome) ===
+        normalizarTexto(nome)
+        &&
+        normalizarTexto(c.uf) ===
+        normalizarTexto(uf)
+    );
+
+
+  if(cidade){
+
+    cidadeOrigem={
+      nome:cidade.nome,
+      uf:cidade.uf
+    };
+
+  }
+
+}
+
+
+/* ==================================================
 PREENCHER FORMULÁRIO
 ================================================== */
 
@@ -3978,9 +4429,7 @@ function preencherFormulario(o){
       const c =
         typeof o.condicoes==='string'
         ?
-        JSON.parse(
-          o.condicoes
-        )
+        JSON.parse(o.condicoes)
         :
         o.condicoes;
 
@@ -4027,11 +4476,6 @@ function preencherFormulario(o){
   }
 
 
-  itens=[];
-
-  itemId=0;
-
-
   let lista=[];
 
 
@@ -4048,10 +4492,8 @@ function preencherFormulario(o){
 
     try{
 
-      lista=
-        JSON.parse(
-          o.itens
-        );
+      lista =
+        JSON.parse(o.itens);
 
     }
     catch(e){
@@ -4063,8 +4505,18 @@ function preencherFormulario(o){
   }
 
 
+  descobrirOrigemDosItens(
+    lista
+  );
+
+
+  itens=[];
+
+  itemId=0;
+
+
   lista.forEach(
-    x=>
+    x =>
       adicionarItem(x)
   );
 
@@ -4072,6 +4524,66 @@ function preencherFormulario(o){
   if(!lista.length){
 
     adicionarItem();
+
+  }
+
+
+  atualizarTextoPartida();
+
+
+  cidadeSelecionada=null;
+
+
+  if(o.local){
+
+    const partes =
+      o.local
+        .split(' - ');
+
+
+    if(partes.length>=2){
+
+      const uf =
+        partes
+          .pop()
+          .trim()
+          .toUpperCase();
+
+      const nome =
+        partes
+          .join(' - ')
+          .trim();
+
+
+      const cidade =
+        cidadesBrasil.find(
+          c =>
+            normalizarTexto(c.nome) ===
+            normalizarTexto(nome)
+            &&
+            normalizarTexto(c.uf) ===
+            normalizarTexto(uf)
+        );
+
+
+      if(cidade){
+
+        cidadeSelecionada={
+          nome:cidade.nome,
+          uf:cidade.uf
+        };
+
+
+        $('partidaBox')
+          .classList
+          .remove('hidden');
+
+
+        calcularDistanciaServico();
+
+      }
+
+    }
 
   }
 
@@ -4158,10 +4670,14 @@ function compartilhar(){
     $('link').textContent;
 
 
-  const texto =
-    `Olá! Segue a proposta comercial da Almeida Guindastes:
+  if(!url){
+    return;
+  }
 
-${url}`;
+
+  const texto =
+    'Olá! Segue a proposta comercial da Almeida Guindastes: '+
+    url;
 
 
   if(
@@ -4170,13 +4686,11 @@ ${url}`;
 
     navigator.share({
 
-      title:
-        'Proposta Comercial Almeida',
+      title:'Proposta Almeida Guindastes',
 
-      text:
-        texto,
+      text:texto,
 
-      url
+      url:url
 
     });
 
@@ -4185,9 +4699,7 @@ ${url}`;
 
     window.open(
       'https://wa.me/?text='+
-      encodeURIComponent(
-        texto
-      ),
+      encodeURIComponent(texto),
       '_blank'
     );
 
@@ -4229,15 +4741,6 @@ function preencherProposta(o){
   $('pLocal').textContent =
     o.local||'';
 
-  $('pPagamento').textContent =
-    o.forma_pagamento||'';
-
-  $('pPeriodo').textContent =
-    o.periodo||'';
-
-  $('pObs').textContent =
-    o.obs||'';
-
 
   let lista =
     o.itens||[];
@@ -4250,9 +4753,7 @@ function preencherProposta(o){
     try{
 
       lista =
-        JSON.parse(
-          lista
-        );
+        JSON.parse(lista);
 
     }
     catch(e){
@@ -4262,6 +4763,41 @@ function preencherProposta(o){
     }
 
   }
+
+
+  let origemProposta =
+    'Palmas - TO';
+
+
+  const itemMob =
+    lista.find(
+      i =>
+        i.equipamento === 'padrao-mob'
+    );
+
+
+  if(itemMob?.descricao){
+
+    const encontrado =
+      String(
+        itemMob.descricao
+      ).match(
+        /Mobilização do equipamento de (.+) até/i
+      );
+
+
+    if(encontrado){
+
+      origemProposta =
+        encontrado[1];
+
+    }
+
+  }
+
+
+  $('pOrigem').textContent =
+    origemProposta;
 
 
   $('pItens').innerHTML =
@@ -4279,7 +4815,9 @@ function preencherProposta(o){
           </td>
 
           <td>
+
             ${escapar(i.descricao)}
+
             ${
               i.cortesia
               ?
@@ -4287,6 +4825,7 @@ function preencherProposta(o){
               :
               ''
             }
+
           </td>
 
           <td>
@@ -4294,14 +4833,16 @@ function preencherProposta(o){
           </td>
 
           <td>
+
             ${brl(
               i.cortesia
               ?
               0
               :
-              Number(i.quantidade||0)*
+              Number(i.quantidade||0) *
               Number(i.valor||0)
             )}
+
           </td>
 
         </tr>
@@ -4320,10 +4861,12 @@ function preencherProposta(o){
 
     $('pDescontoBox').innerHTML =
       `
-      <p style="text-align:right">
-        <b>Desconto:</b>
-        ${brl(o.desconto)}
-      </p>
+
+        <p style="text-align:right">
+          <b>Desconto:</b>
+          ${brl(o.desconto)}
+        </p>
+
       `;
 
   }
@@ -4385,6 +4928,16 @@ ${c.rigging||''}
 
 CONDIÇÕES ADICIONAIS:
 ${c.adicionais||''}`;
+
+
+  $('pPagamento').textContent =
+    o.forma_pagamento||'';
+
+  $('pPeriodo').textContent =
+    o.periodo||'';
+
+  $('pObs').textContent =
+    o.obs||'';
 
 
   $('painel')
@@ -4518,10 +5071,15 @@ async function decidir(
     await sb.rpc(
       'decidir_orcamento',
       {
+
         p_token:token,
+
         p_decisao:decisao,
+
         p_nome:nome,
+
         p_documento:doc
+
       }
     );
 
@@ -4538,10 +5096,15 @@ async function decidir(
 
 
   $('pMsg').textContent =
+
     decisao==='APROVADO'
+
     ?
+
     '✓ Orçamento aprovado com sucesso!'
+
     :
+
     'Orçamento recusado.';
 
 
@@ -4674,5 +5237,4 @@ INÍCIO
 </script>
 
 </body>
-
 </html>
