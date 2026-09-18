@@ -1947,15 +1947,18 @@ function prepararBuscaCidade(){
       }
 
 
-      const resultados =
-        cidadesBrasil
-          .filter(c=>
+     const cidadesOrigem = [
+  {nome:'Luzimangues', uf:'TO'},
+  ...cidadesBrasil
+];
 
-            normalizarTexto(c.nome)
-              .includes(busca)
-
-          )
-          .slice(0,12);
+const resultados =
+  cidadesOrigem
+    .filter(c=>
+      normalizarTexto(c.nome)
+        .includes(busca)
+    )
+    .slice(0,12);
 
 
       if(!resultados.length){
