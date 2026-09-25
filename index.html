@@ -2514,43 +2514,6 @@ $('acaoMsg').textContent =
 }
 
 
-/* ==================================================
-LOGIN
-================================================== */
-
-async function login(){
-
-$('loginMsg').textContent='Entrando...';
-
-const {error} =
-await sb.auth.signInWithPassword({
-
-email:$('loginEmail').value.trim(),
-password:$('loginSenha').value
-
-});
-
-if(error){
-
-$('loginMsg').textContent =
-'Erro: '+error.message;
-
-return;
-
-}
-
-await iniciarSistema();
-
-}
-
-
-async function sair(){
-
-await sb.auth.signOut();
-
-location.reload();
-
-}
 
 
 /* ==================================================
