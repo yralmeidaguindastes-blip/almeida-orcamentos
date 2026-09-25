@@ -2757,11 +2757,16 @@ return;
 }
 
 if(
-campo==='quantidade'||
+campo==='quantidade' ||
 campo==='valor'
 ){
 
-item[campo]=Number(valor)||0;
+item[campo] =
+valor === ''
+?
+0
+:
+Number(valor);
 
 }
 else if(campo==='cortesia'){
@@ -2775,11 +2780,9 @@ item[campo]=valor;
 
 }
 
-renderItens();
 calcularTotal();
 
 }
-
 
 function selecionarEquipamento(id,equipamentoId){
 
