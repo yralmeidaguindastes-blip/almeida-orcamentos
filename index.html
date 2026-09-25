@@ -1456,13 +1456,7 @@ return String(valor || '')
 
 function obterEquipamentos(){
 
-const rigging =
-equipamentosPadrao.find(
-e=>e.id==='padrao-rigging'
-);
-
 return [
-...(rigging ? [rigging] : []),
 ...equipamentosCloud
 ];
 
