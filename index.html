@@ -3199,64 +3199,23 @@ return;
 let html=`
 
 <h3>
-Equipamentos padrão da Almeida
+Equipamentos cadastrados
 </h3>
 
 <div class="muted">
-Estes equipamentos já vêm no sistema.
+Os equipamentos cadastrados aqui ficarão disponíveis nos próximos orçamentos.
 </div>
-
-`;
-
-html +=
-equipamentosPadrao
-.map(e=>`
-
-<div class="catalog-item catalog-default">
-
-<div>
-
-<b>${escapar(e.nome)}</b>
-
-<br>
-
-<span class="mini">
-${escapar(e.unidade)}
-—
-${brl(e.valor)}
-</span>
-
-<br>
-
-<span class="mini">
-${escapar(e.descricao)}
-</span>
-
-</div>
-
-<span class="mini">
-PADRÃO
-</span>
-
-</div>
-
-`)
-.join('');
-
-html += `
-
-<h3 style="margin-top:22px">
-Equipamentos cadastrados por você
-</h3>
 
 `;
 
 if(!equipamentosCloud.length){
 
 html += `
-<p class="muted">
-Nenhum equipamento novo cadastrado.
+
+<p class="muted" style="margin-top:15px">
+Nenhum equipamento cadastrado ainda.
 </p>
+
 `;
 
 }
