@@ -4237,7 +4237,7 @@ return true;
 
 
 /* ==================================================
-INÍCIO DO SISTEMA — INICIALIZAÇÃO SEGURA
+INÍCIO DO SISTEMA
 ================================================== */
 
 (async function(){
@@ -4245,12 +4245,14 @@ INÍCIO DO SISTEMA — INICIALIZAÇÃO SEGURA
   try{
 
     /* Primeiro verifica se existe uma proposta pública */
+
     const token =
       new URLSearchParams(
         window.location.search
       ).get('proposta');
 
     /* Se for link público, abre a proposta */
+
     if(token){
 
       const abriu =
@@ -4273,67 +4275,42 @@ INÍCIO DO SISTEMA — INICIALIZAÇÃO SEGURA
 
 
   /*
-   * IMPORTANTE:
-   * A tela de login fica disponível imediatamente.
-   * Mesmo que alguma tabela do Supabase dê erro,
-   * o usuário ainda consegue acessar o sistema.
+   * SEM LOGIN
+   * O sistema abre diretamente no orçamento.
    */
 
-  $('login').classList.remove('hidden');
+  $('painel')
+    .classList
+    .remove('hidden');
 
-  $('painel').classList.add('hidden');
-
-  $('publico').classList.add('hidden');
-
-  $('btnSair').classList.add('hidden');
+  $('publico')
+    .classList
+    .add('hidden');
 
 
   try{
 
-    const {
-      data:{
-        session
-      }
-    } =
-    await sb.auth.getSession();
-
-
-    /*
-     * Se já estiver logado, entra diretamente
-     * no sistema.
-     */
-
-    if(session){
-
-      await iniciarSistema();
-
-    }
+    await iniciarSistema();
 
   }catch(error){
 
     console.error(
-      'Erro ao verificar sessão:',
+      'Erro ao iniciar o sistema:',
       error
     );
 
     /*
-     * Se houver qualquer erro na sessão,
-     * mantém a tela de login aberta.
+     * Mesmo que alguma função do Supabase
+     * apresente erro, mantém o formulário aberto.
      */
 
-    $('login').classList.remove('hidden');
-
-    $('painel').classList.add('hidden');
-
-    $('publico').classList.add('hidden');
-
-    $('btnSair').classList.add('hidden');
+    $('painel')
+      .classList
+      .remove('hidden');
 
   }
 
 })();
-
-</script>
 
 </body>
 </html>
