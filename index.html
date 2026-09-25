@@ -1,14 +1,23 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
+
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<meta
+  name="viewport"
+  content="width=device-width,initial-scale=1"
+>
+
 <title>Almeida Orçamentos</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <style>
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box
+}
 
 body{
   margin:0;
@@ -64,8 +73,13 @@ header small{
   box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-h2{margin-top:0}
-h3{margin-bottom:10px}
+h2{
+  margin-top:0
+}
+
+h3{
+  margin-bottom:10px
+}
 
 .grid{
   display:grid;
@@ -85,7 +99,9 @@ label{
   font-weight:bold;
 }
 
-input,textarea,select{
+input,
+textarea,
+select{
   width:100%;
   padding:11px;
   border:1px solid #ccd2d8;
@@ -109,17 +125,48 @@ button{
   font-size:14px;
 }
 
-button:hover{opacity:.88}
-button:disabled{opacity:.5;cursor:not-allowed}
+button:hover{
+  opacity:.88
+}
 
-.yellow{background:#f7c600;color:#000}
-.green{background:#1f9d61;color:#fff}
-.black{background:#111;color:#fff}
-.red{background:#c93636;color:#fff}
-.blue{background:#1769aa;color:#fff}
-.gray{background:#e8ebee;color:#111}
+button:disabled{
+  opacity:.5;
+  cursor:not-allowed
+}
 
-.hidden{display:none!important}
+.yellow{
+  background:#f7c600;
+  color:#000;
+}
+
+.green{
+  background:#1f9d61;
+  color:#fff;
+}
+
+.black{
+  background:#111;
+  color:#fff;
+}
+
+.red{
+  background:#c93636;
+  color:#fff;
+}
+
+.blue{
+  background:#1769aa;
+  color:#fff;
+}
+
+.gray{
+  background:#e8ebee;
+  color:#111;
+}
+
+.hidden{
+  display:none!important;
+}
 
 .muted{
   color:#68717b;
@@ -207,8 +254,9 @@ button:disabled{opacity:.5;cursor:not-allowed}
   background:#fafafa;
 }
 
-.catalog-default{border-left:5px solid #1769aa}
-.catalog-cloud{border-left:5px solid #1f9d61}
+.catalog-cloud{
+  border-left:5px solid #1f9d61;
+}
 
 .mini{
   font-size:11px;
@@ -351,7 +399,9 @@ button:disabled{opacity:.5;cursor:not-allowed}
   line-height:1.7;
 }
 
-.proposta-numero b{font-size:18px}
+.proposta-numero b{
+  font-size:18px
+}
 
 .proposta h1{
   font-size:28px;
@@ -458,16 +508,23 @@ button:disabled{opacity:.5;cursor:not-allowed}
 
 @media(max-width:700px){
 
-  .grid,.grid3{grid-template-columns:1fr}
+  .grid,
+  .grid3{
+    grid-template-columns:1fr
+  }
 
-  header h1{font-size:15px}
+  header h1{
+    font-size:15px
+  }
 
   header img{
     height:42px;
     max-width:120px;
   }
 
-  .card{padding:14px}
+  .card{
+    padding:14px
+  }
 
   .proposta{
     padding:18px;
@@ -476,7 +533,9 @@ button:disabled{opacity:.5;cursor:not-allowed}
     box-shadow:none;
   }
 
-  .proposta-header{display:block}
+  .proposta-header{
+    display:block
+  }
 
   .proposta-header img{
     width:180px;
@@ -484,11 +543,16 @@ button:disabled{opacity:.5;cursor:not-allowed}
     margin-bottom:18px;
   }
 
-  .proposta-numero{text-align:left}
+  .proposta-numero{
+    text-align:left
+  }
 
-  .proposta h1{font-size:22px}
+  .proposta h1{
+    font-size:22px
+  }
 
-  .tabela th,.tabela td{
+  .tabela th,
+  .tabela td{
     padding:7px 5px;
     font-size:9px;
   }
@@ -498,20 +562,34 @@ button:disabled{opacity:.5;cursor:not-allowed}
     gap:60px;
   }
 
-  .total-box{display:block}
+  .total-box{
+    display:block
+  }
 
-  .catalog-item{display:block}
+  .catalog-item{
+    display:block
+  }
 
-  .partida-atual{align-items:flex-start}
+  .partida-atual{
+    align-items:flex-start
+  }
+
 }
 
 @media print{
 
-  body{background:#fff}
+  body{
+    background:#fff
+  }
 
-  body *{visibility:hidden}
+  body *{
+    visibility:hidden
+  }
 
-  #impressao,#impressao *{visibility:visible}
+  #impressao,
+  #impressao *{
+    visibility:visible
+  }
 
   #impressao{
     position:absolute;
@@ -520,14 +598,18 @@ button:disabled{opacity:.5;cursor:not-allowed}
     width:100%;
   }
 
-  .nao-imprimir{display:none!important}
+  .nao-imprimir{
+    display:none!important
+  }
 
   .proposta{
     box-shadow:none;
     margin:0;
     max-width:none;
   }
+
 }
+
 </style>
 </head>
 
@@ -535,7 +617,10 @@ button:disabled{opacity:.5;cursor:not-allowed}
 
 <header>
 
-<img src="logo-almeida.png" alt="Almeida Guindastes">
+<img
+  src="logo-almeida.png"
+  alt="Almeida Guindastes"
+>
 
 <h1>
 ALMEIDA ORÇAMENTOS
@@ -546,11 +631,11 @@ ALMEIDA ORÇAMENTOS
 
 <div class="wrap">
 
-<!-- PAINEL -->
+<section id="painel">
 
-<section id="painel" class="hidden">
-
-<!-- CLIENTE -->
+<!-- ==================================================
+CLIENTE
+================================================== -->
 
 <div class="card">
 
@@ -566,7 +651,10 @@ Digite o nome da empresa ou o CNPJ para preencher automaticamente.
 
 </div>
 
-<button class="gray" onclick="novoOrcamento()">
+<button
+  class="gray"
+  onclick="novoOrcamento()"
+>
 + NOVO ORÇAMENTO
 </button>
 
@@ -575,13 +663,14 @@ Digite o nome da empresa ou o CNPJ para preencher automaticamente.
 <div class="grid">
 
 <label>
+
 Empresa contratante
 
 <input
-id="cliente"
-list="listaClientes"
-placeholder="Nome da empresa"
-autocomplete="off"
+  id="cliente"
+  list="listaClientes"
+  placeholder="Nome da empresa"
+  autocomplete="off"
 >
 
 <datalist id="listaClientes"></datalist>
@@ -589,36 +678,63 @@ autocomplete="off"
 </label>
 
 <label>
+
 CNPJ / CPF
 
-<input id="cnpj" placeholder="CNPJ ou CPF">
+<input
+  id="cnpj"
+  placeholder="CNPJ ou CPF"
+>
+
 </label>
 
 <label>
+
 Responsável
 
-<input id="contato" placeholder="Nome do responsável">
+<input
+  id="contato"
+  placeholder="Nome do responsável"
+>
+
 </label>
 
 <label>
+
 Telefone
 
-<input id="telefone" placeholder="Telefone">
+<input
+  id="telefone"
+  placeholder="Telefone"
+>
+
 </label>
 
 <label>
+
 E-mail
 
-<input id="email" type="email" placeholder="E-mail">
+<input
+  id="email"
+  type="email"
+  placeholder="E-mail"
+>
+
 </label>
 
 <label>
+
 Endereço
 
-<input id="endereco" placeholder="Endereço da contratante">
+<input
+  id="endereco"
+  placeholder="Endereço da contratante"
+>
+
 </label>
 
 </div>
+
 
 <!-- LOCAL DO SERVIÇO -->
 
@@ -631,20 +747,27 @@ Local do serviço
 <div class="cidade-wrapper">
 
 <input
-id="local"
-placeholder="Digite a cidade do serviço"
-autocomplete="off"
+  id="local"
+  placeholder="Digite a cidade do serviço"
+  autocomplete="off"
 >
 
-<div id="cidadeSugestoes" class="cidade-sugestoes hidden"></div>
+<div
+  id="cidadeSugestoes"
+  class="cidade-sugestoes hidden"
+></div>
 
 </div>
 
 </div>
+
 
 <!-- PARTIDA -->
 
-<div id="partidaBox" class="partida-box hidden">
+<div
+  id="partidaBox"
+  class="partida-box hidden"
+>
 
 <div class="partida-atual">
 
@@ -654,23 +777,38 @@ autocomplete="off"
 LOCAL DE PARTIDA
 </div>
 
-<div id="partidaAtual" class="partida-nome">
+<div
+  id="partidaAtual"
+  class="partida-nome"
+>
 Palmas - TO
 </div>
 
 </div>
 
-<div class="actions" style="margin-top:0">
+<div
+  class="actions"
+  style="margin-top:0"
+>
 
-<button class="blue" onclick="abrirAlteracaoPartida()">
+<button
+  class="blue"
+  onclick="abrirAlteracaoPartida()"
+>
 ALTERAR LOCAL DE PARTIDA
 </button>
 
-<button class="yellow" onclick="ativarLuzimanguesManual()">
+<button
+  class="yellow"
+  onclick="ativarLuzimanguesManual()"
+>
 LUZIMANGUES
 </button>
 
-<button class="gray" onclick="usarPalmas()">
+<button
+  class="gray"
+  onclick="usarPalmas()"
+>
 USAR PALMAS COMO PARTIDA
 </button>
 
@@ -678,7 +816,10 @@ USAR PALMAS COMO PARTIDA
 
 </div>
 
-<div id="partidaEditor" class="partida-editor hidden">
+<div
+  id="partidaEditor"
+  class="partida-editor hidden"
+>
 
 <label>
 Pesquisar nova cidade de partida
@@ -687,16 +828,22 @@ Pesquisar nova cidade de partida
 <div class="cidade-wrapper">
 
 <input
-id="origem"
-placeholder="Digite qualquer cidade do Brasil"
-autocomplete="off"
+  id="origem"
+  placeholder="Digite qualquer cidade do Brasil"
+  autocomplete="off"
 >
 
-<div id="origemSugestoes" class="cidade-sugestoes hidden"></div>
+<div
+  id="origemSugestoes"
+  class="cidade-sugestoes hidden"
+></div>
 
 </div>
 
-<div class="muted" style="margin-top:8px">
+<div
+  class="muted"
+  style="margin-top:8px"
+>
 Você pode escolher qualquer cidade do Brasil como local de partida.
 </div>
 
@@ -704,61 +851,87 @@ Você pode escolher qualquer cidade do Brasil como local de partida.
 
 </div>
 
+
 <!-- DISTÂNCIA AUTOMÁTICA -->
 
-<div id="calculoDistancia" class="distancia-box">
+<div
+  id="calculoDistancia"
+  class="distancia-box"
+>
 
 <div>
 <strong>Partida:</strong>
-<span id="origemTexto">Palmas - TO</span>
+<span id="origemTexto">
+Palmas - TO
+</span>
 </div>
 
 <div style="margin-top:5px">
+
 <strong>Destino:</strong>
+
 <span id="cidadeDestinoTexto"></span>
+
 </div>
 
-<div id="distanciaTexto" style="margin-top:5px"></div>
+<div
+  id="distanciaTexto"
+  style="margin-top:5px"
+></div>
 
-<div class="grid" style="margin-top:12px">
+<div
+  class="grid"
+  style="margin-top:12px"
+>
 
 <label>
+
 Valor mobilização / km
 
 <input
-id="valorMobilizacaoKm"
-type="number"
-min="0"
-step="0.01"
-value="0"
+  id="valorMobilizacaoKm"
+  type="number"
+  min="0"
+  step="0.01"
+  value="0"
 >
 
 </label>
 
 <label>
+
 Valor desmobilização / km
 
 <input
-id="valorDesmobilizacaoKm"
-type="number"
-min="0"
-step="0.01"
-value="0"
+  id="valorDesmobilizacaoKm"
+  type="number"
+  min="0"
+  step="0.01"
+  value="0"
 >
 
 </label>
 
 </div>
 
-<div id="resumoMobilizacao" style="margin-top:10px;font-weight:600"></div>
+<div
+  id="resumoMobilizacao"
+  style="margin-top:10px;font-weight:600"
+></div>
 
 </div>
 
-<!-- DISTÂNCIA MANUAL LUZIMANGUES -->
 
-<div id="manualLuzimangues" class="manual-box">
+<!-- LUZIMANGUES MANUAL -->
 
-<strong>ATENÇÃO — LUZIMANGUES</strong>
+<div
+  id="manualLuzimangues"
+  class="manual-box"
+>
+
+<strong>
+ATENÇÃO — LUZIMANGUES
+</strong>
 
 <p class="muted">
 Para Luzimangues, o sistema não fará o cálculo automático da distância.
@@ -768,87 +941,115 @@ Informe manualmente a distância e os valores de mobilização e desmobilizaçã
 <div class="grid">
 
 <label>
+
 Distância manual (km)
 
 <input
-id="distanciaManual"
-type="number"
-min="0"
-step="1"
-value="0"
-oninput="atualizarLuzimanguesManual()"
+  id="distanciaManual"
+  type="number"
+  min="0"
+  step="1"
+  value="0"
+  oninput="atualizarLuzimanguesManual()"
 >
 
 </label>
 
 <label>
+
 Valor mobilização / km
 
 <input
-id="manualValorMob"
-type="number"
-min="0"
-step="0.01"
-value="0"
-oninput="atualizarLuzimanguesManual()"
+  id="manualValorMob"
+  type="number"
+  min="0"
+  step="0.01"
+  value="0"
+  oninput="atualizarLuzimanguesManual()"
 >
 
 </label>
 
 <label>
+
 Valor desmobilização / km
 
 <input
-id="manualValorDesmob"
-type="number"
-min="0"
-step="0.01"
-value="0"
-oninput="atualizarLuzimanguesManual()"
+  id="manualValorDesmob"
+  type="number"
+  min="0"
+  step="0.01"
+  value="0"
+  oninput="atualizarLuzimanguesManual()"
 >
 
 </label>
 
 </div>
 
-<div id="resumoManualLuzimangues" style="margin-top:10px;font-weight:bold"></div>
+<div
+  id="resumoManualLuzimangues"
+  style="margin-top:10px;font-weight:bold"
+></div>
 
 </div>
 
-<div class="grid" style="margin-top:15px">
+
+<div
+  class="grid"
+  style="margin-top:15px"
+>
 
 <label>
+
 Validade da proposta
 
-<input id="validade" type="number" value="30">
+<input
+  id="validade"
+  type="number"
+  value="30"
+>
+
 </label>
 
 <label>
+
 Forma de pagamento
 
-<input id="formaPagamento" value="A COMBINAR">
+<input
+  id="formaPagamento"
+  value="A COMBINAR"
+>
+
 </label>
 
 <label>
+
 Prazo / período
 
-<input id="periodo" placeholder="Ex.: 3 meses">
+<input
+  id="periodo"
+  placeholder="Ex.: 3 meses"
+>
+
 </label>
 
 </div>
+
 
 <label style="margin-top:13px">
 
 Observações
 
 <textarea
-id="obs"
-placeholder="Observações específicas deste orçamento"
+  id="obs"
+  placeholder="Observações específicas deste orçamento"
 ></textarea>
 
 </label>
 
 </div>
+
 
 <!-- EQUIPAMENTOS -->
 
@@ -866,45 +1067,71 @@ Escolha um equipamento cadastrado ou adicione outro item.
 
 </div>
 
-<button class="blue" onclick="adicionarItem()">
+<button
+  class="blue"
+  onclick="adicionarItem()"
+>
 + ADICIONAR ITEM
 </button>
 
 </div>
 
-<div id="itens" style="margin-top:15px"></div>
+<div
+  id="itens"
+  style="margin-top:15px"
+></div>
 
 <label>
+
 Desconto geral
 
 <input
-id="desconto"
-type="number"
-min="0"
-step="0.01"
-value="0"
-oninput="calcularTotal()"
+  id="desconto"
+  type="number"
+  min="0"
+  step="0.01"
+  value="0"
+  oninput="calcularTotal()"
 >
 
 </label>
 
 <div class="total-box">
+
 TOTAL:
-<span id="total" class="total">R$ 0,00</span>
+
+<span
+  id="total"
+  class="total"
+>
+R$ 0,00
+</span>
+
 </div>
 
 <div class="total-box">
+
 TOTAL FINAL:
-<span id="totalFinal" class="total">R$ 0,00</span>
+
+<span
+  id="totalFinal"
+  class="total"
+>
+R$ 0,00
+</span>
+
 </div>
 
 </div>
+
 
 <!-- CONDIÇÕES -->
 
 <div class="card">
 
-<h2>3. Condições comerciais</h2>
+<h2>
+3. Condições comerciais
+</h2>
 
 <div class="muted">
 Estas condições aparecem automaticamente na proposta.
@@ -913,77 +1140,111 @@ Estas condições aparecem automaticamente na proposta.
 <div class="grid">
 
 <label>
+
 Horário de trabalho
-<input id="condHorario" value="07:00 às 17:00">
+
+<input
+  id="condHorario"
+  value="07:00 às 17:00"
+>
+
 </label>
 
 <label>
+
 Prazo mínimo / período
-<input id="condPrazo" value="3 meses">
+
+<input
+  id="condPrazo"
+  value="3 meses"
+>
+
 </label>
 
 <label>
+
 Horas mínimas mensais
-<input id="condHoras" value="200 horas/mês">
+
+<input
+  id="condHoras"
+  value="200 horas/mês"
+>
+
 </label>
 
 <label>
+
 Combustível
 
 <select id="condCombustivel">
+
 <option>INCLUSO</option>
 <option>NÃO INCLUSO</option>
 <option>A COMBINAR</option>
+
 </select>
 
 </label>
 
 <label>
+
 Transporte
 
 <select id="condTransporte">
+
 <option>INCLUSO</option>
 <option>NÃO INCLUSO</option>
 <option>A COMBINAR</option>
+
 </select>
 
 </label>
 
 <label>
+
 Alimentação
 
 <select id="condAlimentacao">
+
 <option>NÃO INCLUSO</option>
 <option>INCLUSO</option>
 <option>A COMBINAR</option>
+
 </select>
 
 </label>
 
 <label>
+
 Hospedagem
 
 <select id="condHospedagem">
+
 <option>NÃO INCLUSO</option>
 <option>INCLUSO</option>
 <option>A COMBINAR</option>
+
 </select>
 
 </label>
 
 <label>
+
 Plano de Rigging + ART
 
 <select id="condRigging">
+
 <option>CORTESIA</option>
 <option>INCLUSO</option>
 <option>NÃO INCLUSO</option>
 <option>A COMBINAR</option>
+
 </select>
 
 </label>
 
 </div>
+
 
 <label style="margin-top:15px">
 
@@ -998,41 +1259,68 @@ Condições comerciais adicionais
 
 </div>
 
+
 <!-- FINALIZAR -->
 
 <div class="card">
 
-<h2>4. Finalizar proposta</h2>
+<h2>
+4. Finalizar proposta
+</h2>
 
 <div class="actions">
 
-<button class="yellow" onclick="calcularTotal()">
+<button
+  class="yellow"
+  onclick="calcularTotal()"
+>
 CALCULAR
 </button>
 
-<button class="black" onclick="salvar()">
+<button
+  class="black"
+  onclick="salvar()"
+>
 SALVAR NA NUVEM
 </button>
 
-<button class="green" onclick="gerarLink()">
+<button
+  class="green"
+  onclick="gerarLink()"
+>
 GERAR LINK DO CLIENTE
 </button>
 
-<button class="blue" onclick="abrirPropostaAtual()">
+<button
+  class="blue"
+  onclick="abrirPropostaAtual()"
+>
 VER PROPOSTA / PDF
 </button>
 
 </div>
 
-<div id="linkCard" class="hidden" style="margin-top:18px">
+<div
+  id="linkCard"
+  class="hidden"
+  style="margin-top:18px"
+>
 
-<b>Link da proposta para o cliente:</b>
+<b>
+Link da proposta para o cliente:
+</b>
 
-<div id="link" class="link"></div>
+<div
+  id="link"
+  class="link"
+></div>
 
 <div class="actions">
 
-<button class="green" onclick="compartilhar()">
+<button
+  class="green"
+  onclick="compartilhar()"
+>
 COMPARTILHAR / WHATSAPP
 </button>
 
@@ -1040,15 +1328,21 @@ COMPARTILHAR / WHATSAPP
 
 </div>
 
-<div id="acaoMsg" class="msg"></div>
+<div
+  id="acaoMsg"
+  class="msg"
+></div>
 
 </div>
 
-<!-- CADASTRO EQUIPAMENTOS -->
+
+<!-- CADASTRO -->
 
 <div class="card">
 
-<h2>5. Cadastro de equipamentos</h2>
+<h2>
+5. Cadastro de equipamentos
+</h2>
 
 <p class="muted">
 Cadastre novos equipamentos para usar nos próximos orçamentos.
@@ -1057,55 +1351,84 @@ Cadastre novos equipamentos para usar nos próximos orçamentos.
 <div class="grid">
 
 <label>
+
 Nome do equipamento
 
-<input id="novoNome" placeholder="Ex.: Guindaste 200 toneladas">
+<input
+  id="novoNome"
+  placeholder="Ex.: Guindaste 200 toneladas"
+>
+
 </label>
 
 <label>
+
 Unidade
 
 <select id="novoUnidade">
+
 <option>HORAS</option>
 <option>UNIDADE</option>
 <option>KM</option>
 <option>DIÁRIA</option>
 <option>MÊS</option>
+
 </select>
 
 </label>
 
 <label>
+
 Valor unitário
 
-<input id="novoValor" type="number" step="0.01" value="0">
+<input
+  id="novoValor"
+  type="number"
+  step="0.01"
+  value="0"
+>
+
 </label>
 
 <label>
+
 Descrição
 
-<input id="novoDescricao" placeholder="Descrição completa">
+<input
+  id="novoDescricao"
+  placeholder="Descrição completa"
+>
+
 </label>
 
 </div>
 
 <div class="actions">
 
-<button class="blue" onclick="cadastrarEquipamento()">
+<button
+  class="blue"
+  onclick="cadastrarEquipamento()"
+>
 + CADASTRAR EQUIPAMENTO
 </button>
 
 </div>
 
-<div id="catalogo" class="catalog-box"></div>
+<div
+  id="catalogo"
+  class="catalog-box"
+></div>
 
 </div>
+
 
 <!-- HISTÓRICO -->
 
 <div class="card">
 
-<h2>6. Orçamentos salvos</h2>
+<h2>
+6. Orçamentos salvos
+</h2>
 
 <div id="lista">
 Carregando...
@@ -1115,19 +1438,33 @@ Carregando...
 
 </section>
 
-<!-- PROPOSTA PÚBLICA -->
 
-<section id="publico" class="hidden">
+<!-- ==================================================
+PROPOSTA PÚBLICA
+================================================== -->
 
-<div id="impressao" class="proposta">
+<section
+  id="publico"
+  class="hidden"
+>
+
+<div
+  id="impressao"
+  class="proposta"
+>
 
 <div class="proposta-header">
 
-<img src="logo-almeida.png" alt="Almeida Guindastes">
+<img
+  src="logo-almeida.png"
+  alt="Almeida Guindastes"
+>
 
 <div class="proposta-numero">
 
-<b>PROPOSTA COMERCIAL</b>
+<b>
+PROPOSTA COMERCIAL
+</b>
 
 <br>
 
@@ -1144,33 +1481,71 @@ dias
 
 </div>
 
-<h1>PROPOSTA COMERCIAL</h1>
+<h1>
+PROPOSTA COMERCIAL
+</h1>
 
 <div class="dados-box">
 
-<p><b>CONTRATANTE:</b> <span id="pCliente"></span></p>
-<p><b>CNPJ / CPF:</b> <span id="pCnpj"></span></p>
-<p><b>RESPONSÁVEL:</b> <span id="pContato"></span></p>
-<p><b>TELEFONE:</b> <span id="pTelefone"></span></p>
-<p><b>E-MAIL:</b> <span id="pEmail"></span></p>
-<p><b>ENDEREÇO:</b> <span id="pEndereco"></span></p>
-<p><b>LOCAL DE PARTIDA:</b> <span id="pOrigem"></span></p>
-<p><b>LOCAL DO SERVIÇO:</b> <span id="pLocal"></span></p>
+<p>
+<b>CONTRATANTE:</b>
+<span id="pCliente"></span>
+</p>
+
+<p>
+<b>CNPJ / CPF:</b>
+<span id="pCnpj"></span>
+</p>
+
+<p>
+<b>RESPONSÁVEL:</b>
+<span id="pContato"></span>
+</p>
+
+<p>
+<b>TELEFONE:</b>
+<span id="pTelefone"></span>
+</p>
+
+<p>
+<b>E-MAIL:</b>
+<span id="pEmail"></span>
+</p>
+
+<p>
+<b>ENDEREÇO:</b>
+<span id="pEndereco"></span>
+</p>
+
+<p>
+<b>LOCAL DE PARTIDA:</b>
+<span id="pOrigem"></span>
+</p>
+
+<p>
+<b>LOCAL DO SERVIÇO:</b>
+<span id="pLocal"></span>
+</p>
 
 </div>
 
-<h3>EQUIPAMENTOS E SERVIÇOS</h3>
+
+<h3>
+EQUIPAMENTOS E SERVIÇOS
+</h3>
 
 <table class="tabela">
 
 <thead>
 
 <tr>
+
 <th>Qtd.</th>
 <th>Un.</th>
 <th>Descrição</th>
 <th>Valor unit.</th>
 <th>Total</th>
+
 </tr>
 
 </thead>
@@ -1179,57 +1554,91 @@ dias
 
 </table>
 
+
 <div class="valor-final">
+
 TOTAL:
+
 <span id="pTotal"></span>
+
 </div>
 
 <div id="pDescontoBox"></div>
 
-<h3>CONDIÇÕES COMERCIAIS</h3>
 
-<div class="condicoes" id="pCondicoes"></div>
+<h3>
+CONDIÇÕES COMERCIAIS
+</h3>
+
+<div
+  class="condicoes"
+  id="pCondicoes"
+></div>
+
 
 <div class="dados-box">
 
 <p>
-<b>FORMA DE PAGAMENTO:</b>
+
+<b>
+FORMA DE PAGAMENTO:
+</b>
+
 <span id="pPagamento"></span>
+
 </p>
 
 <p>
-<b>PRAZO / PERÍODO:</b>
+
+<b>
+PRAZO / PERÍODO:
+</b>
+
 <span id="pPeriodo"></span>
+
 </p>
 
 <p>
-<b>OBSERVAÇÕES:</b>
+
+<b>
+OBSERVAÇÕES:
+</b>
+
 <span id="pObs"></span>
+
 </p>
 
 </div>
+
 
 <div class="assinaturas">
 
 <div>
+
 <div class="linha">
 ALMEIDA LOCAÇÃO DE GUINDASTES LTDA
 </div>
+
 </div>
 
 <div>
+
 <div class="linha">
 CONTRATANTE / RESPONSÁVEL
 </div>
-</div>
 
 </div>
 
 </div>
+
+</div>
+
 
 <div class="card nao-imprimir">
 
-<h2>Decisão do cliente</h2>
+<h2>
+Decisão do cliente
+</h2>
 
 <p class="muted">
 Informe os dados do responsável para registrar a decisão.
@@ -1238,40 +1647,59 @@ Informe os dados do responsável para registrar a decisão.
 <div class="grid">
 
 <label>
+
 Nome do responsável
+
 <input id="pNome">
+
 </label>
 
 <label>
+
 CPF / CNPJ
+
 <input id="pDoc">
+
 </label>
 
 </div>
 
 <div class="actions">
 
-<button class="green" onclick="aprovar()">
+<button
+  class="green"
+  onclick="aprovar()"
+>
 ✓ APROVAR ORÇAMENTO
 </button>
 
-<button class="red" onclick="recusar()">
+<button
+  class="red"
+  onclick="recusar()"
+>
 ✕ RECUSAR
 </button>
 
-<button class="black" onclick="window.print()">
+<button
+  class="black"
+  onclick="window.print()"
+>
 🖨️ IMPRIMIR / SALVAR PDF
 </button>
 
 </div>
 
-<div id="pMsg" class="msg"></div>
+<div
+  id="pMsg"
+  class="msg"
+></div>
 
 </div>
 
 </section>
 
 </div>
+
 
 <script>
 
@@ -1285,29 +1713,67 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 'sb_publishable_lBD8I4QUQbDLsTlllmROUQ_Ek0kPBw3';
 
-const sb =
-supabase.createClient(
-SUPABASE_URL,
-SUPABASE_KEY
-);
+let sb = null;
+
+try{
+
+  if(
+    typeof supabase !== 'undefined' &&
+    typeof supabase.createClient === 'function'
+  ){
+
+    sb =
+      supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_KEY
+      );
+
+    console.log(
+      'Supabase conectado.'
+    );
+
+  }
+  else{
+
+    console.error(
+      'Biblioteca do Supabase não carregou.'
+    );
+
+  }
+
+}
+catch(error){
+
+  console.error(
+    'Erro ao iniciar Supabase:',
+    error
+  );
+
+}
 
 
 /* ==================================================
 VARIÁVEIS
 ================================================== */
 
-const $ = id => document.getElementById(id);
+const $ = id =>
+document.getElementById(id);
 
 let itens = [];
+
 let itemId = 0;
+
 let equipamentosCloud = [];
+
 let clientesCloud = [];
+
 let cidadesBrasil = [];
+
 let cidadeSelecionada = null;
 
 let cidadeOrigem = {
-nome:'Palmas',
-uf:'TO'
+  nome:'Palmas',
+  uf:'TO'
 };
 
 let distanciaServicoKm = 0;
@@ -1316,27 +1782,27 @@ let luzimanguesManual = false;
 
 
 /* ==================================================
-ITENS INTERNOS DE TRANSPORTE
+ITENS INTERNOS
 ================================================== */
 
 const equipamentosPadrao = [
 
 {
-id:'padrao-mob',
-nome:'Mobilização',
-descricao:'Mobilização do equipamento.',
-unidade:'KM',
-valor:0,
-cortesia:false
+  id:'padrao-mob',
+  nome:'Mobilização',
+  descricao:'Mobilização do equipamento.',
+  unidade:'KM',
+  valor:0,
+  cortesia:false
 },
 
 {
-id:'padrao-desmob',
-nome:'Desmobilização',
-descricao:'Desmobilização do equipamento.',
-unidade:'KM',
-valor:0,
-cortesia:false
+  id:'padrao-desmob',
+  nome:'Desmobilização',
+  descricao:'Desmobilização do equipamento.',
+  unidade:'KM',
+  valor:0,
+  cortesia:false
 }
 
 ];
@@ -1348,431 +1814,508 @@ UTILITÁRIOS
 
 function brl(v){
 
-return new Intl.NumberFormat(
-'pt-BR',
-{
-style:'currency',
-currency:'BRL'
-}
-).format(Number(v)||0);
+  return new Intl.NumberFormat(
+    'pt-BR',
+    {
+      style:'currency',
+      currency:'BRL'
+    }
+  ).format(
+    Number(v)||0
+  );
 
 }
 
 
 function escapar(v){
 
-return String(v ?? '')
-.replaceAll('&','&amp;')
-.replaceAll('<','&lt;')
-.replaceAll('>','&gt;')
-.replaceAll('"','&quot;')
-.replaceAll("'","&#039;");
+  return String(v ?? '')
+    .replaceAll('&','&amp;')
+    .replaceAll('<','&lt;')
+    .replaceAll('>','&gt;')
+    .replaceAll('"','&quot;')
+    .replaceAll("'","&#039;");
 
 }
 
 
 function normalizarTexto(valor){
 
-return String(valor || '')
-.normalize('NFD')
-.replace(/[\u0300-\u036f]/g,'')
-.toLowerCase()
-.trim();
+  return String(valor || '')
+    .normalize('NFD')
+    .replace(
+      /[\u0300-\u036f]/g,
+      ''
+    )
+    .toLowerCase()
+    .trim();
 
 }
 
 
 function normalizarDocumento(valor){
 
-return String(valor || '')
-.replace(/\D/g,'');
+  return String(valor || '')
+    .replace(/\D/g,'');
 
 }
 
 
 function obterEquipamentos(){
 
-return [
-...equipamentosCloud
-];
+  return [
+    ...equipamentosCloud
+  ];
 
 }
 
 
 /* ==================================================
-CIDADES DO BRASIL
+CIDADES
 ================================================== */
 
 async function carregarCidadesBrasil(){
 
-try{
+  try{
 
-const resposta =
-await fetch(
-'https://servicodados.ibge.gov.br/api/v1/localidades/municipios'
-);
+    const resposta =
+      await fetch(
+        'https://servicodados.ibge.gov.br/api/v1/localidades/municipios'
+      );
 
-if(!resposta.ok){
+    if(!resposta.ok){
 
-throw new Error(
-'Não foi possível carregar as cidades.'
-);
+      throw new Error(
+        'Não foi possível carregar as cidades.'
+      );
 
-}
+    }
 
-const dados =
-await resposta.json();
+    const dados =
+      await resposta.json();
 
-cidadesBrasil =
-dados
-.map(c=>({
+    cidadesBrasil =
+      dados
+      .map(c=>({
 
-nome:c.nome,
+        nome:c.nome,
 
-uf:
-c?.microrregiao
-?.mesorregiao
-?.UF
-?.sigla || ''
+        uf:
+          c?.microrregiao
+          ?.mesorregiao
+          ?.UF
+          ?.sigla || ''
 
-}))
-.filter(c=>c.uf)
-.sort(
-(a,b)=>
-a.nome.localeCompare(
-b.nome,
-'pt-BR'
-)
-);
+      }))
+      .filter(c=>c.uf)
+      .sort(
+        (a,b)=>
+          a.nome.localeCompare(
+            b.nome,
+            'pt-BR'
+          )
+      );
 
-console.log(
-'Cidades carregadas:',
-cidadesBrasil.length
-);
+    console.log(
+      'Cidades carregadas:',
+      cidadesBrasil.length
+    );
 
-}
-catch(error){
+  }
+  catch(error){
 
-console.error(
-'Erro ao carregar cidades:',
-error
-);
+    console.error(
+      'Erro ao carregar cidades:',
+      error
+    );
 
-cidadesBrasil=[];
+    cidadesBrasil=[];
 
-}
+  }
 
 }
 
 
 /* ==================================================
-LISTA DE CIDADES + LUZIMANGUES
+TODAS AS CIDADES
 ================================================== */
 
 function obterTodasCidades(){
 
-const especiais = [
-{
-nome:'Luzimangues',
-uf:'TO',
-especial:true
-}
-];
+  const especiais = [
 
-const mapa = new Map();
+    {
+      nome:'Luzimangues',
+      uf:'TO',
+      especial:true
+    }
 
-[...especiais,...cidadesBrasil].forEach(c=>{
+  ];
 
-const chave =
-normalizarTexto(c.nome)+'|'+
-normalizarTexto(c.uf);
+  const mapa = new Map();
 
-if(!mapa.has(chave)){
-mapa.set(chave,c);
-}
+  [
+    ...especiais,
+    ...cidadesBrasil
+  ].forEach(c=>{
 
-});
+    const chave =
+      normalizarTexto(c.nome)+'|'+
+      normalizarTexto(c.uf);
 
-return [...mapa.values()];
+    if(!mapa.has(chave)){
+
+      mapa.set(
+        chave,
+        c
+      );
+
+    }
+
+  });
+
+  return [
+    ...mapa.values()
+  ];
 
 }
 
 
 /* ==================================================
-BUSCA DO LOCAL DO SERVIÇO
+BUSCA LOCAL
 ================================================== */
 
 function prepararBuscaCidade(){
 
-const campo = $('local');
-const caixa = $('cidadeSugestoes');
+  const campo =
+    $('local');
 
-if(!campo || !caixa){
-return;
-}
+  const caixa =
+    $('cidadeSugestoes');
 
-campo.addEventListener(
-'input',
-function(){
+  if(!campo || !caixa){
+    return;
+  }
 
-cidadeSelecionada = null;
-luzimanguesManual = false;
+  campo.addEventListener(
+    'input',
+    function(){
 
-$('manualLuzimangues').style.display='none';
+      cidadeSelecionada=null;
 
-$('partidaBox').classList.add('hidden');
+      luzimanguesManual=false;
 
-$('calculoDistancia').style.display='none';
+      $('manualLuzimangues')
+        .style
+        .display='none';
 
-distanciaServicoKm=0;
+      $('partidaBox')
+        .classList
+        .add('hidden');
 
-const busca =
-normalizarTexto(this.value);
+      $('calculoDistancia')
+        .style
+        .display='none';
 
-if(!busca){
+      distanciaServicoKm=0;
 
-caixa.innerHTML='';
-caixa.classList.add('hidden');
+      const busca =
+        normalizarTexto(
+          this.value
+        );
 
-return;
-}
+      if(!busca){
 
-const resultados =
-obterTodasCidades()
-.filter(c=>
-normalizarTexto(c.nome)
-.includes(busca)
-)
-.slice(0,15);
+        caixa.innerHTML='';
 
-if(!resultados.length){
+        caixa
+          .classList
+          .add('hidden');
 
-caixa.innerHTML =
-'<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
+        return;
 
-caixa.classList.remove('hidden');
+      }
 
-return;
-}
+      const resultados =
+        obterTodasCidades()
+        .filter(c=>
+          normalizarTexto(
+            c.nome
+          ).includes(busca)
+        )
+        .slice(0,15);
 
-caixa.innerHTML =
-resultados
-.map(c=>`
+      if(!resultados.length){
 
-<div
-class="cidade-sugestao"
-data-nome="${escapar(c.nome)}"
-data-uf="${escapar(c.uf)}"
->
+        caixa.innerHTML =
+          '<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
 
-${c.nome === 'Luzimangues'
-? '⭐ '
-: ''}
+        caixa
+          .classList
+          .remove('hidden');
 
-${escapar(c.nome)} - ${escapar(c.uf)}
+        return;
 
-</div>
+      }
 
-`)
-.join('');
+      caixa.innerHTML =
+        resultados
+        .map(c=>`
 
-caixa.classList.remove('hidden');
+          <div
+            class="cidade-sugestao"
+            data-nome="${escapar(c.nome)}"
+            data-uf="${escapar(c.uf)}"
+          >
 
-caixa
-.querySelectorAll('.cidade-sugestao')
-.forEach(el=>{
+            ${
+              c.nome === 'Luzimangues'
+              ? '⭐ '
+              : ''
+            }
 
-el.addEventListener(
-'click',
-function(){
+            ${escapar(c.nome)}
+            -
+            ${escapar(c.uf)}
 
-selecionarCidade(
-this.dataset.nome,
-this.dataset.uf
-);
+          </div>
 
-}
-);
+        `)
+        .join('');
 
-});
+      caixa
+        .classList
+        .remove('hidden');
 
-}
-);
+      caixa
+        .querySelectorAll(
+          '.cidade-sugestao'
+        )
+        .forEach(el=>{
 
-document.addEventListener(
-'click',
-function(e){
+          el.addEventListener(
+            'click',
+            function(){
 
-if(
-!campo.contains(e.target) &&
-!caixa.contains(e.target)
-){
+              selecionarCidade(
+                this.dataset.nome,
+                this.dataset.uf
+              );
 
-caixa.classList.add('hidden');
+            }
+          );
 
-}
+        });
 
-}
-);
+    }
+  );
+
+  document.addEventListener(
+    'click',
+    function(e){
+
+      if(
+        !campo.contains(e.target) &&
+        !caixa.contains(e.target)
+      ){
+
+        caixa
+          .classList
+          .add('hidden');
+
+      }
+
+    }
+  );
 
 }
 
 
 /* ==================================================
-SELECIONAR LOCAL DO SERVIÇO
+SELECIONAR CIDADE
 ================================================== */
 
-async function selecionarCidade(nome,uf){
+async function selecionarCidade(
+  nome,
+  uf
+){
 
-$('local').value =
-`${nome} - ${uf}`;
+  $('local').value =
+    `${nome} - ${uf}`;
 
-$('cidadeSugestoes')
-.classList
-.add('hidden');
+  $('cidadeSugestoes')
+    .classList
+    .add('hidden');
 
-cidadeSelecionada = {
-nome,
-uf
-};
+  cidadeSelecionada={
+    nome,
+    uf
+  };
 
-luzimanguesManual =
-normalizarTexto(nome)==='luzimangues';
+  luzimanguesManual =
+    normalizarTexto(nome)==='luzimangues';
 
-$('partidaBox')
-.classList
-.remove('hidden');
+  $('partidaBox')
+    .classList
+    .remove('hidden');
 
-atualizarTextoPartida();
+  atualizarTextoPartida();
 
-if(luzimanguesManual){
+  if(luzimanguesManual){
 
-$('calculoDistancia').style.display='none';
+    $('calculoDistancia')
+      .style
+      .display='none';
 
-$('manualLuzimangues').style.display='block';
+    $('manualLuzimangues')
+      .style
+      .display='block';
 
-$('distanciaManual').value=0;
+    $('distanciaManual').value=0;
 
-$('manualValorMob').value=
-$('valorMobilizacaoKm').value||0;
+    $('manualValorMob').value =
+      $('valorMobilizacaoKm').value || 0;
 
-$('manualValorDesmob').value=
-$('valorDesmobilizacaoKm').value||0;
+    $('manualValorDesmob').value =
+      $('valorDesmobilizacaoKm').value || 0;
 
-atualizarLuzimanguesManual();
+    atualizarLuzimanguesManual();
 
-return;
+    return;
 
-}
+  }
 
-$('manualLuzimangues').style.display='none';
+  $('manualLuzimangues')
+    .style
+    .display='none';
 
-await calcularDistanciaServico();
+  await calcularDistanciaServico();
 
 }
 
 
 /* ==================================================
-BUSCA DO LOCAL DE PARTIDA
+BUSCA ORIGEM
 ================================================== */
 
 function prepararBuscaOrigem(){
 
-const campo = $('origem');
-const caixa = $('origemSugestoes');
+  const campo =
+    $('origem');
 
-if(!campo || !caixa){
-return;
-}
+  const caixa =
+    $('origemSugestoes');
 
-campo.addEventListener(
-'input',
-function(){
+  if(!campo || !caixa){
+    return;
+  }
 
-const busca =
-normalizarTexto(this.value);
+  campo.addEventListener(
+    'input',
+    function(){
 
-if(!busca){
+      const busca =
+        normalizarTexto(
+          this.value
+        );
 
-caixa.innerHTML='';
-caixa.classList.add('hidden');
+      if(!busca){
 
-return;
-}
+        caixa.innerHTML='';
 
-const resultados =
-cidadesBrasil
-.filter(c=>
-normalizarTexto(c.nome)
-.includes(busca)
-)
-.slice(0,15);
+        caixa
+          .classList
+          .add('hidden');
 
-if(!resultados.length){
+        return;
 
-caixa.innerHTML =
-'<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
+      }
 
-caixa.classList.remove('hidden');
+      const resultados =
+        cidadesBrasil
+        .filter(c=>
+          normalizarTexto(
+            c.nome
+          ).includes(busca)
+        )
+        .slice(0,15);
 
-return;
-}
+      if(!resultados.length){
 
-caixa.innerHTML =
-resultados
-.map(c=>`
+        caixa.innerHTML =
+          '<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
 
-<div
-class="cidade-sugestao"
-data-nome="${escapar(c.nome)}"
-data-uf="${escapar(c.uf)}"
->
+        caixa
+          .classList
+          .remove('hidden');
 
-${escapar(c.nome)} - ${escapar(c.uf)}
+        return;
 
-</div>
+      }
 
-`)
-.join('');
+      caixa.innerHTML =
+        resultados
+        .map(c=>`
 
-caixa.classList.remove('hidden');
+          <div
+            class="cidade-sugestao"
+            data-nome="${escapar(c.nome)}"
+            data-uf="${escapar(c.uf)}"
+          >
 
-caixa
-.querySelectorAll('.cidade-sugestao')
-.forEach(el=>{
+            ${escapar(c.nome)}
+            -
+            ${escapar(c.uf)}
 
-el.addEventListener(
-'click',
-function(){
+          </div>
 
-selecionarOrigem(
-this.dataset.nome,
-this.dataset.uf
-);
+        `)
+        .join('');
 
-}
-);
+      caixa
+        .classList
+        .remove('hidden');
 
-});
+      caixa
+        .querySelectorAll(
+          '.cidade-sugestao'
+        )
+        .forEach(el=>{
 
-}
-);
+          el.addEventListener(
+            'click',
+            function(){
 
-document.addEventListener(
-'click',
-function(e){
+              selecionarOrigem(
+                this.dataset.nome,
+                this.dataset.uf
+              );
 
-if(
-!campo.contains(e.target) &&
-!caixa.contains(e.target)
-){
+            }
+          );
 
-caixa.classList.add('hidden');
+        });
 
-}
+    }
+  );
 
-}
-);
+  document.addEventListener(
+    'click',
+    function(e){
+
+      if(
+        !campo.contains(e.target) &&
+        !caixa.contains(e.target)
+      ){
+
+        caixa
+          .classList
+          .add('hidden');
+
+      }
+
+    }
+  );
 
 }
 
@@ -1783,140 +2326,150 @@ ALTERAR ORIGEM
 
 function abrirAlteracaoPartida(){
 
-$('partidaEditor')
-.classList
-.remove('hidden');
+  $('partidaEditor')
+    .classList
+    .remove('hidden');
 
-$('origem').value='';
+  $('origem').value='';
 
-$('origem').focus();
-
-}
-
-
-async function selecionarOrigem(nome,uf){
-
-cidadeOrigem = {
-nome,
-uf
-};
-
-$('origem').value =
-`${nome} - ${uf}`;
-
-$('origemSugestoes')
-.classList
-.add('hidden');
-
-$('partidaEditor')
-.classList
-.add('hidden');
-
-atualizarTextoPartida();
-
-if(cidadeSelecionada){
-
-if(luzimanguesManual){
-
-atualizarLuzimanguesManual();
-
-}
-else{
-
-await calcularDistanciaServico();
+  $('origem').focus();
 
 }
 
-}
+
+async function selecionarOrigem(
+  nome,
+  uf
+){
+
+  cidadeOrigem={
+    nome,
+    uf
+  };
+
+  $('origem').value =
+    `${nome} - ${uf}`;
+
+  $('origemSugestoes')
+    .classList
+    .add('hidden');
+
+  $('partidaEditor')
+    .classList
+    .add('hidden');
+
+  atualizarTextoPartida();
+
+  if(cidadeSelecionada){
+
+    if(luzimanguesManual){
+
+      atualizarLuzimanguesManual();
+
+    }
+    else{
+
+      await calcularDistanciaServico();
+
+    }
+
+  }
 
 }
 
 
 function usarPalmas(){
 
-cidadeOrigem = {
-nome:'Palmas',
-uf:'TO'
-};
+  cidadeOrigem={
+    nome:'Palmas',
+    uf:'TO'
+  };
 
-$('origem').value='';
+  $('origem').value='';
 
-$('partidaEditor')
-.classList
-.add('hidden');
+  $('partidaEditor')
+    .classList
+    .add('hidden');
 
-atualizarTextoPartida();
+  atualizarTextoPartida();
 
-if(cidadeSelecionada){
+  if(cidadeSelecionada){
 
-if(luzimanguesManual){
+    if(luzimanguesManual){
 
-atualizarLuzimanguesManual();
+      atualizarLuzimanguesManual();
 
-}
-else{
+    }
+    else{
 
-calcularDistanciaServico();
+      calcularDistanciaServico();
 
-}
+    }
 
-}
+  }
 
 }
 
 
 /* ==================================================
-BOTÃO ESPECIAL LUZIMANGUES
+LUZIMANGUES
 ================================================== */
 
 function ativarLuzimanguesManual(){
 
-$('local').value='Luzimangues - TO';
+  $('local').value =
+    'Luzimangues - TO';
 
-cidadeSelecionada={
-nome:'Luzimangues',
-uf:'TO'
-};
+  cidadeSelecionada={
+    nome:'Luzimangues',
+    uf:'TO'
+  };
 
-luzimanguesManual=true;
+  luzimanguesManual=true;
 
-$('partidaBox')
-.classList
-.remove('hidden');
+  $('partidaBox')
+    .classList
+    .remove('hidden');
 
-$('partidaEditor')
-.classList
-.add('hidden');
+  $('partidaEditor')
+    .classList
+    .add('hidden');
 
-$('calculoDistancia').style.display='none';
+  $('calculoDistancia')
+    .style
+    .display='none';
 
-$('manualLuzimangues').style.display='block';
+  $('manualLuzimangues')
+    .style
+    .display='block';
 
-$('manualValorMob').value =
-$('valorMobilizacaoKm').value || 0;
+  $('manualValorMob').value =
+    $('valorMobilizacaoKm').value || 0;
 
-$('manualValorDesmob').value =
-$('valorDesmobilizacaoKm').value || 0;
+  $('manualValorDesmob').value =
+    $('valorDesmobilizacaoKm').value || 0;
 
-atualizarTextoPartida();
+  atualizarTextoPartida();
 
-atualizarLuzimanguesManual();
+  atualizarLuzimanguesManual();
 
 }
 
 
 /* ==================================================
-TEXTO DA PARTIDA
+PARTIDA
 ================================================== */
 
 function atualizarTextoPartida(){
 
-const texto =
-`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+  const texto =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
-$('partidaAtual').textContent=texto;
+  $('partidaAtual').textContent =
+    texto;
 
-$('origemTexto').textContent=texto;
+  $('origemTexto').textContent =
+    texto;
 
 }
 
@@ -1925,254 +2478,281 @@ $('origemTexto').textContent=texto;
 GEOCODIFICAR
 ================================================== */
 
-async function geocodificarCidade(nomeCidade,uf){
+async function geocodificarCidade(
+  nomeCidade,
+  uf
+){
 
-const consulta =
-`${nomeCidade}, ${uf}, Brasil`;
+  const consulta =
+    `${nomeCidade}, ${uf}, Brasil`;
 
-const url =
-'https://nominatim.openstreetmap.org/search?' +
-new URLSearchParams({
+  const url =
+    'https://nominatim.openstreetmap.org/search?' +
+    new URLSearchParams({
 
-q:consulta,
-format:'jsonv2',
-limit:'1',
-countrycodes:'br'
+      q:consulta,
+      format:'jsonv2',
+      limit:'1',
+      countrycodes:'br'
 
-});
+    });
 
-const resposta =
-await fetch(url);
+  const resposta =
+    await fetch(url);
 
-if(!resposta.ok){
+  if(!resposta.ok){
 
-throw new Error(
-'Erro ao localizar a cidade.'
-);
+    throw new Error(
+      'Erro ao localizar a cidade.'
+    );
 
-}
+  }
 
-const dados =
-await resposta.json();
+  const dados =
+    await resposta.json();
 
-if(!dados.length){
+  if(!dados.length){
 
-throw new Error(
-'Cidade não localizada.'
-);
+    throw new Error(
+      'Cidade não localizada.'
+    );
 
-}
+  }
 
-return {
+  return{
 
-lat:Number(dados[0].lat),
-lon:Number(dados[0].lon)
+    lat:Number(
+      dados[0].lat
+    ),
 
-};
+    lon:Number(
+      dados[0].lon
+    )
+
+  };
 
 }
 
 
 /* ==================================================
-DISTÂNCIA AUTOMÁTICA
+DISTÂNCIA
 ================================================== */
 
 async function calcularDistanciaServico(){
 
-const caixa =
-$('calculoDistancia');
+  const caixa =
+    $('calculoDistancia');
 
-if(!caixa || !cidadeSelecionada){
-return;
-}
+  if(
+    !caixa ||
+    !cidadeSelecionada
+  ){
 
-if(luzimanguesManual){
+    return;
 
-caixa.style.display='none';
-return;
+  }
 
-}
+  if(luzimanguesManual){
 
-caixa.style.display='block';
+    caixa.style.display='none';
 
-$('cidadeDestinoTexto').textContent =
-`${cidadeSelecionada.nome} - ${cidadeSelecionada.uf}`;
+    return;
 
-$('origemTexto').textContent =
-`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+  }
 
-$('distanciaTexto').textContent =
-'Calculando distância rodoviária...';
+  caixa.style.display='block';
 
-try{
+  $('cidadeDestinoTexto').textContent =
+    `${cidadeSelecionada.nome} - ${cidadeSelecionada.uf}`;
 
-const origem =
-await geocodificarCidade(
-cidadeOrigem.nome,
-cidadeOrigem.uf
-);
+  $('origemTexto').textContent =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
-const destino =
-await geocodificarCidade(
-cidadeSelecionada.nome,
-cidadeSelecionada.uf
-);
+  $('distanciaTexto').textContent =
+    'Calculando distância rodoviária...';
 
-const rotaUrl =
-`https://router.project-osrm.org/route/v1/driving/`+
-`${origem.lon},${origem.lat};`+
-`${destino.lon},${destino.lat}`+
-`?overview=false`;
+  try{
 
-const resposta =
-await fetch(rotaUrl);
+    const origem =
+      await geocodificarCidade(
+        cidadeOrigem.nome,
+        cidadeOrigem.uf
+      );
 
-if(!resposta.ok){
+    const destino =
+      await geocodificarCidade(
+        cidadeSelecionada.nome,
+        cidadeSelecionada.uf
+      );
 
-throw new Error(
-'Não foi possível calcular a rota.'
-);
+    const rotaUrl =
+      `https://router.project-osrm.org/route/v1/driving/`+
+      `${origem.lon},${origem.lat};`+
+      `${destino.lon},${destino.lat}`+
+      `?overview=false`;
 
-}
+    const resposta =
+      await fetch(rotaUrl);
 
-const dados =
-await resposta.json();
+    if(!resposta.ok){
 
-if(
-!dados.routes ||
-!dados.routes.length
-){
+      throw new Error(
+        'Não foi possível calcular a rota.'
+      );
 
-throw new Error(
-'Rota não encontrada.'
-);
+    }
 
-}
+    const dados =
+      await resposta.json();
 
-distanciaServicoKm =
-Math.ceil(
-dados.routes[0].distance/1000
-);
+    if(
+      !dados.routes ||
+      !dados.routes.length
+    ){
 
-$('distanciaTexto').textContent =
-`Distância rodoviária: ${distanciaServicoKm} km`;
+      throw new Error(
+        'Rota não encontrada.'
+      );
 
-atualizarValoresTransporte();
+    }
 
-}
-catch(error){
+    distanciaServicoKm =
+      Math.ceil(
+        dados.routes[0].distance/1000
+      );
 
-console.error(error);
+    $('distanciaTexto').textContent =
+      `Distância rodoviária: ${distanciaServicoKm} km`;
 
-distanciaServicoKm=0;
+    atualizarValoresTransporte();
 
-$('distanciaTexto').textContent =
-'Não foi possível calcular a distância.';
+  }
+  catch(error){
 
-}
+    console.error(error);
+
+    distanciaServicoKm=0;
+
+    $('distanciaTexto').textContent =
+      'Não foi possível calcular a distância.';
+
+  }
 
 }
 
 
 /* ==================================================
-TRANSPORTE AUTOMÁTICO
+TRANSPORTE
 ================================================== */
 
 function atualizarValoresTransporte(){
 
-if(luzimanguesManual){
-return;
-}
+  if(luzimanguesManual){
+    return;
+  }
 
-const distancia =
-Number(distanciaServicoKm)||0;
+  const distancia =
+    Number(distanciaServicoKm)||0;
 
-const valorMob =
-Number($('valorMobilizacaoKm').value)||0;
+  const valorMob =
+    Number(
+      $('valorMobilizacaoKm').value
+    )||0;
 
-const valorDesmob =
-Number($('valorDesmobilizacaoKm').value)||0;
+  const valorDesmob =
+    Number(
+      $('valorDesmobilizacaoKm').value
+    )||0;
 
-if(!distancia){
+  if(!distancia){
 
-$('resumoMobilizacao').textContent='';
+    $('resumoMobilizacao').textContent='';
 
-return;
+    return;
 
-}
+  }
 
-const totalMob =
-distancia*valorMob;
+  const totalMob =
+    distancia*valorMob;
 
-const totalDesmob =
-distancia*valorDesmob;
+  const totalDesmob =
+    distancia*valorDesmob;
 
-$('resumoMobilizacao').innerHTML =
-`Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
-`Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
+  $('resumoMobilizacao').innerHTML =
+    `Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
+    `Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
 
-aplicarValoresTransporte(
-distancia,
-valorMob,
-valorDesmob
-);
+  aplicarValoresTransporte(
+    distancia,
+    valorMob,
+    valorDesmob
+  );
 
 }
 
 
 /* ==================================================
-TRANSPORTE MANUAL LUZIMANGUES
+LUZIMANGUES MANUAL
 ================================================== */
 
 function atualizarLuzimanguesManual(){
 
-if(!luzimanguesManual){
-return;
-}
+  if(!luzimanguesManual){
+    return;
+  }
 
-const distancia =
-Number($('distanciaManual').value)||0;
+  const distancia =
+    Number(
+      $('distanciaManual').value
+    )||0;
 
-const valorMob =
-Number($('manualValorMob').value)||0;
+  const valorMob =
+    Number(
+      $('manualValorMob').value
+    )||0;
 
-const valorDesmob =
-Number($('manualValorDesmob').value)||0;
+  const valorDesmob =
+    Number(
+      $('manualValorDesmob').value
+    )||0;
 
-distanciaServicoKm=distancia;
+  distanciaServicoKm =
+    distancia;
 
-$('valorMobilizacaoKm').value=valorMob;
+  $('valorMobilizacaoKm').value =
+    valorMob;
 
-$('valorDesmobilizacaoKm').value=valorDesmob;
+  $('valorDesmobilizacaoKm').value =
+    valorDesmob;
 
-if(!distancia){
+  if(!distancia){
 
-$('resumoManualLuzimangues').textContent =
-'Informe a distância manual em quilômetros.';
+    $('resumoManualLuzimangues').textContent =
+      'Informe a distância manual em quilômetros.';
 
-removerItensTransporte();
+    removerItensTransporte();
 
-calcularTotal();
+    calcularTotal();
 
-return;
+    return;
 
-}
+  }
 
-const totalMob =
-distancia*valorMob;
+  const totalMob =
+    distancia*valorMob;
 
-const totalDesmob =
-distancia*valorDesmob;
+  const totalDesmob =
+    distancia*valorDesmob;
 
-$('resumoManualLuzimangues').innerHTML =
-`Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
-`Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
+  $('resumoManualLuzimangues').innerHTML =
+    `Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
+    `Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
 
-aplicarValoresTransporte(
-distancia,
-valorMob,
-valorDesmob
-);
+  aplicarValoresTransporte(
+    distancia,
+    valorMob,
+    valorDesmob
+  );
 
 }
 
@@ -2183,13 +2763,13 @@ REMOVER TRANSPORTE
 
 function removerItensTransporte(){
 
-itens =
-itens.filter(i=>
-i.equipamento!=='padrao-mob' &&
-i.equipamento!=='padrao-desmob'
-);
+  itens =
+    itens.filter(i=>
+      i.equipamento!=='padrao-mob' &&
+      i.equipamento!=='padrao-desmob'
+    );
 
-renderItens();
+  renderItens();
 
 }
 
@@ -2200,157 +2780,182 @@ EVENTOS TRANSPORTE
 
 function prepararValoresTransporte(){
 
-const mob =
-$('valorMobilizacaoKm');
+  const mob =
+    $('valorMobilizacaoKm');
 
-const desmob =
-$('valorDesmobilizacaoKm');
+  const desmob =
+    $('valorDesmobilizacaoKm');
 
-if(mob){
+  if(mob){
 
-mob.addEventListener(
-'input',
-function(){
+    mob.addEventListener(
+      'input',
+      function(){
 
-if(luzimanguesManual){
+        if(luzimanguesManual){
 
-$('manualValorMob').value=this.value;
+          $('manualValorMob').value =
+            this.value;
 
-atualizarLuzimanguesManual();
+          atualizarLuzimanguesManual();
 
-}
-else{
+        }
+        else{
 
-atualizarValoresTransporte();
+          atualizarValoresTransporte();
 
-}
+        }
 
-}
-);
+      }
+    );
 
-}
+  }
 
-if(desmob){
+  if(desmob){
 
-desmob.addEventListener(
-'input',
-function(){
+    desmob.addEventListener(
+      'input',
+      function(){
 
-if(luzimanguesManual){
+        if(luzimanguesManual){
 
-$('manualValorDesmob').value=this.value;
+          $('manualValorDesmob').value =
+            this.value;
 
-atualizarLuzimanguesManual();
+          atualizarLuzimanguesManual();
 
-}
-else{
+        }
+        else{
 
-atualizarValoresTransporte();
+          atualizarValoresTransporte();
 
-}
+        }
 
-}
-);
+      }
+    );
 
-}
+  }
 
 }
 
 
 /* ==================================================
-APLICAR MOBILIZAÇÃO
+APLICAR TRANSPORTE
 ================================================== */
 
 function aplicarValoresTransporte(
-distancia,
-valorMob,
-valorDesmob
+  distancia,
+  valorMob,
+  valorDesmob
 ){
 
-if(!distancia){
-return;
-}
+  if(!distancia){
+    return;
+  }
 
-const origem =
-`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+  const origem =
+    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
-const destino =
-$('local').value;
+  const destino =
+    $('local').value;
 
-let mobilizacao =
-itens.find(
-i=>i.equipamento==='padrao-mob'
-);
+  let mobilizacao =
+    itens.find(
+      i=>i.equipamento==='padrao-mob'
+    );
 
-let desmobilizacao =
-itens.find(
-i=>i.equipamento==='padrao-desmob'
-);
+  let desmobilizacao =
+    itens.find(
+      i=>i.equipamento==='padrao-desmob'
+    );
 
-if(!mobilizacao){
+  if(!mobilizacao){
 
-adicionarItem({
+    adicionarItem({
 
-equipamento:'padrao-mob',
-quantidade:distancia,
-unidade:'KM',
-descricao:
-`Mobilização do equipamento de ${origem} até ${destino}`,
-valor:valorMob,
-cortesia:false
+      equipamento:'padrao-mob',
 
-});
+      quantidade:distancia,
 
-}
+      unidade:'KM',
 
-if(!desmobilizacao){
+      descricao:
+        `Mobilização do equipamento de ${origem} até ${destino}`,
 
-adicionarItem({
+      valor:valorMob,
 
-equipamento:'padrao-desmob',
-quantidade:distancia,
-unidade:'KM',
-descricao:
-`Desmobilização do equipamento de ${destino} até ${origem}`,
-valor:valorDesmob,
-cortesia:false
+      cortesia:false
 
-});
+    });
 
-}
+  }
 
-mobilizacao =
-itens.find(
-i=>i.equipamento==='padrao-mob'
-);
+  if(!desmobilizacao){
 
-desmobilizacao =
-itens.find(
-i=>i.equipamento==='padrao-desmob'
-);
+    adicionarItem({
 
-if(mobilizacao){
+      equipamento:'padrao-desmob',
 
-mobilizacao.quantidade=distancia;
-mobilizacao.unidade='KM';
-mobilizacao.valor=valorMob;
-mobilizacao.descricao=
-`Mobilização do equipamento de ${origem} até ${destino}`;
+      quantidade:distancia,
 
-}
+      unidade:'KM',
 
-if(desmobilizacao){
+      descricao:
+        `Desmobilização do equipamento de ${destino} até ${origem}`,
 
-desmobilizacao.quantidade=distancia;
-desmobilizacao.unidade='KM';
-desmobilizacao.valor=valorDesmob;
-desmobilizacao.descricao=
-`Desmobilização do equipamento de ${destino} até ${origem}`;
+      valor:valorDesmob,
 
-}
+      cortesia:false
 
-renderItens();
-calcularTotal();
+    });
+
+  }
+
+  mobilizacao =
+    itens.find(
+      i=>i.equipamento==='padrao-mob'
+    );
+
+  desmobilizacao =
+    itens.find(
+      i=>i.equipamento==='padrao-desmob'
+    );
+
+  if(mobilizacao){
+
+    mobilizacao.quantidade =
+      distancia;
+
+    mobilizacao.unidade =
+      'KM';
+
+    mobilizacao.valor =
+      valorMob;
+
+    mobilizacao.descricao =
+      `Mobilização do equipamento de ${origem} até ${destino}`;
+
+  }
+
+  if(desmobilizacao){
+
+    desmobilizacao.quantidade =
+      distancia;
+
+    desmobilizacao.unidade =
+      'KM';
+
+    desmobilizacao.valor =
+      valorDesmob;
+
+    desmobilizacao.descricao =
+      `Desmobilização do equipamento de ${destino} até ${origem}`;
+
+  }
+
+  renderItens();
+
+  calcularTotal();
 
 }
 
@@ -2361,156 +2966,279 @@ CLIENTES
 
 async function carregarClientes(){
 
-const {data,error} =
-await sb
-.from('clientes')
-.select('*')
-.order(
-'cliente',
-{ascending:true}
-);
+  if(!sb){
+    return;
+  }
 
-if(error){
+  const {data,error} =
+    await sb
+    .from('clientes')
+    .select('*')
+    .order(
+      'cliente',
+      {
+        ascending:true
+      }
+    );
 
-console.error(
-'Erro ao carregar clientes:',
-error
-);
+  if(error){
 
-clientesCloud=[];
+    console.error(
+      'Erro ao carregar clientes:',
+      error
+    );
 
-return;
+    clientesCloud=[];
 
-}
+    return;
 
-clientesCloud=data||[];
+  }
 
-prepararBuscaClientes();
+  clientesCloud =
+    data||[];
+
+  prepararBuscaClientes();
 
 }
 
 
 function prepararBuscaClientes(){
 
-const campo=$('cliente');
-const cnpj=$('cnpj');
+  const campo =
+    $('cliente');
 
-if(!campo||!cnpj){
-return;
-}
+  const cnpj =
+    $('cnpj');
 
-const lista=$('listaClientes');
+  if(!campo||!cnpj){
+    return;
+  }
 
-lista.innerHTML =
-clientesCloud
-.map(c=>
-`<option value="${escapar(c.cliente)}">`
-)
-.join('');
+  const lista =
+    $('listaClientes');
 
-campo.oninput=function(){
+  lista.innerHTML =
+    clientesCloud
+    .map(c=>
+      `<option value="${escapar(c.cliente)}">`
+    )
+    .join('');
 
-preencherClientePorNome(this.value);
+  campo.oninput=function(){
 
-};
+    preencherClientePorNome(
+      this.value
+    );
 
-cnpj.oninput=function(){
+  };
 
-preencherClientePorCnpj(this.value);
+  cnpj.oninput=function(){
 
-};
+    preencherClientePorCnpj(
+      this.value
+    );
+
+  };
 
 }
 
 
 function preencherClientePorNome(nome){
 
-const busca =
-normalizarTexto(nome);
+  const busca =
+    normalizarTexto(nome);
 
-if(!busca){
-return;
-}
+  if(!busca){
+    return;
+  }
 
-const cliente =
-clientesCloud.find(
-c=>
-normalizarTexto(c.cliente)===busca
-);
+  const cliente =
+    clientesCloud.find(
+      c=>
+        normalizarTexto(
+          c.cliente
+        )===busca
+    );
 
-if(cliente){
-preencherDadosCliente(cliente);
-}
+  if(cliente){
+
+    preencherDadosCliente(
+      cliente
+    );
+
+  }
 
 }
 
 
 function preencherClientePorCnpj(documento){
 
-const busca =
-normalizarDocumento(documento);
+  const busca =
+    normalizarDocumento(
+      documento
+    );
 
-if(!busca){
-return;
-}
+  if(!busca){
+    return;
+  }
 
-const cliente =
-clientesCloud.find(
-c=>
-normalizarDocumento(c.cnpj)===busca
-);
+  const cliente =
+    clientesCloud.find(
+      c=>
+        normalizarDocumento(
+          c.cnpj
+        )===busca
+    );
 
-if(cliente){
-preencherDadosCliente(cliente);
-}
+  if(cliente){
+
+    preencherDadosCliente(
+      cliente
+    );
+
+  }
 
 }
 
 
 function preencherDadosCliente(cliente){
 
-$('cliente').value=cliente.cliente||'';
-$('cnpj').value=cliente.cnpj||'';
-$('contato').value=cliente.contato||'';
-$('telefone').value=cliente.telefone||'';
-$('email').value=cliente.email||'';
-$('endereco').value=cliente.endereco||'';
+  $('cliente').value =
+    cliente.cliente||'';
 
-$('acaoMsg').textContent =
-'Cliente encontrado e cadastro preenchido.';
+  $('cnpj').value =
+    cliente.cnpj||'';
+
+  $('contato').value =
+    cliente.contato||'';
+
+  $('telefone').value =
+    cliente.telefone||'';
+
+  $('email').value =
+    cliente.email||'';
+
+  $('endereco').value =
+    cliente.endereco||'';
+
+  $('acaoMsg').textContent =
+    'Cliente encontrado e cadastro preenchido.';
 
 }
 
 
 /* ==================================================
-INICIAR
+INICIAR SISTEMA
 ================================================== */
 
 async function iniciarSistema(){
 
-$('painel').classList.remove('hidden');
+  $('painel')
+    .classList
+    .remove('hidden');
 
-$('publico').classList.add('hidden');
+  $('publico')
+    .classList
+    .add('hidden');
 
-await carregarEquipamentos();
 
-await carregarClientes();
+  /* INTERFACE PRIMEIRO */
 
-prepararBuscaCidade();
+  prepararBuscaCidade();
 
-prepararBuscaOrigem();
+  prepararBuscaOrigem();
 
-prepararValoresTransporte();
+  prepararValoresTransporte();
 
-await carregarCidadesBrasil();
 
-if(itens.length===0){
+  if(itens.length===0){
 
-adicionarItem();
+    adicionarItem();
 
-}
+  }
 
-await carregarLista();
+
+  /* CIDADES */
+
+  await carregarCidadesBrasil();
+
+
+  /* SUPABASE */
+
+  if(!sb){
+
+    console.error(
+      'Supabase não está disponível.'
+    );
+
+    $('lista').innerHTML =
+      '<p class="muted">Sistema aberto. A conexão com o banco de dados não está disponível neste momento.</p>';
+
+    return;
+
+  }
+
+
+  /* EQUIPAMENTOS */
+
+  try{
+
+    await carregarEquipamentos();
+
+  }
+  catch(error){
+
+    console.error(
+      'Erro ao carregar equipamentos:',
+      error
+    );
+
+    equipamentosCloud=[];
+
+    renderItens();
+
+    renderCatalogo();
+
+  }
+
+
+  /* CLIENTES */
+
+  try{
+
+    await carregarClientes();
+
+  }
+  catch(error){
+
+    console.error(
+      'Erro ao carregar clientes:',
+      error
+    );
+
+    clientesCloud=[];
+
+  }
+
+
+  /* HISTÓRICO */
+
+  try{
+
+    await carregarLista();
+
+  }
+  catch(error){
+
+    console.error(
+      'Erro ao carregar histórico:',
+      error
+    );
+
+    $('lista').innerHTML =
+      '<p class="muted">Não foi possível carregar o histórico.</p>';
+
+  }
 
 }
 
@@ -2521,60 +3249,83 @@ NOVO ORÇAMENTO
 
 function novoOrcamento(){
 
-if(
-!confirm(
-'Deseja limpar o formulário e começar um novo orçamento?'
-)
-){
-return;
-}
+  if(
+    !confirm(
+      'Deseja limpar o formulário e começar um novo orçamento?'
+    )
+  ){
 
-$('cliente').value='';
-$('cnpj').value='';
-$('contato').value='';
-$('telefone').value='';
-$('email').value='';
-$('endereco').value='';
-$('local').value='';
+    return;
 
-$('validade').value=30;
-$('formaPagamento').value='A COMBINAR';
-$('periodo').value='';
-$('obs').value='';
-$('desconto').value=0;
+  }
 
-$('valorMobilizacaoKm').value=0;
-$('valorDesmobilizacaoKm').value=0;
+  $('cliente').value='';
+  $('cnpj').value='';
+  $('contato').value='';
+  $('telefone').value='';
+  $('email').value='';
+  $('endereco').value='';
+  $('local').value='';
 
-$('distanciaManual').value=0;
-$('manualValorMob').value=0;
-$('manualValorDesmob').value=0;
+  $('validade').value=30;
 
-cidadeSelecionada=null;
+  $('formaPagamento').value =
+    'A COMBINAR';
 
-cidadeOrigem={
-nome:'Palmas',
-uf:'TO'
-};
+  $('periodo').value='';
 
-luzimanguesManual=false;
-distanciaServicoKm=0;
+  $('obs').value='';
 
-atualizarTextoPartida();
+  $('desconto').value=0;
 
-$('partidaBox').classList.add('hidden');
-$('partidaEditor').classList.add('hidden');
-$('calculoDistancia').style.display='none';
-$('manualLuzimangues').style.display='none';
+  $('valorMobilizacaoKm').value=0;
 
-itens=[];
-itemId=0;
+  $('valorDesmobilizacaoKm').value=0;
 
-adicionarItem();
+  $('distanciaManual').value=0;
 
-calcularTotal();
+  $('manualValorMob').value=0;
 
-$('acaoMsg').textContent='';
+  $('manualValorDesmob').value=0;
+
+  cidadeSelecionada=null;
+
+  cidadeOrigem={
+    nome:'Palmas',
+    uf:'TO'
+  };
+
+  luzimanguesManual=false;
+
+  distanciaServicoKm=0;
+
+  atualizarTextoPartida();
+
+  $('partidaBox')
+    .classList
+    .add('hidden');
+
+  $('partidaEditor')
+    .classList
+    .add('hidden');
+
+  $('calculoDistancia')
+    .style
+    .display='none';
+
+  $('manualLuzimangues')
+    .style
+    .display='none';
+
+  itens=[];
+
+  itemId=0;
+
+  adicionarItem();
+
+  calcularTotal();
+
+  $('acaoMsg').textContent='';
 
 }
 
@@ -2585,126 +3336,158 @@ ITENS
 
 function adicionarItem(dados={}){
 
-itemId++;
+  itemId++;
 
-const item={
+  const item={
 
-id:itemId,
+    id:itemId,
 
-equipamento:dados.equipamento||'',
+    equipamento:
+      dados.equipamento||'',
 
-quantidade:Number(dados.quantidade??1),
+    quantidade:
+      Number(
+        dados.quantidade??1
+      ),
 
-unidade:dados.unidade||'UNIDADE',
+    unidade:
+      dados.unidade||
+      'UNIDADE',
 
-descricao:dados.descricao||'',
+    descricao:
+      dados.descricao||'',
 
-valor:Number(dados.valor??0),
+    valor:
+      Number(
+        dados.valor??0
+      ),
 
-cortesia:!!dados.cortesia
+    cortesia:
+      !!dados.cortesia
 
-};
+  };
 
-itens.push(item);
+  itens.push(item);
 
-renderItens();
-calcularTotal();
+  renderItens();
+
+  calcularTotal();
 
 }
 
 
 function removerItem(id){
 
-itens =
-itens.filter(
-i=>i.id!==Number(id)
-);
+  itens =
+    itens.filter(
+      i=>i.id!==Number(id)
+    );
 
-renderItens();
-calcularTotal();
+  renderItens();
+
+  calcularTotal();
 
 }
 
 
-function atualizarItem(id,campo,valor){
-
-const item =
-itens.find(
-x=>x.id===Number(id)
-);
-
-if(!item){
-return;
-}
-
-if(
-campo==='quantidade' ||
-campo==='valor'
+function atualizarItem(
+  id,
+  campo,
+  valor
 ){
 
-item[campo] =
-valor === ''
-?
-0
-:
-Number(valor);
+  const item =
+    itens.find(
+      x=>x.id===Number(id)
+    );
+
+  if(!item){
+    return;
+  }
+
+  if(
+    campo==='quantidade' ||
+    campo==='valor'
+  ){
+
+    item[campo] =
+      valor === ''
+      ? 0
+      : Number(valor);
+
+  }
+  else if(
+    campo==='cortesia'
+  ){
+
+    item[campo]=
+      !!valor;
+
+  }
+  else{
+
+    item[campo]=
+      valor;
+
+  }
+
+  calcularTotal();
 
 }
-else if(campo==='cortesia'){
-
-item[campo]=!!valor;
-
-}
-else{
-
-item[campo]=valor;
-
-}
-
-calcularTotal();
-
-}
 
 
-function selecionarEquipamento(id,equipamentoId){
+function selecionarEquipamento(
+  id,
+  equipamentoId
+){
 
-const eq =
-obterEquipamentos()
-.find(
-x=>x.id===equipamentoId
-);
+  const eq =
+    obterEquipamentos()
+    .find(
+      x=>x.id===equipamentoId
+    );
 
-const item =
-itens.find(
-x=>x.id===Number(id)
-);
+  const item =
+    itens.find(
+      x=>x.id===Number(id)
+    );
 
-if(!eq||!item){
-return;
-}
+  if(!eq||!item){
+    return;
+  }
 
-item.equipamento=eq.id;
-item.unidade=eq.unidade;
-item.descricao=eq.descricao;
-item.valor=Number(eq.valor)||0;
-item.cortesia=!!eq.cortesia;
+  item.equipamento =
+    eq.id;
 
-renderItens();
-calcularTotal();
+  item.unidade =
+    eq.unidade;
+
+  item.descricao =
+    eq.descricao;
+
+  item.valor =
+    Number(eq.valor)||0;
+
+  item.cortesia =
+    !!eq.cortesia;
+
+  renderItens();
+
+  calcularTotal();
 
 }
 
 
 function totalItem(i){
 
-if(i.cortesia){
-return 0;
-}
+  if(i.cortesia){
+    return 0;
+  }
 
-return (
-(Number(i.quantidade)||0)*
-(Number(i.valor)||0)
-);
+  return (
+    (Number(i.quantidade)||0) *
+    (Number(i.valor)||0)
+  );
 
 }
 
@@ -2715,181 +3498,201 @@ RENDER ITENS
 
 function renderItens(){
 
-const c=$('itens');
+  const c =
+    $('itens');
 
-if(!c){
-return;
-}
+  if(!c){
+    return;
+  }
 
-if(!itens.length){
+  if(!itens.length){
 
-c.innerHTML =
-'<div class="muted">Nenhum item adicionado.</div>';
+    c.innerHTML =
+      '<div class="muted">Nenhum item adicionado.</div>';
 
-return;
+    return;
 
-}
+  }
 
-const lista=obterEquipamentos();
-
-c.innerHTML =
-itens
-.map(i=>`
-
-<div class="item">
-
-<div class="item-header">
-
-<div class="item-title">
-Item ${i.id}
-</div>
-
-<div class="item-total">
-${brl(totalItem(i))}
-</div>
-
-</div>
-
-<div class="grid">
-
-<label>
-
-Equipamento cadastrado
-
-<select onchange="selecionarEquipamento(${i.id},this.value)">
-
-<option value="">
-Selecione...
-</option>
-
-${
-lista
-.map(e=>`
-
-<option
-value="${escapar(e.id)}"
-${i.equipamento===e.id?'selected':''}
->
-
-${escapar(e.nome)}
-
-</option>
-
-`)
-.join('')
-}
-
-</select>
-
-</label>
+  const lista =
+    obterEquipamentos();
 
 
-<label>
+  c.innerHTML =
+    itens
+    .map(i=>`
 
-Quantidade
+      <div class="item">
 
-<input
-type="number"
-min="0"
-step="0.01"
-value="${i.quantidade}"
-oninput="atualizarItem(${i.id},'quantidade',this.value)"
->
+        <div class="item-header">
 
-</label>
+          <div class="item-title">
+            Item ${i.id}
+          </div>
 
+          <div class="item-total">
+            ${brl(totalItem(i))}
+          </div>
 
-<label>
-
-Unidade
-
-<select
-onchange="atualizarItem(${i.id},'unidade',this.value)"
->
-
-${
-[
-'HORAS',
-'UNIDADE',
-'KM',
-'DIÁRIA',
-'MÊS'
-]
-.map(u=>
-`
-
-<option
-${i.unidade===u?'selected':''}
->
-${u}
-</option>
-
-`
-)
-.join('')
-}
-
-</select>
-
-</label>
+        </div>
 
 
-<label>
+        <div class="grid">
 
-Valor unitário
+          <label>
 
-<input
-type="number"
-min="0"
-step="0.01"
-value="${i.valor}"
-oninput="atualizarItem(${i.id},'valor',this.value)"
->
+            Equipamento cadastrado
 
-</label>
+            <select
+              onchange="selecionarEquipamento(${i.id},this.value)"
+            >
 
-</div>
+              <option value="">
+                Selecione...
+              </option>
+
+              ${
+                lista
+                .map(e=>`
+
+                  <option
+                    value="${escapar(e.id)}"
+                    ${
+                      i.equipamento===e.id
+                      ?'selected'
+                      :''
+                    }
+                  >
+
+                    ${escapar(e.nome)}
+
+                  </option>
+
+                `)
+                .join('')
+              }
+
+            </select>
+
+          </label>
 
 
-<label style="margin-top:12px">
+          <label>
 
-Descrição
+            Quantidade
 
-<textarea
-oninput="atualizarItem(${i.id},'descricao',this.value)"
->${escapar(i.descricao)}</textarea>
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              value="${i.quantidade}"
+              oninput="atualizarItem(${i.id},'quantidade',this.value)"
+            >
 
-</label>
-
-
-<label class="checkbox-line">
-
-<input
-type="checkbox"
-${i.cortesia?'checked':''}
-onchange="atualizarItem(${i.id},'cortesia',this.checked)"
->
-
-ITEM DE CORTESIA / SEM CUSTO
-
-</label>
+          </label>
 
 
-<div class="actions">
+          <label>
 
-<button
-class="red"
-onclick="removerItem(${i.id})"
->
-REMOVER ITEM
-</button>
+            Unidade
 
-</div>
+            <select
+              onchange="atualizarItem(${i.id},'unidade',this.value)"
+            >
 
-</div>
+              ${
+                [
+                  'HORAS',
+                  'UNIDADE',
+                  'KM',
+                  'DIÁRIA',
+                  'MÊS'
+                ]
+                .map(u=>`
 
-`)
-.join('');
+                  <option
+                    ${
+                      i.unidade===u
+                      ?'selected'
+                      :''
+                    }
+                  >
+                    ${u}
+                  </option>
+
+                `)
+                .join('')
+              }
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            Valor unitário
+
+            <input
+              type="number"
+              min="0"
+              step="0.01"
+              value="${i.valor}"
+              oninput="atualizarItem(${i.id},'valor',this.value)"
+            >
+
+          </label>
+
+        </div>
+
+
+        <label
+          style="margin-top:12px"
+        >
+
+          Descrição
+
+          <textarea
+            oninput="atualizarItem(${i.id},'descricao',this.value)"
+          >${escapar(i.descricao)}</textarea>
+
+        </label>
+
+
+        <label
+          class="checkbox-line"
+        >
+
+          <input
+            type="checkbox"
+            ${
+              i.cortesia
+              ?'checked'
+              :''
+            }
+            onchange="atualizarItem(${i.id},'cortesia',this.checked)"
+          >
+
+          ITEM DE CORTESIA / SEM CUSTO
+
+        </label>
+
+
+        <div class="actions">
+
+          <button
+            class="red"
+            onclick="removerItem(${i.id})"
+          >
+            REMOVER ITEM
+          </button>
+
+        </div>
+
+      </div>
+
+    `)
+    .join('');
 
 }
 
@@ -2900,243 +3703,296 @@ TOTAL
 
 function calcularTotal(){
 
-const bruto =
-itens.reduce(
-(s,i)=>s+totalItem(i),
-0
-);
+  const bruto =
+    itens.reduce(
+      (s,i)=>
+        s+totalItem(i),
+      0
+    );
 
-const desconto =
-Math.max(
-0,
-Number($('desconto').value)||0
-);
+  const desconto =
+    Math.max(
+      0,
+      Number(
+        $('desconto').value
+      )||0
+    );
 
-const final =
-Math.max(
-0,
-bruto-desconto
-);
+  const final =
+    Math.max(
+      0,
+      bruto-desconto
+    );
 
-$('total').textContent=brl(bruto);
-$('totalFinal').textContent=brl(final);
+  $('total').textContent =
+    brl(bruto);
 
-return {
-bruto,
-desconto,
-final
-};
+  $('totalFinal').textContent =
+    brl(final);
+
+  return{
+    bruto,
+    desconto,
+    final
+  };
 
 }
 
 
 /* ==================================================
-EQUIPAMENTOS CLOUD
+EQUIPAMENTOS
 ================================================== */
 
 async function carregarEquipamentos(){
 
-const {data,error} =
-await sb
-.from('equipamentos')
-.select('*')
-.eq('ativo',true)
-.order(
-'created_at',
-{ascending:true}
-);
+  if(!sb){
+    return;
+  }
 
-if(error){
+  const {data,error} =
+    await sb
+    .from('equipamentos')
+    .select('*')
+    .eq('ativo',true)
+    .order(
+      'created_at',
+      {
+        ascending:true
+      }
+    );
 
-console.error(error);
-equipamentosCloud=[];
+  if(error){
 
-}
-else{
+    console.error(
+      'Erro equipamentos:',
+      error
+    );
 
-equipamentosCloud=data||[];
+    equipamentosCloud=[];
 
-}
+  }
+  else{
 
-renderItens();
-renderCatalogo();
+    equipamentosCloud =
+      data||[];
+
+  }
+
+  renderItens();
+
+  renderCatalogo();
 
 }
 
 
 async function cadastrarEquipamento(){
 
-const nome =
-$('novoNome').value.trim();
+  const nome =
+    $('novoNome')
+    .value
+    .trim();
 
-if(!nome){
+  if(!nome){
 
-alert(
-'Informe o nome do equipamento.'
-);
+    alert(
+      'Informe o nome do equipamento.'
+    );
 
-return;
+    return;
 
-}
+  }
 
-/*
- * Sistema sem login.
- * O cadastro depende das políticas RLS
- * configuradas no Supabase.
- */
+  if(!sb){
 
-const payload={
+    alert(
+      'Banco de dados não conectado.'
+    );
 
-nome,
+    return;
 
-descricao:
-$('novoDescricao').value.trim(),
+  }
 
-unidade:
-$('novoUnidade').value,
+  const payload={
 
-valor:
-Number($('novoValor').value)||0,
+    nome,
 
-cortesia:false,
-ativo:true
+    descricao:
+      $('novoDescricao')
+      .value
+      .trim(),
 
-};
+    unidade:
+      $('novoUnidade')
+      .value,
 
-const {error} =
-await sb
-.from('equipamentos')
-.insert(payload);
+    valor:
+      Number(
+        $('novoValor').value
+      )||0,
 
-if(error){
+    cortesia:false,
 
-alert(
-'Erro ao cadastrar: '+
-error.message
-);
+    ativo:true
 
-return;
+  };
 
-}
+  const {error} =
+    await sb
+    .from('equipamentos')
+    .insert(payload);
 
-$('novoNome').value='';
-$('novoDescricao').value='';
-$('novoValor').value='0';
+  if(error){
 
-await carregarEquipamentos();
+    alert(
+      'Erro ao cadastrar: '+
+      error.message
+    );
 
-alert(
-'Equipamento cadastrado com sucesso!'
-);
+    return;
+
+  }
+
+  $('novoNome').value='';
+
+  $('novoDescricao').value='';
+
+  $('novoValor').value='0';
+
+  await carregarEquipamentos();
+
+  alert(
+    'Equipamento cadastrado com sucesso!'
+  );
 
 }
 
 
 async function excluirEquipamento(id){
 
-if(
-!confirm(
-'Excluir este equipamento do cadastro?'
-)
-){
-return;
-}
+  if(
+    !confirm(
+      'Excluir este equipamento do cadastro?'
+    )
+  ){
 
-const {error} =
-await sb
-.from('equipamentos')
-.delete()
-.eq('id',id);
+    return;
 
-if(error){
+  }
 
-alert(
-'Erro: '+error.message
-);
+  if(!sb){
 
-return;
+    alert(
+      'Banco de dados não conectado.'
+    );
 
-}
+    return;
 
-await carregarEquipamentos();
+  }
+
+  const {error} =
+    await sb
+    .from('equipamentos')
+    .delete()
+    .eq('id',id);
+
+  if(error){
+
+    alert(
+      'Erro: '+error.message
+    );
+
+    return;
+
+  }
+
+  await carregarEquipamentos();
 
 }
 
 
 function renderCatalogo(){
 
-const c=$('catalogo');
+  const c =
+    $('catalogo');
 
-if(!c){
-return;
-}
+  if(!c){
+    return;
+  }
 
-let html=`
+  let html=`
 
-<h3>
-Equipamentos cadastrados
-</h3>
+    <h3>
+      Equipamentos cadastrados
+    </h3>
 
-<div class="muted">
-Os equipamentos cadastrados aqui ficarão disponíveis nos próximos orçamentos.
-</div>
+    <div class="muted">
+      Os equipamentos cadastrados aqui ficarão disponíveis nos próximos orçamentos.
+    </div>
 
-`;
+  `;
 
-if(!equipamentosCloud.length){
+  if(!equipamentosCloud.length){
 
-html += `
+    html += `
 
-<p class="muted" style="margin-top:15px">
-Nenhum equipamento cadastrado ainda.
-</p>
+      <p
+        class="muted"
+        style="margin-top:15px"
+      >
+        Nenhum equipamento cadastrado ainda.
+      </p>
 
-`;
+    `;
 
-}
-else{
+  }
+  else{
 
-html +=
-equipamentosCloud
-.map(e=>`
+    html +=
+      equipamentosCloud
+      .map(e=>`
 
-<div class="catalog-item catalog-cloud">
+        <div
+          class="catalog-item catalog-cloud"
+        >
 
-<div>
+          <div>
 
-<b>${escapar(e.nome)}</b>
+            <b>
+              ${escapar(e.nome)}
+            </b>
 
-<br>
+            <br>
 
-<span class="mini">
-${escapar(e.unidade)}
-—
-${brl(e.valor)}
-</span>
+            <span class="mini">
+              ${escapar(e.unidade)}
+              —
+              ${brl(e.valor)}
+            </span>
 
-<br>
+            <br>
 
-<span class="mini">
-${escapar(e.descricao)}
-</span>
+            <span class="mini">
+              ${escapar(e.descricao)}
+            </span>
 
-</div>
+          </div>
 
-<button
-class="red"
-onclick="excluirEquipamento('${e.id}')"
->
-EXCLUIR
-</button>
+          <button
+            class="red"
+            onclick="excluirEquipamento('${e.id}')"
+          >
+            EXCLUIR
+          </button>
 
-</div>
+        </div>
 
-`)
-.join('');
+      `)
+      .join('');
 
-}
+  }
 
-c.innerHTML=html;
+  c.innerHTML =
+    html;
 
 }
 
@@ -3147,19 +4003,36 @@ CONDIÇÕES
 
 function montarCondicoes(){
 
-return {
+  return{
 
-horario:$('condHorario').value,
-prazo:$('condPrazo').value,
-horas:$('condHoras').value,
-combustivel:$('condCombustivel').value,
-transporte:$('condTransporte').value,
-alimentacao:$('condAlimentacao').value,
-hospedagem:$('condHospedagem').value,
-rigging:$('condRigging').value,
-adicionais:$('condicoesAdicionais').value
+    horario:
+      $('condHorario').value,
 
-};
+    prazo:
+      $('condPrazo').value,
+
+    horas:
+      $('condHoras').value,
+
+    combustivel:
+      $('condCombustivel').value,
+
+    transporte:
+      $('condTransporte').value,
+
+    alimentacao:
+      $('condAlimentacao').value,
+
+    hospedagem:
+      $('condHospedagem').value,
+
+    rigging:
+      $('condRigging').value,
+
+    adicionais:
+      $('condicoesAdicionais').value
+
+  };
 
 }
 
@@ -3170,49 +4043,73 @@ MONTAR ORÇAMENTO
 
 function montarOrcamento(){
 
-const calc=calcularTotal();
+  const calc =
+    calcularTotal();
 
-return {
+  return{
 
-cliente:$('cliente').value.trim(),
-cnpj:$('cnpj').value.trim(),
-contato:$('contato').value.trim(),
-telefone:$('telefone').value.trim(),
-email:$('email').value.trim(),
-endereco:$('endereco').value.trim(),
-local:$('local').value.trim(),
+    cliente:
+      $('cliente').value.trim(),
 
-validade:
-Number($('validade').value)||30,
+    cnpj:
+      $('cnpj').value.trim(),
 
-formaPagamento:
-$('formaPagamento').value,
+    contato:
+      $('contato').value.trim(),
 
-periodo:
-$('periodo').value,
+    telefone:
+      $('telefone').value.trim(),
 
-obs:
-$('obs').value,
+    email:
+      $('email').value.trim(),
 
-desconto:calc.desconto,
-total:calc.final,
+    endereco:
+      $('endereco').value.trim(),
 
-itens:
-itens.map(i=>({
+    local:
+      $('local').value.trim(),
 
-equipamento:i.equipamento,
-quantidade:i.quantidade,
-unidade:i.unidade,
-descricao:i.descricao,
-valor:i.valor,
-cortesia:i.cortesia
+    validade:
+      Number(
+        $('validade').value
+      )||30,
 
-})),
+    formaPagamento:
+      $('formaPagamento').value,
 
-condicoes:
-montarCondicoes()
+    periodo:
+      $('periodo').value,
 
-};
+    obs:
+      $('obs').value,
+
+    desconto:
+      calc.desconto,
+
+    total:
+      calc.final,
+
+    itens:
+      itens.map(i=>({
+
+        equipamento:i.equipamento,
+
+        quantidade:i.quantidade,
+
+        unidade:i.unidade,
+
+        descricao:i.descricao,
+
+        valor:i.valor,
+
+        cortesia:i.cortesia
+
+      })),
+
+    condicoes:
+      montarCondicoes()
+
+  };
 
 }
 
@@ -3223,142 +4120,182 @@ SALVAR
 
 async function salvar(){
 
-const q=montarOrcamento();
+  if(!sb){
 
-if(!q.cliente){
+    alert(
+      'O banco de dados não está conectado.'
+    );
 
-alert(
-'Informe a empresa contratante.'
-);
+    return;
 
-return;
+  }
 
-}
+  const q =
+    montarOrcamento();
 
+  if(!q.cliente){
 
-/* CLIENTE */
+    alert(
+      'Informe a empresa contratante.'
+    );
 
-const documento =
-normalizarDocumento(q.cnpj);
+    return;
 
-if(documento){
-
-const existente =
-clientesCloud.find(
-c=>
-normalizarDocumento(c.cnpj)===documento
-);
-
-const dadosCliente={
-
-cliente:q.cliente,
-cnpj:q.cnpj,
-contato:q.contato,
-telefone:q.telefone,
-email:q.email,
-endereco:q.endereco,
-updated_at:new Date().toISOString()
-
-};
-
-if(existente){
-
-const resultadoCliente =
-await sb
-.from('clientes')
-.update(dadosCliente)
-.eq('id',existente.id);
-
-if(resultadoCliente.error){
-
-console.error(
-'Erro ao atualizar cliente:',
-resultadoCliente.error
-);
-
-}
-
-}
-else{
-
-const resultadoCliente =
-await sb
-.from('clientes')
-.insert(dadosCliente)
-.select('*')
-.single();
-
-if(
-!resultadoCliente.error &&
-resultadoCliente.data
-){
-
-clientesCloud.push(
-resultadoCliente.data
-);
-
-}
-
-}
-
-}
+  }
 
 
-const tentativa={
+  /* CLIENTE */
 
-cliente:q.cliente,
-cnpj:q.cnpj,
-contato:q.contato,
-telefone:q.telefone,
-email:q.email,
-endereco:q.endereco,
-local:q.local,
+  const documento =
+    normalizarDocumento(
+      q.cnpj
+    );
 
-validade:q.validade,
+  if(documento){
 
-forma_pagamento:q.formaPagamento,
+    const existente =
+      clientesCloud.find(
+        c=>
+          normalizarDocumento(
+            c.cnpj
+          )===documento
+      );
 
-periodo:q.periodo,
+    const dadosCliente={
 
-obs:q.obs,
+      cliente:q.cliente,
 
-desconto:q.desconto,
+      cnpj:q.cnpj,
 
-total:q.total,
+      contato:q.contato,
 
-itens:q.itens,
+      telefone:q.telefone,
 
-condicoes:
-JSON.stringify(q.condicoes)
+      email:q.email,
 
-};
+      endereco:q.endereco,
 
-const resultado =
-await sb
-.from('orcamentos')
-.insert(tentativa)
-.select('numero')
-.single();
+      updated_at:
+        new Date().toISOString()
 
-if(resultado.error){
+    };
 
-alert(
-'Erro ao salvar: '+
-resultado.error.message
-);
+    if(existente){
 
-return;
+      const resultadoCliente =
+        await sb
+        .from('clientes')
+        .update(
+          dadosCliente
+        )
+        .eq(
+          'id',
+          existente.id
+        );
 
-}
+      if(resultadoCliente.error){
 
-$('acaoMsg').textContent =
-'Orçamento '+
-resultado.data.numero+
-' salvo com sucesso!';
+        console.error(
+          'Erro ao atualizar cliente:',
+          resultadoCliente.error
+        );
 
-await carregarLista();
+      }
 
-return resultado.data.numero;
+    }
+    else{
+
+      const resultadoCliente =
+        await sb
+        .from('clientes')
+        .insert(
+          dadosCliente
+        )
+        .select('*')
+        .single();
+
+      if(
+        !resultadoCliente.error &&
+        resultadoCliente.data
+      ){
+
+        clientesCloud.push(
+          resultadoCliente.data
+        );
+
+      }
+
+    }
+
+  }
+
+
+  const tentativa={
+
+    cliente:q.cliente,
+
+    cnpj:q.cnpj,
+
+    contato:q.contato,
+
+    telefone:q.telefone,
+
+    email:q.email,
+
+    endereco:q.endereco,
+
+    local:q.local,
+
+    validade:q.validade,
+
+    forma_pagamento:
+      q.formaPagamento,
+
+    periodo:q.periodo,
+
+    obs:q.obs,
+
+    desconto:q.desconto,
+
+    total:q.total,
+
+    itens:q.itens,
+
+    condicoes:
+      JSON.stringify(
+        q.condicoes
+      )
+
+  };
+
+  const resultado =
+    await sb
+    .from('orcamentos')
+    .insert(
+      tentativa
+    )
+    .select('numero')
+    .single();
+
+  if(resultado.error){
+
+    alert(
+      'Erro ao salvar: '+
+      resultado.error.message
+    );
+
+    return;
+
+  }
+
+  $('acaoMsg').textContent =
+    'Orçamento '+
+    resultado.data.numero+
+    ' salvo com sucesso!';
+
+  await carregarLista();
+
+  return resultado.data.numero;
 
 }
 
@@ -3369,168 +4306,195 @@ HISTÓRICO
 
 async function carregarLista(){
 
-const {data,error} =
-await sb
-.from('orcamentos')
-.select('*')
-.order(
-'created_at',
-{ascending:false}
-)
-.limit(30);
+  if(!sb){
 
-if(error){
+    $('lista').innerHTML =
+      '<p class="muted">Banco de dados não conectado.</p>';
 
-$('lista').textContent =
-'Erro ao carregar histórico: '+
-error.message;
+    return;
 
-return;
+  }
 
-}
+  const {data,error} =
+    await sb
+    .from('orcamentos')
+    .select('*')
+    .order(
+      'created_at',
+      {
+        ascending:false
+      }
+    )
+    .limit(30);
 
-if(!data?.length){
+  if(error){
 
-$('lista').innerHTML =
-'<p class="muted">Nenhum orçamento salvo.</p>';
+    $('lista').textContent =
+      'Erro ao carregar histórico: '+
+      error.message;
 
-return;
+    return;
 
-}
+  }
 
-$('lista').innerHTML =
-data
-.map(o=>`
+  if(!data?.length){
 
-<div
-style="
-padding:14px 0;
-border-bottom:1px solid #eee
-"
->
+    $('lista').innerHTML =
+      '<p class="muted">Nenhum orçamento salvo.</p>';
 
-<b>
-Orçamento Nº ${escapar(o.numero)}
-</b>
+    return;
 
-<br>
+  }
 
-${escapar(o.cliente||'')}
+  $('lista').innerHTML =
+    data
+    .map(o=>`
 
-<br>
+      <div
+        style="
+          padding:14px 0;
+          border-bottom:1px solid #eee
+        "
+      >
 
-<span class="muted">
-${brl(o.total)}
-</span>
+        <b>
+          Orçamento Nº
+          ${escapar(o.numero)}
+        </b>
 
-<div class="actions">
+        <br>
 
-<button
-class="blue"
-onclick="abrirSalvo('${o.id}')"
->
-ABRIR
-</button>
+        ${escapar(o.cliente||'')}
 
-</div>
+        <br>
 
-</div>
+        <span class="muted">
+          ${brl(o.total)}
+        </span>
 
-`)
-.join('');
+        <div class="actions">
+
+          <button
+            class="blue"
+            onclick="abrirSalvo('${o.id}')"
+          >
+            ABRIR
+          </button>
+
+        </div>
+
+      </div>
+
+    `)
+    .join('');
 
 }
 
 
 async function abrirSalvo(id){
 
-const {data,error} =
-await sb
-.from('orcamentos')
-.select('*')
-.eq('id',id)
-.single();
+  if(!sb){
+    return;
+  }
 
-if(error){
+  const {data,error} =
+    await sb
+    .from('orcamentos')
+    .select('*')
+    .eq('id',id)
+    .single();
 
-alert(error.message);
-return;
+  if(error){
 
-}
+    alert(
+      error.message
+    );
 
-preencherFormulario(data);
+    return;
 
-window.scrollTo({
-top:0,
-behavior:'smooth'
-});
+  }
+
+  preencherFormulario(data);
+
+  window.scrollTo({
+
+    top:0,
+
+    behavior:'smooth'
+
+  });
 
 }
 
 
 /* ==================================================
-ORIGEM DOS ITENS SALVOS
+ORIGEM DOS ITENS
 ================================================== */
 
 function descobrirOrigemDosItens(lista){
 
-const item =
-lista.find(
-i=>i.equipamento==='padrao-mob'
-);
+  const item =
+    lista.find(
+      i=>
+        i.equipamento==='padrao-mob'
+    );
 
-if(!item?.descricao){
-return;
-}
+  if(!item?.descricao){
+    return;
+  }
 
-const texto =
-String(item.descricao);
+  const texto =
+    String(
+      item.descricao
+    );
 
-const encontrado =
-texto.match(
-/Mobilização do equipamento de (.+) até/i
-);
+  const encontrado =
+    texto.match(
+      /Mobilização do equipamento de (.+) até/i
+    );
 
-if(!encontrado){
-return;
-}
+  if(!encontrado){
+    return;
+  }
 
-const origemTexto =
-encontrado[1].trim();
+  const origemTexto =
+    encontrado[1].trim();
 
-const partes =
-origemTexto.split(' - ');
+  const partes =
+    origemTexto.split(' - ');
 
-if(partes.length<2){
-return;
-}
+  if(partes.length<2){
+    return;
+  }
 
-const uf =
-partes.pop()
-.trim()
-.toUpperCase();
+  const uf =
+    partes
+    .pop()
+    .trim()
+    .toUpperCase();
 
-const nome =
-partes.join(' - ')
-.trim();
+  const nome =
+    partes
+    .join(' - ')
+    .trim();
 
-const cidade =
-cidadesBrasil.find(
-c=>
-normalizarTexto(c.nome)===
-normalizarTexto(nome)&&
-normalizarTexto(c.uf)===
-normalizarTexto(uf)
-);
+  const cidade =
+    cidadesBrasil.find(
+      c=>
+        normalizarTexto(c.nome)===
+        normalizarTexto(nome)&&
+        normalizarTexto(c.uf)===
+        normalizarTexto(uf)
+    );
 
-if(cidade){
+  if(cidade){
 
-cidadeOrigem={
-nome:cidade.nome,
-uf:cidade.uf
-};
+    cidadeOrigem={
+      nome:cidade.nome,
+      uf:cidade.uf
+    };
 
-}
+  }
 
 }
 
@@ -3541,203 +4505,250 @@ PREENCHER FORMULÁRIO
 
 function preencherFormulario(o){
 
-$('cliente').value=o.cliente||'';
-$('cnpj').value=o.cnpj||'';
-$('contato').value=o.contato||'';
-$('telefone').value=o.telefone||'';
-$('email').value=o.email||'';
-$('endereco').value=o.endereco||'';
-$('local').value=o.local||'';
+  $('cliente').value =
+    o.cliente||'';
 
-$('validade').value=o.validade||30;
+  $('cnpj').value =
+    o.cnpj||'';
 
-$('formaPagamento').value =
-o.forma_pagamento||'A COMBINAR';
+  $('contato').value =
+    o.contato||'';
 
-$('periodo').value=o.periodo||'';
-$('obs').value=o.obs||'';
-$('desconto').value=o.desconto||0;
+  $('telefone').value =
+    o.telefone||'';
 
-if(o.condicoes){
+  $('email').value =
+    o.email||'';
 
-try{
+  $('endereco').value =
+    o.endereco||'';
 
-const c =
-typeof o.condicoes==='string'
-?JSON.parse(o.condicoes)
-:o.condicoes;
+  $('local').value =
+    o.local||'';
 
-$('condHorario').value=
-c.horario||'07:00 às 17:00';
+  $('validade').value =
+    o.validade||30;
 
-$('condPrazo').value=
-c.prazo||'3 meses';
+  $('formaPagamento').value =
+    o.forma_pagamento||
+    'A COMBINAR';
 
-$('condHoras').value=
-c.horas||'200 horas/mês';
+  $('periodo').value =
+    o.periodo||'';
 
-$('condCombustivel').value=
-c.combustivel||'INCLUSO';
+  $('obs').value =
+    o.obs||'';
 
-$('condTransporte').value=
-c.transporte||'INCLUSO';
+  $('desconto').value =
+    o.desconto||0;
 
-$('condAlimentacao').value=
-c.alimentacao||'NÃO INCLUSO';
 
-$('condHospedagem').value=
-c.hospedagem||'NÃO INCLUSO';
+  if(o.condicoes){
 
-$('condRigging').value=
-c.rigging||'CORTESIA';
+    try{
 
-$('condicoesAdicionais').value=
-c.adicionais||'';
+      const c =
+        typeof o.condicoes==='string'
+        ?JSON.parse(o.condicoes)
+        :o.condicoes;
 
-}
-catch(e){}
+      $('condHorario').value =
+        c.horario||
+        '07:00 às 17:00';
 
-}
+      $('condPrazo').value =
+        c.prazo||
+        '3 meses';
 
+      $('condHoras').value =
+        c.horas||
+        '200 horas/mês';
 
-let lista=[];
+      $('condCombustivel').value =
+        c.combustivel||
+        'INCLUSO';
 
-if(Array.isArray(o.itens)){
+      $('condTransporte').value =
+        c.transporte||
+        'INCLUSO';
 
-lista=o.itens;
+      $('condAlimentacao').value =
+        c.alimentacao||
+        'NÃO INCLUSO';
 
-}
-else if(typeof o.itens==='string'){
+      $('condHospedagem').value =
+        c.hospedagem||
+        'NÃO INCLUSO';
 
-try{
+      $('condRigging').value =
+        c.rigging||
+        'CORTESIA';
 
-lista=JSON.parse(o.itens);
+      $('condicoesAdicionais').value =
+        c.adicionais||'';
 
-}
-catch(e){
+    }
+    catch(e){}
 
-lista=[];
+  }
 
-}
 
-}
+  let lista=[];
 
-descobrirOrigemDosItens(lista);
+  if(Array.isArray(o.itens)){
 
-itens=[];
-itemId=0;
+    lista=o.itens;
 
-lista.forEach(
-x=>adicionarItem(x)
-);
+  }
+  else if(
+    typeof o.itens==='string'
+  ){
 
-if(!lista.length){
-adicionarItem();
-}
+    try{
 
-atualizarTextoPartida();
+      lista=
+        JSON.parse(o.itens);
 
-cidadeSelecionada=null;
+    }
+    catch(e){
 
-luzimanguesManual=false;
+      lista=[];
 
-if(o.local){
+    }
 
-const partes=o.local.split(' - ');
+  }
 
-if(partes.length>=2){
 
-const uf =
-partes.pop()
-.trim()
-.toUpperCase();
+  descobrirOrigemDosItens(
+    lista
+  );
 
-const nome =
-partes.join(' - ')
-.trim();
 
-if(
-normalizarTexto(nome)==='luzimangues'
-){
+  itens=[];
 
-cidadeSelecionada={
-nome:'Luzimangues',
-uf:'TO'
-};
+  itemId=0;
 
-luzimanguesManual=true;
+  lista.forEach(
+    x=>
+      adicionarItem(x)
+  );
 
-$('partidaBox')
-.classList
-.remove('hidden');
+  if(!lista.length){
 
-$('manualLuzimangues')
-.style
-.display='block';
+    adicionarItem();
 
-const itemMob =
-lista.find(
-i=>i.equipamento==='padrao-mob'
-);
+  }
 
-if(itemMob){
 
-$('distanciaManual').value=
-itemMob.quantidade||0;
+  atualizarTextoPartida();
 
-$('manualValorMob').value=
-itemMob.valor||0;
+  cidadeSelecionada=null;
 
-}
+  luzimanguesManual=false;
 
-const itemDesmob =
-lista.find(
-i=>i.equipamento==='padrao-desmob'
-);
 
-if(itemDesmob){
+  if(o.local){
 
-$('manualValorDesmob').value=
-itemDesmob.valor||0;
+    const partes =
+      o.local.split(' - ');
 
-}
+    if(partes.length>=2){
 
-atualizarLuzimanguesManual();
+      const uf =
+        partes
+        .pop()
+        .trim()
+        .toUpperCase();
 
-}
-else{
+      const nome =
+        partes
+        .join(' - ')
+        .trim();
 
-const cidade =
-cidadesBrasil.find(
-c=>
-normalizarTexto(c.nome)===
-normalizarTexto(nome)&&
-normalizarTexto(c.uf)===
-normalizarTexto(uf)
-);
+      if(
+        normalizarTexto(nome)==='luzimangues'
+      ){
 
-if(cidade){
+        cidadeSelecionada={
+          nome:'Luzimangues',
+          uf:'TO'
+        };
 
-cidadeSelecionada={
-nome:cidade.nome,
-uf:cidade.uf
-};
+        luzimanguesManual=true;
 
-$('partidaBox')
-.classList
-.remove('hidden');
+        $('partidaBox')
+          .classList
+          .remove('hidden');
 
-calcularDistanciaServico();
+        $('manualLuzimangues')
+          .style
+          .display='block';
 
-}
+        const itemMob =
+          lista.find(
+            i=>
+              i.equipamento==='padrao-mob'
+          );
 
-}
+        if(itemMob){
 
-}
+          $('distanciaManual').value =
+            itemMob.quantidade||0;
 
-}
+          $('manualValorMob').value =
+            itemMob.valor||0;
 
-calcularTotal();
+        }
+
+        const itemDesmob =
+          lista.find(
+            i=>
+              i.equipamento==='padrao-desmob'
+          );
+
+        if(itemDesmob){
+
+          $('manualValorDesmob').value =
+            itemDesmob.valor||0;
+
+        }
+
+        atualizarLuzimanguesManual();
+
+      }
+      else{
+
+        const cidade =
+          cidadesBrasil.find(
+            c=>
+              normalizarTexto(c.nome)===
+              normalizarTexto(nome)&&
+              normalizarTexto(c.uf)===
+              normalizarTexto(uf)
+          );
+
+        if(cidade){
+
+          cidadeSelecionada={
+            nome:cidade.nome,
+            uf:cidade.uf
+          };
+
+          $('partidaBox')
+            .classList
+            .remove('hidden');
+
+          calcularDistanciaServico();
+
+        }
+
+      }
+
+    }
+
+  }
+
+  calcularTotal();
 
 }
 
@@ -3748,48 +4759,53 @@ LINK
 
 async function gerarLink(){
 
-const numero=await salvar();
+  const numero =
+    await salvar();
 
-if(!numero){
-return;
-}
+  if(!numero){
+    return;
+  }
 
-const {data,error} =
-await sb
-.from('orcamentos')
-.select('token')
-.eq('numero',numero)
-.single();
+  const {data,error} =
+    await sb
+    .from('orcamentos')
+    .select('token')
+    .eq(
+      'numero',
+      numero
+    )
+    .single();
 
-if(
-error||
-!data?.token
-){
+  if(
+    error||
+    !data?.token
+  ){
 
-alert(
-'Orçamento salvo, mas não foi possível gerar o link.'
-);
+    alert(
+      'Orçamento salvo, mas não foi possível gerar o link.'
+    );
 
-return;
+    return;
 
-}
+  }
 
-const url =
-location.origin+
-location.pathname+
-'?proposta='+
-data.token;
+  const url =
+    location.origin+
+    location.pathname+
+    '?proposta='+
+    data.token;
 
-$('linkCard')
-.classList
-.remove('hidden');
+  $('linkCard')
+    .classList
+    .remove('hidden');
 
-$('link').textContent=url;
+  $('link').textContent =
+    url;
 
-$('linkCard')
-.scrollIntoView({
-behavior:'smooth'
-});
+  $('linkCard')
+    .scrollIntoView({
+      behavior:'smooth'
+    });
 
 }
 
@@ -3800,36 +4816,42 @@ COMPARTILHAR
 
 function compartilhar(){
 
-const url=$('link').textContent;
+  const url =
+    $('link').textContent;
 
-if(!url){
-return;
-}
+  if(!url){
+    return;
+  }
 
-const texto =
-'Olá! Segue a proposta comercial da Almeida Guindastes: '+
-url;
+  const texto =
+    'Olá! Segue a proposta comercial da Almeida Guindastes: '+
+    url;
 
-if(navigator.share){
+  if(navigator.share){
 
-navigator.share({
+    navigator.share({
 
-title:'Proposta Almeida Guindastes',
-text:texto,
-url:url
+      title:
+        'Proposta Almeida Guindastes',
 
-});
+      text:
+        texto,
 
-}
-else{
+      url:
+        url
 
-window.open(
-'https://wa.me/?text='+
-encodeURIComponent(texto),
-'_blank'
-);
+    });
 
-}
+  }
+  else{
+
+    window.open(
+      'https://wa.me/?text='+
+      encodeURIComponent(texto),
+      '_blank'
+    );
+
+  }
 
 }
 
@@ -3840,133 +4862,188 @@ PROPOSTA
 
 function preencherProposta(o){
 
-$('pNumero').textContent=o.numero||'';
-$('pValidade').textContent=o.validade||30;
-$('pCliente').textContent=o.cliente||'';
-$('pCnpj').textContent=o.cnpj||'';
-$('pContato').textContent=o.contato||'';
-$('pTelefone').textContent=o.telefone||'';
-$('pEmail').textContent=o.email||'';
-$('pEndereco').textContent=o.endereco||'';
-$('pLocal').textContent=o.local||'';
+  $('pNumero').textContent =
+    o.numero||'';
 
-let lista=o.itens||[];
+  $('pValidade').textContent =
+    o.validade||30;
 
-if(typeof lista==='string'){
+  $('pCliente').textContent =
+    o.cliente||'';
 
-try{
-lista=JSON.parse(lista);
-}
-catch(e){
-lista=[];
-}
+  $('pCnpj').textContent =
+    o.cnpj||'';
 
-}
+  $('pContato').textContent =
+    o.contato||'';
 
-let origemProposta='Palmas - TO';
+  $('pTelefone').textContent =
+    o.telefone||'';
 
-const itemMob =
-lista.find(
-i=>i.equipamento==='padrao-mob'
-);
+  $('pEmail').textContent =
+    o.email||'';
 
-if(itemMob?.descricao){
+  $('pEndereco').textContent =
+    o.endereco||'';
 
-const encontrado =
-String(itemMob.descricao)
-.match(
-/Mobilização do equipamento de (.+) até/i
-);
+  $('pLocal').textContent =
+    o.local||'';
 
-if(encontrado){
-origemProposta=encontrado[1];
-}
 
-}
+  let lista =
+    o.itens||[];
 
-$('pOrigem').textContent=origemProposta;
+  if(
+    typeof lista==='string'
+  ){
 
-$('pItens').innerHTML =
-lista
-.map(i=>`
+    try{
 
-<tr>
+      lista =
+        JSON.parse(lista);
 
-<td>${escapar(i.quantidade)}</td>
+    }
+    catch(e){
 
-<td>${escapar(i.unidade)}</td>
+      lista=[];
 
-<td>
+    }
 
-${escapar(i.descricao)}
+  }
 
-${
-i.cortesia
-?
-'<br><b>CORTESIA</b>'
-:
-''
-}
 
-</td>
+  let origemProposta =
+    'Palmas - TO';
 
-<td>${brl(i.valor)}</td>
+  const itemMob =
+    lista.find(
+      i=>
+        i.equipamento==='padrao-mob'
+    );
 
-<td>
+  if(itemMob?.descricao){
 
-${brl(
-i.cortesia
-?
-0
-:
-Number(i.quantidade||0)*
-Number(i.valor||0)
-)}
+    const encontrado =
+      String(
+        itemMob.descricao
+      )
+      .match(
+        /Mobilização do equipamento de (.+) até/i
+      );
 
-</td>
+    if(encontrado){
 
-</tr>
+      origemProposta =
+        encontrado[1];
 
-`)
-.join('');
+    }
 
-$('pTotal').textContent=brl(o.total);
+  }
 
-if(Number(o.desconto||0)>0){
+  $('pOrigem').textContent =
+    origemProposta;
 
-$('pDescontoBox').innerHTML=
-`
 
-<p style="text-align:right">
+  $('pItens').innerHTML =
+    lista
+    .map(i=>`
 
-<b>Desconto:</b>
-${brl(o.desconto)}
+      <tr>
 
-</p>
+        <td>
+          ${escapar(i.quantidade)}
+        </td>
 
-`;
+        <td>
+          ${escapar(i.unidade)}
+        </td>
 
-}
-else{
+        <td>
 
-$('pDescontoBox').innerHTML='';
+          ${escapar(i.descricao)}
 
-}
+          ${
+            i.cortesia
+            ?'<br><b>CORTESIA</b>'
+            :''
+          }
 
-let c=o.condicoes||{};
+        </td>
 
-if(typeof c==='string'){
+        <td>
+          ${brl(i.valor)}
+        </td>
 
-try{
-c=JSON.parse(c);
-}
-catch(e){
-c={};
-}
+        <td>
 
-}
+          ${
+            brl(
+              i.cortesia
+              ?0
+              :
+              Number(i.quantidade||0)*
+              Number(i.valor||0)
+            )
+          }
 
-$('pCondicoes').textContent=
+        </td>
+
+      </tr>
+
+    `)
+    .join('');
+
+
+  $('pTotal').textContent =
+    brl(o.total);
+
+
+  if(
+    Number(o.desconto||0)>0
+  ){
+
+    $('pDescontoBox').innerHTML =
+      `
+
+        <p style="text-align:right">
+
+          <b>Desconto:</b>
+
+          ${brl(o.desconto)}
+
+        </p>
+
+      `;
+
+  }
+  else{
+
+    $('pDescontoBox').innerHTML='';
+
+  }
+
+
+  let c =
+    o.condicoes||{};
+
+  if(typeof c==='string'){
+
+    try{
+
+      c =
+        JSON.parse(c);
+
+    }
+    catch(e){
+
+      c={};
+
+    }
+
+  }
+
+
+  $('pCondicoes').textContent =
 
 `HORÁRIO DE TRABALHO:
 ${c.horario||''}
@@ -3995,24 +5072,29 @@ ${c.rigging||''}
 CONDIÇÕES ADICIONAIS:
 ${c.adicionais||''}`;
 
-$('pPagamento').textContent=
-o.forma_pagamento||'';
 
-$('pPeriodo').textContent=
-o.periodo||'';
+  $('pPagamento').textContent =
+    o.forma_pagamento||'';
 
-$('pObs').textContent=
-o.obs||'';
+  $('pPeriodo').textContent =
+    o.periodo||'';
 
-$('painel')
-.classList
-.add('hidden');
+  $('pObs').textContent =
+    o.obs||'';
 
-$('publico')
-.classList
-.remove('hidden');
 
-window.scrollTo(0,0);
+  $('painel')
+    .classList
+    .add('hidden');
+
+  $('publico')
+    .classList
+    .remove('hidden');
+
+  window.scrollTo(
+    0,
+    0
+  );
 
 }
 
@@ -4023,27 +5105,34 @@ PROPOSTA ATUAL
 
 async function abrirPropostaAtual(){
 
-const numero=await salvar();
+  const numero =
+    await salvar();
 
-if(!numero){
-return;
-}
+  if(!numero){
+    return;
+  }
 
-const {data,error} =
-await sb
-.from('orcamentos')
-.select('*')
-.eq('numero',numero)
-.single();
+  const {data,error} =
+    await sb
+    .from('orcamentos')
+    .select('*')
+    .eq(
+      'numero',
+      numero
+    )
+    .single();
 
-if(error){
+  if(error){
 
-alert(error.message);
-return;
+    alert(
+      error.message
+    );
 
-}
+    return;
 
-preencherProposta(data);
+  }
+
+  preencherProposta(data);
 
 }
 
@@ -4052,77 +5141,107 @@ preencherProposta(data);
 APROVAÇÃO
 ================================================== */
 
-async function decidir(decisao){
+async function decidir(
+  decisao
+){
 
-const token =
-new URLSearchParams(
-location.search
-).get('proposta');
+  const token =
+    new URLSearchParams(
+      location.search
+    )
+    .get('proposta');
 
-if(!token){
+  if(!token){
 
-alert(
-'Proposta não identificada.'
-);
+    alert(
+      'Proposta não identificada.'
+    );
 
-return;
+    return;
 
-}
+  }
 
-const nome =
-$('pNome').value.trim();
+  const nome =
+    $('pNome')
+    .value
+    .trim();
 
-const doc =
-$('pDoc').value.trim();
+  const doc =
+    $('pDoc')
+    .value
+    .trim();
 
-if(!nome){
+  if(!nome){
 
-alert(
-'Informe o nome do responsável.'
-);
+    alert(
+      'Informe o nome do responsável.'
+    );
 
-return;
+    return;
 
-}
+  }
 
-const {error} =
-await sb.rpc(
-'decidir_orcamento',
-{
+  if(!sb){
 
-p_token:token,
-p_decisao:decisao,
-p_nome:nome,
-p_documento:doc
+    alert(
+      'Banco de dados não conectado.'
+    );
 
-}
-);
+    return;
 
-if(error){
+  }
 
-$('pMsg').textContent=
-'Erro: '+error.message;
+  const {error} =
+    await sb.rpc(
+      'decidir_orcamento',
+      {
 
-return;
+        p_token:token,
 
-}
+        p_decisao:decisao,
 
-$('pMsg').textContent =
-decisao==='APROVADO'
-?
-'✓ Orçamento aprovado com sucesso!'
-:
-'Orçamento recusado.';
+        p_nome:nome,
+
+        p_documento:doc
+
+      }
+    );
+
+  if(error){
+
+    $('pMsg').textContent =
+      'Erro: '+
+      error.message;
+
+    return;
+
+  }
+
+  $('pMsg').textContent =
+    decisao==='APROVADO'
+    ?
+    '✓ Orçamento aprovado com sucesso!'
+    :
+    'Orçamento recusado.';
 
 }
 
 
 function aprovar(){
-decidir('APROVADO');
+
+  decidir(
+    'APROVADO'
+  );
+
 }
 
+
 function recusar(){
-decidir('RECUSADO');
+
+  decidir(
+    'RECUSADO'
+  );
+
 }
 
 
@@ -4132,117 +5251,162 @@ PROPOSTA PÚBLICA
 
 async function abrirPublica(){
 
-const token =
-new URLSearchParams(
-location.search
-).get('proposta');
+  const token =
+    new URLSearchParams(
+      location.search
+    )
+    .get('proposta');
 
-if(!token){
-return false;
-}
+  if(!token){
+    return false;
+  }
 
-const {data,error} =
-await sb.rpc(
-'ver_orcamento_publico',
-{
-p_token:token
-}
-);
+  if(!sb){
 
-if(error||!data){
+    document.body.innerHTML = `
 
-document.body.innerHTML=`
+      <div
+        style="
+          padding:40px;
+          font-family:Arial
+        "
+      >
 
-<div
-style="
-padding:40px;
-font-family:Arial
-"
->
+        <h2>
+          Banco de dados não disponível.
+        </h2>
 
-<h2>
-Proposta não encontrada.
-</h2>
+      </div>
 
-</div>
+    `;
 
-`;
+    return true;
 
-return true;
+  }
 
-}
+  const {data,error} =
+    await sb.rpc(
+      'ver_orcamento_publico',
+      {
+        p_token:token
+      }
+    );
 
-const o =
-Array.isArray(data)
-?data[0]
-:data;
+  if(
+    error||
+    !data
+  ){
 
-preencherProposta(o);
+    document.body.innerHTML=`
 
-return true;
+      <div
+        style="
+          padding:40px;
+          font-family:Arial
+        "
+      >
+
+        <h2>
+          Proposta não encontrada.
+        </h2>
+
+      </div>
+
+    `;
+
+    return true;
+
+  }
+
+  const o =
+    Array.isArray(data)
+    ?data[0]
+    :data;
+
+  preencherProposta(o);
+
+  return true;
 
 }
 
 
 /* ==================================================
-INÍCIO DO SISTEMA
+INÍCIO
 ================================================== */
 
 (async function(){
 
-try{
+  console.log(
+    'Iniciando Almeida Orçamentos...'
+  );
 
-const token =
-new URLSearchParams(
-window.location.search
-).get('proposta');
 
-if(token){
+  try{
 
-const abriu =
-await abrirPublica();
+    const token =
+      new URLSearchParams(
+        window.location.search
+      )
+      .get('proposta');
 
-if(abriu){
-return;
-}
+    if(token){
 
-}
+      const abriu =
+        await abrirPublica();
 
-}
-catch(error){
+      if(abriu){
+        return;
+      }
 
-console.error(
-'Erro ao verificar proposta pública:',
-error
-);
+    }
 
-}
+  }
+  catch(error){
 
-$('painel')
-.classList
-.remove('hidden');
+    console.error(
+      'Erro ao verificar proposta pública:',
+      error
+    );
 
-$('publico')
-.classList
-.add('hidden');
+  }
 
-try{
 
-await iniciarSistema();
+  /*
+   * O painel já está visível no HTML.
+   * Portanto, mesmo que o Supabase dê erro,
+   * o usuário não ficará com a tela branca.
+   */
 
-}
-catch(error){
+  $('painel')
+    .classList
+    .remove('hidden');
 
-console.error(
-'Erro ao iniciar o sistema:',
-error
-);
+  $('publico')
+    .classList
+    .add('hidden');
 
-$('painel')
-.classList
-.remove('hidden');
 
-}
+  try{
+
+    await iniciarSistema();
+
+  }
+  catch(error){
+
+    console.error(
+      'Erro ao iniciar o sistema:',
+      error
+    );
+
+    $('painel')
+      .classList
+      .remove('hidden');
+
+    $('publico')
+      .classList
+      .add('hidden');
+
+  }
 
 })();
 
