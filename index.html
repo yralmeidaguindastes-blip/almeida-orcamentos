@@ -64,13 +64,8 @@ header small{
   box-shadow:0 3px 12px rgba(0,0,0,.06);
 }
 
-h2{
-  margin-top:0;
-}
-
-h3{
-  margin-bottom:10px;
-}
+h2{margin-top:0}
+h3{margin-bottom:10px}
 
 .grid{
   display:grid;
@@ -90,9 +85,7 @@ label{
   font-weight:bold;
 }
 
-input,
-textarea,
-select{
+input,textarea,select{
   width:100%;
   padding:11px;
   border:1px solid #ccd2d8;
@@ -116,48 +109,17 @@ button{
   font-size:14px;
 }
 
-button:hover{
-  opacity:.88;
-}
+button:hover{opacity:.88}
+button:disabled{opacity:.5;cursor:not-allowed}
 
-button:disabled{
-  opacity:.5;
-  cursor:not-allowed;
-}
+.yellow{background:#f7c600;color:#000}
+.green{background:#1f9d61;color:#fff}
+.black{background:#111;color:#fff}
+.red{background:#c93636;color:#fff}
+.blue{background:#1769aa;color:#fff}
+.gray{background:#e8ebee;color:#111}
 
-.yellow{
-  background:#f7c600;
-  color:#000;
-}
-
-.green{
-  background:#1f9d61;
-  color:#fff;
-}
-
-.black{
-  background:#111;
-  color:#fff;
-}
-
-.red{
-  background:#c93636;
-  color:#fff;
-}
-
-.blue{
-  background:#1769aa;
-  color:#fff;
-}
-
-.gray{
-  background:#e8ebee;
-  color:#111;
-}
-
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 .muted{
   color:#68717b;
@@ -245,13 +207,8 @@ button:disabled{
   background:#fafafa;
 }
 
-.catalog-default{
-  border-left:5px solid #1769aa;
-}
-
-.catalog-cloud{
-  border-left:5px solid #1f9d61;
-}
+.catalog-default{border-left:5px solid #1769aa}
+.catalog-cloud{border-left:5px solid #1f9d61}
 
 .mini{
   font-size:11px;
@@ -279,9 +236,7 @@ button:disabled{
   flex-wrap:wrap;
 }
 
-/* ==============================
-   CIDADES
-============================== */
+/* CIDADES */
 
 .cidade-wrapper{
   position:relative;
@@ -325,6 +280,15 @@ button:disabled{
   background:#f8fafc;
 }
 
+.manual-box{
+  display:none;
+  margin-top:12px;
+  padding:14px;
+  border:2px solid #f7c600;
+  border-radius:10px;
+  background:#fffdf2;
+}
+
 .partida-box{
   margin-top:12px;
   padding:14px;
@@ -352,9 +316,7 @@ button:disabled{
   border-top:1px solid #ddd;
 }
 
-/* ==============================
-   PROPOSTA
-============================== */
+/* PROPOSTA */
 
 .proposta{
   max-width:900px;
@@ -389,9 +351,7 @@ button:disabled{
   line-height:1.7;
 }
 
-.proposta-numero b{
-  font-size:18px;
-}
+.proposta-numero b{font-size:18px}
 
 .proposta h1{
   font-size:28px;
@@ -496,29 +456,18 @@ button:disabled{
   color:#666;
 }
 
-/* ==============================
-   RESPONSIVO
-============================== */
-
 @media(max-width:700px){
 
-  .grid,
-  .grid3{
-    grid-template-columns:1fr;
-  }
+  .grid,.grid3{grid-template-columns:1fr}
 
-  header h1{
-    font-size:15px;
-  }
+  header h1{font-size:15px}
 
   header img{
     height:42px;
     max-width:120px;
   }
 
-  .card{
-    padding:14px;
-  }
+  .card{padding:14px}
 
   .proposta{
     padding:18px;
@@ -527,9 +476,7 @@ button:disabled{
     box-shadow:none;
   }
 
-  .proposta-header{
-    display:block;
-  }
+  .proposta-header{display:block}
 
   .proposta-header img{
     width:180px;
@@ -537,16 +484,11 @@ button:disabled{
     margin-bottom:18px;
   }
 
-  .proposta-numero{
-    text-align:left;
-  }
+  .proposta-numero{text-align:left}
 
-  .proposta h1{
-    font-size:22px;
-  }
+  .proposta h1{font-size:22px}
 
-  .tabela th,
-  .tabela td{
+  .tabela th,.tabela td{
     padding:7px 5px;
     font-size:9px;
   }
@@ -556,33 +498,20 @@ button:disabled{
     gap:60px;
   }
 
-  .total-box{
-    display:block;
-  }
+  .total-box{display:block}
 
-  .catalog-item{
-    display:block;
-  }
+  .catalog-item{display:block}
 
-  .partida-atual{
-    align-items:flex-start;
-  }
+  .partida-atual{align-items:flex-start}
 }
 
 @media print{
 
-  body{
-    background:#fff;
-  }
+  body{background:#fff}
 
-  body *{
-    visibility:hidden;
-  }
+  body *{visibility:hidden}
 
-  #impressao,
-  #impressao *{
-    visibility:visible;
-  }
+  #impressao,#impressao *{visibility:visible}
 
   #impressao{
     position:absolute;
@@ -591,9 +520,7 @@ button:disabled{
     width:100%;
   }
 
-  .nao-imprimir{
-    display:none!important;
-  }
+  .nao-imprimir{display:none!important}
 
   .proposta{
     box-shadow:none;
@@ -608,1047 +535,801 @@ button:disabled{
 
 <header>
 
-  <img
-    src="logo-almeida.png"
-    alt="Almeida Guindastes"
-  >
+<img src="logo-almeida.png" alt="Almeida Guindastes">
 
-  <h1>
-    ALMEIDA ORÇAMENTOS
-    <small>Sistema de propostas comerciais</small>
-  </h1>
+<h1>
+ALMEIDA ORÇAMENTOS
+<small>Sistema de propostas comerciais</small>
+</h1>
 
-  <button
-    id="btnSair"
-    class="yellow hidden"
-    onclick="sair()"
-  >
-    SAIR
-  </button>
+<button id="btnSair" class="yellow hidden" onclick="sair()">
+SAIR
+</button>
 
 </header>
 
 <div class="wrap">
 
-<!-- =========================
-LOGIN
-========================= -->
+<!-- LOGIN -->
 
-<section
-  id="login"
-  class="card"
-  style="max-width:700px;margin:35px auto"
->
+<section id="login" class="card" style="max-width:700px;margin:35px auto">
 
-  <h2>Acesso da Almeida</h2>
+<h2>Acesso da Almeida</h2>
 
-  <p class="muted">
-    Entre com o e-mail e senha cadastrados no sistema.
-  </p>
+<p class="muted">
+Entre com o e-mail e senha cadastrados no sistema.
+</p>
 
-  <div class="grid">
+<div class="grid">
 
-    <label>
-      E-mail
-      <input
-        id="loginEmail"
-        type="email"
-        autocomplete="email"
-      >
-    </label>
+<label>
+E-mail
+<input id="loginEmail" type="email" autocomplete="email">
+</label>
 
-    <label>
-      Senha
-      <input
-        id="loginSenha"
-        type="password"
-        autocomplete="current-password"
-      >
-    </label>
+<label>
+Senha
+<input id="loginSenha" type="password" autocomplete="current-password">
+</label>
 
-  </div>
+</div>
 
-  <div class="actions">
+<div class="actions">
 
-    <button
-      class="black"
-      onclick="login()"
-    >
-      ENTRAR
-    </button>
+<button class="black" onclick="login()">
+ENTRAR
+</button>
 
-  </div>
+</div>
 
-  <div
-    id="loginMsg"
-    class="msg"
-  ></div>
+<div id="loginMsg" class="msg"></div>
 
 </section>
 
 
-<!-- =========================
-PAINEL
-========================= -->
+<!-- PAINEL -->
 
-<section
-  id="painel"
-  class="hidden"
+<section id="painel" class="hidden">
+
+
+<!-- CLIENTE -->
+
+<div class="card">
+
+<div class="section-title">
+
+<div>
+
+<h2>1. Dados da contratante</h2>
+
+<div class="muted">
+Digite o nome da empresa ou o CNPJ para preencher automaticamente.
+</div>
+
+</div>
+
+<button class="gray" onclick="novoOrcamento()">
++ NOVO ORÇAMENTO
+</button>
+
+</div>
+
+
+<div class="grid">
+
+<label>
+Empresa contratante
+
+<input
+id="cliente"
+list="listaClientes"
+placeholder="Nome da empresa"
+autocomplete="off"
 >
 
-<!-- =========================
-CLIENTE
-========================= -->
+<datalist id="listaClientes"></datalist>
 
-<div class="card">
+</label>
 
-  <div class="section-title">
 
-    <div>
+<label>
+CNPJ / CPF
 
-      <h2>1. Dados da contratante</h2>
+<input id="cnpj" placeholder="CNPJ ou CPF">
+</label>
 
-      <div class="muted">
-        Digite o nome da empresa ou o CNPJ para preencher automaticamente.
-      </div>
 
-    </div>
+<label>
+Responsável
 
-    <button
-      class="gray"
-      onclick="novoOrcamento()"
-    >
-      + NOVO ORÇAMENTO
-    </button>
+<input id="contato" placeholder="Nome do responsável">
+</label>
 
-  </div>
 
+<label>
+Telefone
 
-  <div class="grid">
+<input id="telefone" placeholder="Telefone">
+</label>
 
-    <label>
-      Empresa contratante
 
-      <input
-        id="cliente"
-        list="listaClientes"
-        placeholder="Nome da empresa"
-        autocomplete="off"
-      >
+<label>
+E-mail
 
-      <datalist id="listaClientes"></datalist>
+<input id="email" type="email" placeholder="E-mail">
+</label>
 
-    </label>
 
+<label>
+Endereço
 
-    <label>
-      CNPJ / CPF
-
-      <input
-        id="cnpj"
-        placeholder="CNPJ ou CPF"
-      >
-    </label>
-
-
-    <label>
-      Responsável
-
-      <input
-        id="contato"
-        placeholder="Nome do responsável"
-      >
-    </label>
-
-
-    <label>
-      Telefone
-
-      <input
-        id="telefone"
-        placeholder="Telefone"
-      >
-    </label>
-
-
-    <label>
-      E-mail
-
-      <input
-        id="email"
-        type="email"
-        placeholder="E-mail"
-      >
-    </label>
-
-
-    <label>
-      Endereço
-
-      <input
-        id="endereco"
-        placeholder="Endereço da contratante"
-      >
-    </label>
-
-  </div>
-
-
-  <!-- =========================
-  LOCAL DO SERVIÇO
-  ========================= -->
-
-  <div style="margin-top:15px">
-
-    <label>
-      Local do serviço
-    </label>
-
-    <div class="cidade-wrapper">
-
-      <input
-        id="local"
-        placeholder="Digite a cidade do serviço"
-        autocomplete="off"
-      >
-
-      <div
-        id="cidadeSugestoes"
-        class="cidade-sugestoes hidden"
-      ></div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-  PARTIDA
-  ========================= -->
-
-  <div
-    id="partidaBox"
-    class="partida-box hidden"
-  >
-
-    <div class="partida-atual">
-
-      <div>
-
-        <div class="muted">
-          LOCAL DE PARTIDA
-        </div>
-
-        <div
-          id="partidaAtual"
-          class="partida-nome"
-        >
-          Palmas - TO
-        </div>
-
-      </div>
-
-      <div class="actions" style="margin-top:0">
-
-        <button
-          class="blue"
-          onclick="abrirAlteracaoPartida()"
-        >
-          ALTERAR LOCAL DE PARTIDA
-        </button>
-
-        <button
-          class="gray"
-          onclick="usarPalmas()"
-        >
-          USAR PALMAS COMO PARTIDA
-        </button>
-
-      </div>
-
-    </div>
-
-
-    <div
-      id="partidaEditor"
-      class="partida-editor hidden"
-    >
-
-      <label>
-        Pesquisar nova cidade de partida
-      </label>
-
-      <div class="cidade-wrapper">
-
-        <input
-          id="origem"
-          placeholder="Digite a cidade de partida"
-          autocomplete="off"
-        >
-
-        <div
-          id="origemSugestoes"
-          class="cidade-sugestoes hidden"
-        ></div>
-
-      </div>
-
-      <div class="muted" style="margin-top:8px">
-        Exemplo: São Paulo, Goiânia, Paraíso do Tocantins, Brasília...
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-  DISTÂNCIA
-  ========================= -->
-
-  <div
-    id="calculoDistancia"
-    class="distancia-box"
-  >
-
-    <div>
-      <strong>Partida:</strong>
-      <span id="origemTexto">
-        Palmas - TO
-      </span>
-    </div>
-
-    <div style="margin-top:5px">
-      <strong>Destino:</strong>
-      <span id="cidadeDestinoTexto"></span>
-    </div>
-
-    <div
-      id="distanciaTexto"
-      style="margin-top:5px"
-    ></div>
-
-
-    <div
-      class="grid"
-      style="margin-top:12px"
-    >
-
-      <label>
-
-        Valor mobilização / km
-
-        <input
-          id="valorMobilizacaoKm"
-          type="number"
-          min="0"
-          step="0.01"
-          value="0"
-        >
-
-      </label>
-
-
-      <label>
-
-        Valor desmobilização / km
-
-        <input
-          id="valorDesmobilizacaoKm"
-          type="number"
-          min="0"
-          step="0.01"
-          value="0"
-        >
-
-      </label>
-
-    </div>
-
-
-    <div
-      id="resumoMobilizacao"
-      style="margin-top:10px;font-weight:600"
-    ></div>
-
-  </div>
-
-
-  <div class="grid" style="margin-top:15px">
-
-    <label>
-      Validade da proposta
-
-      <input
-        id="validade"
-        type="number"
-        value="30"
-      >
-
-    </label>
-
-
-    <label>
-      Forma de pagamento
-
-      <input
-        id="formaPagamento"
-        value="A COMBINAR"
-      >
-
-    </label>
-
-
-    <label>
-      Prazo / período
-
-      <input
-        id="periodo"
-        placeholder="Ex.: 3 meses"
-      >
-
-    </label>
-
-  </div>
-
-
-  <label style="margin-top:13px">
-
-    Observações
-
-    <textarea
-      id="obs"
-      placeholder="Observações específicas deste orçamento"
-    ></textarea>
-
-  </label>
+<input id="endereco" placeholder="Endereço da contratante">
+</label>
 
 </div>
 
 
-<!-- =========================
-EQUIPAMENTOS
-========================= -->
+<!-- LOCAL DO SERVIÇO -->
 
-<div class="card">
+<div style="margin-top:15px">
 
-  <div class="section-title">
+<label>
+Local do serviço
+</label>
 
-    <div>
+<div class="cidade-wrapper">
 
-      <h2>2. Equipamentos e serviços</h2>
+<input
+id="local"
+placeholder="Digite a cidade do serviço"
+autocomplete="off"
+>
 
-      <div class="muted">
-        Escolha um equipamento cadastrado ou adicione outro item.
-      </div>
+<div id="cidadeSugestoes" class="cidade-sugestoes hidden"></div>
 
-    </div>
-
-    <button
-      class="blue"
-      onclick="adicionarItem()"
-    >
-      + ADICIONAR ITEM
-    </button>
-
-  </div>
-
-
-  <div
-    id="itens"
-    style="margin-top:15px"
-  ></div>
-
-
-  <label>
-
-    Desconto geral
-
-    <input
-      id="desconto"
-      type="number"
-      min="0"
-      step="0.01"
-      value="0"
-      oninput="calcularTotal()"
-    >
-
-  </label>
-
-
-  <div class="total-box">
-
-    TOTAL:
-
-    <span
-      id="total"
-      class="total"
-    >
-      R$ 0,00
-    </span>
-
-  </div>
-
-
-  <div class="total-box">
-
-    TOTAL FINAL:
-
-    <span
-      id="totalFinal"
-      class="total"
-    >
-      R$ 0,00
-    </span>
-
-  </div>
+</div>
 
 </div>
 
 
-<!-- =========================
-CONDIÇÕES
-========================= -->
+<!-- PARTIDA -->
+
+<div id="partidaBox" class="partida-box hidden">
+
+<div class="partida-atual">
+
+<div>
+
+<div class="muted">
+LOCAL DE PARTIDA
+</div>
+
+<div id="partidaAtual" class="partida-nome">
+Palmas - TO
+</div>
+
+</div>
+
+<div class="actions" style="margin-top:0">
+
+<button class="blue" onclick="abrirAlteracaoPartida()">
+ALTERAR LOCAL DE PARTIDA
+</button>
+
+<button class="yellow" onclick="ativarLuzimanguesManual()">
+LUZIMANGUES
+</button>
+
+<button class="gray" onclick="usarPalmas()">
+USAR PALMAS COMO PARTIDA
+</button>
+
+</div>
+
+</div>
+
+
+<div id="partidaEditor" class="partida-editor hidden">
+
+<label>
+Pesquisar nova cidade de partida
+</label>
+
+<div class="cidade-wrapper">
+
+<input
+id="origem"
+placeholder="Digite qualquer cidade do Brasil"
+autocomplete="off"
+>
+
+<div id="origemSugestoes" class="cidade-sugestoes hidden"></div>
+
+</div>
+
+<div class="muted" style="margin-top:8px">
+Você pode escolher qualquer cidade do Brasil como local de partida.
+</div>
+
+</div>
+
+</div>
+
+
+<!-- DISTÂNCIA AUTOMÁTICA -->
+
+<div id="calculoDistancia" class="distancia-box">
+
+<div>
+<strong>Partida:</strong>
+<span id="origemTexto">Palmas - TO</span>
+</div>
+
+<div style="margin-top:5px">
+<strong>Destino:</strong>
+<span id="cidadeDestinoTexto"></span>
+</div>
+
+<div id="distanciaTexto" style="margin-top:5px"></div>
+
+<div class="grid" style="margin-top:12px">
+
+<label>
+Valor mobilização / km
+
+<input
+id="valorMobilizacaoKm"
+type="number"
+min="0"
+step="0.01"
+value="0"
+>
+
+</label>
+
+
+<label>
+Valor desmobilização / km
+
+<input
+id="valorDesmobilizacaoKm"
+type="number"
+min="0"
+step="0.01"
+value="0"
+>
+
+</label>
+
+</div>
+
+<div id="resumoMobilizacao" style="margin-top:10px;font-weight:600"></div>
+
+</div>
+
+
+<!-- DISTÂNCIA MANUAL LUZIMANGUES -->
+
+<div id="manualLuzimangues" class="manual-box">
+
+<strong>ATENÇÃO — LUZIMANGUES</strong>
+
+<p class="muted">
+Para Luzimangues, o sistema não fará o cálculo automático da distância.
+Informe manualmente a distância e os valores de mobilização e desmobilização.
+</p>
+
+<div class="grid">
+
+<label>
+Distância manual (km)
+
+<input
+id="distanciaManual"
+type="number"
+min="0"
+step="1"
+value="0"
+oninput="atualizarLuzimanguesManual()"
+>
+
+</label>
+
+<label>
+Valor mobilização / km
+
+<input
+id="manualValorMob"
+type="number"
+min="0"
+step="0.01"
+value="0"
+oninput="atualizarLuzimanguesManual()"
+>
+
+</label>
+
+<label>
+Valor desmobilização / km
+
+<input
+id="manualValorDesmob"
+type="number"
+min="0"
+step="0.01"
+value="0"
+oninput="atualizarLuzimanguesManual()"
+>
+
+</label>
+
+</div>
+
+<div id="resumoManualLuzimangues" style="margin-top:10px;font-weight:bold"></div>
+
+</div>
+
+
+<div class="grid" style="margin-top:15px">
+
+<label>
+Validade da proposta
+
+<input id="validade" type="number" value="30">
+</label>
+
+<label>
+Forma de pagamento
+
+<input id="formaPagamento" value="A COMBINAR">
+</label>
+
+<label>
+Prazo / período
+
+<input id="periodo" placeholder="Ex.: 3 meses">
+</label>
+
+</div>
+
+
+<label style="margin-top:13px">
+
+Observações
+
+<textarea
+id="obs"
+placeholder="Observações específicas deste orçamento"
+></textarea>
+
+</label>
+
+</div>
+
+
+<!-- EQUIPAMENTOS -->
 
 <div class="card">
 
-  <h2>3. Condições comerciais</h2>
+<div class="section-title">
 
-  <div class="muted">
-    Estas condições aparecem automaticamente na proposta.
-  </div>
+<div>
 
+<h2>2. Equipamentos e serviços</h2>
 
-  <div class="grid">
+<div class="muted">
+Escolha um equipamento cadastrado ou adicione outro item.
+</div>
 
-    <label>
-      Horário de trabalho
+</div>
 
-      <input
-        id="condHorario"
-        value="07:00 às 17:00"
-      >
-    </label>
+<button class="blue" onclick="adicionarItem()">
++ ADICIONAR ITEM
+</button>
 
+</div>
 
-    <label>
-      Prazo mínimo / período
+<div id="itens" style="margin-top:15px"></div>
 
-      <input
-        id="condPrazo"
-        value="3 meses"
-      >
-    </label>
+<label>
+Desconto geral
 
+<input
+id="desconto"
+type="number"
+min="0"
+step="0.01"
+value="0"
+oninput="calcularTotal()"
+>
 
-    <label>
-      Horas mínimas mensais
+</label>
 
-      <input
-        id="condHoras"
-        value="200 horas/mês"
-      >
-    </label>
+<div class="total-box">
+TOTAL:
+<span id="total" class="total">R$ 0,00</span>
+</div>
 
+<div class="total-box">
+TOTAL FINAL:
+<span id="totalFinal" class="total">R$ 0,00</span>
+</div>
 
-    <label>
-      Combustível
-
-      <select id="condCombustivel">
-        <option>INCLUSO</option>
-        <option>NÃO INCLUSO</option>
-        <option>A COMBINAR</option>
-      </select>
-
-    </label>
+</div>
 
 
-    <label>
-      Transporte
+<!-- CONDIÇÕES -->
 
-      <select id="condTransporte">
-        <option>INCLUSO</option>
-        <option>NÃO INCLUSO</option>
-        <option>A COMBINAR</option>
-      </select>
+<div class="card">
 
-    </label>
+<h2>3. Condições comerciais</h2>
 
+<div class="muted">
+Estas condições aparecem automaticamente na proposta.
+</div>
 
-    <label>
-      Alimentação
+<div class="grid">
 
-      <select id="condAlimentacao">
-        <option>NÃO INCLUSO</option>
-        <option>INCLUSO</option>
-        <option>A COMBINAR</option>
-      </select>
+<label>
+Horário de trabalho
+<input id="condHorario" value="07:00 às 17:00">
+</label>
 
-    </label>
+<label>
+Prazo mínimo / período
+<input id="condPrazo" value="3 meses">
+</label>
 
+<label>
+Horas mínimas mensais
+<input id="condHoras" value="200 horas/mês">
+</label>
 
-    <label>
-      Hospedagem
+<label>
+Combustível
 
-      <select id="condHospedagem">
-        <option>NÃO INCLUSO</option>
-        <option>INCLUSO</option>
-        <option>A COMBINAR</option>
-      </select>
+<select id="condCombustivel">
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
 
-    </label>
+</label>
 
+<label>
+Transporte
 
-    <label>
-      Plano de Rigging + ART
+<select id="condTransporte">
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
 
-      <select id="condRigging">
-        <option>CORTESIA</option>
-        <option>INCLUSO</option>
-        <option>NÃO INCLUSO</option>
-        <option>A COMBINAR</option>
-      </select>
+</label>
 
-    </label>
+<label>
+Alimentação
 
-  </div>
+<select id="condAlimentacao">
+<option>NÃO INCLUSO</option>
+<option>INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
 
+</label>
 
-  <label style="margin-top:15px">
+<label>
+Hospedagem
 
-    Condições comerciais adicionais
+<select id="condHospedagem">
+<option>NÃO INCLUSO</option>
+<option>INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
 
-    <textarea id="condicoesAdicionais">• Os serviços serão realizados conforme programação acordada entre as partes.
+</label>
+
+<label>
+Plano de Rigging + ART
+
+<select id="condRigging">
+<option>CORTESIA</option>
+<option>INCLUSO</option>
+<option>NÃO INCLUSO</option>
+<option>A COMBINAR</option>
+</select>
+
+</label>
+
+</div>
+
+<label style="margin-top:15px">
+
+Condições comerciais adicionais
+
+<textarea id="condicoesAdicionais">• Os serviços serão realizados conforme programação acordada entre as partes.
 • Eventuais horas excedentes serão cobradas conforme valor estabelecido na proposta.
 • O equipamento deverá operar em local adequado e com condições de segurança.
 • A contratante deverá disponibilizar acesso e condições necessárias para execução dos serviços.</textarea>
 
-  </label>
+</label>
 
 </div>
 
 
-<!-- =========================
-FINALIZAR
-========================= -->
+<!-- FINALIZAR -->
 
 <div class="card">
 
-  <h2>4. Finalizar proposta</h2>
+<h2>4. Finalizar proposta</h2>
 
-  <div class="actions">
+<div class="actions">
 
-    <button
-      class="yellow"
-      onclick="calcularTotal()"
-    >
-      CALCULAR
-    </button>
+<button class="yellow" onclick="calcularTotal()">
+CALCULAR
+</button>
 
+<button class="black" onclick="salvar()">
+SALVAR NA NUVEM
+</button>
 
-    <button
-      class="black"
-      onclick="salvar()"
-    >
-      SALVAR NA NUVEM
-    </button>
+<button class="green" onclick="gerarLink()">
+GERAR LINK DO CLIENTE
+</button>
 
-
-    <button
-      class="green"
-      onclick="gerarLink()"
-    >
-      GERAR LINK DO CLIENTE
-    </button>
-
-
-    <button
-      class="blue"
-      onclick="abrirPropostaAtual()"
-    >
-      VER PROPOSTA / PDF
-    </button>
-
-  </div>
-
-
-  <div
-    id="linkCard"
-    class="hidden"
-    style="margin-top:18px"
-  >
-
-    <b>
-      Link da proposta para o cliente:
-    </b>
-
-    <div
-      id="link"
-      class="link"
-    ></div>
-
-    <div class="actions">
-
-      <button
-        class="green"
-        onclick="compartilhar()"
-      >
-        COMPARTILHAR / WHATSAPP
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <div
-    id="acaoMsg"
-    class="msg"
-  ></div>
+<button class="blue" onclick="abrirPropostaAtual()">
+VER PROPOSTA / PDF
+</button>
 
 </div>
 
 
-<!-- =========================
-CADASTRO EQUIPAMENTOS
-========================= -->
+<div id="linkCard" class="hidden" style="margin-top:18px">
 
-<div class="card">
+<b>Link da proposta para o cliente:</b>
 
-  <h2>5. Cadastro de equipamentos</h2>
+<div id="link" class="link"></div>
 
-  <p class="muted">
-    Cadastre novos equipamentos para usar nos próximos orçamentos.
-  </p>
+<div class="actions">
 
+<button class="green" onclick="compartilhar()">
+COMPARTILHAR / WHATSAPP
+</button>
 
-  <div class="grid">
+</div>
 
-    <label>
-      Nome do equipamento
+</div>
 
-      <input
-        id="novoNome"
-        placeholder="Ex.: Guindaste 200 toneladas"
-      >
-    </label>
-
-
-    <label>
-      Unidade
-
-      <select id="novoUnidade">
-        <option>HORAS</option>
-        <option>UNIDADE</option>
-        <option>KM</option>
-        <option>DIÁRIA</option>
-        <option>MÊS</option>
-      </select>
-
-    </label>
-
-
-    <label>
-      Valor unitário
-
-      <input
-        id="novoValor"
-        type="number"
-        step="0.01"
-        value="0"
-      >
-    </label>
-
-
-    <label>
-      Descrição
-
-      <input
-        id="novoDescricao"
-        placeholder="Descrição completa"
-      >
-    </label>
-
-  </div>
-
-
-  <div class="actions">
-
-    <button
-      class="blue"
-      onclick="cadastrarEquipamento()"
-    >
-      + CADASTRAR EQUIPAMENTO
-    </button>
-
-  </div>
-
-
-  <div
-    id="catalogo"
-    class="catalog-box"
-  ></div>
+<div id="acaoMsg" class="msg"></div>
 
 </div>
 
 
-<!-- =========================
-HISTÓRICO
-========================= -->
+<!-- CADASTRO EQUIPAMENTOS -->
 
 <div class="card">
 
-  <h2>6. Orçamentos salvos</h2>
+<h2>5. Cadastro de equipamentos</h2>
 
-  <div id="lista">
-    Carregando...
-  </div>
+<p class="muted">
+Cadastre novos equipamentos para usar nos próximos orçamentos.
+</p>
+
+<div class="grid">
+
+<label>
+Nome do equipamento
+
+<input id="novoNome" placeholder="Ex.: Guindaste 200 toneladas">
+</label>
+
+<label>
+Unidade
+
+<select id="novoUnidade">
+<option>HORAS</option>
+<option>UNIDADE</option>
+<option>KM</option>
+<option>DIÁRIA</option>
+<option>MÊS</option>
+</select>
+
+</label>
+
+<label>
+Valor unitário
+
+<input id="novoValor" type="number" step="0.01" value="0">
+</label>
+
+<label>
+Descrição
+
+<input id="novoDescricao" placeholder="Descrição completa">
+</label>
+
+</div>
+
+<div class="actions">
+
+<button class="blue" onclick="cadastrarEquipamento()">
++ CADASTRAR EQUIPAMENTO
+</button>
+
+</div>
+
+<div id="catalogo" class="catalog-box"></div>
+
+</div>
+
+
+<!-- HISTÓRICO -->
+
+<div class="card">
+
+<h2>6. Orçamentos salvos</h2>
+
+<div id="lista">
+Carregando...
+</div>
 
 </div>
 
 </section>
 
 
-<!-- =========================
-PROPOSTA PÚBLICA
-========================= -->
+<!-- PROPOSTA PÚBLICA -->
 
-<section
-  id="publico"
-  class="hidden"
->
+<section id="publico" class="hidden">
 
-<div
-  id="impressao"
-  class="proposta"
->
+<div id="impressao" class="proposta">
 
-  <div class="proposta-header">
+<div class="proposta-header">
 
-    <img
-      src="logo-almeida.png"
-      alt="Almeida Guindastes"
-    >
+<img src="logo-almeida.png" alt="Almeida Guindastes">
 
-    <div class="proposta-numero">
+<div class="proposta-numero">
 
-      <b>PROPOSTA COMERCIAL</b>
+<b>PROPOSTA COMERCIAL</b>
 
-      <br>
+<br>
 
-      Nº
-      <span id="pNumero"></span>
+Nº
+<span id="pNumero"></span>
 
-      <br>
+<br>
 
-      Validade:
-      <span id="pValidade"></span>
-      dias
+Validade:
+<span id="pValidade"></span>
+dias
 
-    </div>
+</div>
 
-  </div>
+</div>
 
+<h1>PROPOSTA COMERCIAL</h1>
 
-  <h1>
-    PROPOSTA COMERCIAL
-  </h1>
+<div class="dados-box">
 
+<p><b>CONTRATANTE:</b> <span id="pCliente"></span></p>
+<p><b>CNPJ / CPF:</b> <span id="pCnpj"></span></p>
+<p><b>RESPONSÁVEL:</b> <span id="pContato"></span></p>
+<p><b>TELEFONE:</b> <span id="pTelefone"></span></p>
+<p><b>E-MAIL:</b> <span id="pEmail"></span></p>
+<p><b>ENDEREÇO:</b> <span id="pEndereco"></span></p>
+<p><b>LOCAL DE PARTIDA:</b> <span id="pOrigem"></span></p>
+<p><b>LOCAL DO SERVIÇO:</b> <span id="pLocal"></span></p>
 
-  <div class="dados-box">
+</div>
 
-    <p>
-      <b>CONTRATANTE:</b>
-      <span id="pCliente"></span>
-    </p>
+<h3>EQUIPAMENTOS E SERVIÇOS</h3>
 
-    <p>
-      <b>CNPJ / CPF:</b>
-      <span id="pCnpj"></span>
-    </p>
+<table class="tabela">
 
-    <p>
-      <b>RESPONSÁVEL:</b>
-      <span id="pContato"></span>
-    </p>
+<thead>
 
-    <p>
-      <b>TELEFONE:</b>
-      <span id="pTelefone"></span>
-    </p>
+<tr>
+<th>Qtd.</th>
+<th>Un.</th>
+<th>Descrição</th>
+<th>Valor unit.</th>
+<th>Total</th>
+</tr>
 
-    <p>
-      <b>E-MAIL:</b>
-      <span id="pEmail"></span>
-    </p>
+</thead>
 
-    <p>
-      <b>ENDEREÇO:</b>
-      <span id="pEndereco"></span>
-    </p>
+<tbody id="pItens"></tbody>
 
-    <p>
-      <b>LOCAL DE PARTIDA:</b>
-      <span id="pOrigem"></span>
-    </p>
+</table>
 
-    <p>
-      <b>LOCAL DO SERVIÇO:</b>
-      <span id="pLocal"></span>
-    </p>
+<div class="valor-final">
+TOTAL:
+<span id="pTotal"></span>
+</div>
 
-  </div>
+<div id="pDescontoBox"></div>
 
+<h3>CONDIÇÕES COMERCIAIS</h3>
 
-  <h3>
-    EQUIPAMENTOS E SERVIÇOS
-  </h3>
+<div class="condicoes" id="pCondicoes"></div>
 
+<div class="dados-box">
 
-  <table class="tabela">
+<p>
+<b>FORMA DE PAGAMENTO:</b>
+<span id="pPagamento"></span>
+</p>
 
-    <thead>
+<p>
+<b>PRAZO / PERÍODO:</b>
+<span id="pPeriodo"></span>
+</p>
 
-      <tr>
-        <th>Qtd.</th>
-        <th>Un.</th>
-        <th>Descrição</th>
-        <th>Valor unit.</th>
-        <th>Total</th>
-      </tr>
+<p>
+<b>OBSERVAÇÕES:</b>
+<span id="pObs"></span>
+</p>
 
-    </thead>
+</div>
 
-    <tbody id="pItens"></tbody>
+<div class="assinaturas">
 
-  </table>
+<div>
+<div class="linha">
+ALMEIDA LOCAÇÃO DE GUINDASTES LTDA
+</div>
+</div>
 
+<div>
+<div class="linha">
+CONTRATANTE / RESPONSÁVEL
+</div>
+</div>
 
-  <div class="valor-final">
-
-    TOTAL:
-
-    <span id="pTotal"></span>
-
-  </div>
-
-
-  <div id="pDescontoBox"></div>
-
-
-  <h3>
-    CONDIÇÕES COMERCIAIS
-  </h3>
-
-
-  <div
-    class="condicoes"
-    id="pCondicoes"
-  ></div>
-
-
-  <div class="dados-box">
-
-    <p>
-      <b>FORMA DE PAGAMENTO:</b>
-      <span id="pPagamento"></span>
-    </p>
-
-    <p>
-      <b>PRAZO / PERÍODO:</b>
-      <span id="pPeriodo"></span>
-    </p>
-
-    <p>
-      <b>OBSERVAÇÕES:</b>
-      <span id="pObs"></span>
-    </p>
-
-  </div>
-
-
-  <div class="assinaturas">
-
-    <div>
-      <div class="linha">
-        ALMEIDA LOCAÇÃO DE GUINDASTES LTDA
-      </div>
-    </div>
-
-    <div>
-      <div class="linha">
-        CONTRATANTE / RESPONSÁVEL
-      </div>
-    </div>
-
-  </div>
+</div>
 
 </div>
 
 
 <div class="card nao-imprimir">
 
-  <h2>
-    Decisão do cliente
-  </h2>
+<h2>Decisão do cliente</h2>
 
-  <p class="muted">
-    Informe os dados do responsável para registrar a decisão.
-  </p>
+<p class="muted">
+Informe os dados do responsável para registrar a decisão.
+</p>
 
+<div class="grid">
 
-  <div class="grid">
+<label>
+Nome do responsável
+<input id="pNome">
+</label>
 
-    <label>
-      Nome do responsável
+<label>
+CPF / CNPJ
+<input id="pDoc">
+</label>
 
-      <input id="pNome">
+</div>
 
-    </label>
+<div class="actions">
 
+<button class="green" onclick="aprovar()">
+✓ APROVAR ORÇAMENTO
+</button>
 
-    <label>
-      CPF / CNPJ
+<button class="red" onclick="recusar()">
+✕ RECUSAR
+</button>
 
-      <input id="pDoc">
+<button class="black" onclick="window.print()">
+🖨️ IMPRIMIR / SALVAR PDF
+</button>
 
-    </label>
+</div>
 
-  </div>
-
-
-  <div class="actions">
-
-    <button
-      class="green"
-      onclick="aprovar()"
-    >
-      ✓ APROVAR ORÇAMENTO
-    </button>
-
-
-    <button
-      class="red"
-      onclick="recusar()"
-    >
-      ✕ RECUSAR
-    </button>
-
-
-    <button
-      class="black"
-      onclick="window.print()"
-    >
-      🖨️ IMPRIMIR / SALVAR PDF
-    </button>
-
-  </div>
-
-
-  <div
-    id="pMsg"
-    class="msg"
-  ></div>
+<div id="pMsg" class="msg"></div>
 
 </div>
 
@@ -1671,8 +1352,8 @@ const SUPABASE_KEY =
 
 const sb =
 supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
+SUPABASE_URL,
+SUPABASE_KEY
 );
 
 
@@ -1680,27 +1361,23 @@ supabase.createClient(
 VARIÁVEIS
 ================================================== */
 
-const $ =
-id => document.getElementById(id);
+const $ = id => document.getElementById(id);
 
 let itens = [];
-
 let itemId = 0;
-
 let equipamentosCloud = [];
-
 let clientesCloud = [];
-
 let cidadesBrasil = [];
-
 let cidadeSelecionada = null;
 
 let cidadeOrigem = {
-  nome:'Palmas',
-  uf:'TO'
+nome:'Palmas',
+uf:'TO'
 };
 
 let distanciaServicoKm = 0;
+
+let luzimanguesManual = false;
 
 
 /* ==================================================
@@ -1709,68 +1386,68 @@ EQUIPAMENTOS PADRÃO
 
 const equipamentosPadrao = [
 
-  {
-    id:'padrao-160',
-    nome:'Guindaste 160 toneladas',
-    descricao:'Guindaste 160 toneladas com lança telescópica de 77,5 metros e lança auxiliar (JIB) de 33,5 metros.',
-    unidade:'HORAS',
-    valor:700,
-    cortesia:false
-  },
+{
+id:'padrao-160',
+nome:'Guindaste 160 toneladas',
+descricao:'Guindaste 160 toneladas com lança telescópica de 77,5 metros e lança auxiliar (JIB) de 33,5 metros.',
+unidade:'HORAS',
+valor:700,
+cortesia:false
+},
 
-  {
-    id:'padrao-110',
-    nome:'Guindaste 110 toneladas',
-    descricao:'Guindaste 110 toneladas com lança telescópica de 60 metros e lança auxiliar (JIB) de 27 metros.',
-    unidade:'HORAS',
-    valor:600,
-    cortesia:false
-  },
+{
+id:'padrao-110',
+nome:'Guindaste 110 toneladas',
+descricao:'Guindaste 110 toneladas com lança telescópica de 60 metros e lança auxiliar (JIB) de 27 metros.',
+unidade:'HORAS',
+valor:600,
+cortesia:false
+},
 
-  {
-    id:'padrao-70',
-    nome:'Guindaste 70 toneladas',
-    descricao:'Guindaste 70 toneladas com lança telescópica de 46,5 metros e lança auxiliar (JIB) de 16 metros.',
-    unidade:'HORAS',
-    valor:450,
-    cortesia:false
-  },
+{
+id:'padrao-70',
+nome:'Guindaste 70 toneladas',
+descricao:'Guindaste 70 toneladas com lança telescópica de 46,5 metros e lança auxiliar (JIB) de 16 metros.',
+unidade:'HORAS',
+valor:450,
+cortesia:false
+},
 
-  {
-    id:'padrao-munck45',
-    nome:'Caminhão Munck 45 toneladas',
-    descricao:'Caminhão Munck 45 toneladas com lança de 21 metros e capacidade máxima de içamento de 10.900 kg.',
-    unidade:'HORAS',
-    valor:300,
-    cortesia:false
-  },
+{
+id:'padrao-munck45',
+nome:'Caminhão Munck 45 toneladas',
+descricao:'Caminhão Munck 45 toneladas com lança de 21 metros e capacidade máxima de içamento de 10.900 kg.',
+unidade:'HORAS',
+valor:300,
+cortesia:false
+},
 
-  {
-    id:'padrao-mob',
-    nome:'Mobilização',
-    descricao:'Mobilização do equipamento.',
-    unidade:'KM',
-    valor:0,
-    cortesia:false
-  },
+{
+id:'padrao-mob',
+nome:'Mobilização',
+descricao:'Mobilização do equipamento.',
+unidade:'KM',
+valor:0,
+cortesia:false
+},
 
-  {
-    id:'padrao-desmob',
-    nome:'Desmobilização',
-    descricao:'Desmobilização do equipamento.',
-    unidade:'KM',
-    valor:0,
-    cortesia:false
-  },
+{
+id:'padrao-desmob',
+nome:'Desmobilização',
+descricao:'Desmobilização do equipamento.',
+unidade:'KM',
+valor:0,
+cortesia:false
+},
 
-  {
-    id:'padrao-rigging',
-    nome:'Plano de Rigging + ART',
-    descricao:'Plano de Rigging + ART.',
-    unidade:'UNIDADE',
-    valor:0,
-    cortesia:true
-  }
+{
+id:'padrao-rigging',
+nome:'Plano de Rigging + ART',
+descricao:'Plano de Rigging + ART.',
+unidade:'UNIDADE',
+valor:0,
+cortesia:true
+}
 
 ];
 
@@ -1781,60 +1458,54 @@ UTILITÁRIOS
 
 function brl(v){
 
-  return new Intl.NumberFormat(
-    'pt-BR',
-    {
-      style:'currency',
-      currency:'BRL'
-    }
-  ).format(
-    Number(v)||0
-  );
+return new Intl.NumberFormat(
+'pt-BR',
+{
+style:'currency',
+currency:'BRL'
+}
+).format(Number(v)||0);
 
 }
 
 
 function escapar(v){
 
-  return String(v ?? '')
-    .replaceAll('&','&amp;')
-    .replaceAll('<','&lt;')
-    .replaceAll('>','&gt;')
-    .replaceAll('"','&quot;')
-    .replaceAll("'","&#039;");
+return String(v ?? '')
+.replaceAll('&','&amp;')
+.replaceAll('<','&lt;')
+.replaceAll('>','&gt;')
+.replaceAll('"','&quot;')
+.replaceAll("'","&#039;");
 
 }
 
 
 function normalizarTexto(valor){
 
-  return String(valor || '')
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g,'')
-    .toLowerCase()
-    .trim();
+return String(valor || '')
+.normalize('NFD')
+.replace(/[\u0300-\u036f]/g,'')
+.toLowerCase()
+.trim();
 
 }
 
 
 function normalizarDocumento(valor){
 
-  return String(valor || '')
-    .replace(/\D/g,'');
+return String(valor || '')
+.replace(/\D/g,'');
 
 }
 
 
-/* ==================================================
-EQUIPAMENTOS
-================================================== */
-
 function obterEquipamentos(){
 
-  return [
-    ...equipamentosPadrao,
-    ...equipamentosCloud
-  ];
+return [
+...equipamentosPadrao,
+...equipamentosCloud
+];
 
 }
 
@@ -1845,341 +1516,380 @@ CIDADES DO BRASIL
 
 async function carregarCidadesBrasil(){
 
-  try{
+try{
 
-    const resposta =
-      await fetch(
-        'https://servicodados.ibge.gov.br/api/v1/localidades/municipios'
-      );
+const resposta =
+await fetch(
+'https://servicodados.ibge.gov.br/api/v1/localidades/municipios'
+);
 
-    if(!resposta.ok){
+if(!resposta.ok){
 
-      throw new Error(
-        'Não foi possível carregar as cidades.'
-      );
+throw new Error(
+'Não foi possível carregar as cidades.'
+);
 
-    }
+}
 
-    const dados =
-      await resposta.json();
+const dados =
+await resposta.json();
 
-    cidadesBrasil =
-      dados
-        .map(c=>({
+cidadesBrasil =
+dados
+.map(c=>({
 
-          nome:c.nome,
+nome:c.nome,
 
-          uf:
-            c?.microrregiao
-              ?.mesorregiao
-              ?.UF
-              ?.sigla || ''
+uf:
+c?.microrregiao
+?.mesorregiao
+?.UF
+?.sigla || ''
 
-        }))
-        .filter(c=>c.uf)
-        .sort(
-          (a,b)=>
-            a.nome.localeCompare(
-              b.nome,
-              'pt-BR'
-            )
-        );
+}))
+.filter(c=>c.uf)
+.sort(
+(a,b)=>
+a.nome.localeCompare(
+b.nome,
+'pt-BR'
+)
+);
 
-    console.log(
-      'Cidades carregadas:',
-      cidadesBrasil.length
-    );
+console.log(
+'Cidades carregadas:',
+cidadesBrasil.length
+);
 
-  }
-  catch(error){
+}
+catch(error){
 
-    console.error(
-      'Erro ao carregar cidades:',
-      error
-    );
+console.error(
+'Erro ao carregar cidades:',
+error
+);
 
-    cidadesBrasil=[];
+cidadesBrasil=[];
 
-  }
+}
 
 }
 
 
 /* ==================================================
-BUSCA CIDADE DO SERVIÇO
+LISTA DE CIDADES + LUZIMANGUES
+================================================== */
+
+function obterTodasCidades(){
+
+const especiais = [
+{
+nome:'Luzimangues',
+uf:'TO',
+especial:true
+}
+];
+
+const mapa = new Map();
+
+[...especiais,...cidadesBrasil].forEach(c=>{
+
+const chave =
+normalizarTexto(c.nome)+'|'+
+normalizarTexto(c.uf);
+
+if(!mapa.has(chave)){
+mapa.set(chave,c);
+}
+
+});
+
+return [...mapa.values()];
+
+}
+
+
+/* ==================================================
+BUSCA DO LOCAL DO SERVIÇO
 ================================================== */
 
 function prepararBuscaCidade(){
 
-  const campo =
-    $('local');
+const campo = $('local');
+const caixa = $('cidadeSugestoes');
 
-  const caixa =
-    $('cidadeSugestoes');
+if(!campo || !caixa){
+return;
+}
 
-  if(!campo || !caixa){
-    return;
-  }
+campo.addEventListener(
+'input',
+function(){
 
+cidadeSelecionada = null;
+luzimanguesManual = false;
 
-  campo.addEventListener(
-    'input',
-    function(){
+$('manualLuzimangues').style.display='none';
 
-      cidadeSelecionada=null;
+$('partidaBox').classList.add('hidden');
 
-      const busca =
-        normalizarTexto(
-          this.value
-        );
+$('calculoDistancia').style.display='none';
 
-      if(!busca){
+distanciaServicoKm=0;
 
-        caixa.innerHTML='';
-        caixa.classList.add('hidden');
+const busca =
+normalizarTexto(this.value);
 
-        $('partidaBox').classList.add('hidden');
-        $('calculoDistancia').style.display='none';
+if(!busca){
 
-        distanciaServicoKm=0;
+caixa.innerHTML='';
+caixa.classList.add('hidden');
 
-        return;
-      }
-
-
-     const cidadesOrigem = [
-  {nome:'Luzimangues', uf:'TO'},
-  ...cidadesBrasil
-];
+return;
+}
 
 const resultados =
-  [
-    {nome:'Luzimangues',uf:'TO'},
-    ...cidadesBrasil
-  ]
-    .filter(c=>
+obterTodasCidades()
+.filter(c=>
+normalizarTexto(c.nome)
+.includes(busca)
+)
+.slice(0,15);
 
-      normalizarTexto(c.nome)
-        .includes(busca)
+if(!resultados.length){
 
-    )
-    .slice(0,12);
+caixa.innerHTML =
+'<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
 
+caixa.classList.remove('hidden');
 
-      if(!resultados.length){
+return;
+}
 
-        caixa.innerHTML =
-          '<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
+caixa.innerHTML =
+resultados
+.map(c=>`
 
-        caixa.classList.remove('hidden');
+<div
+class="cidade-sugestao"
+data-nome="${escapar(c.nome)}"
+data-uf="${escapar(c.uf)}"
+>
 
-        return;
-      }
+${c.nome === 'Luzimangues'
+? '⭐ '
+: ''}
 
+${escapar(c.nome)} - ${escapar(c.uf)}
 
-      caixa.innerHTML =
-        resultados
-          .map(c=>`
+</div>
 
-            <div
-              class="cidade-sugestao"
-              data-nome="${escapar(c.nome)}"
-              data-uf="${escapar(c.uf)}"
-            >
-              ${escapar(c.nome)} - ${escapar(c.uf)}
-            </div>
+`)
+.join('');
 
-          `)
-          .join('');
+caixa.classList.remove('hidden');
 
+caixa
+.querySelectorAll('.cidade-sugestao')
+.forEach(el=>{
 
-      caixa.classList.remove('hidden');
+el.addEventListener(
+'click',
+function(){
 
+selecionarCidade(
+this.dataset.nome,
+this.dataset.uf
+);
 
-      caixa
-        .querySelectorAll('.cidade-sugestao')
-        .forEach(el=>{
+}
+);
 
-          el.addEventListener(
-            'click',
-            function(){
+});
 
-              selecionarCidade(
-                this.dataset.nome,
-                this.dataset.uf
-              );
+}
+);
 
-            }
-          );
 
-        });
+/* FECHAR SUGESTÕES */
 
-    }
-  );
+document.addEventListener(
+'click',
+function(e){
 
+if(
+!campo.contains(e.target) &&
+!caixa.contains(e.target)
+){
 
+caixa.classList.add('hidden');
 
-/* ==================================================
-BUSCA CIDADE DE ORIGEM
-================================================== */
+}
 
-function prepararBuscaOrigem(){
-
-  const campo =
-    $('origem');
-
-  const caixa =
-    $('origemSugestoes');
-
-  if(!campo || !caixa){
-    return;
-  }
-
-
-  campo.addEventListener(
-    'input',
-    function(){
-
-      const busca =
-        normalizarTexto(
-          this.value
-        );
-
-
-      if(!busca){
-
-        caixa.innerHTML='';
-        caixa.classList.add('hidden');
-
-        return;
-
-      }
-
-
-      const luzimangues = {
-        nome:'Luzimangues',
-        uf:'TO'
-      };
-
-
-      const resultados =
-        normalizarTexto(luzimangues.nome)
-          .includes(busca)
-          ? [luzimangues]
-          : [];
-
-
-      if(!resultados.length){
-
-        caixa.innerHTML =
-          '<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
-
-        caixa.classList.remove('hidden');
-
-        return;
-
-      }
-
-
-      caixa.innerHTML =
-        resultados
-          .map(c=>`
-
-            <div
-              class="cidade-sugestao"
-              data-nome="${escapar(c.nome)}"
-              data-uf="${escapar(c.uf)}"
-            >
-              ${escapar(c.nome)} - ${escapar(c.uf)}
-            </div>
-
-          `)
-          .join('');
-
-
-      caixa.classList.remove('hidden');
-
-
-      caixa
-        .querySelectorAll('.cidade-sugestao')
-        .forEach(el=>{
-
-          el.addEventListener(
-            'click',
-            function(){
-
-              selecionarOrigem(
-                this.dataset.nome,
-                this.dataset.uf
-              );
-
-            }
-          );
-
-        });
-
-    }
-  );
-
-
-  document.addEventListener(
-    'click',
-    function(e){
-
-      if(
-        !campo.contains(e.target) &&
-        !caixa.contains(e.target)
-      ){
-
-        caixa.classList.add('hidden');
-
-      }
-
-    }
-  );
+}
+);
 
 }
 
 
-
 /* ==================================================
-SELECIONAR DESTINO
+SELECIONAR LOCAL DO SERVIÇO
 ================================================== */
 
-async function selecionarCidade(
-  nome,
-  uf
+async function selecionarCidade(nome,uf){
+
+$('local').value =
+`${nome} - ${uf}`;
+
+$('cidadeSugestoes')
+.classList
+.add('hidden');
+
+cidadeSelecionada = {
+nome,
+uf
+};
+
+luzimanguesManual =
+normalizarTexto(nome)==='luzimangues';
+
+
+$('partidaBox')
+.classList
+.remove('hidden');
+
+atualizarTextoPartida();
+
+
+if(luzimanguesManual){
+
+$('calculoDistancia').style.display='none';
+
+$('manualLuzimangues').style.display='block';
+
+$('distanciaManual').value=0;
+
+$('manualValorMob').value=
+$('valorMobilizacaoKm').value||0;
+
+$('manualValorDesmob').value=
+$('valorDesmobilizacaoKm').value||0;
+
+atualizarLuzimanguesManual();
+
+return;
+
+}
+
+$('manualLuzimangues').style.display='none';
+
+await calcularDistanciaServico();
+
+}
+
+
+/* ==================================================
+BUSCA DO LOCAL DE PARTIDA
+================================================== */
+
+function prepararBuscaOrigem(){
+
+const campo = $('origem');
+const caixa = $('origemSugestoes');
+
+if(!campo || !caixa){
+return;
+}
+
+campo.addEventListener(
+'input',
+function(){
+
+const busca =
+normalizarTexto(this.value);
+
+if(!busca){
+
+caixa.innerHTML='';
+caixa.classList.add('hidden');
+
+return;
+}
+
+const resultados =
+cidadesBrasil
+.filter(c=>
+normalizarTexto(c.nome)
+.includes(busca)
+)
+.slice(0,15);
+
+if(!resultados.length){
+
+caixa.innerHTML =
+'<div class="cidade-sugestao">Nenhuma cidade encontrada.</div>';
+
+caixa.classList.remove('hidden');
+
+return;
+}
+
+caixa.innerHTML =
+resultados
+.map(c=>`
+
+<div
+class="cidade-sugestao"
+data-nome="${escapar(c.nome)}"
+data-uf="${escapar(c.uf)}"
+>
+
+${escapar(c.nome)} - ${escapar(c.uf)}
+
+</div>
+
+`)
+.join('');
+
+caixa.classList.remove('hidden');
+
+caixa
+.querySelectorAll('.cidade-sugestao')
+.forEach(el=>{
+
+el.addEventListener(
+'click',
+function(){
+
+selecionarOrigem(
+this.dataset.nome,
+this.dataset.uf
+);
+
+}
+);
+
+});
+
+}
+);
+
+
+document.addEventListener(
+'click',
+function(e){
+
+if(
+!campo.contains(e.target) &&
+!caixa.contains(e.target)
 ){
 
-  const campo =
-    $('local');
+caixa.classList.add('hidden');
 
-  const caixa =
-    $('cidadeSugestoes');
+}
 
-
-  campo.value =
-    `${nome} - ${uf}`;
-
-
-  caixa.classList.add('hidden');
-
-
-  cidadeSelecionada = {
-    nome,
-    uf
-  };
-
-
-  $('partidaBox')
-    .classList
-    .remove('hidden');
-
-
-  atualizarTextoPartida();
-
-
-  await calcularDistanciaServico();
+}
+);
 
 }
 
@@ -2190,87 +1900,140 @@ ALTERAR ORIGEM
 
 function abrirAlteracaoPartida(){
 
-  $('partidaEditor')
-    .classList
-    .remove('hidden');
+$('partidaEditor')
+.classList
+.remove('hidden');
 
-  $('origem').focus();
+$('origem').value='';
+
+$('origem').focus();
+
+}
+
+
+async function selecionarOrigem(nome,uf){
+
+cidadeOrigem = {
+nome,
+uf
+};
+
+$('origem').value =
+`${nome} - ${uf}`;
+
+$('origemSugestoes')
+.classList
+.add('hidden');
+
+$('partidaEditor')
+.classList
+.add('hidden');
+
+atualizarTextoPartida();
+
+if(cidadeSelecionada){
+
+if(luzimanguesManual){
+
+atualizarLuzimanguesManual();
+
+}
+else{
+
+await calcularDistanciaServico();
+
+}
+
+}
 
 }
 
 
 function usarPalmas(){
 
-  cidadeOrigem = {
-    nome:'Palmas',
-    uf:'TO'
-  };
+cidadeOrigem = {
+nome:'Palmas',
+uf:'TO'
+};
 
-  $('origem').value='';
+$('origem').value='';
 
-  $('partidaEditor')
-    .classList
-    .add('hidden');
+$('partidaEditor')
+.classList
+.add('hidden');
 
-  atualizarTextoPartida();
+atualizarTextoPartida();
 
-  if(cidadeSelecionada){
+if(cidadeSelecionada){
 
-    calcularDistanciaServico();
+if(luzimanguesManual){
 
-  }
+atualizarLuzimanguesManual();
+
+}
+else{
+
+calcularDistanciaServico();
+
+}
+
+}
 
 }
 
 
-async function selecionarOrigem(
-  nome,
-  uf
-){
+/* ==================================================
+BOTÃO ESPECIAL LUZIMANGUES
+================================================== */
 
-  cidadeOrigem = {
-    nome,
-    uf
-  };
+function ativarLuzimanguesManual(){
 
+$('local').value='Luzimangues - TO';
 
-  $('origem').value =
-    `${nome} - ${uf}`;
+cidadeSelecionada={
+nome:'Luzimangues',
+uf:'TO'
+};
 
+luzimanguesManual=true;
 
-  $('origemSugestoes')
-    .classList
-    .add('hidden');
+$('partidaBox')
+.classList
+.remove('hidden');
 
+$('partidaEditor')
+.classList
+.add('hidden');
 
-  $('partidaEditor')
-    .classList
-    .add('hidden');
+$('calculoDistancia').style.display='none';
 
+$('manualLuzimangues').style.display='block';
 
-  atualizarTextoPartida();
+$('manualValorMob').value =
+$('valorMobilizacaoKm').value || 0;
 
+$('manualValorDesmob').value =
+$('valorDesmobilizacaoKm').value || 0;
 
-  if(cidadeSelecionada){
+atualizarTextoPartida();
 
-    await calcularDistanciaServico();
-
-  }
+atualizarLuzimanguesManual();
 
 }
 
+
+/* ==================================================
+TEXTO DA PARTIDA
+================================================== */
 
 function atualizarTextoPartida(){
 
-  const texto =
-    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+const texto =
+`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
+$('partidaAtual').textContent=texto;
 
-  $('partidaAtual').textContent =
-    texto;
-
-  $('origemTexto').textContent =
-    texto;
+$('origemTexto').textContent=texto;
 
 }
 
@@ -2279,291 +2042,334 @@ function atualizarTextoPartida(){
 GEOCODIFICAR
 ================================================== */
 
-async function geocodificarCidade(
-  nomeCidade,
-  uf
-){
+async function geocodificarCidade(nomeCidade,uf){
 
-  const consulta =
-    `${nomeCidade}, ${uf}, Brasil`;
+const consulta =
+`${nomeCidade}, ${uf}, Brasil`;
 
+const url =
+'https://nominatim.openstreetmap.org/search?' +
+new URLSearchParams({
 
-  const url =
-    'https://nominatim.openstreetmap.org/search?' +
-    new URLSearchParams({
+q:consulta,
+format:'jsonv2',
+limit:'1',
+countrycodes:'br'
 
-      q:consulta,
+});
 
-      format:'jsonv2',
+const resposta =
+await fetch(url);
 
-      limit:'1',
+if(!resposta.ok){
 
-      countrycodes:'br'
+throw new Error(
+'Erro ao localizar a cidade.'
+);
 
-    });
+}
 
+const dados =
+await resposta.json();
 
-  const resposta =
-    await fetch(url);
+if(!dados.length){
 
+throw new Error(
+'Cidade não localizada.'
+);
 
-  if(!resposta.ok){
+}
 
-    throw new Error(
-      'Erro ao localizar a cidade.'
-    );
+return {
 
-  }
+lat:Number(dados[0].lat),
+lon:Number(dados[0].lon)
 
-
-  const dados =
-    await resposta.json();
-
-
-  if(!dados.length){
-
-    throw new Error(
-      'Cidade não localizada.'
-    );
-
-  }
-
-
-  return {
-
-    lat:Number(
-      dados[0].lat
-    ),
-
-    lon:Number(
-      dados[0].lon
-    )
-
-  };
+};
 
 }
 
 
 /* ==================================================
-CALCULAR DISTÂNCIA
+DISTÂNCIA AUTOMÁTICA
 ================================================== */
 
 async function calcularDistanciaServico(){
 
-  const campo =
-    $('local');
+const caixa =
+$('calculoDistancia');
 
-  const caixa =
-    $('calculoDistancia');
+if(!caixa || !cidadeSelecionada){
+return;
+}
 
+if(luzimanguesManual){
 
-  if(!campo || !caixa){
-    return;
-  }
+caixa.style.display='none';
+return;
 
+}
 
-  const valor =
-    campo.value.trim();
+caixa.style.display='block';
 
+$('cidadeDestinoTexto').textContent =
+`${cidadeSelecionada.nome} - ${cidadeSelecionada.uf}`;
 
-  if(!valor){
+$('origemTexto').textContent =
+`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
-    caixa.style.display='none';
+$('distanciaTexto').textContent =
+'Calculando distância rodoviária...';
 
-    cidadeSelecionada=null;
+try{
 
-    distanciaServicoKm=0;
+const origem =
+await geocodificarCidade(
+cidadeOrigem.nome,
+cidadeOrigem.uf
+);
 
-    return;
+const destino =
+await geocodificarCidade(
+cidadeSelecionada.nome,
+cidadeSelecionada.uf
+);
 
-  }
+const rotaUrl =
+`https://router.project-osrm.org/route/v1/driving/`+
+`${origem.lon},${origem.lat};`+
+`${destino.lon},${destino.lat}`+
+`?overview=false`;
 
+const resposta =
+await fetch(rotaUrl);
 
-  if(!cidadeSelecionada){
+if(!resposta.ok){
 
-    return;
+throw new Error(
+'Não foi possível calcular a rota.'
+);
 
-  }
+}
 
+const dados =
+await resposta.json();
 
-  caixa.style.display='block';
+if(
+!dados.routes ||
+!dados.routes.length
+){
 
+throw new Error(
+'Rota não encontrada.'
+);
 
-  $('cidadeDestinoTexto').textContent =
-    `${cidadeSelecionada.nome} - ${cidadeSelecionada.uf}`;
+}
 
+distanciaServicoKm =
+Math.ceil(
+dados.routes[0].distance/1000
+);
 
-  $('origemTexto').textContent =
-    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+$('distanciaTexto').textContent =
+`Distância rodoviária: ${distanciaServicoKm} km`;
 
+atualizarValoresTransporte();
 
-  $('distanciaTexto').textContent =
-    'Calculando distância rodoviária...';
+}
+catch(error){
 
+console.error(error);
 
-  try{
+distanciaServicoKm=0;
 
-    const origem =
-      await geocodificarCidade(
-        cidadeOrigem.nome,
-        cidadeOrigem.uf
-      );
+$('distanciaTexto').textContent =
+'Não foi possível calcular a distância.';
 
-
-    const destino =
-      await geocodificarCidade(
-        cidadeSelecionada.nome,
-        cidadeSelecionada.uf
-      );
-
-
-    const rotaUrl =
-      `https://router.project-osrm.org/route/v1/driving/` +
-      `${origem.lon},${origem.lat};` +
-      `${destino.lon},${destino.lat}` +
-      `?overview=false`;
-
-
-    const resposta =
-      await fetch(rotaUrl);
-
-
-    if(!resposta.ok){
-
-      throw new Error(
-        'Não foi possível calcular a rota.'
-      );
-
-    }
-
-
-    const dados =
-      await resposta.json();
-
-
-    if(
-      !dados.routes ||
-      !dados.routes.length
-    ){
-
-      throw new Error(
-        'Rota não encontrada.'
-      );
-
-    }
-
-
-    distanciaServicoKm =
-      Math.ceil(
-        dados.routes[0].distance / 1000
-      );
-
-
-    $('distanciaTexto').textContent =
-      `Distância rodoviária: ${distanciaServicoKm} km`;
-
-
-    atualizarValoresTransporte();
-
-  }
-  catch(error){
-
-    console.error(error);
-
-    distanciaServicoKm=0;
-
-    $('distanciaTexto').textContent =
-      'Não foi possível calcular a distância.';
-
-  }
+}
 
 }
 
 
 /* ==================================================
-TRANSPORTE
+TRANSPORTE AUTOMÁTICO
 ================================================== */
 
 function atualizarValoresTransporte(){
 
-  const distancia =
-    Number(
-      distanciaServicoKm
-    ) || 0;
+if(luzimanguesManual){
+return;
+}
 
+const distancia =
+Number(distanciaServicoKm)||0;
 
-  const valorMob =
-    Number(
-      $('valorMobilizacaoKm')?.value
-    ) || 0;
+const valorMob =
+Number($('valorMobilizacaoKm').value)||0;
 
+const valorDesmob =
+Number($('valorDesmobilizacaoKm').value)||0;
 
-  const valorDesmob =
-    Number(
-      $('valorDesmobilizacaoKm')?.value
-    ) || 0;
+if(!distancia){
 
+$('resumoMobilizacao').textContent='';
 
-  if(!distancia){
+return;
 
-    $('resumoMobilizacao').textContent='';
+}
 
-    return;
+const totalMob =
+distancia*valorMob;
 
-  }
+const totalDesmob =
+distancia*valorDesmob;
 
+$('resumoMobilizacao').innerHTML =
+`Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
+`Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
 
-  const totalMob =
-    distancia * valorMob;
-
-
-  const totalDesmob =
-    distancia * valorDesmob;
-
-
-  $('resumoMobilizacao').innerHTML =
-
-    `Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>` +
-
-    `Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
-
-
-  aplicarValoresTransporte(
-    distancia,
-    valorMob,
-    valorDesmob
-  );
+aplicarValoresTransporte(
+distancia,
+valorMob,
+valorDesmob
+);
 
 }
 
 
+/* ==================================================
+TRANSPORTE MANUAL LUZIMANGUES
+================================================== */
+
+function atualizarLuzimanguesManual(){
+
+if(!luzimanguesManual){
+return;
+}
+
+const distancia =
+Number($('distanciaManual').value)||0;
+
+const valorMob =
+Number($('manualValorMob').value)||0;
+
+const valorDesmob =
+Number($('manualValorDesmob').value)||0;
+
+distanciaServicoKm=distancia;
+
+$('valorMobilizacaoKm').value=valorMob;
+
+$('valorDesmobilizacaoKm').value=valorDesmob;
+
+if(!distancia){
+
+$('resumoManualLuzimangues').textContent =
+'Informe a distância manual em quilômetros.';
+
+removerItensTransporte();
+
+calcularTotal();
+
+return;
+
+}
+
+const totalMob =
+distancia*valorMob;
+
+const totalDesmob =
+distancia*valorDesmob;
+
+$('resumoManualLuzimangues').innerHTML =
+`Mobilização: ${distancia} km × ${brl(valorMob)} = ${brl(totalMob)}<br>`+
+`Desmobilização: ${distancia} km × ${brl(valorDesmob)} = ${brl(totalDesmob)}`;
+
+aplicarValoresTransporte(
+distancia,
+valorMob,
+valorDesmob
+);
+
+}
+
+
+/* ==================================================
+REMOVER TRANSPORTE
+================================================== */
+
+function removerItensTransporte(){
+
+itens =
+itens.filter(i=>
+i.equipamento!=='padrao-mob' &&
+i.equipamento!=='padrao-desmob'
+);
+
+renderItens();
+
+}
+
+
+/* ==================================================
+EVENTOS TRANSPORTE
+================================================== */
+
 function prepararValoresTransporte(){
 
-  const mob =
-    $('valorMobilizacaoKm');
+const mob =
+$('valorMobilizacaoKm');
 
-  const desmob =
-    $('valorDesmobilizacaoKm');
+const desmob =
+$('valorDesmobilizacaoKm');
 
+if(mob){
 
-  if(mob){
+mob.addEventListener(
+'input',
+function(){
 
-    mob.addEventListener(
-      'input',
-      atualizarValoresTransporte
-    );
+if(luzimanguesManual){
 
-  }
+$('manualValorMob').value=this.value;
 
+atualizarLuzimanguesManual();
 
-  if(desmob){
+}
+else{
 
-    desmob.addEventListener(
-      'input',
-      atualizarValoresTransporte
-    );
+atualizarValoresTransporte();
 
-  }
+}
+
+}
+);
+
+}
+
+if(desmob){
+
+desmob.addEventListener(
+'input',
+function(){
+
+if(luzimanguesManual){
+
+$('manualValorDesmob').value=this.value;
+
+atualizarLuzimanguesManual();
+
+}
+else{
+
+atualizarValoresTransporte();
+
+}
+
+}
+);
+
+}
 
 }
 
@@ -2573,132 +2379,95 @@ APLICAR MOBILIZAÇÃO
 ================================================== */
 
 function aplicarValoresTransporte(
-  distancia,
-  valorMob,
-  valorDesmob
+distancia,
+valorMob,
+valorDesmob
 ){
 
-  if(!distancia){
-    return;
-  }
+if(!distancia){
+return;
+}
 
+const origem =
+`${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
 
-  const origem =
-    `${cidadeOrigem.nome} - ${cidadeOrigem.uf}`;
+const destino =
+$('local').value;
 
-  const destino =
-    $('local').value;
+let mobilizacao =
+itens.find(
+i=>i.equipamento==='padrao-mob'
+);
 
+let desmobilizacao =
+itens.find(
+i=>i.equipamento==='padrao-desmob'
+);
 
-  let mobilizacao =
-    itens.find(
-      i =>
-        i.equipamento === 'padrao-mob'
-    );
+if(!mobilizacao){
 
+adicionarItem({
 
-  let desmobilizacao =
-    itens.find(
-      i =>
-        i.equipamento === 'padrao-desmob'
-    );
+equipamento:'padrao-mob',
+quantidade:distancia,
+unidade:'KM',
+descricao:
+`Mobilização do equipamento de ${origem} até ${destino}`,
+valor:valorMob,
+cortesia:false
 
+});
 
-  if(!mobilizacao){
+}
 
-    adicionarItem({
+if(!desmobilizacao){
 
-      equipamento:'padrao-mob',
+adicionarItem({
 
-      quantidade:distancia,
+equipamento:'padrao-desmob',
+quantidade:distancia,
+unidade:'KM',
+descricao:
+`Desmobilização do equipamento de ${destino} até ${origem}`,
+valor:valorDesmob,
+cortesia:false
 
-      unidade:'KM',
+});
 
-      descricao:
-        `Mobilização do equipamento de ${origem} até ${destino}`,
+}
 
-      valor:valorMob,
+mobilizacao =
+itens.find(
+i=>i.equipamento==='padrao-mob'
+);
 
-      cortesia:false
+desmobilizacao =
+itens.find(
+i=>i.equipamento==='padrao-desmob'
+);
 
-    });
+if(mobilizacao){
 
-  }
+mobilizacao.quantidade=distancia;
+mobilizacao.unidade='KM';
+mobilizacao.valor=valorMob;
+mobilizacao.descricao=
+`Mobilização do equipamento de ${origem} até ${destino}`;
 
+}
 
-  if(!desmobilizacao){
+if(desmobilizacao){
 
-    adicionarItem({
+desmobilizacao.quantidade=distancia;
+desmobilizacao.unidade='KM';
+desmobilizacao.valor=valorDesmob;
+desmobilizacao.descricao=
+`Desmobilização do equipamento de ${destino} até ${origem}`;
 
-      equipamento:'padrao-desmob',
+}
 
-      quantidade:distancia,
-
-      unidade:'KM',
-
-      descricao:
-        `Desmobilização do equipamento de ${destino} até ${origem}`,
-
-      valor:valorDesmob,
-
-      cortesia:false
-
-    });
-
-  }
-
-
-  mobilizacao =
-    itens.find(
-      i =>
-        i.equipamento === 'padrao-mob'
-    );
-
-
-  desmobilizacao =
-    itens.find(
-      i =>
-        i.equipamento === 'padrao-desmob'
-    );
-
-
-  if(mobilizacao){
-
-    mobilizacao.quantidade =
-      distancia;
-
-    mobilizacao.unidade =
-      'KM';
-
-    mobilizacao.valor =
-      valorMob;
-
-    mobilizacao.descricao =
-      `Mobilização do equipamento de ${origem} até ${destino}`;
-
-  }
-
-
-  if(desmobilizacao){
-
-    desmobilizacao.quantidade =
-      distancia;
-
-    desmobilizacao.unidade =
-      'KM';
-
-    desmobilizacao.valor =
-      valorDesmob;
-
-    desmobilizacao.descricao =
-      `Desmobilização do equipamento de ${destino} até ${origem}`;
-
-  }
-
-
-  renderItens();
-
-  calcularTotal();
+renderItens();
+calcularTotal();
 
 }
 
@@ -2709,195 +2478,123 @@ CLIENTES
 
 async function carregarClientes(){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('clientes')
-      .select('*')
-      .order(
-        'cliente',
-        {
-          ascending:true
-        }
-      );
+const {data,error} =
+await sb
+.from('clientes')
+.select('*')
+.order(
+'cliente',
+{ascending:true}
+);
 
+if(error){
 
-  if(error){
+console.error(
+'Erro ao carregar clientes:',
+error
+);
 
-    console.error(
-      'Erro ao carregar clientes:',
-      error
-    );
+clientesCloud=[];
 
-    clientesCloud=[];
+return;
 
-    return;
+}
 
-  }
+clientesCloud=data||[];
 
-
-  clientesCloud =
-    data || [];
-
-
-  prepararBuscaClientes();
+prepararBuscaClientes();
 
 }
 
 
 function prepararBuscaClientes(){
 
-  const campo =
-    $('cliente');
+const campo=$('cliente');
+const cnpj=$('cnpj');
 
-  const cnpj =
-    $('cnpj');
+if(!campo||!cnpj){
+return;
+}
 
+const lista=$('listaClientes');
 
-  if(!campo || !cnpj){
-    return;
-  }
+lista.innerHTML =
+clientesCloud
+.map(c=>
+`<option value="${escapar(c.cliente)}">`
+)
+.join('');
 
+campo.oninput=function(){
 
-  const lista =
-    $('listaClientes');
+preencherClientePorNome(this.value);
 
+};
 
-  lista.innerHTML =
-    clientesCloud
-      .map(c=>`
+cnpj.oninput=function(){
 
-        <option
-          value="${escapar(c.cliente)}"
-        >
+preencherClientePorCnpj(this.value);
 
-      `)
-      .join('');
-
-
-  campo.addEventListener(
-    'input',
-    function(){
-
-      preencherClientePorNome(
-        this.value
-      );
-
-    }
-  );
-
-
-  cnpj.addEventListener(
-    'input',
-    function(){
-
-      preencherClientePorCnpj(
-        this.value
-      );
-
-    }
-  );
+};
 
 }
 
 
-function preencherClientePorNome(
-  nome
-){
+function preencherClientePorNome(nome){
 
-  const busca =
-    normalizarTexto(nome);
+const busca =
+normalizarTexto(nome);
 
+if(!busca){
+return;
+}
 
-  if(!busca){
-    return;
-  }
+const cliente =
+clientesCloud.find(
+c=>
+normalizarTexto(c.cliente)===busca
+);
 
-
-  const cliente =
-    clientesCloud.find(
-      c =>
-        normalizarTexto(
-          c.cliente
-        ) === busca
-    );
-
-
-  if(!cliente){
-    return;
-  }
-
-
-  preencherDadosCliente(
-    cliente
-  );
+if(cliente){
+preencherDadosCliente(cliente);
+}
 
 }
 
 
-function preencherClientePorCnpj(
-  documento
-){
+function preencherClientePorCnpj(documento){
 
-  const busca =
-    normalizarDocumento(
-      documento
-    );
+const busca =
+normalizarDocumento(documento);
 
+if(!busca){
+return;
+}
 
-  if(!busca){
-    return;
-  }
+const cliente =
+clientesCloud.find(
+c=>
+normalizarDocumento(c.cnpj)===busca
+);
 
-
-  const cliente =
-    clientesCloud.find(
-      c =>
-        normalizarDocumento(
-          c.cnpj
-        ) === busca
-    );
-
-
-  if(!cliente){
-    return;
-  }
-
-
-  preencherDadosCliente(
-    cliente
-  );
+if(cliente){
+preencherDadosCliente(cliente);
+}
 
 }
 
 
-function preencherDadosCliente(
-  cliente
-){
+function preencherDadosCliente(cliente){
 
-  $('cliente').value =
-    cliente.cliente || '';
+$('cliente').value=cliente.cliente||'';
+$('cnpj').value=cliente.cnpj||'';
+$('contato').value=cliente.contato||'';
+$('telefone').value=cliente.telefone||'';
+$('email').value=cliente.email||'';
+$('endereco').value=cliente.endereco||'';
 
-  $('cnpj').value =
-    cliente.cnpj || '';
-
-  $('contato').value =
-    cliente.contato || '';
-
-  $('telefone').value =
-    cliente.telefone || '';
-
-  $('email').value =
-    cliente.email || '';
-
-  $('endereco').value =
-    cliente.endereco || '';
-
-
-  $('acaoMsg').textContent =
-    'Cliente encontrado e cadastro preenchido.';
+$('acaoMsg').textContent =
+'Cliente encontrado e cadastro preenchido.';
 
 }
 
@@ -2908,118 +2605,78 @@ LOGIN
 
 async function login(){
 
-  $('loginMsg').textContent =
-    'Entrando...';
+$('loginMsg').textContent='Entrando...';
 
+const {error} =
+await sb.auth.signInWithPassword({
 
-  const {
-    error
-  } =
-    await sb.auth.signInWithPassword({
+email:$('loginEmail').value.trim(),
+password:$('loginSenha').value
 
-      email:
-        $('loginEmail').value.trim(),
+});
 
-      password:
-        $('loginSenha').value
+if(error){
 
-    });
+$('loginMsg').textContent =
+'Erro: '+error.message;
 
+return;
 
-  if(error){
+}
 
-    $('loginMsg').textContent =
-      'Erro: '+
-      error.message;
-
-    return;
-
-  }
-
-
-  await iniciarSistema();
+await iniciarSistema();
 
 }
 
 
 async function sair(){
 
-  await sb.auth.signOut();
+await sb.auth.signOut();
 
-  location.reload();
+location.reload();
 
 }
 
 
 /* ==================================================
-INICIAR SISTEMA
+INICIAR
 ================================================== */
 
 async function iniciarSistema(){
 
-  const {
-    data:{
-      session
-    }
-  } =
-    await sb.auth.getSession();
+const {
+data:{session}
+} =
+await sb.auth.getSession();
 
+if(!session){
 
-  if(!session){
+$('login').classList.remove('hidden');
+$('painel').classList.add('hidden');
+$('btnSair').classList.add('hidden');
 
-    $('login')
-      .classList
-      .remove('hidden');
+return;
 
-    $('painel')
-      .classList
-      .add('hidden');
+}
 
-    $('btnSair')
-      .classList
-      .add('hidden');
+$('login').classList.add('hidden');
+$('painel').classList.remove('hidden');
+$('btnSair').classList.remove('hidden');
 
-    return;
+await carregarEquipamentos();
+await carregarClientes();
 
-  }
+prepararBuscaCidade();
+prepararBuscaOrigem();
+prepararValoresTransporte();
 
+await carregarCidadesBrasil();
 
-  $('login')
-    .classList
-    .add('hidden');
+if(itens.length===0){
+adicionarItem();
+}
 
-
-  $('painel')
-    .classList
-    .remove('hidden');
-
-
-  $('btnSair')
-    .classList
-    .remove('hidden');
-
-
-  await carregarEquipamentos();
-
-  await carregarClientes();
-
-  prepararBuscaCidade();
-
-  prepararBuscaOrigem();
-
-  prepararValoresTransporte();
-
-  await carregarCidadesBrasil();
-
-
-  if(itens.length===0){
-
-    adicionarItem();
-
-  }
-
-
-  await carregarLista();
+await carregarLista();
 
 }
 
@@ -3030,76 +2687,60 @@ NOVO ORÇAMENTO
 
 function novoOrcamento(){
 
-  if(
-    !confirm(
-      'Deseja limpar o formulário e começar um novo orçamento?'
-    )
-  ){
-    return;
-  }
+if(
+!confirm(
+'Deseja limpar o formulário e começar um novo orçamento?'
+)
+){
+return;
+}
 
+$('cliente').value='';
+$('cnpj').value='';
+$('contato').value='';
+$('telefone').value='';
+$('email').value='';
+$('endereco').value='';
+$('local').value='';
 
-  $('cliente').value='';
-  $('cnpj').value='';
-  $('contato').value='';
-  $('telefone').value='';
-  $('email').value='';
-  $('endereco').value='';
-  $('local').value='';
+$('validade').value=30;
+$('formaPagamento').value='A COMBINAR';
+$('periodo').value='';
+$('obs').value='';
+$('desconto').value=0;
 
-  $('validade').value=30;
+$('valorMobilizacaoKm').value=0;
+$('valorDesmobilizacaoKm').value=0;
 
-  $('formaPagamento').value='A COMBINAR';
+$('distanciaManual').value=0;
+$('manualValorMob').value=0;
+$('manualValorDesmob').value=0;
 
-  $('periodo').value='';
+cidadeSelecionada=null;
 
-  $('obs').value='';
+cidadeOrigem={
+nome:'Palmas',
+uf:'TO'
+};
 
-  $('desconto').value=0;
+luzimanguesManual=false;
+distanciaServicoKm=0;
 
-  $('valorMobilizacaoKm').value=0;
+atualizarTextoPartida();
 
-  $('valorDesmobilizacaoKm').value=0;
+$('partidaBox').classList.add('hidden');
+$('partidaEditor').classList.add('hidden');
+$('calculoDistancia').style.display='none';
+$('manualLuzimangues').style.display='none';
 
+itens=[];
+itemId=0;
 
-  cidadeSelecionada=null;
+adicionarItem();
 
+calcularTotal();
 
-  cidadeOrigem={
-    nome:'Palmas',
-    uf:'TO'
-  };
-
-
-  atualizarTextoPartida();
-
-
-  $('partidaBox')
-    .classList
-    .add('hidden');
-
-
-  $('partidaEditor')
-    .classList
-    .add('hidden');
-
-
-  $('calculoDistancia')
-    .style
-    .display='none';
-
-
-  itens=[];
-
-  itemId=0;
-
-
-  adicionarItem();
-
-  calcularTotal();
-
-
-  $('acaoMsg').textContent='';
+$('acaoMsg').textContent='';
 
 }
 
@@ -3108,182 +2749,123 @@ function novoOrcamento(){
 ITENS
 ================================================== */
 
-function adicionarItem(
-  dados={}
-){
+function adicionarItem(dados={}){
 
-  itemId++;
+itemId++;
 
+const item={
 
-  const item={
+id:itemId,
 
-    id:itemId,
+equipamento:dados.equipamento||'',
 
-    equipamento:
-      dados.equipamento || '',
+quantidade:Number(dados.quantidade??1),
 
-    quantidade:
-      Number(
-        dados.quantidade ?? 1
-      ),
+unidade:dados.unidade||'UNIDADE',
 
-    unidade:
-      dados.unidade ||
-      'UNIDADE',
+descricao:dados.descricao||'',
 
-    descricao:
-      dados.descricao ||
-      '',
+valor:Number(dados.valor??0),
 
-    valor:
-      Number(
-        dados.valor ?? 0
-      ),
+cortesia:!!dados.cortesia
 
-    cortesia:
-      !!dados.cortesia
+};
 
-  };
+itens.push(item);
 
-
-  itens.push(item);
-
-
-  renderItens();
-
-  calcularTotal();
+renderItens();
+calcularTotal();
 
 }
 
 
 function removerItem(id){
 
-  itens =
-    itens.filter(
-      i =>
-        i.id !== Number(id)
-    );
+itens =
+itens.filter(
+i=>i.id!==Number(id)
+);
 
-
-  renderItens();
-
-  calcularTotal();
+renderItens();
+calcularTotal();
 
 }
 
 
-function atualizarItem(
-  id,
-  campo,
-  valor
+function atualizarItem(id,campo,valor){
+
+const item =
+itens.find(
+x=>x.id===Number(id)
+);
+
+if(!item){
+return;
+}
+
+if(
+campo==='quantidade'||
+campo==='valor'
 ){
 
-  const item =
-    itens.find(
-      x =>
-        x.id === Number(id)
-    );
+item[campo]=Number(valor)||0;
 
+}
+else if(campo==='cortesia'){
 
-  if(!item){
-    return;
-  }
+item[campo]=!!valor;
 
+}
+else{
 
-  if(
-    campo==='quantidade' ||
-    campo==='valor'
-  ){
+item[campo]=valor;
 
-    item[campo] =
-      Number(valor)||0;
+}
 
-  }
-  else if(
-    campo==='cortesia'
-  ){
-
-    item[campo] =
-      !!valor;
-
-  }
-  else{
-
-    item[campo]=valor;
-
-  }
-
-
-  renderItens();
-
-  calcularTotal();
+renderItens();
+calcularTotal();
 
 }
 
 
-function selecionarEquipamento(
-  id,
-  equipamentoId
-){
+function selecionarEquipamento(id,equipamentoId){
 
-  const eq =
-    obterEquipamentos()
-      .find(
-        x =>
-          x.id===equipamentoId
-      );
+const eq =
+obterEquipamentos()
+.find(
+x=>x.id===equipamentoId
+);
 
+const item =
+itens.find(
+x=>x.id===Number(id)
+);
 
-  const item =
-    itens.find(
-      x =>
-        x.id===Number(id)
-    );
+if(!eq||!item){
+return;
+}
 
+item.equipamento=eq.id;
+item.unidade=eq.unidade;
+item.descricao=eq.descricao;
+item.valor=Number(eq.valor)||0;
+item.cortesia=!!eq.cortesia;
 
-  if(!eq || !item){
-    return;
-  }
-
-
-  item.equipamento =
-    eq.id;
-
-  item.unidade =
-    eq.unidade;
-
-  item.descricao =
-    eq.descricao;
-
-  item.valor =
-    Number(eq.valor)||0;
-
-  item.cortesia =
-    !!eq.cortesia;
-
-
-  renderItens();
-
-  calcularTotal();
+renderItens();
+calcularTotal();
 
 }
 
 
 function totalItem(i){
 
-  if(i.cortesia){
-    return 0;
-  }
+if(i.cortesia){
+return 0;
+}
 
-
-  return
-  (
-    Number(i.quantidade)||0
-  )
-  *
-  (
-    Number(i.valor)||0
-  );
+return
+(Number(i.quantidade)||0)*
+(Number(i.valor)||0);
 
 }
 
@@ -3294,233 +2876,217 @@ RENDER ITENS
 
 function renderItens(){
 
-  const c =
-    $('itens');
+const c=$('itens');
+
+if(!c){
+return;
+}
+
+if(!itens.length){
+
+c.innerHTML =
+'<div class="muted">Nenhum item adicionado.</div>';
+
+return;
+
+}
+
+const lista=obterEquipamentos();
+
+c.innerHTML =
+itens
+.map(i=>`
+
+<div class="item">
+
+<div class="item-header">
+
+<div class="item-title">
+Item ${i.id}
+</div>
+
+<div class="item-total">
+${brl(totalItem(i))}
+</div>
+
+</div>
+
+<div class="grid">
+
+<label>
+
+Equipamento cadastrado
+
+<select onchange="selecionarEquipamento(${i.id},this.value)">
+
+<option value="">
+Selecione...
+</option>
+
+${
+lista
+.map(e=>`
+
+<option
+value="${escapar(e.id)}"
+${i.equipamento===e.id?'selected':''}
+>
+
+${escapar(e.nome)}
+
+</option>
+
+`)
+.join('')
+}
+
+</select>
+
+</label>
 
 
-  if(!c){
-    return;
-  }
+<label>
+
+Quantidade
+
+<input
+type="number"
+min="0"
+step="0.01"
+value="${i.quantidade}"
+oninput="atualizarItem(${i.id},'quantidade',this.value)"
+>
+
+</label>
 
 
-  if(!itens.length){
+<label>
 
-    c.innerHTML =
-      '<div class="muted">Nenhum item adicionado.</div>';
+Unidade
 
-    return;
+<select
+onchange="atualizarItem(${i.id},'unidade',this.value)"
+>
 
-  }
+${
+[
+'HORAS',
+'UNIDADE',
+'KM',
+'DIÁRIA',
+'MÊS'
+]
+.map(u=>
+`
 
+<option
+${i.unidade===u?'selected':''}
+>
+${u}
+</option>
 
-  const lista =
-    obterEquipamentos();
+`
+)
+.join('')
+}
 
+</select>
 
-  c.innerHTML =
-    itens
-      .map(i=>`
-
-        <div class="item">
-
-          <div class="item-header">
-
-            <div class="item-title">
-              Item ${i.id}
-            </div>
-
-            <div class="item-total">
-              ${brl(totalItem(i))}
-            </div>
-
-          </div>
-
-
-          <div class="grid">
-
-            <label>
-
-              Equipamento cadastrado
-
-              <select
-                onchange="selecionarEquipamento(${i.id},this.value)"
-              >
-
-                <option value="">
-                  Selecione...
-                </option>
-
-                ${
-                  lista
-                    .map(e=>`
-
-                      <option
-                        value="${escapar(e.id)}"
-                        ${i.equipamento===e.id?'selected':''}
-                      >
-                        ${escapar(e.nome)}
-                      </option>
-
-                    `)
-                    .join('')
-                }
-
-              </select>
-
-            </label>
+</label>
 
 
-            <label>
+<label>
 
-              Quantidade
+Valor unitário
 
-              <input
-                type="number"
-                min="0"
-                step="0.01"
-                value="${i.quantidade}"
-                oninput="atualizarItem(${i.id},'quantidade',this.value)"
-              >
+<input
+type="number"
+min="0"
+step="0.01"
+value="${i.valor}"
+oninput="atualizarItem(${i.id},'valor',this.value)"
+>
 
-            </label>
+</label>
 
-
-            <label>
-
-              Unidade
-
-              <select
-                onchange="atualizarItem(${i.id},'unidade',this.value)"
-              >
-
-                ${
-                  [
-                    'HORAS',
-                    'UNIDADE',
-                    'KM',
-                    'DIÁRIA',
-                    'MÊS'
-                  ]
-                  .map(u=>`
-
-                    <option
-                      ${i.unidade===u?'selected':''}
-                    >
-                      ${u}
-                    </option>
-
-                  `)
-                  .join('')
-                }
-
-              </select>
-
-            </label>
+</div>
 
 
-            <label>
+<label style="margin-top:12px">
 
-              Valor unitário
+Descrição
 
-              <input
-                type="number"
-                min="0"
-                step="0.01"
-                value="${i.valor}"
-                oninput="atualizarItem(${i.id},'valor',this.value)"
-              >
+<textarea
+oninput="atualizarItem(${i.id},'descricao',this.value)"
+>${escapar(i.descricao)}</textarea>
 
-            </label>
-
-          </div>
+</label>
 
 
-          <label style="margin-top:12px">
+<label class="checkbox-line">
 
-            Descrição
+<input
+type="checkbox"
+${i.cortesia?'checked':''}
+onchange="atualizarItem(${i.id},'cortesia',this.checked)"
+>
 
-            <textarea
-              oninput="atualizarItem(${i.id},'descricao',this.value)"
-            >${escapar(i.descricao)}</textarea>
+ITEM DE CORTESIA / SEM CUSTO
 
-          </label>
-
-
-          <label class="checkbox-line">
-
-            <input
-              type="checkbox"
-              ${i.cortesia?'checked':''}
-              onchange="atualizarItem(${i.id},'cortesia',this.checked)"
-            >
-
-            ITEM DE CORTESIA / SEM CUSTO
-
-          </label>
+</label>
 
 
-          <div class="actions">
+<div class="actions">
 
-            <button
-              class="red"
-              onclick="removerItem(${i.id})"
-            >
-              REMOVER ITEM
-            </button>
+<button
+class="red"
+onclick="removerItem(${i.id})"
+>
+REMOVER ITEM
+</button>
 
-          </div>
+</div>
 
-        </div>
+</div>
 
-      `)
-      .join('');
+`)
+.join('');
 
 }
 
 
 /* ==================================================
-CÁLCULO
+TOTAL
 ================================================== */
 
 function calcularTotal(){
 
-  const bruto =
-    itens.reduce(
-      (s,i)=>
-        s + totalItem(i),
-      0
-    );
+const bruto =
+itens.reduce(
+(s,i)=>s+totalItem(i),
+0
+);
 
+const desconto =
+Math.max(
+0,
+Number($('desconto').value)||0
+);
 
-  const desconto =
-    Math.max(
-      0,
-      Number(
-        $('desconto').value
-      )||0
-    );
+const final =
+Math.max(
+0,
+bruto-desconto
+);
 
+$('total').textContent=brl(bruto);
+$('totalFinal').textContent=brl(final);
 
-  const final =
-    Math.max(
-      0,
-      bruto-desconto
-    );
-
-
-  $('total').textContent =
-    brl(bruto);
-
-
-  $('totalFinal').textContent =
-    brl(final);
-
-
-  return {
-    bruto,
-    desconto,
-    final
-  };
+return {
+bruto,
+desconto,
+final
+};
 
 }
 
@@ -3531,313 +3097,259 @@ EQUIPAMENTOS CLOUD
 
 async function carregarEquipamentos(){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('equipamentos')
-      .select('*')
-      .eq('ativo',true)
-      .order(
-        'created_at',
-        {
-          ascending:true
-        }
-      );
+const {data,error} =
+await sb
+.from('equipamentos')
+.select('*')
+.eq('ativo',true)
+.order(
+'created_at',
+{ascending:true}
+);
 
+if(error){
 
-  if(error){
+console.error(error);
+equipamentosCloud=[];
 
-    console.error(error);
+}
+else{
 
-    equipamentosCloud=[];
+equipamentosCloud=data||[];
 
-  }
-  else{
+}
 
-    equipamentosCloud =
-      data || [];
-
-  }
-
-
-  renderItens();
-
-  renderCatalogo();
+renderItens();
+renderCatalogo();
 
 }
 
 
 async function cadastrarEquipamento(){
 
-  const nome =
-    $('novoNome')
-      .value
-      .trim();
+const nome =
+$('novoNome').value.trim();
 
+if(!nome){
 
-  if(!nome){
+alert(
+'Informe o nome do equipamento.'
+);
 
-    alert(
-      'Informe o nome do equipamento.'
-    );
+return;
 
-    return;
+}
 
-  }
+const {
+data:{user}
+} =
+await sb.auth.getUser();
 
+if(!user){
 
-  const {
-    data:{
-      user
-    }
-  } =
-    await sb.auth.getUser();
+alert(
+'Faça login novamente.'
+);
 
+return;
 
-  if(!user){
+}
 
-    alert(
-      'Faça login novamente.'
-    );
+const payload={
 
-    return;
+user_id:user.id,
 
-  }
+nome,
 
+descricao:
+$('novoDescricao').value.trim(),
 
-  const payload={
+unidade:
+$('novoUnidade').value,
 
-    user_id:user.id,
+valor:
+Number($('novoValor').value)||0,
 
-    nome,
+cortesia:false,
+ativo:true
 
-    descricao:
-      $('novoDescricao')
-        .value
-        .trim(),
+};
 
-    unidade:
-      $('novoUnidade')
-        .value,
+const {error} =
+await sb
+.from('equipamentos')
+.insert(payload);
 
-    valor:
-      Number(
-        $('novoValor')
-          .value
-      )||0,
+if(error){
 
-    cortesia:false,
+alert(
+'Erro ao cadastrar: '+
+error.message
+);
 
-    ativo:true
+return;
 
-  };
+}
 
+$('novoNome').value='';
+$('novoDescricao').value='';
+$('novoValor').value='0';
 
-  const {
-    error
-  } =
-    await sb
-      .from('equipamentos')
-      .insert(payload);
+await carregarEquipamentos();
 
-
-  if(error){
-
-    alert(
-      'Erro ao cadastrar: '+
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  $('novoNome').value='';
-
-  $('novoDescricao').value='';
-
-  $('novoValor').value='0';
-
-
-  await carregarEquipamentos();
-
-
-  alert(
-    'Equipamento cadastrado com sucesso!'
-  );
+alert(
+'Equipamento cadastrado com sucesso!'
+);
 
 }
 
 
 async function excluirEquipamento(id){
 
-  if(
-    !confirm(
-      'Excluir este equipamento do cadastro?'
-    )
-  ){
-    return;
-  }
+if(
+!confirm(
+'Excluir este equipamento do cadastro?'
+)
+){
+return;
+}
 
+const {error} =
+await sb
+.from('equipamentos')
+.delete()
+.eq('id',id);
 
-  const {
-    error
-  } =
-    await sb
-      .from('equipamentos')
-      .delete()
-      .eq('id',id);
+if(error){
 
+alert(
+'Erro: '+error.message
+);
 
-  if(error){
+return;
 
-    alert(
-      'Erro: '+
-      error.message
-    );
+}
 
-    return;
-
-  }
-
-
-  await carregarEquipamentos();
+await carregarEquipamentos();
 
 }
 
 
 function renderCatalogo(){
 
-  const c =
-    $('catalogo');
+const c=$('catalogo');
 
+if(!c){
+return;
+}
 
-  if(!c){
-    return;
-  }
+let html=`
 
+<h3>
+Equipamentos padrão da Almeida
+</h3>
 
-  let html = `
+<div class="muted">
+Estes equipamentos já vêm no sistema.
+</div>
 
-    <h3>
-      Equipamentos padrão da Almeida
-    </h3>
+`;
 
-    <div class="muted">
-      Estes equipamentos já vêm no sistema.
-    </div>
+html +=
+equipamentosPadrao
+.map(e=>`
 
-  `;
+<div class="catalog-item catalog-default">
 
+<div>
 
-  html +=
-    equipamentosPadrao
-      .map(e=>`
+<b>${escapar(e.nome)}</b>
 
-        <div class="catalog-item catalog-default">
+<br>
 
-          <div>
+<span class="mini">
+${escapar(e.unidade)}
+—
+${brl(e.valor)}
+</span>
 
-            <b>
-              ${escapar(e.nome)}
-            </b>
+<br>
 
-            <br>
+<span class="mini">
+${escapar(e.descricao)}
+</span>
 
-            <span class="mini">
-              ${escapar(e.unidade)}
-              —
-              ${brl(e.valor)}
-            </span>
+</div>
 
-            <br>
+<span class="mini">
+PADRÃO
+</span>
 
-            <span class="mini">
-              ${escapar(e.descricao)}
-            </span>
+</div>
 
-          </div>
+`)
+.join('');
 
-          <span class="mini">
-            PADRÃO
-          </span>
+html += `
 
-        </div>
+<h3 style="margin-top:22px">
+Equipamentos cadastrados por você
+</h3>
 
-      `)
-      .join('');
+`;
 
+if(!equipamentosCloud.length){
 
-  html += `
+html += `
+<p class="muted">
+Nenhum equipamento novo cadastrado.
+</p>
+`;
 
-    <h3 style="margin-top:22px">
-      Equipamentos cadastrados por você
-    </h3>
+}
+else{
 
-  `;
+html +=
+equipamentosCloud
+.map(e=>`
 
+<div class="catalog-item catalog-cloud">
 
-  if(!equipamentosCloud.length){
+<div>
 
-    html += `
+<b>${escapar(e.nome)}</b>
 
-      <p class="muted">
-        Nenhum equipamento novo cadastrado.
-      </p>
+<br>
 
-    `;
+<span class="mini">
+${escapar(e.unidade)}
+—
+${brl(e.valor)}
+</span>
 
-  }
-  else{
+<br>
 
-    html +=
-      equipamentosCloud
-        .map(e=>`
+<span class="mini">
+${escapar(e.descricao)}
+</span>
 
-          <div class="catalog-item catalog-cloud">
+</div>
 
-            <div>
+<button
+class="red"
+onclick="excluirEquipamento('${e.id}')"
+>
+EXCLUIR
+</button>
 
-              <b>
-                ${escapar(e.nome)}
-              </b>
+</div>
 
-              <br>
+`)
+.join('');
 
-              <span class="mini">
-                ${escapar(e.unidade)}
-                —
-                ${brl(e.valor)}
-              </span>
+}
 
-              <br>
-
-              <span class="mini">
-                ${escapar(e.descricao)}
-              </span>
-
-            </div>
-
-            <button
-              class="red"
-              onclick="excluirEquipamento('${e.id}')"
-            >
-              EXCLUIR
-            </button>
-
-          </div>
-
-        `)
-        .join('');
-
-  }
-
-
-  c.innerHTML =
-    html;
+c.innerHTML=html;
 
 }
 
@@ -3848,36 +3360,19 @@ CONDIÇÕES
 
 function montarCondicoes(){
 
-  return {
+return {
 
-    horario:
-      $('condHorario').value,
+horario:$('condHorario').value,
+prazo:$('condPrazo').value,
+horas:$('condHoras').value,
+combustivel:$('condCombustivel').value,
+transporte:$('condTransporte').value,
+alimentacao:$('condAlimentacao').value,
+hospedagem:$('condHospedagem').value,
+rigging:$('condRigging').value,
+adicionais:$('condicoesAdicionais').value
 
-    prazo:
-      $('condPrazo').value,
-
-    horas:
-      $('condHoras').value,
-
-    combustivel:
-      $('condCombustivel').value,
-
-    transporte:
-      $('condTransporte').value,
-
-    alimentacao:
-      $('condAlimentacao').value,
-
-    hospedagem:
-      $('condHospedagem').value,
-
-    rigging:
-      $('condRigging').value,
-
-    adicionais:
-      $('condicoesAdicionais').value
-
-  };
+};
 
 }
 
@@ -3888,80 +3383,49 @@ MONTAR ORÇAMENTO
 
 function montarOrcamento(){
 
-  const calc =
-    calcularTotal();
+const calc=calcularTotal();
 
+return {
 
-  return {
+cliente:$('cliente').value.trim(),
+cnpj:$('cnpj').value.trim(),
+contato:$('contato').value.trim(),
+telefone:$('telefone').value.trim(),
+email:$('email').value.trim(),
+endereco:$('endereco').value.trim(),
+local:$('local').value.trim(),
 
-    cliente:
-      $('cliente').value.trim(),
+validade:
+Number($('validade').value)||30,
 
-    cnpj:
-      $('cnpj').value.trim(),
+formaPagamento:
+$('formaPagamento').value,
 
-    contato:
-      $('contato').value.trim(),
+periodo:
+$('periodo').value,
 
-    telefone:
-      $('telefone').value.trim(),
+obs:
+$('obs').value,
 
-    email:
-      $('email').value.trim(),
+desconto:calc.desconto,
+total:calc.final,
 
-    endereco:
-      $('endereco').value.trim(),
+itens:
+itens.map(i=>({
 
-    local:
-      $('local').value.trim(),
+equipamento:i.equipamento,
+quantidade:i.quantidade,
+unidade:i.unidade,
+descricao:i.descricao,
+valor:i.valor,
+cortesia:i.cortesia
 
-    validade:
-      Number(
-        $('validade').value
-      )||30,
+})),
 
-    formaPagamento:
-      $('formaPagamento').value,
+condicoes:
+montarCondicoes()
 
-    periodo:
-      $('periodo').value,
-
-    obs:
-      $('obs').value,
-
-    desconto:
-      calc.desconto,
-
-    total:
-      calc.final,
-
-    itens:
-      itens.map(i=>({
-
-        equipamento:
-          i.equipamento,
-
-        quantidade:
-          i.quantidade,
-
-        unidade:
-          i.unidade,
-
-        descricao:
-          i.descricao,
-
-        valor:
-          i.valor,
-
-        cortesia:
-          i.cortesia
-
-      })),
-
-    condicoes:
-      montarCondicoes()
-
-  };
+};
 
 }
 
@@ -3972,195 +3436,143 @@ SALVAR
 
 async function salvar(){
 
-  const {
-    data:{
-      user
-    }
-  } =
-    await sb.auth.getUser();
+const {
+data:{user}
+} =
+await sb.auth.getUser();
 
+if(!user){
 
-  if(!user){
+alert(
+'Faça login novamente.'
+);
 
-    alert(
-      'Faça login novamente.'
-    );
+return;
 
-    return;
+}
 
-  }
+const q=montarOrcamento();
 
+if(!q.cliente){
 
-  const q =
-    montarOrcamento();
+alert(
+'Informe a empresa contratante.'
+);
 
+return;
 
-  if(!q.cliente){
+}
 
-    alert(
-      'Informe a empresa contratante.'
-    );
 
-    return;
+/* CLIENTE */
 
-  }
+const documento =
+normalizarDocumento(q.cnpj);
 
+if(documento){
 
-  /* SALVAR CLIENTE */
+const existente =
+clientesCloud.find(
+c=>
+normalizarDocumento(c.cnpj)===documento
+);
 
-  const documento =
-    normalizarDocumento(
-      q.cnpj
-    );
+const dadosCliente={
 
+user_id:user.id,
+cliente:q.cliente,
+cnpj:q.cnpj,
+contato:q.contato,
+telefone:q.telefone,
+email:q.email,
+endereco:q.endereco,
+updated_at:new Date().toISOString()
 
-  if(documento){
+};
 
-    const existente =
-      clientesCloud.find(
-        c =>
-          normalizarDocumento(
-            c.cnpj
-          ) === documento
-      );
+if(existente){
 
+await sb
+.from('clientes')
+.update(dadosCliente)
+.eq('id',existente.id);
 
-    const dadosCliente={
+}
+else{
 
-      user_id:user.id,
+const {data:novoCliente} =
+await sb
+.from('clientes')
+.insert(dadosCliente)
+.select('*')
+.single();
 
-      cliente:q.cliente,
+if(novoCliente){
+clientesCloud.push(novoCliente);
+}
 
-      cnpj:q.cnpj,
+}
 
-      contato:q.contato,
+}
 
-      telefone:q.telefone,
 
-      email:q.email,
+const tentativa={
 
-      endereco:q.endereco,
+user_id:user.id,
 
-      updated_at:
-        new Date()
-          .toISOString()
+cliente:q.cliente,
+cnpj:q.cnpj,
+contato:q.contato,
+telefone:q.telefone,
+email:q.email,
+endereco:q.endereco,
+local:q.local,
 
-    };
+validade:q.validade,
 
+forma_pagamento:q.formaPagamento,
 
-    if(existente){
+periodo:q.periodo,
 
-      await sb
-        .from('clientes')
-        .update(
-          dadosCliente
-        )
-        .eq(
-          'id',
-          existente.id
-        );
+obs:q.obs,
 
-    }
-    else{
+desconto:q.desconto,
 
-      const {
-        data:novoCliente
-      } =
-        await sb
-          .from('clientes')
-          .insert(
-            dadosCliente
-          )
-          .select('*')
-          .single();
+total:q.total,
 
+itens:q.itens,
 
-      if(novoCliente){
+condicoes:
+JSON.stringify(q.condicoes)
 
-        clientesCloud.push(
-          novoCliente
-        );
+};
 
-      }
+const resultado =
+await sb
+.from('orcamentos')
+.insert(tentativa)
+.select('numero')
+.single();
 
-    }
+if(resultado.error){
 
-  }
+alert(
+'Erro ao salvar: '+
+resultado.error.message
+);
 
+return;
 
-  const tentativa={
+}
 
-    user_id:user.id,
+$('acaoMsg').textContent =
+'Orçamento '+
+resultado.data.numero+
+' salvo com sucesso!';
 
-    cliente:q.cliente,
+await carregarLista();
 
-    cnpj:q.cnpj,
-
-    contato:q.contato,
-
-    telefone:q.telefone,
-
-    email:q.email,
-
-    endereco:q.endereco,
-
-    local:q.local,
-
-    validade:q.validade,
-
-    forma_pagamento:
-      q.formaPagamento,
-
-    periodo:q.periodo,
-
-    obs:q.obs,
-
-    desconto:q.desconto,
-
-    total:q.total,
-
-    itens:q.itens,
-
-    condicoes:
-      JSON.stringify(
-        q.condicoes
-      )
-
-  };
-
-
-  const resultado =
-    await sb
-      .from('orcamentos')
-      .insert(
-        tentativa
-      )
-      .select('numero')
-      .single();
-
-
-  if(resultado.error){
-
-    alert(
-      'Erro ao salvar: '+
-      resultado.error.message
-    );
-
-    return;
-
-  }
-
-
-  $('acaoMsg').textContent =
-    'Orçamento '+
-    resultado.data.numero+
-    ' salvo com sucesso!';
-
-
-  await carregarLista();
-
-
-  return resultado.data.numero;
+return resultado.data.numero;
 
 }
 
@@ -4171,205 +3583,167 @@ HISTÓRICO
 
 async function carregarLista(){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('orcamentos')
-      .select('*')
-      .order(
-        'created_at',
-        {
-          ascending:false
-        }
-      )
-      .limit(30);
+const {data,error} =
+await sb
+.from('orcamentos')
+.select('*')
+.order(
+'created_at',
+{ascending:false}
+)
+.limit(30);
 
+if(error){
 
-  if(error){
+$('lista').textContent =
+'Erro ao carregar histórico.';
 
-    $('lista').textContent =
-      'Erro ao carregar histórico.';
+return;
 
-    return;
+}
 
-  }
+if(!data?.length){
 
+$('lista').innerHTML =
+'<p class="muted">Nenhum orçamento salvo.</p>';
 
-  if(!data?.length){
+return;
 
-    $('lista').innerHTML =
-      '<p class="muted">Nenhum orçamento salvo.</p>';
+}
 
-    return;
+$('lista').innerHTML =
+data
+.map(o=>`
 
-  }
+<div
+style="
+padding:14px 0;
+border-bottom:1px solid #eee
+"
+>
 
+<b>
+Orçamento Nº ${escapar(o.numero)}
+</b>
 
-  $('lista').innerHTML =
-    data
-      .map(o=>`
+<br>
 
-        <div
-          style="
-            padding:14px 0;
-            border-bottom:1px solid #eee
-          "
-        >
+${escapar(o.cliente||'')}
 
-          <b>
-            Orçamento Nº
-            ${escapar(o.numero)}
-          </b>
+<br>
 
-          <br>
+<span class="muted">
+${brl(o.total)}
+</span>
 
-          ${escapar(o.cliente||'')}
+<div class="actions">
 
-          <br>
+<button
+class="blue"
+onclick="abrirSalvo('${o.id}')"
+>
+ABRIR
+</button>
 
-          <span class="muted">
-            ${brl(o.total)}
-          </span>
+</div>
 
-          <div class="actions">
+</div>
 
-            <button
-              class="blue"
-              onclick="abrirSalvo('${o.id}')"
-            >
-              ABRIR
-            </button>
-
-          </div>
-
-        </div>
-
-      `)
-      .join('');
+`)
+.join('');
 
 }
 
 
 async function abrirSalvo(id){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('orcamentos')
-      .select('*')
-      .eq('id',id)
-      .single();
+const {data,error} =
+await sb
+.from('orcamentos')
+.select('*')
+.eq('id',id)
+.single();
 
+if(error){
 
-  if(error){
+alert(error.message);
+return;
 
-    alert(
-      error.message
-    );
+}
 
-    return;
+preencherFormulario(data);
 
-  }
-
-
-  preencherFormulario(
-    data
-  );
-
-
-  window.scrollTo({
-    top:0,
-    behavior:'smooth'
-  });
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
 
 }
 
 
 /* ==================================================
-RECUPERAR ORIGEM DE ORÇAMENTO SALVO
+ORIGEM DOS ITENS SALVOS
 ================================================== */
 
 function descobrirOrigemDosItens(lista){
 
-  const item =
-    lista.find(
-      i =>
-        i.equipamento === 'padrao-mob'
-    );
+const item =
+lista.find(
+i=>i.equipamento==='padrao-mob'
+);
 
+if(!item?.descricao){
+return;
+}
 
-  if(!item?.descricao){
-    return;
-  }
+const texto =
+String(item.descricao);
 
+const encontrado =
+texto.match(
+/Mobilização do equipamento de (.+) até/i
+);
 
-  const texto =
-    String(
-      item.descricao
-    );
+if(!encontrado){
+return;
+}
 
+const origemTexto =
+encontrado[1].trim();
 
-  const encontrado =
-    texto.match(
-      /Mobilização do equipamento de (.+) até/i
-    );
+const partes =
+origemTexto.split(' - ');
 
+if(partes.length<2){
+return;
+}
 
-  if(!encontrado){
-    return;
-  }
+const uf =
+partes.pop()
+.trim()
+.toUpperCase();
 
+const nome =
+partes.join(' - ')
+.trim();
 
-  const origemTexto =
-    encontrado[1]
-      .trim();
+const cidade =
+cidadesBrasil.find(
+c=>
+normalizarTexto(c.nome)===
+normalizarTexto(nome)&&
+normalizarTexto(c.uf)===
+normalizarTexto(uf)
+);
 
+if(cidade){
 
-  const partes =
-    origemTexto.split(' - ');
+cidadeOrigem={
+nome:cidade.nome,
+uf:cidade.uf
+};
 
-
-  if(partes.length < 2){
-    return;
-  }
-
-
-  const uf =
-    partes
-      .pop()
-      .trim()
-      .toUpperCase();
-
-
-  const nome =
-    partes
-      .join(' - ')
-      .trim();
-
-
-  const cidade =
-    cidadesBrasil.find(
-      c =>
-        normalizarTexto(c.nome) ===
-        normalizarTexto(nome)
-        &&
-        normalizarTexto(c.uf) ===
-        normalizarTexto(uf)
-    );
-
-
-  if(cidade){
-
-    cidadeOrigem={
-      nome:cidade.nome,
-      uf:cidade.uf
-    };
-
-  }
+}
 
 }
 
@@ -4380,278 +3754,255 @@ PREENCHER FORMULÁRIO
 
 function preencherFormulario(o){
 
-  $('cliente').value =
-    o.cliente||'';
+$('cliente').value=o.cliente||'';
+$('cnpj').value=o.cnpj||'';
+$('contato').value=o.contato||'';
+$('telefone').value=o.telefone||'';
+$('email').value=o.email||'';
+$('endereco').value=o.endereco||'';
+$('local').value=o.local||'';
 
-  $('cnpj').value =
-    o.cnpj||'';
+$('validade').value=o.validade||30;
 
-  $('contato').value =
-    o.contato||'';
+$('formaPagamento').value =
+o.forma_pagamento||'A COMBINAR';
 
-  $('telefone').value =
-    o.telefone||'';
+$('periodo').value=o.periodo||'';
+$('obs').value=o.obs||'';
+$('desconto').value=o.desconto||0;
 
-  $('email').value =
-    o.email||'';
+if(o.condicoes){
 
-  $('endereco').value =
-    o.endereco||'';
+try{
 
-  $('local').value =
-    o.local||'';
+const c =
+typeof o.condicoes==='string'
+?JSON.parse(o.condicoes)
+:o.condicoes;
 
-  $('validade').value =
-    o.validade||30;
+$('condHorario').value=
+c.horario||'07:00 às 17:00';
 
-  $('formaPagamento').value =
-    o.forma_pagamento||
-    'A COMBINAR';
+$('condPrazo').value=
+c.prazo||'3 meses';
 
-  $('periodo').value =
-    o.periodo||'';
+$('condHoras').value=
+c.horas||'200 horas/mês';
 
-  $('obs').value =
-    o.obs||'';
+$('condCombustivel').value=
+c.combustivel||'INCLUSO';
 
-  $('desconto').value =
-    o.desconto||0;
+$('condTransporte').value=
+c.transporte||'INCLUSO';
 
+$('condAlimentacao').value=
+c.alimentacao||'NÃO INCLUSO';
 
-  if(o.condicoes){
+$('condHospedagem').value=
+c.hospedagem||'NÃO INCLUSO';
 
-    try{
+$('condRigging').value=
+c.rigging||'CORTESIA';
 
-      const c =
-        typeof o.condicoes==='string'
-        ?
-        JSON.parse(o.condicoes)
-        :
-        o.condicoes;
+$('condicoesAdicionais').value=
+c.adicionais||'';
 
+}
+catch(e){}
 
-      $('condHorario').value =
-        c.horario||
-        '07:00 às 17:00';
+}
 
-      $('condPrazo').value =
-        c.prazo||
-        '3 meses';
 
-      $('condHoras').value =
-        c.horas||
-        '200 horas/mês';
+let lista=[];
 
-      $('condCombustivel').value =
-        c.combustivel||
-        'INCLUSO';
+if(Array.isArray(o.itens)){
 
-      $('condTransporte').value =
-        c.transporte||
-        'INCLUSO';
+lista=o.itens;
 
-      $('condAlimentacao').value =
-        c.alimentacao||
-        'NÃO INCLUSO';
+}
+else if(typeof o.itens==='string'){
 
-      $('condHospedagem').value =
-        c.hospedagem||
-        'NÃO INCLUSO';
+try{
 
-      $('condRigging').value =
-        c.rigging||
-        'CORTESIA';
+lista=JSON.parse(o.itens);
 
-      $('condicoesAdicionais').value =
-        c.adicionais||
-        '';
+}
+catch(e){
 
-    }
-    catch(e){}
+lista=[];
 
-  }
+}
 
+}
 
-  let lista=[];
+descobrirOrigemDosItens(lista);
 
+itens=[];
+itemId=0;
 
-  if(
-    Array.isArray(o.itens)
-  ){
+lista.forEach(
+x=>adicionarItem(x)
+);
 
-    lista=o.itens;
+if(!lista.length){
+adicionarItem();
+}
 
-  }
-  else if(
-    typeof o.itens==='string'
-  ){
+atualizarTextoPartida();
 
-    try{
+cidadeSelecionada=null;
 
-      lista =
-        JSON.parse(o.itens);
+luzimanguesManual=false;
 
-    }
-    catch(e){
+if(o.local){
 
-      lista=[];
+const partes=o.local.split(' - ');
 
-    }
+if(partes.length>=2){
 
-  }
+const uf =
+partes.pop()
+.trim()
+.toUpperCase();
 
+const nome =
+partes.join(' - ')
+.trim();
 
-  descobrirOrigemDosItens(
-    lista
-  );
+if(
+normalizarTexto(nome)==='luzimangues'
+){
 
+cidadeSelecionada={
+nome:'Luzimangues',
+uf:'TO'
+};
 
-  itens=[];
+luzimanguesManual=true;
 
-  itemId=0;
+$('partidaBox')
+.classList
+.remove('hidden');
 
+$('manualLuzimangues')
+.style
+.display='block';
 
-  lista.forEach(
-    x =>
-      adicionarItem(x)
-  );
+const itemMob =
+lista.find(
+i=>i.equipamento==='padrao-mob'
+);
 
+if(itemMob){
 
-  if(!lista.length){
+$('distanciaManual').value=
+itemMob.quantidade||0;
 
-    adicionarItem();
+$('manualValorMob').value=
+itemMob.valor||0;
 
-  }
+}
 
+const itemDesmob =
+lista.find(
+i=>i.equipamento==='padrao-desmob'
+);
 
-  atualizarTextoPartida();
+if(itemDesmob){
 
+$('manualValorDesmob').value=
+itemDesmob.valor||0;
 
-  cidadeSelecionada=null;
+}
 
+atualizarLuzimanguesManual();
 
-  if(o.local){
+}
+else{
 
-    const partes =
-      o.local
-        .split(' - ');
+const cidade =
+cidadesBrasil.find(
+c=>
+normalizarTexto(c.nome)===
+normalizarTexto(nome)&&
+normalizarTexto(c.uf)===
+normalizarTexto(uf)
+);
 
+if(cidade){
 
-    if(partes.length>=2){
+cidadeSelecionada={
+nome:cidade.nome,
+uf:cidade.uf
+};
 
-      const uf =
-        partes
-          .pop()
-          .trim()
-          .toUpperCase();
+$('partidaBox')
+.classList
+.remove('hidden');
 
-      const nome =
-        partes
-          .join(' - ')
-          .trim();
+calcularDistanciaServico();
 
+}
 
-      const cidade =
-        cidadesBrasil.find(
-          c =>
-            normalizarTexto(c.nome) ===
-            normalizarTexto(nome)
-            &&
-            normalizarTexto(c.uf) ===
-            normalizarTexto(uf)
-        );
+}
 
+}
 
-      if(cidade){
+}
 
-        cidadeSelecionada={
-          nome:cidade.nome,
-          uf:cidade.uf
-        };
-
-
-        $('partidaBox')
-          .classList
-          .remove('hidden');
-
-
-        calcularDistanciaServico();
-
-      }
-
-    }
-
-  }
-
-
-  calcularTotal();
+calcularTotal();
 
 }
 
 
 /* ==================================================
-GERAR LINK
+LINK
 ================================================== */
 
 async function gerarLink(){
 
-  const numero =
-    await salvar();
+const numero=await salvar();
 
+if(!numero){
+return;
+}
 
-  if(!numero){
-    return;
-  }
+const {data,error} =
+await sb
+.from('orcamentos')
+.select('token')
+.eq('numero',numero)
+.single();
 
+if(
+error||
+!data?.token
+){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('orcamentos')
-      .select('token')
-      .eq(
-        'numero',
-        numero
-      )
-      .single();
+alert(
+'Orçamento salvo, mas não foi possível gerar o link.'
+);
 
+return;
 
-  if(
-    error ||
-    !data?.token
-  ){
+}
 
-    alert(
-      'Orçamento salvo, mas não foi possível gerar o link.'
-    );
+const url =
+location.origin+
+location.pathname+
+'?proposta='+
+data.token;
 
-    return;
+$('linkCard')
+.classList
+.remove('hidden');
 
-  }
+$('link').textContent=url;
 
-
-  const url =
-    location.origin+
-    location.pathname+
-    '?proposta='+
-    data.token;
-
-
-  $('linkCard')
-    .classList
-    .remove('hidden');
-
-
-  $('link').textContent =
-    url;
-
-
-  $('linkCard')
-    .scrollIntoView({
-      behavior:'smooth'
-    });
+$('linkCard')
+.scrollIntoView({
+behavior:'smooth'
+});
 
 }
 
@@ -4662,44 +4013,36 @@ COMPARTILHAR
 
 function compartilhar(){
 
-  const url =
-    $('link').textContent;
+const url=$('link').textContent;
 
+if(!url){
+return;
+}
 
-  if(!url){
-    return;
-  }
+const texto =
+'Olá! Segue a proposta comercial da Almeida Guindastes: '+
+url;
 
+if(navigator.share){
 
-  const texto =
-    'Olá! Segue a proposta comercial da Almeida Guindastes: '+
-    url;
+navigator.share({
 
+title:'Proposta Almeida Guindastes',
+text:texto,
+url:url
 
-  if(
-    navigator.share
-  ){
+});
 
-    navigator.share({
+}
+else{
 
-      title:'Proposta Almeida Guindastes',
+window.open(
+'https://wa.me/?text='+
+encodeURIComponent(texto),
+'_blank'
+);
 
-      text:texto,
-
-      url:url
-
-    });
-
-  }
-  else{
-
-    window.open(
-      'https://wa.me/?text='+
-      encodeURIComponent(texto),
-      '_blank'
-    );
-
-  }
+}
 
 }
 
@@ -4710,193 +4053,133 @@ PROPOSTA
 
 function preencherProposta(o){
 
-  $('pNumero').textContent =
-    o.numero||'';
+$('pNumero').textContent=o.numero||'';
+$('pValidade').textContent=o.validade||30;
+$('pCliente').textContent=o.cliente||'';
+$('pCnpj').textContent=o.cnpj||'';
+$('pContato').textContent=o.contato||'';
+$('pTelefone').textContent=o.telefone||'';
+$('pEmail').textContent=o.email||'';
+$('pEndereco').textContent=o.endereco||'';
+$('pLocal').textContent=o.local||'';
 
-  $('pValidade').textContent =
-    o.validade||30;
+let lista=o.itens||[];
 
-  $('pCliente').textContent =
-    o.cliente||'';
+if(typeof lista==='string'){
 
-  $('pCnpj').textContent =
-    o.cnpj||'';
+try{
+lista=JSON.parse(lista);
+}
+catch(e){
+lista=[];
+}
 
-  $('pContato').textContent =
-    o.contato||'';
+}
 
-  $('pTelefone').textContent =
-    o.telefone||'';
+let origemProposta='Palmas - TO';
 
-  $('pEmail').textContent =
-    o.email||'';
+const itemMob =
+lista.find(
+i=>i.equipamento==='padrao-mob'
+);
 
-  $('pEndereco').textContent =
-    o.endereco||'';
+if(itemMob?.descricao){
 
-  $('pLocal').textContent =
-    o.local||'';
+const encontrado =
+String(itemMob.descricao)
+.match(
+/Mobilização do equipamento de (.+) até/i
+);
 
+if(encontrado){
+origemProposta=encontrado[1];
+}
 
-  let lista =
-    o.itens||[];
+}
 
+$('pOrigem').textContent=origemProposta;
 
-  if(
-    typeof lista==='string'
-  ){
+$('pItens').innerHTML =
+lista
+.map(i=>`
 
-    try{
+<tr>
 
-      lista =
-        JSON.parse(lista);
+<td>${escapar(i.quantidade)}</td>
 
-    }
-    catch(e){
+<td>${escapar(i.unidade)}</td>
 
-      lista=[];
+<td>
 
-    }
+${escapar(i.descricao)}
 
-  }
+${
+i.cortesia
+?
+'<br><b>CORTESIA</b>'
+:
+''
+}
 
+</td>
 
-  let origemProposta =
-    'Palmas - TO';
+<td>${brl(i.valor)}</td>
 
+<td>
 
-  const itemMob =
-    lista.find(
-      i =>
-        i.equipamento === 'padrao-mob'
-    );
+${brl(
+i.cortesia
+?
+0
+:
+Number(i.quantidade||0)*
+Number(i.valor||0)
+)}
 
+</td>
 
-  if(itemMob?.descricao){
+</tr>
 
-    const encontrado =
-      String(
-        itemMob.descricao
-      ).match(
-        /Mobilização do equipamento de (.+) até/i
-      );
+`)
+.join('');
 
+$('pTotal').textContent=brl(o.total);
 
-    if(encontrado){
+if(Number(o.desconto||0)>0){
 
-      origemProposta =
-        encontrado[1];
+$('pDescontoBox').innerHTML=
+`
 
-    }
+<p style="text-align:right">
 
-  }
+<b>Desconto:</b>
+${brl(o.desconto)}
 
+</p>
 
-  $('pOrigem').textContent =
-    origemProposta;
+`;
 
+}
+else{
 
-  $('pItens').innerHTML =
-    lista
-      .map(i=>`
+$('pDescontoBox').innerHTML='';
 
-        <tr>
+}
 
-          <td>
-            ${escapar(i.quantidade)}
-          </td>
+let c=o.condicoes||{};
 
-          <td>
-            ${escapar(i.unidade)}
-          </td>
+if(typeof c==='string'){
 
-          <td>
+try{
+c=JSON.parse(c);
+}
+catch(e){
+c={};
+}
 
-            ${escapar(i.descricao)}
+}
 
-            ${
-              i.cortesia
-              ?
-              '<br><b>CORTESIA</b>'
-              :
-              ''
-            }
-
-          </td>
-
-          <td>
-            ${brl(i.valor)}
-          </td>
-
-          <td>
-
-            ${brl(
-              i.cortesia
-              ?
-              0
-              :
-              Number(i.quantidade||0) *
-              Number(i.valor||0)
-            )}
-
-          </td>
-
-        </tr>
-
-      `)
-      .join('');
-
-
-  $('pTotal').textContent =
-    brl(o.total);
-
-
-  if(
-    Number(o.desconto||0)>0
-  ){
-
-    $('pDescontoBox').innerHTML =
-      `
-
-        <p style="text-align:right">
-          <b>Desconto:</b>
-          ${brl(o.desconto)}
-        </p>
-
-      `;
-
-  }
-  else{
-
-    $('pDescontoBox').innerHTML='';
-
-  }
-
-
-  let c =
-    o.condicoes||{};
-
-
-  if(
-    typeof c==='string'
-  ){
-
-    try{
-
-      c =
-        JSON.parse(c);
-
-    }
-    catch(e){
-
-      c={};
-
-    }
-
-  }
-
-
-  $('pCondicoes').textContent =
+$('pCondicoes').textContent=
 
 `HORÁRIO DE TRABALHO:
 ${c.horario||''}
@@ -4925,41 +4208,32 @@ ${c.rigging||''}
 CONDIÇÕES ADICIONAIS:
 ${c.adicionais||''}`;
 
+$('pPagamento').textContent=
+o.forma_pagamento||'';
 
-  $('pPagamento').textContent =
-    o.forma_pagamento||'';
+$('pPeriodo').textContent=
+o.periodo||'';
 
-  $('pPeriodo').textContent =
-    o.periodo||'';
+$('pObs').textContent=
+o.obs||'';
 
-  $('pObs').textContent =
-    o.obs||'';
+$('painel')
+.classList
+.add('hidden');
 
+$('login')
+.classList
+.add('hidden');
 
-  $('painel')
-    .classList
-    .add('hidden');
+$('publico')
+.classList
+.remove('hidden');
 
+$('btnSair')
+.classList
+.add('hidden');
 
-  $('login')
-    .classList
-    .add('hidden');
-
-
-  $('publico')
-    .classList
-    .remove('hidden');
-
-
-  $('btnSair')
-    .classList
-    .add('hidden');
-
-
-  window.scrollTo(
-    0,
-    0
-  );
+window.scrollTo(0,0);
 
 }
 
@@ -4970,43 +4244,27 @@ PROPOSTA ATUAL
 
 async function abrirPropostaAtual(){
 
-  const numero =
-    await salvar();
+const numero=await salvar();
 
+if(!numero){
+return;
+}
 
-  if(!numero){
-    return;
-  }
+const {data,error} =
+await sb
+.from('orcamentos')
+.select('*')
+.eq('numero',numero)
+.single();
 
+if(error){
 
-  const {
-    data,
-    error
-  } =
-    await sb
-      .from('orcamentos')
-      .select('*')
-      .eq(
-        'numero',
-        numero
-      )
-      .single();
+alert(error.message);
+return;
 
+}
 
-  if(error){
-
-    alert(
-      error.message
-    );
-
-    return;
-
-  }
-
-
-  preencherProposta(
-    data
-  );
+preencherProposta(data);
 
 }
 
@@ -5015,198 +4273,134 @@ async function abrirPropostaAtual(){
 APROVAÇÃO
 ================================================== */
 
-async function decidir(
-  decisao
-){
+async function decidir(decisao){
 
-  const token =
-    new URLSearchParams(
-      location.search
-    ).get(
-      'proposta'
-    );
+const token =
+new URLSearchParams(
+location.search
+).get('proposta');
 
+if(!token){
 
-  if(!token){
+alert(
+'Proposta não identificada.'
+);
 
-    alert(
-      'Proposta não identificada.'
-    );
+return;
 
-    return;
+}
 
-  }
+const nome =
+$('pNome').value.trim();
 
+const doc =
+$('pDoc').value.trim();
 
-  const nome =
-    $('pNome')
-      .value
-      .trim();
+if(!nome){
 
+alert(
+'Informe o nome do responsável.'
+);
 
-  const doc =
-    $('pDoc')
-      .value
-      .trim();
+return;
 
+}
 
-  if(!nome){
+const {error} =
+await sb.rpc(
+'decidir_orcamento',
+{
 
-    alert(
-      'Informe o nome do responsável.'
-    );
+p_token:token,
+p_decisao:decisao,
+p_nome:nome,
+p_documento:doc
 
-    return;
+}
+);
 
-  }
+if(error){
 
+$('pMsg').textContent=
+'Erro: '+error.message;
 
-  const {
-    error
-  } =
-    await sb.rpc(
-      'decidir_orcamento',
-      {
+return;
 
-        p_token:token,
+}
 
-        p_decisao:decisao,
-
-        p_nome:nome,
-
-        p_documento:doc
-
-      }
-    );
-
-
-  if(error){
-
-    $('pMsg').textContent =
-      'Erro: '+
-      error.message;
-
-    return;
-
-  }
-
-
-  $('pMsg').textContent =
-
-    decisao==='APROVADO'
-
-    ?
-
-    '✓ Orçamento aprovado com sucesso!'
-
-    :
-
-    'Orçamento recusado.';
-
-
-  $('pMsg').className =
-    'msg '+
-    (
-      decisao==='APROVADO'
-      ?
-      'status approved'
-      :
-      'status rejected'
-    );
+$('pMsg').textContent =
+decisao==='APROVADO'
+?
+'✓ Orçamento aprovado com sucesso!'
+:
+'Orçamento recusado.';
 
 }
 
 
 function aprovar(){
-
-  decidir(
-    'APROVADO'
-  );
-
+decidir('APROVADO');
 }
 
-
 function recusar(){
-
-  decidir(
-    'RECUSADO'
-  );
-
+decidir('RECUSADO');
 }
 
 
 /* ==================================================
-ABRIR PROPOSTA PÚBLICA
+PROPOSTA PÚBLICA
 ================================================== */
 
 async function abrirPublica(){
 
-  const token =
-    new URLSearchParams(
-      location.search
-    ).get(
-      'proposta'
-    );
+const token =
+new URLSearchParams(
+location.search
+).get('proposta');
 
+if(!token){
+return false;
+}
 
-  if(!token){
-    return false;
-  }
+const {data,error} =
+await sb.rpc(
+'ver_orcamento_publico',
+{
+p_token:token
+}
+);
 
+if(error||!data){
 
-  const {
-    data,
-    error
-  } =
-    await sb.rpc(
-      'ver_orcamento_publico',
-      {
-        p_token:token
-      }
-    );
+document.body.innerHTML=`
 
+<div
+style="
+padding:40px;
+font-family:Arial
+"
+>
 
-  if(
-    error ||
-    !data
-  ){
+<h2>
+Proposta não encontrada.
+</h2>
 
-    document.body.innerHTML = `
+</div>
 
-      <div
-        style="
-          padding:40px;
-          font-family:Arial
-        "
-      >
+`;
 
-        <h2>
-          Proposta não encontrada.
-        </h2>
+return true;
 
-      </div>
+}
 
-    `;
+const o =
+Array.isArray(data)
+?data[0]
+:data;
 
-    return true;
+preencherProposta(o);
 
-  }
-
-
-  const o =
-    Array.isArray(data)
-    ?
-    data[0]
-    :
-    data;
-
-
-  preencherProposta(
-    o
-  );
-
-
-  return true;
+return true;
 
 }
 
@@ -5217,16 +4411,14 @@ INÍCIO
 
 (async function(){
 
-  const publica =
-    await abrirPublica();
+const publica =
+await abrirPublica();
 
+if(publica){
+return;
+}
 
-  if(publica){
-    return;
-  }
-
-
-  await iniciarSistema();
+await iniciarSistema();
 
 })();
 
