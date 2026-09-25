@@ -4406,19 +4406,99 @@ return true;
 
 
 /* ==================================================
-INÍCIO
+INÍCIO DO SISTEMA — INICIALIZAÇÃO SEGURA
 ================================================== */
 
 (async function(){
 
-const publica =
-await abrirPublica();
+  try{
 
-if(publica){
-return;
-}
+    /* Primeiro verifica se existe uma proposta pública */
+    const token =
+      new URLSearchParams(
+        window.location.search
+      ).get('proposta');
 
-await iniciarSistema();
+    /* Se for link público, abre a proposta */
+    if(token){
+
+      const abriu =
+        await abrirPublica();
+
+      if(abriu){
+        return;
+      }
+
+    }
+
+  }catch(error){
+
+    console.error(
+      'Erro ao verificar proposta pública:',
+      error
+    );
+
+  }
+
+
+  /*
+   * IMPORTANTE:
+   * A tela de login fica disponível imediatamente.
+   * Mesmo que alguma tabela do Supabase dê erro,
+   * o usuário ainda consegue acessar o sistema.
+   */
+
+  $('login').classList.remove('hidden');
+
+  $('painel').classList.add('hidden');
+
+  $('publico').classList.add('hidden');
+
+  $('btnSair').classList.add('hidden');
+
+
+  try{
+
+    const {
+      data:{
+        session
+      }
+    } =
+    await sb.auth.getSession();
+
+
+    /*
+     * Se já estiver logado, entra diretamente
+     * no sistema.
+     */
+
+    if(session){
+
+      await iniciarSistema();
+
+    }
+
+  }catch(error){
+
+    console.error(
+      'Erro ao verificar sessão:',
+      error
+    );
+
+    /*
+     * Se houver qualquer erro na sessão,
+     * mantém a tela de login aberta.
+     */
+
+    $('login').classList.remove('hidden');
+
+    $('painel').classList.add('hidden');
+
+    $('publico').classList.add('hidden');
+
+    $('btnSair').classList.add('hidden');
+
+  }
 
 })();
 
