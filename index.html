@@ -542,17 +542,13 @@ ALMEIDA ORÇAMENTOS
 <small>Sistema de propostas comerciais</small>
 </h1>
 
-
 </header>
 
 <div class="wrap">
 
-
-
 <!-- PAINEL -->
 
 <section id="painel" class="hidden">
-
 
 <!-- CLIENTE -->
 
@@ -576,7 +572,6 @@ Digite o nome da empresa ou o CNPJ para preencher automaticamente.
 
 </div>
 
-
 <div class="grid">
 
 <label>
@@ -593,13 +588,11 @@ autocomplete="off"
 
 </label>
 
-
 <label>
 CNPJ / CPF
 
 <input id="cnpj" placeholder="CNPJ ou CPF">
 </label>
-
 
 <label>
 Responsável
@@ -607,20 +600,17 @@ Responsável
 <input id="contato" placeholder="Nome do responsável">
 </label>
 
-
 <label>
 Telefone
 
 <input id="telefone" placeholder="Telefone">
 </label>
 
-
 <label>
 E-mail
 
 <input id="email" type="email" placeholder="E-mail">
 </label>
-
 
 <label>
 Endereço
@@ -629,7 +619,6 @@ Endereço
 </label>
 
 </div>
-
 
 <!-- LOCAL DO SERVIÇO -->
 
@@ -652,7 +641,6 @@ autocomplete="off"
 </div>
 
 </div>
-
 
 <!-- PARTIDA -->
 
@@ -690,7 +678,6 @@ USAR PALMAS COMO PARTIDA
 
 </div>
 
-
 <div id="partidaEditor" class="partida-editor hidden">
 
 <label>
@@ -716,7 +703,6 @@ Você pode escolher qualquer cidade do Brasil como local de partida.
 </div>
 
 </div>
-
 
 <!-- DISTÂNCIA AUTOMÁTICA -->
 
@@ -749,7 +735,6 @@ value="0"
 
 </label>
 
-
 <label>
 Valor desmobilização / km
 
@@ -768,7 +753,6 @@ value="0"
 <div id="resumoMobilizacao" style="margin-top:10px;font-weight:600"></div>
 
 </div>
-
 
 <!-- DISTÂNCIA MANUAL LUZIMANGUES -->
 
@@ -831,7 +815,6 @@ oninput="atualizarLuzimanguesManual()"
 
 </div>
 
-
 <div class="grid" style="margin-top:15px">
 
 <label>
@@ -854,7 +837,6 @@ Prazo / período
 
 </div>
 
-
 <label style="margin-top:13px">
 
 Observações
@@ -867,7 +849,6 @@ placeholder="Observações específicas deste orçamento"
 </label>
 
 </div>
-
 
 <!-- EQUIPAMENTOS -->
 
@@ -918,7 +899,6 @@ TOTAL FINAL:
 </div>
 
 </div>
-
 
 <!-- CONDIÇÕES -->
 
@@ -1018,7 +998,6 @@ Condições comerciais adicionais
 
 </div>
 
-
 <!-- FINALIZAR -->
 
 <div class="card">
@@ -1045,7 +1024,6 @@ VER PROPOSTA / PDF
 
 </div>
 
-
 <div id="linkCard" class="hidden" style="margin-top:18px">
 
 <b>Link da proposta para o cliente:</b>
@@ -1065,7 +1043,6 @@ COMPARTILHAR / WHATSAPP
 <div id="acaoMsg" class="msg"></div>
 
 </div>
-
 
 <!-- CADASTRO EQUIPAMENTOS -->
 
@@ -1124,7 +1101,6 @@ Descrição
 
 </div>
 
-
 <!-- HISTÓRICO -->
 
 <div class="card">
@@ -1138,7 +1114,6 @@ Carregando...
 </div>
 
 </section>
-
 
 <!-- PROPOSTA PÚBLICA -->
 
@@ -1252,7 +1227,6 @@ CONTRATANTE / RESPONSÁVEL
 
 </div>
 
-
 <div class="card nao-imprimir">
 
 <h2>Decisão do cliente</h2>
@@ -1298,7 +1272,6 @@ CPF / CNPJ
 </section>
 
 </div>
-
 
 <script>
 
@@ -1367,6 +1340,7 @@ cortesia:false
 }
 
 ];
+
 
 /* ==================================================
 UTILITÁRIOS
@@ -1625,9 +1599,6 @@ this.dataset.uf
 }
 );
 
-
-/* FECHAR SUGESTÕES */
-
 document.addEventListener(
 'click',
 function(e){
@@ -1668,13 +1639,11 @@ uf
 luzimanguesManual =
 normalizarTexto(nome)==='luzimangues';
 
-
 $('partidaBox')
 .classList
 .remove('hidden');
 
 atualizarTextoPartida();
-
 
 if(luzimanguesManual){
 
@@ -1788,7 +1757,6 @@ this.dataset.uf
 
 }
 );
-
 
 document.addEventListener(
 'click',
@@ -2514,8 +2482,6 @@ $('acaoMsg').textContent =
 }
 
 
-
-
 /* ==================================================
 INICIAR
 ================================================== */
@@ -2698,6 +2664,7 @@ item[campo]=valor;
 calcularTotal();
 
 }
+
 
 function selecionarEquipamento(id,equipamentoId){
 
@@ -2924,7 +2891,7 @@ REMOVER ITEM
 `)
 .join('');
 
-}}
+}
 
 
 /* ==================================================
@@ -3012,24 +2979,13 @@ return;
 
 }
 
-const {
-data:{user}
-} =
-await sb.auth.getUser();
-
-if(!user){
-
-alert(
-'Faça login novamente.'
-);
-
-return;
-
-}
+/*
+ * Sistema sem login.
+ * O cadastro depende das políticas RLS
+ * configuradas no Supabase.
+ */
 
 const payload={
-
-user_id:user.id,
 
 nome,
 
@@ -3267,21 +3223,6 @@ SALVAR
 
 async function salvar(){
 
-const {
-data:{user}
-} =
-await sb.auth.getUser();
-
-if(!user){
-
-alert(
-'Faça login novamente.'
-);
-
-return;
-
-}
-
 const q=montarOrcamento();
 
 if(!q.cliente){
@@ -3310,7 +3251,6 @@ normalizarDocumento(c.cnpj)===documento
 
 const dadosCliente={
 
-user_id:user.id,
 cliente:q.cliente,
 cnpj:q.cnpj,
 contato:q.contato,
@@ -3323,23 +3263,40 @@ updated_at:new Date().toISOString()
 
 if(existente){
 
+const resultadoCliente =
 await sb
 .from('clientes')
 .update(dadosCliente)
 .eq('id',existente.id);
 
+if(resultadoCliente.error){
+
+console.error(
+'Erro ao atualizar cliente:',
+resultadoCliente.error
+);
+
+}
+
 }
 else{
 
-const {data:novoCliente} =
+const resultadoCliente =
 await sb
 .from('clientes')
 .insert(dadosCliente)
 .select('*')
 .single();
 
-if(novoCliente){
-clientesCloud.push(novoCliente);
+if(
+!resultadoCliente.error &&
+resultadoCliente.data
+){
+
+clientesCloud.push(
+resultadoCliente.data
+);
+
 }
 
 }
@@ -3348,8 +3305,6 @@ clientesCloud.push(novoCliente);
 
 
 const tentativa={
-
-user_id:user.id,
 
 cliente:q.cliente,
 cnpj:q.cnpj,
@@ -3427,7 +3382,8 @@ await sb
 if(error){
 
 $('lista').textContent =
-'Erro ao carregar histórico.';
+'Erro ao carregar histórico: '+
+error.message;
 
 return;
 
@@ -4052,17 +4008,9 @@ $('painel')
 .classList
 .add('hidden');
 
-$('login')
-.classList
-.add('hidden');
-
 $('publico')
 .classList
 .remove('hidden');
-
-$('btnSair')
-.classList
-.add('hidden');
 
 window.scrollTo(0,0);
 
@@ -4242,70 +4190,59 @@ INÍCIO DO SISTEMA
 
 (async function(){
 
-  try{
+try{
 
-    /* Verifica primeiro se é uma proposta pública */
+const token =
+new URLSearchParams(
+window.location.search
+).get('proposta');
 
-    const token =
-      new URLSearchParams(
-        window.location.search
-      ).get('proposta');
+if(token){
 
-    if(token){
+const abriu =
+await abrirPublica();
 
-      const abriu =
-        await abrirPublica();
+if(abriu){
+return;
+}
 
-      if(abriu){
-        return;
-      }
+}
 
-    }
+}
+catch(error){
 
-  }catch(error){
+console.error(
+'Erro ao verificar proposta pública:',
+error
+);
 
-    console.error(
-      'Erro ao verificar proposta pública:',
-      error
-    );
+}
 
-  }
+$('painel')
+.classList
+.remove('hidden');
 
+$('publico')
+.classList
+.add('hidden');
 
-  /* ==================================================
-  SISTEMA SEM LOGIN
-  ================================================== */
+try{
 
-  $('painel')
-    .classList
-    .remove('hidden');
+await iniciarSistema();
 
-  $('publico')
-    .classList
-    .add('hidden');
+}
+catch(error){
 
+console.error(
+'Erro ao iniciar o sistema:',
+error
+);
 
-  try{
+$('painel')
+.classList
+.remove('hidden');
 
-    await iniciarSistema();
-
-  }catch(error){
-
-    console.error(
-      'Erro ao iniciar o sistema:',
-      error
-    );
-
-    /*
-     * Mantém o formulário aberto mesmo
-     * se alguma consulta do Supabase falhar.
-     */
-
-    $('painel')
-      .classList
-      .remove('hidden');
-
-  }
+}
 
 })();
 
