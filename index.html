@@ -4244,14 +4244,12 @@ INÍCIO DO SISTEMA
 
   try{
 
-    /* Primeiro verifica se existe uma proposta pública */
+    /* Verifica primeiro se é uma proposta pública */
 
     const token =
       new URLSearchParams(
         window.location.search
       ).get('proposta');
-
-    /* Se for link público, abre a proposta */
 
     if(token){
 
@@ -4274,10 +4272,9 @@ INÍCIO DO SISTEMA
   }
 
 
-  /*
-   * SEM LOGIN
-   * O sistema abre diretamente no orçamento.
-   */
+  /* ==================================================
+  SISTEMA SEM LOGIN
+  ================================================== */
 
   $('painel')
     .classList
@@ -4300,8 +4297,8 @@ INÍCIO DO SISTEMA
     );
 
     /*
-     * Mesmo que alguma função do Supabase
-     * apresente erro, mantém o formulário aberto.
+     * Mantém o formulário aberto mesmo
+     * se alguma consulta do Supabase falhar.
      */
 
     $('painel')
@@ -4311,6 +4308,8 @@ INÍCIO DO SISTEMA
   }
 
 })();
+
+</script>
 
 </body>
 </html>
