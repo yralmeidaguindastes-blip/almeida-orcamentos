@@ -2522,36 +2522,26 @@ INICIAR
 
 async function iniciarSistema(){
 
-const {
-data:{session}
-} =
-await sb.auth.getSession();
-
-if(!session){
-
-$('login').classList.remove('hidden');
-$('painel').classList.add('hidden');
-$('btnSair').classList.add('hidden');
-
-return;
-
-}
-
-$('login').classList.add('hidden');
 $('painel').classList.remove('hidden');
-$('btnSair').classList.remove('hidden');
+
+$('publico').classList.add('hidden');
 
 await carregarEquipamentos();
+
 await carregarClientes();
 
 prepararBuscaCidade();
+
 prepararBuscaOrigem();
+
 prepararValoresTransporte();
 
 await carregarCidadesBrasil();
 
 if(itens.length===0){
+
 adicionarItem();
+
 }
 
 await carregarLista();
